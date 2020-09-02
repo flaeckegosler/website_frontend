@@ -1,0 +1,13 @@
+.container-news {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.inner-container-news {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
