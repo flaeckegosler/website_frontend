@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../constants.dart';
 
@@ -28,30 +29,30 @@ class GlassContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: 100,
+                height: 70,
               ),
-              Text(
+              SelectableText(
                 "Guuggemusig",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline5!
-                    .copyWith(color: Colors.white),
-              ),
-              Text(
-                "Fläckegosler \nRoteborg",
-                style: TextStyle(
-                  fontSize: 100,
-                  fontWeight: FontWeight.bold,
+                style: GoogleFonts.shadowsIntoLight(
+                  fontSize: 40,
                   color: Colors.white,
-                  height: 1.5,
                 ),
               ),
-              Text(
+              SelectableText(
+                "Fläckegosler \nRoteborg",
+                style: GoogleFonts.shadowsIntoLight(
+                  fontSize: 100,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                  // height: 1.5,
+                ),
+              ),
+              SelectableText(
                 "Since 1989",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline5!
-                    .copyWith(color: Colors.white),
+                style: GoogleFonts.shadowsIntoLight(
+                  fontSize: 30,
+                  color: Colors.white,
+                ),
               )
             ],
           ),
