@@ -6,19 +6,20 @@ const RESOURCES = {
   "assets/assets/images/MUSTER_REPETIEREND.png": "f1e1bfe3f22b635abe7b107d56817d13",
 "assets/assets/images/tambi_2020_vektor.png": "14c38aaad2f14d51f8a63f8d6794bf75",
 "assets/assets/images/tambi_2020.png": "cad95311fdc572677974c656294a8f29",
-"assets/AssetManifest.json": "da0c8d7460b766c7a90a2d12d508fef3",
+"assets/assets/images/flaeckegosler_webseite_logo.png": "3271b8cdf7c4f8ca5dd0a386d8e2c263",
+"assets/AssetManifest.json": "04fdeae88acce17d31c390629406b0c7",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/NOTICES": "4dd7ee76d81db4a6f0fb7cfe7aa4294c",
+"assets/NOTICES": "1865f376a50e42fae66a9857b09e9b4a",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
 "version.json": "2a46acd7468e1516803b5ec9f9c3c104",
-"main.dart.js": "ed991efb1d15c0536535016e2c58d83a",
-"index.html": "86acc6dd6934b74ec1f7476d0f7a3d26",
-"/": "86acc6dd6934b74ec1f7476d0f7a3d26"
+"main.dart.js": "e8e05189cb2462282c521ee129b125b3",
+"index.html": "8172b83777544ba62d508cf9b34a6c6d",
+"/": "8172b83777544ba62d508cf9b34a6c6d"
 };
 
 // The application shell files that are downloaded before a service worker can
