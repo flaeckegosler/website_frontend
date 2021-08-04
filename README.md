@@ -1,6 +1,6 @@
 # website_frontend
 
-A new Flutter project.
+Visit https://flaeckegosler.github.io/website_frontend/#/ for the deployed main branch.
 
 ## Getting Started
 
