@@ -7,7 +7,7 @@ class PersonPic extends StatelessWidget {
       height: 600,
       // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
       child: Image.asset(
-        "assets/images/tambi_2020.png",
+        "assets/images/tambi_2020_vektor.png",
         fit: BoxFit.fitHeight,
       ),
     );
