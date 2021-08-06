@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:website_frontend/models/news.dart';
+import 'package:website_frontend/models/news_model.dart';
 
 class NewsProvider with ChangeNotifier {
   List<News> _news = [];
