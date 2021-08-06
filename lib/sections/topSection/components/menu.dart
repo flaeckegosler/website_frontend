@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
+import 'package:website_frontend/constants.dart';
 
 class Menu extends StatefulWidget {
   @override

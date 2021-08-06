@@ -2,8 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../constants.dart';
+import 'package:website_frontend/constants.dart';
 
 class GlassContent extends StatelessWidget {
   const GlassContent({
@@ -19,6 +18,7 @@ class GlassContent extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
+          height: 670,
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding * 2),
           constraints:
               BoxConstraints(maxWidth: 1110, maxHeight: size.height * 0.7),

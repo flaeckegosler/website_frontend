@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'glass_content.dart';
+import 'package:website_frontend/sections/topSection/components/glass_content.dart';
 
 class LogoAndBlurBox extends StatelessWidget {
   const LogoAndBlurBox({
@@ -17,7 +16,7 @@ class LogoAndBlurBox extends StatelessWidget {
         // Image.asset("assets/images/flaeckegosler.png"),
         Spacer(),
         GlassContent(size: size),
-        Spacer(flex: 3),
+        // Spacer(flex: 3),
       ],
     );
   }

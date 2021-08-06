@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   lint: ^1.5.3
   google_fonts: ^2.1.0
+  provider: ^5.0.0
+  velocity_x: ^3.3.0
 
 dev_dependencies:
   flutter_test:
