@@ -35,13 +35,13 @@ class _NewsCardState extends State<NewsCard> {
     });
   }
 
-  Duration duration = Duration(milliseconds: 200);
+  Duration duration = const Duration(milliseconds: 200);
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
     final _newsProvider = context.watch<NewsProvider>();
     if (_isLoading) {
-      return CircularProgressIndicator();
+      return const CircularProgressIndicator();
     } else {
       return InkWell(
         onTap: () {},

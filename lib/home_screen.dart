@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 
-import 'package:website_frontend/sections/topSection/top_section.dart';
+import 'package:website_frontend/sections/top/top_section.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
