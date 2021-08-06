@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:website_frontend/sections/topSection/components/glass_content.dart';
+import 'package:website_frontend/sections/top/components/glass_content.dart';
 
 class LogoAndBlurBox extends StatelessWidget {
   const LogoAndBlurBox({

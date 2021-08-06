@@ -19,16 +19,15 @@ class GlassContent extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           height: 670,
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding * 2),
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 2),
           constraints:
               BoxConstraints(maxWidth: 1110, maxHeight: size.height * 0.7),
           width: double.infinity,
           color: Colors.white.withOpacity(0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 70,
               ),
               SelectableText(

@@ -19,7 +19,7 @@ class NewsProvider with ChangeNotifier {
     return _result;
   }
 
-  createNews() {
+  Future<void> createNews() async {
     _news.add(News(
         id: 0.toString(),
         newsTitle: "Sommerausflug Fuederegg",
