@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:velocity_x/velocity_x.dart';
+import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
-
-import 'constants.dart';
+import 'package:website_frontend/provider/news_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,14 +13,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        inputDecorationTheme: kDefaultInputDecorationTheme,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: NewsProvider(),
+        ),
+      ],
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: true,
+        title: 'Fläckegosler',
+        theme: ThemeData(
+          inputDecorationTheme: kDefaultInputDecorationTheme,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        routeInformationParser: VxInformationParser(),
+        routerDelegate: VxNavigator(
+          routes: {
+            "/": (_, __) => MaterialPage(
+                  child: HomeScreen(),
+                )
+          },
+        ),
       ),
-      home: HomeScreen(),
     );
   }
 }

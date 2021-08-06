@@ -1,11 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import '../../constants.dart';
-import 'components/logo_blur_box.dart';
-import 'components/menu.dart';
-import 'components/person_pic.dart';
+import 'package:website_frontend/constants.dart';
+import 'package:website_frontend/sections/topSection/components/logo_blur_box.dart';
+import 'package:website_frontend/sections/topSection/components/menu.dart';
+import 'package:website_frontend/sections/topSection/components/person_pic.dart';
 
 class TopSection extends StatelessWidget {
   @override
