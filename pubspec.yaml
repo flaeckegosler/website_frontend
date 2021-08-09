@@ -32,6 +32,7 @@ dependencies:
   google_fonts: ^2.1.0
   provider: ^5.0.0
   velocity_x: ^3.3.0
+  flutter_html: ^2.1.1
 
 dev_dependencies:
   flutter_test:

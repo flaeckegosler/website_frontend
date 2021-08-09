@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/news_provider.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class NewsCard extends StatefulWidget {
   const NewsCard({
@@ -54,18 +55,43 @@ class _NewsCardState extends State<NewsCard> {
         child: AnimatedContainer(
           duration: duration,
           margin: const EdgeInsets.only(top: kDefaultPadding * 3),
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          height: 350,
+          // padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          height: 400,
           width: 350,
           decoration: BoxDecoration(
-            color: Colors.green,
+            color: Colors.grey[300],
             borderRadius: BorderRadius.circular(10),
             boxShadow: [if (isHover) kDefaultCardShadow],
           ),
           child: Column(
             children: [
+              Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  image: DecorationImage(
+                      image: AssetImage(
+                          _newsProvider.allNews[widget.index].imageURL),
+                      fit: BoxFit.cover),
+                ),
+              ),
+              Html(
+                data: _newsProvider.allNews[widget.index].newsIntroText,
+                /*style: const TextStyle(
+                  color: kTextColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w300,
+                  fontStyle: FontStyle.italic,
+                  height: 1.5,
+                ), */
+              ),
+              const SizedBox(height: kDefaultPadding * 2),
+              Text(
+                _newsProvider.allNews[widget.index].newsCreatedBy,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
               Transform.translate(
-                offset: const Offset(0, -55),
+                offset: const Offset(0, 0),
                 child: AnimatedContainer(
                   duration: duration,
                   height: 100,
@@ -74,27 +100,12 @@ class _NewsCardState extends State<NewsCard> {
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.white, width: 10),
                     boxShadow: [if (!isHover) kDefaultCardShadow],
-                    //  image: DecorationImage(
-                    // image: AssetImage(news[widget.index].userPic),
-                    //    ),
+                    image: const DecorationImage(
+                      image: AssetImage("/images/redakteure/raphikoch.png"),
+                    ),
                   ),
                 ),
               ),
-              Text(
-                _newsProvider.allNews[widget.index].newsMainText,
-                style: const TextStyle(
-                  color: kTextColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w300,
-                  fontStyle: FontStyle.italic,
-                  height: 1.5,
-                ),
-              ),
-              const SizedBox(height: kDefaultPadding * 2),
-              Text(
-                _newsProvider.allNews[widget.index].newsCreatedBy,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              )
             ],
           ),
         ),

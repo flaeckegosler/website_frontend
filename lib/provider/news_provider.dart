@@ -23,8 +23,7 @@ class NewsProvider with ChangeNotifier {
     _news.add(News(
         id: 0.toString(),
         newsTitle: "Sommerausflug Fuederegg",
-        imageURL:
-            "https://flaeckegosler.ch/site/assets/files/2516/img_3002.jpg",
+        imageURL: "/images/mock/img_3002.jpg",
         cropImageURL:
             "https://flaeckegosler.ch/site/assets/files/2516/img_3002.-thumbnail.jpg",
         timeCreatedUnix: 1626121843,
@@ -41,8 +40,7 @@ class NewsProvider with ChangeNotifier {
         id: 1.toString(),
         newsTitle:
             "Bericht zur 31. Generalversammlung der Guuggemusig Fläckegosler Roteborg",
-        imageURL:
-            "https://flaeckegosler.ch/site/assets/files/2514/whatsapp_image_2021-06-27_at_22_08_48_1-1.jpeg",
+        imageURL: "/images/mock/whatsapp_image_2021-06-27_at_22_08_48_1-1.jpeg",
         cropImageURL:
             "https://flaeckegosler.ch/site/assets/files/2514/whatsapp_image_2021-06-27_at_22_08_48_1-1.-thumbnail.jpeg",
         timeCreatedUnix: 1625349600,
@@ -58,8 +56,7 @@ class NewsProvider with ChangeNotifier {
     _news.add(News(
         id: 2.toString(),
         newsTitle: "Flättere-Samschtig",
-        imageURL:
-            "https://flaeckegosler.ch/site/assets/files/2504/samschtig-1.jpeg",
+        imageURL: "/images/mock/samschtig-1.jpeg",
         cropImageURL:
             "https://flaeckegosler.ch/site/assets/files/2504/samschtig-1.-thumbnail.jpeg",
         timeCreatedUnix: 1613170800,
