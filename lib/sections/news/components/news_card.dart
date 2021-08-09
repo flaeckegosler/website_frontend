@@ -53,8 +53,8 @@ class _NewsCardState extends State<NewsCard> {
         },
         child: AnimatedContainer(
           duration: duration,
-          margin: EdgeInsets.only(top: kDefaultPadding * 3),
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          margin: const EdgeInsets.only(top: kDefaultPadding * 3),
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           height: 350,
           width: 350,
           decoration: BoxDecoration(
@@ -65,7 +65,7 @@ class _NewsCardState extends State<NewsCard> {
           child: Column(
             children: [
               Transform.translate(
-                offset: Offset(0, -55),
+                offset: const Offset(0, -55),
                 child: AnimatedContainer(
                   duration: duration,
                   height: 100,
@@ -82,7 +82,7 @@ class _NewsCardState extends State<NewsCard> {
               ),
               Text(
                 _newsProvider.allNews[widget.index].newsMainText,
-                style: TextStyle(
+                style: const TextStyle(
                   color: kTextColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w300,
@@ -90,10 +90,10 @@ class _NewsCardState extends State<NewsCard> {
                   height: 1.5,
                 ),
               ),
-              SizedBox(height: kDefaultPadding * 2),
+              const SizedBox(height: kDefaultPadding * 2),
               Text(
                 _newsProvider.allNews[widget.index].newsCreatedBy,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               )
             ],
           ),

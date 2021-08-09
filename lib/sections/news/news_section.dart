@@ -7,16 +7,16 @@ class NewsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),
-      constraints: BoxConstraints(maxWidth: 1110),
+      padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),
+      constraints: const BoxConstraints(maxWidth: 1110),
       child: Column(
         children: [
-          SectionTitle(
+          const SectionTitle(
             title: "News",
             subTitle: "Aktuelles auf einen Blick!",
             color: Color(0xFF00B1FF),
           ),
-          SizedBox(height: kDefaultPadding),
+          const SizedBox(height: kDefaultPadding),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(

@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             TopSection(),
-            SizedBox(height: kDefaultPadding * 2),
+            const SizedBox(height: kDefaultPadding * 2),
             NewsSection(),
           ],
         ),

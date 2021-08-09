@@ -6,7 +6,7 @@ class PersonPic extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(right: 0),
+          margin: const EdgeInsets.only(right: 0),
           height: 650,
           // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
           child: Image.asset(
@@ -16,7 +16,7 @@ class PersonPic extends StatelessWidget {
         ),
         Positioned.fill(
           child: Container(
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               right: 50,
               bottom: 110,
             ),

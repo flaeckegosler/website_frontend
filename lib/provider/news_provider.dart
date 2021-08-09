@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:website_frontend/models/news_model.dart';
 
 class NewsProvider with ChangeNotifier {
-  List<News> _news = [];
+  final List<News> _news = [];
 
   List<News> get allNews {
     return List.from(_news);
