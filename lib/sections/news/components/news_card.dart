@@ -105,7 +105,7 @@ class _NewsCardState extends State<NewsCard> {
                         border: Border.all(color: Colors.white, width: 2),
                         boxShadow: [if (!isHover) kDefaultCardShadow],
                         image: const DecorationImage(
-                          image: AssetImage("/redakteure/raphikoch.png"),
+                          image: AssetImage("/raphikoch.png"),
                         ),
                       ),
                     ),
