@@ -12,7 +12,7 @@ class LogoAndBlurBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Image.asset("assets/images/flaeckegosler.png"),
+        // Image.asset("assets/flaeckegosler.png"),
         // const Spacer(),
         GlassContent(size: size),
         // Spacer(flex: 3),

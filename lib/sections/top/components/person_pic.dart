@@ -10,7 +10,7 @@ class PersonPic extends StatelessWidget {
           height: 650,
           // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
           child: Image.asset(
-            "assets/images/tambi_2020_vektor.png",
+            "assets/tambi_2020_vektor.png",
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -24,7 +24,7 @@ class PersonPic extends StatelessWidget {
               alignment: Alignment.bottomRight,
               // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
               child: Image.asset(
-                "assets/images/flaeckegosler_webseite_logo.png",
+                "assets/flaeckegosler_webseite_logo.png",
                 fit: BoxFit.fitHeight,
                 height: 125,
               ),
