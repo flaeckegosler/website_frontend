@@ -12,7 +12,8 @@ class TopSection extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       alignment: Alignment.center,
-      constraints: const BoxConstraints(maxHeight: 700, minHeight: 700),
+      height: 700,
+      //constraints: const BoxConstraints(maxHeight: 700, minHeight: 700),
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -22,18 +23,23 @@ class TopSection extends StatelessWidget {
         ),
       ),
       child: Container(
+        alignment: Alignment.bottomCenter,
+        // color: Colors.red,
         margin: const EdgeInsets.only(top: kDefaultPadding),
-        width: 1200,
+        width: 1200, //See class_content.dart
         child: Stack(
           children: [
-            LogoAndBlurBox(size: size),
-            Positioned(
-              bottom: 0,
-              right: 50,
-              child: PersonPic(),
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: LogoAndBlurBox(size: size),
             ),
             Positioned(
               bottom: 0,
+              right: 0,
+              child: PersonPic(),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
               child: Menu(),
             ),
           ],

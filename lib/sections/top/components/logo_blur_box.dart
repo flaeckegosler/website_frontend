@@ -11,10 +11,9 @@ class LogoAndBlurBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Image.asset("assets/images/flaeckegosler.png"),
-        const Spacer(),
+        // const Spacer(),
         GlassContent(size: size),
         // Spacer(flex: 3),
       ],
