@@ -56,7 +56,7 @@ class _NewsCardState extends State<NewsCard> {
           duration: duration,
           margin: const EdgeInsets.only(top: kDefaultPadding * 3),
           // padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          height: 400,
+          height: 450,
           width: 350,
           decoration: BoxDecoration(
             color: Colors.grey[300],
@@ -64,6 +64,7 @@ class _NewsCardState extends State<NewsCard> {
             boxShadow: [if (isHover) kDefaultCardShadow],
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 height: 200,
@@ -85,27 +86,33 @@ class _NewsCardState extends State<NewsCard> {
                   height: 1.5,
                 ), */
               ),
-              const SizedBox(height: kDefaultPadding * 2),
-              Text(
-                _newsProvider.allNews[widget.index].newsCreatedBy,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Transform.translate(
-                offset: const Offset(0, 0),
-                child: AnimatedContainer(
-                  duration: duration,
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 10),
-                    boxShadow: [if (!isHover) kDefaultCardShadow],
-                    image: const DecorationImage(
-                      image: AssetImage("/images/redakteure/raphikoch.png"),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    _newsProvider.allNews[widget.index].newsCreatedBy,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Transform.translate(
+                    offset: const Offset(0, 0),
+                    child: AnimatedContainer(
+                      duration: duration,
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 2),
+                        boxShadow: [if (!isHover) kDefaultCardShadow],
+                        image: const DecorationImage(
+                          image: AssetImage("/images/redakteure/raphikoch.png"),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
