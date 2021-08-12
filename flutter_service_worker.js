@@ -26,15 +26,10 @@ const RESOURCES = {
 "assets/assets/redakteure/fabio.png": "690c154d4edbb7c9d85ef5564bb29626",
 "assets/assets/redakteure/danielah.png": "306044526da237c3af0677de59293398",
 "assets/assets/redakteure/raphikoch.png": "554be50a1b3e61b136cb8bf5e9b7bec8",
-"assets/assets/Hover.png": "f0a2318c40269d84384f56f54d25ad69",
-"assets/assets/MUSTER_REPETIEREND.png": "f1e1bfe3f22b635abe7b107d56817d13",
-"assets/assets/tambi_2020_vektor.png": "14c38aaad2f14d51f8a63f8d6794bf75",
 "assets/assets/mock/whatsapp_image_2021-06-27_at_22_08_48_1-1.jpeg": "058a5c016a5730981f9629c059b59cfd",
 "assets/assets/mock/img_3002.jpg": "dcdf10e45fb50df3378fba924fdfa173",
 "assets/assets/mock/samschtig-1.jpeg": "9fbb6d366fb4dc01b0995d625b0e17e6",
-"assets/assets/tambi_2020.png": "cad95311fdc572677974c656294a8f29",
-"assets/assets/flaeckegosler_webseite_logo.png": "3271b8cdf7c4f8ca5dd0a386d8e2c263",
-"assets/AssetManifest.json": "98f427ed99296e315c3dbb5ebb40bf6d",
+"assets/AssetManifest.json": "15bea2f57350d759cc73ba4ac08b688a",
 "assets/FontManifest.json": "71a4a82de411f155107da3f8dac64ebd",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
@@ -66,8 +61,8 @@ const RESOURCES = {
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
 "version.json": "2a46acd7468e1516803b5ec9f9c3c104",
 "main.dart.js": "2b0cc945065eced6e6c768128c780788",
-"index.html": "eb9241bd87d1dd17cc5ab2a08b7bd92b",
-"/": "eb9241bd87d1dd17cc5ab2a08b7bd92b"
+"index.html": "ed53269e8b6769ee51c915f52788252d",
+"/": "ed53269e8b6769ee51c915f52788252d"
 };
 
 // The application shell files that are downloaded before a service worker can
