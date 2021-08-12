@@ -44,78 +44,72 @@ class _NewsCardState extends State<NewsCard> {
     if (_isLoading) {
       return const CircularProgressIndicator();
     } else {
-      return InkWell(
-        onTap: () {},
-        hoverColor: Colors.transparent,
-        onHover: (value) {
-          setState(() {
-            isHover = value;
-          });
-        },
-        child: AnimatedContainer(
-          duration: duration,
-          margin: const EdgeInsets.only(top: kDefaultPadding * 3),
-          // padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          height: 450,
-          width: 350,
-          decoration: BoxDecoration(
-            color: Colors.grey[300],
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [if (isHover) kDefaultCardShadow],
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
-                      image: AssetImage(
-                          _newsProvider.allNews[widget.index].imageURL),
-                      fit: BoxFit.cover),
-                ),
+      return Stack(
+        children: [
+          InkWell(
+            onTap: () {},
+            hoverColor: Colors.transparent,
+            onHover: (value) {
+              setState(() {
+                isHover = value;
+              });
+            },
+            child: Container(
+              height: 550, //Otherwise card gets smaller
+              //    width: 350,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [if (isHover) kDefaultCardShadow],
               ),
-              Html(
-                data: _newsProvider.allNews[widget.index].newsIntroText,
-                /*style: const TextStyle(
-                  color: kTextColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w300,
-                  fontStyle: FontStyle.italic,
-                  height: 1.5,
-                ), */
-              ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    _newsProvider.allNews[widget.index].newsCreatedBy,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Transform.translate(
-                    offset: const Offset(0, 0),
-                    child: AnimatedContainer(
-                      duration: duration,
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: 2),
-                        boxShadow: [if (!isHover) kDefaultCardShadow],
-                        image: const DecorationImage(
-                          image: AssetImage("assets/raphikoch.png"),
-                        ),
-                      ),
+                  Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                          image: AssetImage(
+                              _newsProvider.allNews[widget.index].imageURL),
+                          fit: BoxFit.cover),
                     ),
                   ),
+                  Html(
+                    data: _newsProvider.allNews[widget.index].newsIntroText,
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        _newsProvider.allNews[widget.index].newsCreatedBy,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Transform.translate(
+                        offset: const Offset(0, 0),
+                        child: AnimatedContainer(
+                          duration: duration,
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Colors.white, width: 2),
+                            boxShadow: [if (!isHover) kDefaultCardShadow],
+                            image: const DecorationImage(
+                              image: AssetImage("assets/raphikoch.png"),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
                 ],
               ),
-              const SizedBox(height: 20),
-            ],
+            ),
           ),
-        ),
+        ],
       );
     }
   }
