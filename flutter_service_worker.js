@@ -3,12 +3,13 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/assets/images/Hover.png": "f0a2318c40269d84384f56f54d25ad69",
+  "assets/assets/images/redakteure/raphikoch.png": "554be50a1b3e61b136cb8bf5e9b7bec8",
+"assets/assets/images/Hover.png": "f0a2318c40269d84384f56f54d25ad69",
 "assets/assets/images/MUSTER_REPETIEREND.png": "f1e1bfe3f22b635abe7b107d56817d13",
 "assets/assets/images/tambi_2020_vektor.png": "14c38aaad2f14d51f8a63f8d6794bf75",
 "assets/assets/images/tambi_2020.png": "cad95311fdc572677974c656294a8f29",
 "assets/assets/images/flaeckegosler_webseite_logo.png": "3271b8cdf7c4f8ca5dd0a386d8e2c263",
-"assets/AssetManifest.json": "a39f3723e79e62712e8af238186c3539",
+"assets/AssetManifest.json": "8ca019b4f5210f2d03e543a0a5c14c85",
 "assets/FontManifest.json": "71a4a82de411f155107da3f8dac64ebd",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
@@ -39,9 +40,9 @@ const RESOURCES = {
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
 "version.json": "2a46acd7468e1516803b5ec9f9c3c104",
-"main.dart.js": "04e300e032d6ef10ea53f46c715b05dc",
-"index.html": "a7b1d9b6fe133b4618abf444633efac3",
-"/": "a7b1d9b6fe133b4618abf444633efac3"
+"main.dart.js": "fbd296e022ad8bca85983dae22b0f679",
+"index.html": "2d3c1ca82bc0c4d13bc26315a840c6ac",
+"/": "2d3c1ca82bc0c4d13bc26315a840c6ac"
 };
 
 // The application shell files that are downloaded before a service worker can
