@@ -27,17 +27,17 @@ class _NewsSectionState extends State<NewsSection>
 
   void getNewsWidthMethod(int index, {required bool showAllActive}) {
     if (index == 0 && showAllActive == false) {
-      getNews0Width = 1110;
+      getNews0Width = 1250;
       getNews1Width = 0;
       getNews2Width = 0;
     } else if (index == 1 && showAllActive == false) {
       getNews0Width = 0;
-      getNews1Width = 1110;
+      getNews1Width = 1250;
       getNews2Width = 0;
     } else if (index == 2 && showAllActive == false) {
       getNews0Width = 0;
       getNews1Width = 0;
-      getNews2Width = 1110;
+      getNews2Width = 1250;
     } else if (showAllActive == true) {
       getNews0Width = 350;
       getNews1Width = 350;
@@ -71,7 +71,8 @@ class _NewsSectionState extends State<NewsSection>
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(maxWidth: 1110),
+      // color: Colors.blue, //good for debugging
+      constraints: const BoxConstraints(maxWidth: 1250),
       child: Column(
         children: [
           const SectionTitle(
@@ -173,20 +174,23 @@ class _NewsSectionState extends State<NewsSection>
               ],
             ),
           ),
+          if (showAllActive == true) const SizedBox(width: 25),
           Expanded(
             flex: _animation.value as int,
-            child: Container(
+            child: SizedBox(
               width: 0,
-              color: Colors.grey[200],
+              //  color: Colors.grey[200],
               child: ListView(
                 children: [
                   const SizedBox(
                     height: 25,
                     width: 0,
                   ),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Center(
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      color: Colors.grey[200],
                       child: Html(
                         data: _newsProvider.allNews[index].newsMainText,
                         style: {
@@ -197,14 +201,13 @@ class _NewsSectionState extends State<NewsSection>
                           ),
                           "p": Style(
                             fontFamily: 'serif',
-                            padding: const EdgeInsets.all(16),
-                            fontSize: FontSize.rem(2.5),
+                            padding: const EdgeInsets.all(1),
+                            fontSize: FontSize.em(1),
                           ),
                         },
                       ),
                     ),
                   ),
-                  //),
                 ],
               ),
             ),
