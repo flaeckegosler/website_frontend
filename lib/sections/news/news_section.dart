@@ -64,7 +64,7 @@ class _NewsSectionState extends State<NewsSection>
     fetchNewsList();
     _animationController =
         AnimationController(duration: Duration(seconds: 1), vsync: this);
-    _animation = IntTween(begin: 0, end: 3600).animate(_animationController);
+    _animation = IntTween(begin: 0, end: 2400).animate(_animationController);
     _animation.addListener(() => setState(() {}));
   }
 
@@ -87,6 +87,9 @@ class _NewsSectionState extends State<NewsSection>
               newsWidget(1),
               newsWidget(2),
             ],
+          ),
+          const SizedBox(
+            height: 40,
           ),
         ],
       ),
@@ -156,7 +159,7 @@ class _NewsSectionState extends State<NewsSection>
       child: Row(
         children: [
           Expanded(
-            flex: 1800,
+            flex: 1200,
             child: Stack(
               children: [
                 Column(

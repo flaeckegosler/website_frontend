@@ -75,8 +75,34 @@ class _NewsCardState extends State<NewsCard> {
                           fit: BoxFit.cover),
                     ),
                   ),
-                  Html(
-                    data: _newsProvider.allNews[widget.index].newsIntroText,
+                  Column(
+                    //This column is used to reduce space between title and intro text
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 18, right: 18),
+                          child: Text(
+                            _newsProvider.allNews[widget.index].newsTitle,
+                            style: const TextStyle(
+                                fontWeight: FontWeight.w800, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                      Html(
+                        data: _newsProvider.allNews[widget.index].newsIntroText,
+                        style: {
+                          "p": Style(
+                            fontFamily: 'serif',
+                            padding: const EdgeInsets.only(
+                              left: 10,
+                              right: 10,
+                            ),
+                            fontSize: FontSize.em(1),
+                          ),
+                        },
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
                   Row(
