@@ -13,7 +13,7 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
       height: 100,
       child: Row(

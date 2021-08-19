@@ -9,8 +9,6 @@ class GallerySection extends StatefulWidget {
 class _GallerySectionState extends State<GallerySection> {
   bool _isLoading = false;
 
-  int newsFlexTest = 0;
-
   //Fetch all Listings
   Future fetchGalleryList() async {
     setState(() {
