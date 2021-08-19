@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
+import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 
 void main() {
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(
           value: NewsProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: MemberProvider(),
         ),
       ],
       child: MaterialApp.router(
