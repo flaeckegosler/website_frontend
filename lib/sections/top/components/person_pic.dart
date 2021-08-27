@@ -6,17 +6,17 @@ class PersonPic extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(right: 0),
+          margin: const EdgeInsets.only(right: 0),
           height: 650,
           // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
           child: Image.asset(
-            "assets/images/tambi_2020_vektor.png",
+            "assets/tambi_2020_vektor.png",
             fit: BoxFit.fitHeight,
           ),
         ),
         Positioned.fill(
           child: Container(
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               right: 50,
               bottom: 110,
             ),
@@ -24,7 +24,7 @@ class PersonPic extends StatelessWidget {
               alignment: Alignment.bottomRight,
               // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
               child: Image.asset(
-                "assets/images/flaeckegosler_webseite_logo.png",
+                "assets/flaeckegosler_webseite_logo.png",
                 fit: BoxFit.fitHeight,
                 height: 125,
               ),
