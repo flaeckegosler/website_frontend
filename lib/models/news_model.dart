@@ -28,6 +28,3 @@ class News with ChangeNotifier {
       required this.newsTags,
       required this.galleryLink});
 }
-
-String review =
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua enim ad minim veniam.';
