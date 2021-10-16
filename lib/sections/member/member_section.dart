@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/models/members_model.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 
 class MemberSection extends StatefulWidget {
@@ -15,9 +16,19 @@ class _MemberSectionState extends State<MemberSection> {
     Provider.of<MemberProvider>(context, listen: false).createMembers();
   }
 
+  Widget createMemberCard(Member member) {
+    return Card(
+      child: Image.network(member.pictureUrl),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final _myMemberProvider = context.watch<MemberProvider>();
+
+    var myList = List.generate(_myMemberProvider.allMembers.length,
+        (index) => createMemberCard(_myMemberProvider.allMembers[index]));
+
     return SizedBox(
       width: double.infinity,
       //color: const Color.fromRGBO(141, 66, 245, 1),
@@ -26,6 +37,7 @@ class _MemberSectionState extends State<MemberSection> {
           alignment: Alignment.center,
           //color: Colors.red, //good for debugging
           constraints: const BoxConstraints(maxWidth: 1250),
+          height: 1000,
           child: Column(
             children: [
               const SizedBox(
@@ -38,6 +50,16 @@ class _MemberSectionState extends State<MemberSection> {
               ),
               const SizedBox(
                 height: 20,
+              ),
+              // Here comes the buttons
+              Expanded(
+                child: GridView(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5),
+                  children: myList,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
