@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/provider/news_provider.dart';
+
+import 'gallery.dart';
 
 class GallerySection extends StatefulWidget {
   @override
@@ -14,7 +18,7 @@ class _GallerySectionState extends State<GallerySection> {
     setState(() {
       _isLoading = true;
     });
-    // await Provider.of<NewsProvider>(context, listen: false).createNews();
+    //await Provider.of<NewsProvider>(context, listen: false).createNews();
     setState(() {
       _isLoading = false;
     });
@@ -29,6 +33,7 @@ class _GallerySectionState extends State<GallerySection> {
 
   @override
   Widget build(BuildContext context) {
+    final _newsProvider = context.watch<NewsProvider>();
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(46, 142, 196, 1),
@@ -50,29 +55,10 @@ class _GallerySectionState extends State<GallerySection> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      color: Colors.yellow,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      color: Colors.green,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      color: Colors.brown,
-                    ),
-                  ),
-                ],
-              ),
+              SizedBox(
+                  height: 500,
+                  width: 800,
+                  child: Gallery(_newsProvider.allNews[0])),
             ],
           ),
         ),
