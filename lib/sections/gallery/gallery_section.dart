@@ -18,6 +18,9 @@ class _GallerySectionState extends State<GallerySection> {
     setState(() {
       _isLoading = true;
     });
+    //NEWS FETCHTED TWICE! BAD!
+    //TODO: Change
+    await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
     //await Provider.of<NewsProvider>(context, listen: false).createNews();
     setState(() {
       _isLoading = false;
@@ -58,7 +61,9 @@ class _GallerySectionState extends State<GallerySection> {
               SizedBox(
                   height: 500,
                   width: 800,
-                  child: Gallery(_newsProvider.allNews[0])),
+                  child: _isLoading == true
+                      ? Container()
+                      : Gallery(_newsProvider.allNews[0])),
             ],
           ),
         ),
