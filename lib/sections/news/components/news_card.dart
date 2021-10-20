@@ -29,8 +29,8 @@ class _NewsCardState extends State<NewsCard> {
     setState(() {
       _isLoading = true;
     });
-    await Provider.of<NewsProvider>(context, listen: false).createNews();
-    //await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
+    //await Provider.of<NewsProvider>(context, listen: false).createNews();
+    await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
     setState(() {
       _isLoading = false;
     });
@@ -70,7 +70,7 @@ class _NewsCardState extends State<NewsCard> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       image: DecorationImage(
-                          image: AssetImage(
+                          image: NetworkImage(
                               _newsProvider.allNews[widget.index].imageURL),
                           fit: BoxFit.cover),
                     ),
