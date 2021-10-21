@@ -5,6 +5,7 @@ import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
+import 'package:website_frontend/provider/pictures_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: MemberProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: PicturesProvider(),
         ),
       ],
       child: MaterialApp.router(

@@ -10,7 +10,7 @@ class News with ChangeNotifier {
   final String newsCreatedBy;
   final String newsIntroText;
   final String newsMainText;
-  final String imageDescription;
+  final String? imageDescription;
   final String newsTags;
   final String galleryLink;
 
@@ -24,7 +24,7 @@ class News with ChangeNotifier {
       required this.newsCreatedBy,
       required this.newsIntroText,
       required this.newsMainText,
-      required this.imageDescription,
+      this.imageDescription,
       required this.newsTags,
       required this.galleryLink});
 }

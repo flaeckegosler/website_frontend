@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:website_frontend/models/news_model.dart';
 
 class NewsProvider with ChangeNotifier {
-  final List<News> _news = [];
+  List<News> _news = [];
 
   List<News> get allNews {
     return List.from(_news);
@@ -19,6 +19,7 @@ class NewsProvider with ChangeNotifier {
     return _result;
   }
 
+/*
   Future<void> createNews() async {
     _news.add(News(
         id: 0.toString(),
@@ -70,34 +71,32 @@ class NewsProvider with ChangeNotifier {
             'Ein Selfie eines Mitgliedes der Gruppe "Tha(mpon) WG". (Foto: Patrick Roos)',
         newsTags: "",
         galleryLink: ""));
-  }
+  }*/
 
-/*
-  fetchNewsList() async {
-    var url = Uri.parse('https://flaeckegosler.ch/app/news-to-json/');
+  Future<void> fetchNewsList() async {
+    final url = Uri.parse('https://flaeckegosler.ch/app/news-to-json/');
     final response = await http.get(
       url,
-      headers: {
-        "content-type": "application/json",
-      },
     );
     if (response.statusCode == 200) {
       final List<News> fetchedProductList = [];
-      final Map<String, dynamic> newsListData = json.decode(response.body);
+      final Map<String, dynamic> newsListData =
+          json.decode(response.body) as Map<String, dynamic>;
       newsListData.forEach((String newsId, dynamic newsData) {
         final News news = News(
-            id: newsId.toString(),
-            newsTitle: newsData['newsTitle'],
-            imageURL: newsData['imageURL'],
-            cropImageURL: newsData['cropImageURL'],
-            timeCreatedUnix: newsData['timeCreatedUnix'],
-            timeCreatedFormatted: newsData['timeCreatedFormatted'],
-            newsCreatedBy: newsData['newsCreatedBy'],
-            newsIntroText: newsData['newsIntroText'],
-            newsMainText: newsData['newsMainText'],
-            imageDescription: newsData['imageDescription'],
-            newsTags: newsData['newsTags'],
-            galleryLink: newsData['galleryLink']);
+          id: newsId.toString(),
+          newsTitle: newsData['newsTitle'] as String,
+          imageURL: newsData['imageURL'] as String,
+          cropImageURL: newsData['cropImageURL'] as String,
+          timeCreatedUnix: newsData['timeCreatedUnix'] as int,
+          timeCreatedFormatted: newsData['timeCreatedFormatted'] as String,
+          newsCreatedBy: newsData['newsCreatedBy'] as String,
+          newsIntroText: newsData['newsIntroText'] as String,
+          newsMainText: newsData['newsMainText'] as String,
+          imageDescription: newsData['imageDescription'] as String?,
+          newsTags: newsData['newsTags'] as String,
+          galleryLink: newsData['galleryLink'] as String,
+        );
         fetchedProductList.add(news);
       });
       _news = fetchedProductList;
@@ -105,6 +104,5 @@ class NewsProvider with ChangeNotifier {
       throw Exception("Unable to get news");
     }
     ;
-  }*/
-
+  }
 }

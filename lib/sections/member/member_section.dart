@@ -18,7 +18,10 @@ class _MemberSectionState extends State<MemberSection> {
 
   Widget createMemberCard(Member member) {
     return Card(
-      child: Image.network(member.pictureUrl),
+      child: Image.network(
+        member.pictureUrl,
+        fit: BoxFit.cover,
+      ),
     );
   }
 
@@ -37,7 +40,7 @@ class _MemberSectionState extends State<MemberSection> {
           alignment: Alignment.center,
           //color: Colors.red, //good for debugging
           constraints: const BoxConstraints(maxWidth: 1250),
-          height: 1000,
+          height: 2900,
           child: Column(
             children: [
               const SizedBox(
@@ -60,36 +63,6 @@ class _MemberSectionState extends State<MemberSection> {
                       crossAxisCount: 5),
                   children: myList,
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      color: Colors.purple,
-                      child: Column(
-                        children: [
-                          Text(_myMemberProvider.allMembers[0].lastName),
-                          Text(_myMemberProvider.allMembers[1].lastName),
-                          Text(_myMemberProvider.allMembers[2].lastName),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      color: Colors.orange,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      color: Colors.blue,
-                    ),
-                  ),
-                ],
               ),
             ],
           ),

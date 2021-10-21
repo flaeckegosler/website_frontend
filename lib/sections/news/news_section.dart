@@ -50,8 +50,8 @@ class _NewsSectionState extends State<NewsSection>
     setState(() {
       _isLoading = true;
     });
-    await Provider.of<NewsProvider>(context, listen: false).createNews();
-    //await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
+    //await Provider.of<NewsProvider>(context, listen: false).createNews();
+    await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
     setState(() {
       _isLoading = false;
     });
@@ -83,9 +83,18 @@ class _NewsSectionState extends State<NewsSection>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              newsWidget(0),
-              newsWidget(1),
-              newsWidget(2),
+              if (_isLoading == true)
+                const CircularProgressIndicator()
+              else
+                newsWidget(0),
+              if (_isLoading == true)
+                const CircularProgressIndicator()
+              else
+                newsWidget(1),
+              if (_isLoading == true)
+                const CircularProgressIndicator()
+              else
+                newsWidget(2),
             ],
           ),
           const SizedBox(
