@@ -9,6 +9,15 @@ class MemberSection extends StatefulWidget {
   _MemberSectionState createState() => _MemberSectionState();
 }
 
+enum Picked_button {
+  all,
+  trompete,
+  posaune,
+  horn,
+  sousaphon,
+  drums,
+}
+
 class _MemberSectionState extends State<MemberSection> {
   @override
   void initState() {
@@ -25,12 +34,30 @@ class _MemberSectionState extends State<MemberSection> {
     );
   }
 
+  Picked_button pickedButton = Picked_button.all;
+
   @override
   Widget build(BuildContext context) {
     final _myMemberProvider = context.watch<MemberProvider>();
 
-    var myList = List.generate(_myMemberProvider.allMembers.length,
-        (index) => createMemberCard(_myMemberProvider.allMembers[index]));
+    List<Widget> getMemberList() {
+      if (pickedButton == Picked_button.all) {
+        return List.generate(_myMemberProvider.allMembers.length,
+            (index) => createMemberCard(_myMemberProvider.allMembers[index]));
+      } else if (pickedButton == Picked_button.trompete) {
+        return List.generate(
+            _myMemberProvider.getMemberOfInstrument("Trompete").length,
+            (index) => createMemberCard(
+                _myMemberProvider.getMemberOfInstrument("Trompete")[index]));
+      } else if (pickedButton == Picked_button.posaune) {
+        return List.generate(
+            _myMemberProvider.getMemberOfInstrument("Posaune").length,
+            (index) => createMemberCard(
+                _myMemberProvider.getMemberOfInstrument("Posaune")[index]));
+      } else {
+        return [];
+      }
+    }
 
     return SizedBox(
       width: double.infinity,
@@ -40,7 +67,6 @@ class _MemberSectionState extends State<MemberSection> {
           alignment: Alignment.center,
           //color: Colors.red, //good for debugging
           constraints: const BoxConstraints(maxWidth: 1250),
-          height: 2900,
           child: Column(
             children: [
               const SizedBox(
@@ -55,19 +81,113 @@ class _MemberSectionState extends State<MemberSection> {
                 height: 20,
               ),
               // Here comes the buttons
-              Expanded(
+              Container(
+                height: 60,
+                padding: const EdgeInsets.only(left: 10, right: 10),
                 child: GridView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 5),
-                  children: myList,
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    childAspectRatio: 4,
+                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 15,
+                    maxCrossAxisExtent: 200,
+                  ),
+                  children: buttons(), //"Anrufbeantworter"
                 ),
+              ),
+              GridView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5),
+                children: getMemberList(),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  List<Widget> buttons() {
+    return [
+      //Show all
+      ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: Picked_button.all == pickedButton
+              ? MaterialStateProperty.all<Color>(
+                  const Color.fromRGBO(147, 90, 161, 1),
+                )
+              : MaterialStateProperty.all<Color>(
+                  Colors.grey,
+                ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            pickedButton = Picked_button.all;
+          });
+        },
+        child: const Text(
+          "Alle!",
+          textAlign: TextAlign.center,
+        ),
+      ),
+      //Trompete
+      ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: Picked_button.trompete == pickedButton
+              ? MaterialStateProperty.all<Color>(
+                  const Color.fromRGBO(147, 90, 161, 1),
+                )
+              : MaterialStateProperty.all<Color>(
+                  Colors.grey,
+                ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            pickedButton = Picked_button.trompete;
+          });
+        },
+        child: const Text(
+          "Trompete!",
+          textAlign: TextAlign.center,
+        ),
+      ),
+      //Posaune
+      ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: Picked_button.posaune == pickedButton
+              ? MaterialStateProperty.all<Color>(
+                  const Color.fromRGBO(147, 90, 161, 1),
+                )
+              : MaterialStateProperty.all<Color>(
+                  Colors.grey,
+                ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            pickedButton = Picked_button.posaune;
+          });
+        },
+        child: const Text(
+          "Posaune!",
+          textAlign: TextAlign.center,
+        ),
+      )
+    ];
   }
 }
