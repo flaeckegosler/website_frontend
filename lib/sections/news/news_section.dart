@@ -70,37 +70,40 @@ class _NewsSectionState extends State<NewsSection>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.blue, //good for debugging
-      constraints: const BoxConstraints(maxWidth: 1250),
-      child: Column(
-        children: [
-          const SectionTitle(
-            title: "News",
-            subTitle: "Aktuelles auf einen Blick!",
-            color: Color(0xFF00B1FF),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (_isLoading == true)
-                const CircularProgressIndicator()
-              else
-                newsWidget(0),
-              if (_isLoading == true)
-                const CircularProgressIndicator()
-              else
-                newsWidget(1),
-              if (_isLoading == true)
-                const CircularProgressIndicator()
-              else
-                newsWidget(2),
-            ],
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-        ],
+    return Align(
+      child: Container(
+        alignment: Alignment.center,
+        // color: Colors.blue, //good for debugging
+        constraints: const BoxConstraints(maxWidth: 1250),
+        child: Column(
+          children: [
+            const SectionTitle(
+              title: "News",
+              subTitle: "Aktuelles auf einen Blick!",
+              color: Color(0xFF00B1FF),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (_isLoading == true)
+                  const CircularProgressIndicator()
+                else
+                  newsWidget(0),
+                if (_isLoading == true)
+                  const CircularProgressIndicator()
+                else
+                  newsWidget(1),
+                if (_isLoading == true)
+                  const CircularProgressIndicator()
+                else
+                  newsWidget(2),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+          ],
+        ),
       ),
     );
   }
