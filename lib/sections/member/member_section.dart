@@ -34,7 +34,7 @@ class _MemberSectionState extends State<MemberSection> {
     );
   }
 
-  Picked_button pickedButton = Picked_button.all;
+  Picked_button pickedButton = Picked_button.drums;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +44,21 @@ class _MemberSectionState extends State<MemberSection> {
       if (pickedButton == Picked_button.all) {
         return List.generate(_myMemberProvider.allMembers.length,
             (index) => createMemberCard(_myMemberProvider.allMembers[index]));
+      } else if (pickedButton == Picked_button.drums) {
+        return List.generate(
+            _myMemberProvider.getMemberOfInstrument("Drums").length,
+            (index) => createMemberCard(
+                _myMemberProvider.getMemberOfInstrument("Drums")[index]));
+      } else if (pickedButton == Picked_button.horn) {
+        return List.generate(
+            _myMemberProvider.getMemberOfInstrument("Horn").length,
+            (index) => createMemberCard(
+                _myMemberProvider.getMemberOfInstrument("Horn")[index]));
+      } else if (pickedButton == Picked_button.sousaphon) {
+        return List.generate(
+            _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
+            (index) => createMemberCard(
+                _myMemberProvider.getMemberOfInstrument("Sousaphon")[index]));
       } else if (pickedButton == Picked_button.trompete) {
         return List.generate(
             _myMemberProvider.getMemberOfInstrument("Trompete").length,
@@ -101,6 +116,9 @@ class _MemberSectionState extends State<MemberSection> {
                     crossAxisCount: 5),
                 children: getMemberList(),
               ),
+              const SizedBox(
+                height: 20,
+              )
             ],
           ),
         ),
@@ -132,14 +150,14 @@ class _MemberSectionState extends State<MemberSection> {
           });
         },
         child: const Text(
-          "Alle!",
+          "Alle",
           textAlign: TextAlign.center,
         ),
       ),
-      //Trompete
+      //Drums
       ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: Picked_button.trompete == pickedButton
+          backgroundColor: Picked_button.drums == pickedButton
               ? MaterialStateProperty.all<Color>(
                   const Color.fromRGBO(147, 90, 161, 1),
                 )
@@ -154,11 +172,37 @@ class _MemberSectionState extends State<MemberSection> {
         ),
         onPressed: () {
           setState(() {
-            pickedButton = Picked_button.trompete;
+            pickedButton = Picked_button.drums;
           });
         },
         child: const Text(
-          "Trompete!",
+          "Drums",
+          textAlign: TextAlign.center,
+        ),
+      ),
+      //Horn
+      ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: Picked_button.horn == pickedButton
+              ? MaterialStateProperty.all<Color>(
+                  const Color.fromRGBO(147, 90, 161, 1),
+                )
+              : MaterialStateProperty.all<Color>(
+                  Colors.grey,
+                ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            pickedButton = Picked_button.horn;
+          });
+        },
+        child: const Text(
+          "Horn",
           textAlign: TextAlign.center,
         ),
       ),
@@ -184,10 +228,62 @@ class _MemberSectionState extends State<MemberSection> {
           });
         },
         child: const Text(
-          "Posaune!",
+          "Posaune",
           textAlign: TextAlign.center,
         ),
-      )
+      ),
+      //Sousaphon
+      ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: Picked_button.sousaphon == pickedButton
+              ? MaterialStateProperty.all<Color>(
+                  const Color.fromRGBO(147, 90, 161, 1),
+                )
+              : MaterialStateProperty.all<Color>(
+                  Colors.grey,
+                ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            pickedButton = Picked_button.sousaphon;
+          });
+        },
+        child: const Text(
+          "Sousaphon",
+          textAlign: TextAlign.center,
+        ),
+      ),
+      //Trompete
+      ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: Picked_button.trompete == pickedButton
+              ? MaterialStateProperty.all<Color>(
+                  const Color.fromRGBO(147, 90, 161, 1),
+                )
+              : MaterialStateProperty.all<Color>(
+                  Colors.grey,
+                ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            pickedButton = Picked_button.trompete;
+          });
+        },
+        child: const Text(
+          "Trompete",
+          textAlign: TextAlign.center,
+        ),
+      ),
     ];
   }
 }
