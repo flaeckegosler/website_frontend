@@ -10,16 +10,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TopSection(),
-            const SizedBox(height: kDefaultPadding * 2),
-            NewsSection(),
-            GallerySection(),
-            MemberSection(),
-          ],
-        ),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          TopSection(),
+          const SizedBox(height: kDefaultPadding * 2),
+          NewsSection(),
+          GallerySection(),
+          MemberSection(),
+        ],
       ),
     );
   }

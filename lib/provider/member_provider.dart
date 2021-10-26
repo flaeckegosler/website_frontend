@@ -9,6 +9,17 @@ class MemberProvider with ChangeNotifier {
     return List.from(_member);
   }
 
+  List<Member> getMemberOfInstrument(String instrument) {
+    final List<Member> _instrument = [];
+    for (final element in _member) {
+      if (element.instrument == instrument) {
+        _instrument.add(element);
+      }
+    }
+    _instrument.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(_instrument);
+  }
+
   void createMembers() {
     _member.add(
       Member(
