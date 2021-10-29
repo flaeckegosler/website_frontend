@@ -27,7 +27,7 @@ class PicturesProvider with ChangeNotifier {
       //Resolve map to List
       List<SpecificImage> temp = [];
       picturesData['pictures'].forEach((k, v) => temp.add(
-          SpecificImage(pictureName: k as String, pictureLink: v as String)));
+          SpecificImage(pictureName: k as String, pictureUrl: v as String)));
       final Pictures pictures = Pictures(
           id: picturesId.toString(),
           menuTitle: picturesData['menuTitle'] as String,
