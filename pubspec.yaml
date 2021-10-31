@@ -33,6 +33,10 @@ dependencies:
   provider: ^5.0.0
   velocity_x: ^3.3.0
   flutter_html: ^2.1.1
+  carousel_slider: ^4.0.0
+  smooth_page_indicator: ^1.0.0+2
+  cached_network_image: ^3.1.0
+  scrollable_positioned_list: ^0.2.2
 
 dev_dependencies:
   flutter_test:

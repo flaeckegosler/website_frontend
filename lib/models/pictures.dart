@@ -20,10 +20,10 @@ class Pictures {
 
 class SpecificImage {
   final String pictureName;
-  final String pictureLink;
+  final String pictureUrl;
 
   SpecificImage({
     required this.pictureName,
-    required this.pictureLink,
+    required this.pictureUrl,
   });
 }
