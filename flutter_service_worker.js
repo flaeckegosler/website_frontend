@@ -6,7 +6,7 @@ const RESOURCES = {
   "version.json": "2a46acd7468e1516803b5ec9f9c3c104",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "b51e3621db5216073e095ff4a117775c",
+"assets/NOTICES": "1fd1edc26b0c6c4b81531620efec8c2f",
 "assets/assets/samschtig-1.jpeg": "9fbb6d366fb4dc01b0995d625b0e17e6",
 "assets/assets/MUSTER_REPETIEREND.png": "f1e1bfe3f22b635abe7b107d56817d13",
 "assets/assets/tambi_2020.png": "cad95311fdc572677974c656294a8f29",
@@ -42,10 +42,10 @@ const RESOURCES = {
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"main.dart.js": "f36ec97f5dfc4185551803864ecadb8f",
+"main.dart.js": "fd121087598ae05436e699d2dfa884c5",
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
-"index.html": "8c34d87f9a796ebbbeaea4348d244d9d",
-"/": "8c34d87f9a796ebbbeaea4348d244d9d"
+"index.html": "24193c5e9ed76ce7006d6ca10b7e46f6",
+"/": "24193c5e9ed76ce7006d6ca10b7e46f6"
 };
 
 // The application shell files that are downloaded before a service worker can
