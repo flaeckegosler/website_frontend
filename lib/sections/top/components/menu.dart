@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:website_frontend/constants.dart';
+import 'package:website_frontend/provider/scroll_singleton.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -17,6 +18,9 @@ class _MenuState extends State<Menu> {
     "Kleiderverkauf",
     "Expedition"
   ];
+
+  ScrollSingleton myScrollSingleton = ScrollSingleton();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,6 +49,7 @@ class _MenuState extends State<Menu> {
         onTap: () {
           setState(() {
             selectedIndex = index;
+            myScrollSingleton.scrollToItem(menuItems[index]);
           });
         },
         onHover: (value) {
