@@ -10,40 +10,24 @@ class NewsSection extends StatefulWidget {
   _NewsSectionState createState() => _NewsSectionState();
 }
 
+enum ActiveNews { none, first, second, third }
+
 class _NewsSectionState extends State<NewsSection>
     with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation _animation;
+  // late AnimationController _animationController;
+  // late Animation _animation;
 
   bool _isLoading = false;
 
-  double getNews0Width = 350;
-  double getNews1Width = 350;
-  double getNews2Width = 350;
+  int n0preview = 350;
+  int n1preview = 350;
+  int n2preview = 350;
 
-  bool showAllActive = false;
+  int n0text = 0;
+  int n1text = 0;
+  int n2text = 0;
 
-  int newsFlexTest = 0;
-
-  void getNewsWidthMethod(int index, {required bool showAllActive}) {
-    if (index == 0 && showAllActive == false) {
-      getNews0Width = 1250;
-      getNews1Width = 0;
-      getNews2Width = 0;
-    } else if (index == 1 && showAllActive == false) {
-      getNews0Width = 0;
-      getNews1Width = 1250;
-      getNews2Width = 0;
-    } else if (index == 2 && showAllActive == false) {
-      getNews0Width = 0;
-      getNews1Width = 0;
-      getNews2Width = 1250;
-    } else if (showAllActive == true) {
-      getNews0Width = 350;
-      getNews1Width = 350;
-      getNews2Width = 350;
-    }
-  }
+  ActiveNews activeNews = ActiveNews.none;
 
   //Fetch all Listings
   Future fetchNewsList() async {
@@ -62,149 +46,163 @@ class _NewsSectionState extends State<NewsSection>
     // TODO: implement initState
     super.initState();
     fetchNewsList();
-    _animationController =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
-    _animation = IntTween(begin: 0, end: 2400).animate(_animationController);
-    _animation.addListener(() => setState(() {}));
+    // _animationController =
+    // AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    //_animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
+    // _animation.addListener(() => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    //  _animationController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      child: Container(
-        alignment: Alignment.center,
-        // color: Colors.blue, //good for debugging
-        constraints: const BoxConstraints(maxWidth: 1250),
-        child: Column(
+    Widget addIcon(int index, ActiveNews _activeNews) {
+      return Container(
+        margin: const EdgeInsets.only(right: 5),
+        height: 50.0,
+        child: SizedBox.fromSize(
+          size: const Size(50, 50), // button width and height
+          child: ClipOval(
+            child: Material(
+              color: ActiveNews.none == _activeNews
+                  ? Colors.green
+                  : Colors.red, // button color
+              child: InkWell(
+                splashColor: const Color.fromRGBO(248, 177, 1, 1),
+                // splash color
+                onTap: () {
+                  setState(() {
+                    if (index == 0 && _activeNews == ActiveNews.none) {
+                      activeNews = ActiveNews.first;
+                      n1preview = 0;
+                      n2preview = 0;
+                      n0text = 875;
+                    } else if (index == 1 && _activeNews == ActiveNews.none) {
+                      activeNews = ActiveNews.second;
+                      n0preview = 0;
+                      n1text = 875;
+                      n2preview = 0;
+                    } else if (index == 2 && _activeNews == ActiveNews.none) {
+                      activeNews = ActiveNews.third;
+                      n0preview = 0;
+                      n1preview = 0;
+                      n2text = 875;
+                    } else if (_activeNews == ActiveNews.first ||
+                        _activeNews == ActiveNews.second ||
+                        _activeNews == ActiveNews.third) {
+                      activeNews = ActiveNews.none;
+                      n0preview = 350;
+                      n1preview = 350;
+                      n2preview = 350;
+                      n0text = 0;
+                      n1text = 0;
+                      n2text = 0;
+                    }
+                  });
+                },
+                // button pressed
+                child: (activeNews == ActiveNews.none)
+                    ? const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 25,
+                      )
+                    : const Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                        size: 25,
+                      ), // icon
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    double getWidthPreview(int index) {
+      if (index == 0) {
+        return n0preview as double;
+      } else if (index == 1) {
+        return n1preview as double;
+      } else if (index == 2) {
+        return n2preview as double;
+      } else {
+        throw Exception();
+      }
+    }
+
+    double getWidthNewsText(int index, ActiveNews activeNews) {
+      if (activeNews == ActiveNews.none) return 0;
+      if (index == 0 && activeNews == ActiveNews.first) return 875;
+      if (index == 1 && activeNews == ActiveNews.second) return 875;
+      if (index == 2 && activeNews == ActiveNews.third) return 875;
+      //else
+      return 0;
+    }
+
+    Widget newsWidget(int index, ActiveNews activeNews) {
+      final _newsProvider = context.watch<NewsProvider>();
+      return Container(
+        //  color: Colors.red,
+        height: 575, //25+  NewsCard$
+        child: Row(
           children: [
-            const SectionTitle(
-              title: "News",
-              subTitle: "Aktuelles auf einen Blick!",
-              color: Color(0xFF00B1FF),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                if (_isLoading == true)
-                  const CircularProgressIndicator()
-                else
-                  newsWidget(0),
-                if (_isLoading == true)
-                  const CircularProgressIndicator()
-                else
-                  newsWidget(1),
-                if (_isLoading == true)
-                  const CircularProgressIndicator()
-                else
-                  newsWidget(2),
-              ],
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget addIcon(int index) {
-    return Container(
-      margin: const EdgeInsets.only(right: 5),
-      height: 50.0,
-      child: SizedBox.fromSize(
-        size: const Size(50, 50), // button width and height
-        child: ClipOval(
-          child: Material(
-            color: showAllActive == false
-                ? Colors.green
-                : Colors.red, // button color
-            child: InkWell(
-              splashColor: const Color.fromRGBO(248, 177, 1, 1),
-              // splash color
-              onTap: () {
-                setState(() {
-                  getNewsWidthMethod(index, showAllActive: showAllActive);
-                  if (_animationController.value as int == 0) {
-                    _animationController.forward();
-                  } else {
-                    _animationController.reverse();
-                  }
-                  showAllActive == false
-                      ? showAllActive = true
-                      : showAllActive = false;
-                });
-              },
-              // button pressed
-              child: showAllActive == false
-                  ? const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 25,
-                    )
-                  : const Icon(
-                      Icons.remove,
-                      color: Colors.white,
-                      size: 25,
-                    ), // icon
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  double getNewsWidth(int index) {
-    if (index == 0) return getNews0Width;
-    if (index == 1) return getNews1Width;
-    if (index == 2) return getNews2Width;
-    throw Exception();
-  }
-
-  Widget newsWidget(int index) {
-    final _newsProvider = context.watch<NewsProvider>();
-
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 1000),
-      height: 575, //25+  NewsCard$
-      width: getNewsWidth(index),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1200,
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    const SizedBox(height: 25),
-                    NewsCard(index: index),
-                  ],
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: addIcon(index),
+            AnimatedContainer(
+              width: getWidthPreview(index),
+              duration: const Duration(seconds: 1),
+              child: Stack(
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: 25,
+                        // color: Colors.purple,
+                      ),
+                      NewsCard(index: index),
+                    ],
                   ),
-                ),
-              ],
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: addIcon(index, activeNews),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          if (showAllActive == true) const SizedBox(width: 25),
-          Expanded(
-            flex: _animation.value as int,
-            child: SizedBox(
-              width: 0,
-              //  color: Colors.grey[200],
+            if (activeNews == ActiveNews.first && index == 0)
+              Container(
+                width: 25,
+                //  color: Colors.blue,
+              ),
+            if (activeNews == ActiveNews.second && index == 1)
+              Container(
+                width: 25,
+                // color: Colors.blue,
+              ),
+            if (activeNews == ActiveNews.third && index == 2)
+              Container(
+                width: 25,
+                // color: Colors.blue,
+              ),
+            AnimatedContainer(
+              width: getWidthNewsText(index, activeNews),
+              duration: const Duration(seconds: 1),
               child: ListView(
                 children: [
-                  const SizedBox(
+                  Container(
                     height: 25,
                     width: 0,
+                    //  color: Colors.yellow,
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
-                      padding: const EdgeInsets.all(20),
+                      // padding: const EdgeInsets.all(20),
                       color: Colors.grey[200],
                       child: Html(
                         data: _newsProvider.allNews[index].newsMainText,
@@ -226,8 +224,45 @@ class _NewsSectionState extends State<NewsSection>
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
+      );
+    }
+
+    return Align(
+      child: Container(
+        alignment: Alignment.center,
+        // color: Colors.blue, //good for debugging
+        constraints: const BoxConstraints(maxWidth: 1250),
+        child: Column(
+          children: [
+            const SectionTitle(
+              title: "News",
+              subTitle: "Aktuelles auf einen Blick!",
+              color: Color(0xFF00B1FF),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (_isLoading == true)
+                  const CircularProgressIndicator()
+                else
+                  newsWidget(0, activeNews),
+                if (_isLoading == true)
+                  const CircularProgressIndicator()
+                else
+                  newsWidget(1, activeNews),
+                if (_isLoading == true)
+                  const CircularProgressIndicator()
+                else
+                  newsWidget(2, activeNews),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+          ],
+        ),
       ),
     );
   }
