@@ -1,9 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
-import 'package:provider/provider.dart';
 
 class NewsSection extends StatefulWidget {
   @override
@@ -13,9 +15,12 @@ class NewsSection extends StatefulWidget {
 enum ActiveNews { none, first, second, third }
 
 class _NewsSectionState extends State<NewsSection>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   // late AnimationController _animationController;
   // late Animation _animation;
+
+  late AnimationController _fadeController;
+  late Animation _fadeInAnimation;
 
   bool _isLoading = false;
 
@@ -46,6 +51,11 @@ class _NewsSectionState extends State<NewsSection>
     // TODO: implement initState
     super.initState();
     fetchNewsList();
+    _fadeController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    );
+    _fadeInAnimation = Tween(begin: 0.0, end: 1.0).animate(_fadeController);
     // _animationController =
     // AnimationController(duration: const Duration(seconds: 1), vsync: this);
     //_animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
@@ -55,7 +65,30 @@ class _NewsSectionState extends State<NewsSection>
   @override
   void dispose() {
     //  _animationController.dispose();
+    _fadeController.dispose();
     super.dispose();
+  }
+
+  // ignore: avoid_void_async
+  void _asyncPauseAndContinueAnimationForward() async {
+    await Future.delayed(const Duration(seconds: 1));
+    setState(() {
+      _fadeController.forward();
+    });
+  }
+
+  // ignore: avoid_void_async
+  void _asyncPauseAndContinueAnimationReverse() async {
+    await _fadeController.reverse();
+    setState(() {
+      activeNews = ActiveNews.none;
+      n0preview = 350;
+      n1preview = 350;
+      n2preview = 350;
+      n0text = 0;
+      n1text = 0;
+      n2text = 0;
+    });
   }
 
   @override
@@ -80,27 +113,23 @@ class _NewsSectionState extends State<NewsSection>
                       activeNews = ActiveNews.first;
                       n1preview = 0;
                       n2preview = 0;
-                      n0text = 875;
+                      _asyncPauseAndContinueAnimationForward();
                     } else if (index == 1 && _activeNews == ActiveNews.none) {
                       activeNews = ActiveNews.second;
                       n0preview = 0;
                       n1text = 875;
                       n2preview = 0;
+                      _asyncPauseAndContinueAnimationForward();
                     } else if (index == 2 && _activeNews == ActiveNews.none) {
                       activeNews = ActiveNews.third;
                       n0preview = 0;
                       n1preview = 0;
                       n2text = 875;
+                      _asyncPauseAndContinueAnimationForward();
                     } else if (_activeNews == ActiveNews.first ||
                         _activeNews == ActiveNews.second ||
                         _activeNews == ActiveNews.third) {
-                      activeNews = ActiveNews.none;
-                      n0preview = 350;
-                      n1preview = 350;
-                      n2preview = 350;
-                      n0text = 0;
-                      n1text = 0;
-                      n2text = 0;
+                      _asyncPauseAndContinueAnimationReverse();
                     }
                   });
                 },
@@ -189,39 +218,42 @@ class _NewsSectionState extends State<NewsSection>
                 width: 25,
                 // color: Colors.blue,
               ),
-            AnimatedContainer(
-              width: getWidthNewsText(index, activeNews),
-              duration: const Duration(seconds: 1),
-              child: ListView(
-                children: [
-                  Container(
-                    height: 25,
-                    width: 0,
-                    //  color: Colors.yellow,
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      // padding: const EdgeInsets.all(20),
-                      color: Colors.grey[200],
-                      child: Html(
-                        data: _newsProvider.allNews[index].newsMainText,
-                        style: {
-                          "h1": Style(
-                            fontFamily: 'serif',
-                            backgroundColor: Colors.black,
-                            color: Colors.white,
-                          ),
-                          "p": Style(
-                            fontFamily: 'serif',
-                            padding: const EdgeInsets.all(1),
-                            fontSize: FontSize.em(1),
-                          ),
-                        },
+            FadeTransition(
+              opacity: _fadeInAnimation as Animation<double>,
+              child: AnimatedContainer(
+                width: getWidthNewsText(index, activeNews),
+                duration: const Duration(seconds: 1),
+                child: ListView(
+                  children: [
+                    Container(
+                      height: 25,
+                      width: 0,
+                      //  color: Colors.yellow,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        // padding: const EdgeInsets.all(20),
+                        color: Colors.grey[200],
+                        child: Html(
+                          data: _newsProvider.allNews[index].newsMainText,
+                          style: {
+                            "h1": Style(
+                              fontFamily: 'serif',
+                              backgroundColor: Colors.black,
+                              color: Colors.white,
+                            ),
+                            "p": Style(
+                              fontFamily: 'serif',
+                              padding: const EdgeInsets.all(1),
+                              fontSize: FontSize.em(1),
+                            ),
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
