@@ -26,7 +26,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Raphael",
           lastName: "Koch",
           pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2196/raphael_koch.280x0.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2523/raphael_koch.280x0.jpg",
           instrument: "Horn",
           vorstand: "",
           expedition: "",
@@ -89,7 +89,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Alina",
           lastName: "Orsi",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
@@ -115,7 +115,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Chantal",
           lastName: "Fischer",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
@@ -154,7 +154,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Joanna",
           lastName: "Zemp",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
@@ -167,7 +167,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Julia",
           lastName: "Lipp",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
@@ -309,7 +309,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Silvia",
           lastName: "Krummenacher",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
@@ -477,7 +477,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Oliver",
           lastName: "Köchli",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Posaune",
           vorstand: "",
           expedition: "",
@@ -580,7 +580,7 @@ class MemberProvider with ChangeNotifier {
           firstName: "Raphaela",
           lastName: "Zimmermann",
           pictureUrl:
-              "https://flaeckegosler.ch/site/templates/styles/images/portrait_placeholder_140x210.jpg",
+              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
           instrument: "Horn",
           vorstand: "",
           expedition: "",
