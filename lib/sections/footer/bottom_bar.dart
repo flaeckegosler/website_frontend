@@ -25,6 +25,9 @@ class BottomBar extends StatelessWidget {
       //color: Colors.blueGrey[900],
       child: Column(
         children: [
+          const SizedBox(
+            height: 100,
+          ),
           Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -35,28 +38,45 @@ class BottomBar extends StatelessWidget {
                 s2: 'About Us',
                 s3: 'Careers',
               ),
-              Container(
-                color: Colors.white,
-                width: 2,
-                height: 150,
-              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  InfoText(
-                    type: 'Email',
-                    text: 'dylan@gmail.com',
-                  ),
+                  Text('placeholer',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(2.5, 2.5),
+                            blurRadius: 5.0,
+                            color: Color.fromARGB(255, 0, 0, 1),
+                          ),
+                        ],
+                      )),
                   SizedBox(height: 5),
-                  InfoText(
-                    type: 'Address',
-                    text: '128, Trymore Road, Delft, MN - 56124',
-                  )
+                  Text(
+                    "placeholder 2",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.5, 2.5),
+                          blurRadius: 5.0,
+                          color: Color.fromARGB(255, 0, 0, 1),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
                 ],
               ),
             ],
           ),
           const Divider(
+            thickness: 2,
             color: Colors.white,
           ),
           const SizedBox(height: 20),
@@ -64,7 +84,14 @@ class BottomBar extends StatelessWidget {
             'Copyright © 2021 | Fläckegosler',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 16,
+              shadows: <Shadow>[
+                Shadow(
+                  offset: Offset(2.5, 2.5),
+                  blurRadius: 5.0,
+                  color: Color.fromARGB(255, 0, 0, 1),
+                ),
+              ],
             ),
           ),
         ],

@@ -170,7 +170,7 @@ class _GallerySectionState extends State<GallerySection> {
               else
                 buildCarousel(_pictureProvider),
               if (_isLoading)
-                const CircularProgressIndicator()
+                const SizedBox()
               else
                 buildIndicator(
                   (_pictureProvider.allPictures[0].specificImage.length / 8)
@@ -179,10 +179,7 @@ class _GallerySectionState extends State<GallerySection> {
               const SizedBox(
                 height: 20,
               ),
-              if (_isLoading)
-                const CircularProgressIndicator()
-              else
-                buildButtons(),
+              if (_isLoading) const SizedBox() else buildButtons(),
               const SizedBox(
                 height: 20,
               ),

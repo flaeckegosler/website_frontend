@@ -27,9 +27,31 @@ class _MemberSectionState extends State<MemberSection> {
 
   Widget createMemberCard(Member member) {
     return Card(
-      child: Image.network(
-        member.pictureUrl,
-        fit: BoxFit.cover,
+      child: Stack(
+        children: [
+          Image.network(
+            member.pictureUrl,
+            fit: BoxFit.contain,
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.bottomLeft,
+            child: Text(
+              member.firstName,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(2.5, 2.5),
+                    blurRadius: 5.0,
+                    color: Color.fromARGB(255, 0, 0, 1),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -80,7 +102,6 @@ class _MemberSectionState extends State<MemberSection> {
       child: Align(
         child: Container(
           alignment: Alignment.center,
-          //color: Colors.red, //good for debugging
           constraints: const BoxConstraints(maxWidth: 1250),
           child: Column(
             children: [
@@ -113,7 +134,9 @@ class _MemberSectionState extends State<MemberSection> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5),
+                  childAspectRatio: 0.7,
+                  crossAxisCount: 5,
+                ),
                 children: getMemberList(),
               ),
               const SizedBox(
@@ -129,7 +152,7 @@ class _MemberSectionState extends State<MemberSection> {
   List<Widget> buttons() {
     return [
       //Show all
-      ElevatedButton(
+      /* ElevatedButton(
         style: ButtonStyle(
           backgroundColor: Picked_button.all == pickedButton
               ? MaterialStateProperty.all<Color>(
@@ -153,7 +176,7 @@ class _MemberSectionState extends State<MemberSection> {
           "Alle",
           textAlign: TextAlign.center,
         ),
-      ),
+      ),*/
       //Drums
       ElevatedButton(
         style: ButtonStyle(
