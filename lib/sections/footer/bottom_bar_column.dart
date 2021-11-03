@@ -26,6 +26,13 @@ class BottomBarColumn extends StatelessWidget {
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.w500,
+              shadows: <Shadow>[
+                Shadow(
+                  offset: Offset(2.5, 2.5),
+                  blurRadius: 5.0,
+                  color: Color.fromARGB(255, 0, 0, 1),
+                ),
+              ],
             ),
           ),
           const SizedBox(
