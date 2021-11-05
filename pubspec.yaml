@@ -55,9 +55,29 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  - assets/
+  - assets/redakteure/carmen.png
+  - assets/redakteure/damian.png
+  - assets/redakteure/dariok.png
+  - assets/redakteure/darios.png
+  - assets/redakteure/diego.png
+  - assets/redakteure/dominicm.png
+  - assets/redakteure/fabiank.png
+  - assets/redakteure/fabio.png
+  - assets/redakteure/janick.png
+  - assets/redakteure/jose.png
+  - assets/redakteure/justin.png
+  - assets/redakteure/lukasStuder.png
+  - assets/redakteure/manuelm.png
+  - assets/redakteure/martin.png
+  - assets/redakteure/michelek.png
+  - assets/redakteure/noah.png
+  - assets/redakteure/olivers.png
+  - assets/redakteure/patrickv.png
+  - assets/redakteure/phil.png
+  - assets/redakteure/raphikoch.png
+  - assets/redakteure/reto.png
+  - assets/redakteure/stefan.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

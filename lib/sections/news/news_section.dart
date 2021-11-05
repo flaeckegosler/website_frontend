@@ -19,6 +19,10 @@ class _NewsSectionState extends State<NewsSection>
   // late AnimationController _animationController;
   // late Animation _animation;
 
+  GlobalKey<NewsCardState> newsCardKey1 = GlobalKey<NewsCardState>();
+  GlobalKey<NewsCardState> newsCardKey2 = GlobalKey<NewsCardState>();
+  GlobalKey<NewsCardState> newsCardKey3 = GlobalKey<NewsCardState>();
+
   late AnimationController _fadeController;
   late Animation _fadeInAnimation;
 
@@ -70,7 +74,21 @@ class _NewsSectionState extends State<NewsSection>
   }
 
   // ignore: avoid_void_async
-  void _asyncPauseAndContinueAnimationForward() async {
+  void _asyncPauseAndContinueAnimationForward(int index) async {
+    setState(() {
+      if (index == 0) {
+        newsCardKey2.currentState!.fadeController.forward();
+        newsCardKey3.currentState!.fadeController.forward();
+      } else if (index == 1) {
+        newsCardKey1.currentState!.fadeController.forward();
+        newsCardKey3.currentState!.fadeController.forward();
+      } else if (index == 2) {
+        newsCardKey1.currentState!.fadeController.forward();
+        newsCardKey2.currentState!.fadeController.forward();
+      } else {
+        throw Exception();
+      }
+    });
     await Future.delayed(const Duration(seconds: 1));
     setState(() {
       _fadeController.forward();
@@ -89,6 +107,10 @@ class _NewsSectionState extends State<NewsSection>
       n1text = 0;
       n2text = 0;
     });
+    await Future.delayed(const Duration(milliseconds: 750));
+    newsCardKey1.currentState!.fadeController.reverse();
+    newsCardKey2.currentState!.fadeController.reverse();
+    newsCardKey3.currentState!.fadeController.reverse();
   }
 
   @override
@@ -113,19 +135,19 @@ class _NewsSectionState extends State<NewsSection>
                       activeNews = ActiveNews.first;
                       n1preview = 0;
                       n2preview = 0;
-                      _asyncPauseAndContinueAnimationForward();
+                      _asyncPauseAndContinueAnimationForward(index);
                     } else if (index == 1 && _activeNews == ActiveNews.none) {
                       activeNews = ActiveNews.second;
                       n0preview = 0;
                       n1text = 875;
                       n2preview = 0;
-                      _asyncPauseAndContinueAnimationForward();
+                      _asyncPauseAndContinueAnimationForward(index);
                     } else if (index == 2 && _activeNews == ActiveNews.none) {
                       activeNews = ActiveNews.third;
                       n0preview = 0;
                       n1preview = 0;
                       n2text = 875;
-                      _asyncPauseAndContinueAnimationForward();
+                      _asyncPauseAndContinueAnimationForward(index);
                     } else if (_activeNews == ActiveNews.first ||
                         _activeNews == ActiveNews.second ||
                         _activeNews == ActiveNews.third) {
@@ -175,6 +197,9 @@ class _NewsSectionState extends State<NewsSection>
 
     Widget newsWidget(int index, ActiveNews activeNews) {
       final _newsProvider = context.watch<NewsProvider>();
+      final NewsCard newsCard1 = NewsCard(index: index, key: newsCardKey1);
+      final NewsCard newsCard2 = NewsCard(index: index, key: newsCardKey2);
+      final NewsCard newsCard3 = NewsCard(index: index, key: newsCardKey3);
       return Container(
         //  color: Colors.red,
         height: 575, //25+  NewsCard$
@@ -191,7 +216,12 @@ class _NewsSectionState extends State<NewsSection>
                         height: 25,
                         // color: Colors.purple,
                       ),
-                      NewsCard(index: index),
+                      if (index == 0)
+                        newsCard1
+                      else if (index == 1)
+                        newsCard2
+                      else if (index == 2)
+                        newsCard3,
                     ],
                   ),
                   Positioned.fill(

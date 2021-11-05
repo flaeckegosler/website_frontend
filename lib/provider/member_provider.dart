@@ -581,7 +581,7 @@ class MemberProvider with ChangeNotifier {
           lastName: "Zimmermann",
           pictureUrl:
               "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Horn",
+          instrument: "Posaune",
           vorstand: "",
           expedition: "",
           muKo: "",
