@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
+import 'package:website_frontend/models/authors.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -75,6 +76,15 @@ class _NewsCardState extends State<NewsCard> {
                           fit: BoxFit.cover),
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Icon(Icons.access_time, size: 14),
+                      Text(
+                          " ${_newsProvider.allNews[widget.index].timeCreatedFormatted}",
+                          style: const TextStyle(fontSize: 12)),
+                    ],
+                  ),
                   Column(
                     //This column is used to reduce space between title and intro text
                     children: [
@@ -104,32 +114,8 @@ class _NewsCardState extends State<NewsCard> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        _newsProvider.allNews[widget.index].newsCreatedBy,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Transform.translate(
-                        offset: const Offset(0, 0),
-                        child: AnimatedContainer(
-                          duration: duration,
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white, width: 2),
-                            boxShadow: [if (!isHover) kDefaultCardShadow],
-                            image: const DecorationImage(
-                              image: AssetImage("assets/raphikoch.png"),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  buildRedakteur(
+                      _newsProvider.allNews[widget.index].newsCreatedBy),
                   const SizedBox(height: 20),
                 ],
               ),
@@ -137,6 +123,31 @@ class _NewsCardState extends State<NewsCard> {
           ),
         ],
       );
+    }
+  }
+
+  Widget buildRedakteur(String newsCreatedBy) {
+    if (Authors.getRedakteur(newsCreatedBy) != null) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CircleAvatar(
+            radius: 45,
+            backgroundImage: AssetImage(
+              Authors.getRedakteur(newsCreatedBy)!,
+            ),
+          ),
+          const SizedBox(
+            width: 5,
+          ),
+          Text(
+            "   von $newsCreatedBy",
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ],
+      );
+    } else {
+      return const SizedBox();
     }
   }
 }
