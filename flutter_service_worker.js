@@ -6,8 +6,8 @@ const RESOURCES = {
   "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.html": "94415fe0d409eb5417c93f8a77d6823e",
-"/": "94415fe0d409eb5417c93f8a77d6823e",
+"index.html": "1b4af8a59bdc44ada16844fb6e740205",
+"/": "1b4af8a59bdc44ada16844fb6e740205",
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
 "version.json": "2a46acd7468e1516803b5ec9f9c3c104",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
@@ -66,7 +66,7 @@ const RESOURCES = {
 "assets/assets/MUSTER_REPETIEREND.png": "f1e1bfe3f22b635abe7b107d56817d13",
 "assets/assets/whatsapp_image_2021-06-27_at_22_08_48_1-1.jpeg": "058a5c016a5730981f9629c059b59cfd",
 "assets/AssetManifest.json": "a59325a5bf93645cd10a9aabda87be49",
-"main.dart.js": "5e531af8e125bed93a42f3fbae454f41"
+"main.dart.js": "d427177f14b79990c5dadb0aaee1d7f3"
 };
 
 // The application shell files that are downloaded before a service worker can
