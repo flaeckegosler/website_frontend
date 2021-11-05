@@ -75,24 +75,20 @@ class _NewsSectionState extends State<NewsSection>
 
   // ignore: avoid_void_async
   void _asyncPauseAndContinueAnimationForward(int index) async {
-    setState(() {
-      if (index == 0) {
-        newsCardKey2.currentState!.fadeController.forward();
-        newsCardKey3.currentState!.fadeController.forward();
-      } else if (index == 1) {
-        newsCardKey1.currentState!.fadeController.forward();
-        newsCardKey3.currentState!.fadeController.forward();
-      } else if (index == 2) {
-        newsCardKey1.currentState!.fadeController.forward();
-        newsCardKey2.currentState!.fadeController.forward();
-      } else {
-        throw Exception();
-      }
-    });
+    if (index == 0) {
+      newsCardKey2.currentState!.fadeController.forward();
+      newsCardKey3.currentState!.fadeController.forward();
+    } else if (index == 1) {
+      newsCardKey1.currentState!.fadeController.forward();
+      newsCardKey3.currentState!.fadeController.forward();
+    } else if (index == 2) {
+      newsCardKey1.currentState!.fadeController.forward();
+      newsCardKey2.currentState!.fadeController.forward();
+    } else {
+      throw Exception();
+    }
     await Future.delayed(const Duration(seconds: 1));
-    setState(() {
-      _fadeController.forward();
-    });
+    _fadeController.forward();
   }
 
   // ignore: avoid_void_async
@@ -130,30 +126,34 @@ class _NewsSectionState extends State<NewsSection>
                 splashColor: const Color.fromRGBO(248, 177, 1, 1),
                 // splash color
                 onTap: () {
-                  setState(() {
-                    if (index == 0 && _activeNews == ActiveNews.none) {
+                  if (index == 0 && _activeNews == ActiveNews.none) {
+                    setState(() {
                       activeNews = ActiveNews.first;
                       n1preview = 0;
                       n2preview = 0;
-                      _asyncPauseAndContinueAnimationForward(index);
-                    } else if (index == 1 && _activeNews == ActiveNews.none) {
+                    });
+                    _asyncPauseAndContinueAnimationForward(index);
+                  } else if (index == 1 && _activeNews == ActiveNews.none) {
+                    setState(() {
                       activeNews = ActiveNews.second;
                       n0preview = 0;
                       n1text = 875;
                       n2preview = 0;
-                      _asyncPauseAndContinueAnimationForward(index);
-                    } else if (index == 2 && _activeNews == ActiveNews.none) {
+                    });
+                    _asyncPauseAndContinueAnimationForward(index);
+                  } else if (index == 2 && _activeNews == ActiveNews.none) {
+                    setState(() {
                       activeNews = ActiveNews.third;
                       n0preview = 0;
                       n1preview = 0;
                       n2text = 875;
-                      _asyncPauseAndContinueAnimationForward(index);
-                    } else if (_activeNews == ActiveNews.first ||
-                        _activeNews == ActiveNews.second ||
-                        _activeNews == ActiveNews.third) {
-                      _asyncPauseAndContinueAnimationReverse();
-                    }
-                  });
+                    });
+                    _asyncPauseAndContinueAnimationForward(index);
+                  } else if (_activeNews == ActiveNews.first ||
+                      _activeNews == ActiveNews.second ||
+                      _activeNews == ActiveNews.third) {
+                    _asyncPauseAndContinueAnimationReverse();
+                  }
                 },
                 // button pressed
                 child: (activeNews == ActiveNews.none)
