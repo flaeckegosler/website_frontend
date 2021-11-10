@@ -19,9 +19,9 @@ class BottomBar extends StatelessWidget {
     final urlShare = Uri.encodeComponent("https://flaeckegosler.ch");
 
     final urls = {
-      SocialMedia.facebook: "https://www.facebook.com",
+      SocialMedia.facebook: "https://www.facebook.com/Flaeckegosler",
       SocialMedia.instagram: "https://www.instagram.com/flaeckegosler",
-      SocialMedia.linkedin: "https://www.linkedin.com",
+      SocialMedia.linkedin: "https://www.linkedin.com/company/flaeckegosler",
       SocialMedia.email: "mailto:?subject=$subject&body=$text\n\n$urlShare",
       SocialMedia.whatsapp: "https://api.whatsapp.com/send?text=$text$urlShare",
     };
