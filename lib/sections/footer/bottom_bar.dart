@@ -55,102 +55,201 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          // fit: BoxFit.contain,
-          image: AssetImage("assets/MUSTER_REPETIEREND.png"),
-          repeat: ImageRepeat.repeat,
-          scale: 0.2,
+    double width = MediaQuery.of(context).size.width;
+    if (width < 600) {
+      return Container(
+        height: 400,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            // fit: BoxFit.contain,
+            image: AssetImage("assets/MUSTER_REPETIEREND.png"),
+            repeat: ImageRepeat.repeat,
+            scale: 0.2,
+          ),
         ),
-      ),
-      padding: const EdgeInsets.all(30),
-      //color: Colors.blueGrey[900],
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 100,
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const Text(
-                "Sponsoring",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  shadows: <Shadow>[
-                    Shadow(
-                      offset: Offset(2.5, 2.5),
-                      blurRadius: 5.0,
-                      color: Color.fromARGB(255, 0, 0, 1),
-                    ),
-                  ],
-                ),
+        padding: const EdgeInsets.all(30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Sponsoring",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(2.5, 2.5),
+                    blurRadius: 5.0,
+                    color: Color.fromARGB(255, 0, 0, 1),
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 150,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    buildSocialButton(
-                      icon: FontAwesomeIcons.instagram,
-                      color: Color(0xFF0075fc),
-                      onClicked: () => share(SocialMedia.instagram),
-                    ),
-                    const SizedBox(
-                      width: 25,
-                    ),
-                    buildSocialButton(
-                      icon: FontAwesomeIcons.facebook,
-                      color: Color(0xFF0075fc),
-                      onClicked: () => share(SocialMedia.facebook),
-                    ),
-                    const SizedBox(
-                      width: 25,
-                    ),
-                    buildSocialButton(
-                      icon: FontAwesomeIcons.linkedin,
-                      color: Color(0xFF0075fc),
-                      onClicked: () => share(SocialMedia.linkedin),
-                    ),
-                    const SizedBox(
-                      width: 25,
-                    ),
-                    buildSocialButton(
-                      icon: FontAwesomeIcons.whatsapp,
-                      color: Color(0xFF0075fc),
-                      onClicked: () => share(SocialMedia.whatsapp),
-                    ),
-                  ],
-                ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildSocialButton(
+                    icon: FontAwesomeIcons.instagram,
+                    color: Color(0xFF0075fc),
+                    onClicked: () => share(SocialMedia.instagram),
+                  ),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  buildSocialButton(
+                    icon: FontAwesomeIcons.facebook,
+                    color: Color(0xFF0075fc),
+                    onClicked: () => share(SocialMedia.facebook),
+                  ),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  buildSocialButton(
+                    icon: FontAwesomeIcons.linkedin,
+                    color: Color(0xFF0075fc),
+                    onClicked: () => share(SocialMedia.linkedin),
+                  ),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  buildSocialButton(
+                    icon: FontAwesomeIcons.whatsapp,
+                    color: Color(0xFF0075fc),
+                    onClicked: () => share(SocialMedia.whatsapp),
+                  ),
+                ],
               ),
-            ],
-          ),
-          const Divider(
-            thickness: 2,
-            color: Colors.white,
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            'Copyright © 2021 | Fläckegosler Roteborg',
-            style: TextStyle(
+            ),
+            const Divider(
+              thickness: 2,
               color: Colors.white,
-              fontSize: 18,
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(1.5, 1.5),
-                  blurRadius: 6.0,
-                  color: Color.fromARGB(122, 0, 0, 0),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Copyright © 2021 | Fläckegosler Roteborg',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(1.5, 1.5),
+                    blurRadius: 6.0,
+                    color: Color.fromARGB(122, 0, 0, 0),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Container(
+        height: 400,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            // fit: BoxFit.contain,
+            image: AssetImage("assets/MUSTER_REPETIEREND.png"),
+            repeat: ImageRepeat.repeat,
+            scale: 0.2,
+          ),
+        ),
+        padding: const EdgeInsets.all(30),
+        //color: Colors.blueGrey[900],
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 100,
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text(
+                  "Sponsoring",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(2.5, 2.5),
+                        blurRadius: 5.0,
+                        color: Color.fromARGB(255, 0, 0, 1),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 150,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      buildSocialButton(
+                        icon: FontAwesomeIcons.instagram,
+                        color: Color(0xFF0075fc),
+                        onClicked: () => share(SocialMedia.instagram),
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      buildSocialButton(
+                        icon: FontAwesomeIcons.facebook,
+                        color: Color(0xFF0075fc),
+                        onClicked: () => share(SocialMedia.facebook),
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      buildSocialButton(
+                        icon: FontAwesomeIcons.linkedin,
+                        color: Color(0xFF0075fc),
+                        onClicked: () => share(SocialMedia.linkedin),
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      buildSocialButton(
+                        icon: FontAwesomeIcons.whatsapp,
+                        color: Color(0xFF0075fc),
+                        onClicked: () => share(SocialMedia.whatsapp),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+            const Divider(
+              thickness: 2,
+              color: Colors.white,
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Copyright © 2021 | Fläckegosler Roteborg',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(1.5, 1.5),
+                    blurRadius: 6.0,
+                    color: Color.fromARGB(122, 0, 0, 0),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
   }
 }
