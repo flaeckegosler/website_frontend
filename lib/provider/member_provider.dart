@@ -20,6 +20,50 @@ class MemberProvider with ChangeNotifier {
     return List.from(_instrument);
   }
 
+  List<Member> getMemberOfVorstand() {
+    final List<Member> _vorstand = [];
+    for (final element in _member) {
+      if (element.vorstand != "") {
+        _vorstand.add(element);
+      }
+    }
+    _vorstand.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(_vorstand);
+  }
+
+  List<Member> getMemberOfExpedition() {
+    final List<Member> _expedition = [];
+    for (final element in _member) {
+      if (element.expedition != "") {
+        _expedition.add(element);
+      }
+    }
+    _expedition.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(_expedition);
+  }
+
+  List<Member> getMemberOfSujetkommission() {
+    final List<Member> _sujetKommission = [];
+    for (final element in _member) {
+      if (element.sujetKommission != "") {
+        _sujetKommission.add(element);
+      }
+    }
+    _sujetKommission.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(_sujetKommission);
+  }
+
+  List<Member> getMemberOfMuKo() {
+    final List<Member> _muKo = [];
+    for (final element in _member) {
+      if (element.muKo != "") {
+        _muKo.add(element);
+      }
+    }
+    _muKo.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(_muKo);
+  }
+
   void createMembers() {
     _member.add(
       Member(
