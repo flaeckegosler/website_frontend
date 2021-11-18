@@ -157,10 +157,13 @@ class _GallerySectionState extends State<GallerySection> {
               const SizedBox(
                 height: 40,
               ),
-              const SectionTitle(
-                title: "Fotos",
-                subTitle: "Schau dir unsere Bilder an!",
-                color: Color.fromRGBO(147, 90, 162, 1),
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0, right: 10),
+                child: SectionTitle(
+                  title: "Fotos",
+                  subTitle: "Schau dir unsere Bilder an!",
+                  color: Color.fromRGBO(147, 90, 162, 1),
+                ),
               ),
               const SizedBox(
                 height: 20,

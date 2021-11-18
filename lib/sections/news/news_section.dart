@@ -298,10 +298,13 @@ class _NewsSectionState extends State<NewsSection>
         constraints: const BoxConstraints(maxWidth: 1250),
         child: Column(
           children: [
-            const SectionTitle(
-              title: "News",
-              subTitle: "Aktuelles auf einen Blick!",
-              color: Color(0xFF00B1FF),
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0, right: 10),
+              child: SectionTitle(
+                title: "News",
+                subTitle: "Aktuelles auf einen Blick!",
+                color: Color(0xFF00B1FF),
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
