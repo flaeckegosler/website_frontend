@@ -9,8 +9,12 @@ class MemberSection extends StatefulWidget {
   _MemberSectionState createState() => _MemberSectionState();
 }
 
-enum Picked_button {
-  all,
+enum ButtonType {
+  Instrumente,
+  Kommissionen,
+}
+
+enum Picked_button_Instruments {
   trompete,
   posaune,
   horn,
@@ -18,7 +22,17 @@ enum Picked_button {
   drums,
 }
 
+enum Picked_button_Kommissionen {
+  vorstand,
+  expedition,
+  sujetkomission,
+  musikkomission,
+  wagenbau,
+}
+
 class _MemberSectionState extends State<MemberSection> {
+  ButtonType buttonType = ButtonType.Instrumente;
+
   @override
   void initState() {
     super.initState();
@@ -29,9 +43,11 @@ class _MemberSectionState extends State<MemberSection> {
     return Card(
       child: Stack(
         children: [
-          Image.network(
-            member.pictureUrl,
-            fit: BoxFit.contain,
+          Center(
+            child: Image.network(
+              member.pictureUrl,
+              fit: BoxFit.cover,
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(20),
@@ -56,7 +72,73 @@ class _MemberSectionState extends State<MemberSection> {
     );
   }
 
-  Picked_button pickedButton = Picked_button.drums;
+  Widget createMemberCardPremium(
+      Member member, Picked_button_Kommissionen buttonType) {
+    String aemtli = "";
+    if (buttonType == Picked_button_Kommissionen.vorstand) {
+      aemtli = member.vorstand;
+    } else if (buttonType == Picked_button_Kommissionen.expedition) {
+      aemtli = member.expedition;
+    } else if (buttonType == Picked_button_Kommissionen.sujetkomission) {
+      aemtli = member.sujetKommission;
+    } else if (buttonType == Picked_button_Kommissionen.musikkomission) {
+      aemtli = member.muKo;
+    }
+    return Card(
+      child: Stack(
+        children: [
+          Center(
+            child: Image.network(
+              member.pictureUrl,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  member.firstName,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(2.5, 2.5),
+                        blurRadius: 5.0,
+                        color: Color.fromARGB(255, 0, 0, 1),
+                      ),
+                    ],
+                  ),
+                ),
+                Text(
+                  aemtli,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(2.5, 2.5),
+                        blurRadius: 5.0,
+                        color: Color.fromARGB(255, 0, 0, 1),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Picked_button_Instruments pickedButtonInstrument =
+      Picked_button_Instruments.drums;
+  Picked_button_Kommissionen pickedButtonKommission =
+      Picked_button_Kommissionen.vorstand;
 
   @override
   Widget build(BuildContext context) {
@@ -64,36 +146,70 @@ class _MemberSectionState extends State<MemberSection> {
     final double width = MediaQuery.of(context).size.width;
 
     List<Widget> getMemberList() {
-      if (pickedButton == Picked_button.all) {
-        return List.generate(_myMemberProvider.allMembers.length,
-            (index) => createMemberCard(_myMemberProvider.allMembers[index]));
-      } else if (pickedButton == Picked_button.drums) {
-        return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Drums").length,
-            (index) => createMemberCard(
-                _myMemberProvider.getMemberOfInstrument("Drums")[index]));
-      } else if (pickedButton == Picked_button.horn) {
-        return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Horn").length,
-            (index) => createMemberCard(
-                _myMemberProvider.getMemberOfInstrument("Horn")[index]));
-      } else if (pickedButton == Picked_button.sousaphon) {
-        return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
-            (index) => createMemberCard(
-                _myMemberProvider.getMemberOfInstrument("Sousaphon")[index]));
-      } else if (pickedButton == Picked_button.trompete) {
-        return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Trompete").length,
-            (index) => createMemberCard(
-                _myMemberProvider.getMemberOfInstrument("Trompete")[index]));
-      } else if (pickedButton == Picked_button.posaune) {
-        return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Posaune").length,
-            (index) => createMemberCard(
-                _myMemberProvider.getMemberOfInstrument("Posaune")[index]));
+      if (buttonType == ButtonType.Instrumente) {
+        if (pickedButtonInstrument == Picked_button_Instruments.drums) {
+          return List.generate(
+              _myMemberProvider.getMemberOfInstrument("Drums").length,
+              (index) => createMemberCard(
+                  _myMemberProvider.getMemberOfInstrument("Drums")[index]));
+        } else if (pickedButtonInstrument == Picked_button_Instruments.horn) {
+          return List.generate(
+              _myMemberProvider.getMemberOfInstrument("Horn").length,
+              (index) => createMemberCard(
+                  _myMemberProvider.getMemberOfInstrument("Horn")[index]));
+        } else if (pickedButtonInstrument ==
+            Picked_button_Instruments.sousaphon) {
+          return List.generate(
+              _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
+              (index) => createMemberCard(
+                  _myMemberProvider.getMemberOfInstrument("Sousaphon")[index]));
+        } else if (pickedButtonInstrument ==
+            Picked_button_Instruments.trompete) {
+          return List.generate(
+              _myMemberProvider.getMemberOfInstrument("Trompete").length,
+              (index) => createMemberCard(
+                  _myMemberProvider.getMemberOfInstrument("Trompete")[index]));
+        } else if (pickedButtonInstrument ==
+            Picked_button_Instruments.posaune) {
+          return List.generate(
+              _myMemberProvider.getMemberOfInstrument("Posaune").length,
+              (index) => createMemberCard(
+                  _myMemberProvider.getMemberOfInstrument("Posaune")[index]));
+        } else {
+          return [];
+        }
       } else {
-        return [];
+        //ButtonType == Kommissionen
+        if (pickedButtonKommission == Picked_button_Kommissionen.vorstand) {
+          return List.generate(
+              _myMemberProvider.getMemberOfVorstand().length,
+              (index) => createMemberCardPremium(
+                  _myMemberProvider.getMemberOfVorstand()[index],
+                  Picked_button_Kommissionen.vorstand));
+        } else if (pickedButtonKommission ==
+            Picked_button_Kommissionen.expedition) {
+          return List.generate(
+              _myMemberProvider.getMemberOfExpedition().length,
+              (index) => createMemberCardPremium(
+                  _myMemberProvider.getMemberOfExpedition()[index],
+                  Picked_button_Kommissionen.expedition));
+        } else if (pickedButtonKommission ==
+            Picked_button_Kommissionen.sujetkomission) {
+          return List.generate(
+              _myMemberProvider.getMemberOfSujetkommission().length,
+              (index) => createMemberCardPremium(
+                  _myMemberProvider.getMemberOfSujetkommission()[index],
+                  Picked_button_Kommissionen.sujetkomission));
+        } else if (pickedButtonKommission ==
+            Picked_button_Kommissionen.musikkomission) {
+          return List.generate(
+              _myMemberProvider.getMemberOfMuKo().length,
+              (index) => createMemberCardPremium(
+                  _myMemberProvider.getMemberOfMuKo()[index],
+                  Picked_button_Kommissionen.musikkomission));
+        } else {
+          return [];
+        }
       }
     }
 
@@ -128,19 +244,7 @@ class _MemberSectionState extends State<MemberSection> {
                 height: 20,
               ),
               // Here comes the buttons
-              Container(
-                height: 60,
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: GridView(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    childAspectRatio: 4,
-                    mainAxisSpacing: 15,
-                    crossAxisSpacing: 15,
-                    maxCrossAxisExtent: 200,
-                  ),
-                  children: buttons(), //"Anrufbeantworter"
-                ),
-              ),
+              memberButtonsResponsive(),
               GridView(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -160,164 +264,427 @@ class _MemberSectionState extends State<MemberSection> {
     );
   }
 
-  List<Widget> buttons() {
+  Widget memberButtonsResponsive() {
+    double width = MediaQuery.of(context).size.width;
+    if (width > 1000) {
+      return Container(
+        height: 60,
+        padding: const EdgeInsets.only(left: 10, right: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: buttonType == ButtonType.Instrumente
+              ? instrumenteButtons()
+              : kommissionenButtons(),
+        ),
+      );
+    } else {
+      return Container(
+        height: 120,
+        padding: const EdgeInsets.only(left: 10, right: 10),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[0]
+                else
+                  kommissionenButtons()[0],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[1]
+                else
+                  kommissionenButtons()[1],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[2]
+                else
+                  kommissionenButtons()[2],
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[3]
+                else
+                  kommissionenButtons()[3],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[4]
+                else
+                  kommissionenButtons()[4],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[5]
+                else
+                  const SizedBox(
+                    width: 160,
+                    height: 40,
+                  ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+  }
+
+  List<Widget> instrumenteButtons() {
     return [
-      //Show all
-      /* ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: Picked_button.all == pickedButton
-              ? MaterialStateProperty.all<Color>(
-                  const Color.fromRGBO(147, 90, 161, 1),
-                )
-              : MaterialStateProperty.all<Color>(
-                  Colors.grey,
-                ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-        ),
-        onPressed: () {
-          setState(() {
-            pickedButton = Picked_button.all;
-          });
-        },
-        child: const Text(
-          "Alle",
-          textAlign: TextAlign.center,
-        ),
-      ),*/
       //Drums
-      ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: Picked_button.drums == pickedButton
-              ? MaterialStateProperty.all<Color>(
-                  const Color.fromRGBO(147, 90, 161, 1),
-                )
-              : MaterialStateProperty.all<Color>(
-                  Colors.grey,
-                ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Instruments.drums == pickedButtonInstrument
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
             ),
           ),
-        ),
-        onPressed: () {
-          setState(() {
-            pickedButton = Picked_button.drums;
-          });
-        },
-        child: const Text(
-          "Drums",
-          textAlign: TextAlign.center,
+          onPressed: () {
+            setState(() {
+              pickedButtonInstrument = Picked_button_Instruments.drums;
+            });
+          },
+          child: const Text(
+            "Drums",
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
       //Horn
-      ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: Picked_button.horn == pickedButton
-              ? MaterialStateProperty.all<Color>(
-                  const Color.fromRGBO(147, 90, 161, 1),
-                )
-              : MaterialStateProperty.all<Color>(
-                  Colors.grey,
-                ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Instruments.horn == pickedButtonInstrument
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
             ),
           ),
-        ),
-        onPressed: () {
-          setState(() {
-            pickedButton = Picked_button.horn;
-          });
-        },
-        child: const Text(
-          "Horn",
-          textAlign: TextAlign.center,
+          onPressed: () {
+            setState(() {
+              pickedButtonInstrument = Picked_button_Instruments.horn;
+            });
+          },
+          child: const Text(
+            "Horn",
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
       //Posaune
-      ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: Picked_button.posaune == pickedButton
-              ? MaterialStateProperty.all<Color>(
-                  const Color.fromRGBO(147, 90, 161, 1),
-                )
-              : MaterialStateProperty.all<Color>(
-                  Colors.grey,
-                ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Instruments.posaune == pickedButtonInstrument
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
             ),
           ),
-        ),
-        onPressed: () {
-          setState(() {
-            pickedButton = Picked_button.posaune;
-          });
-        },
-        child: const Text(
-          "Posaune",
-          textAlign: TextAlign.center,
+          onPressed: () {
+            setState(() {
+              pickedButtonInstrument = Picked_button_Instruments.posaune;
+            });
+          },
+          child: const Text(
+            "Posaune",
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
       //Sousaphon
-      ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: Picked_button.sousaphon == pickedButton
-              ? MaterialStateProperty.all<Color>(
-                  const Color.fromRGBO(147, 90, 161, 1),
-                )
-              : MaterialStateProperty.all<Color>(
-                  Colors.grey,
-                ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Instruments.sousaphon == pickedButtonInstrument
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
             ),
           ),
-        ),
-        onPressed: () {
-          setState(() {
-            pickedButton = Picked_button.sousaphon;
-          });
-        },
-        child: const Text(
-          "Sousaphon",
-          textAlign: TextAlign.center,
+          onPressed: () {
+            setState(() {
+              pickedButtonInstrument = Picked_button_Instruments.sousaphon;
+            });
+          },
+          child: const Text(
+            "Sousaphon",
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
       //Trompete
-      ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: Picked_button.trompete == pickedButton
-              ? MaterialStateProperty.all<Color>(
-                  const Color.fromRGBO(147, 90, 161, 1),
-                )
-              : MaterialStateProperty.all<Color>(
-                  Colors.grey,
-                ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Instruments.trompete == pickedButtonInstrument
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
             ),
           ),
-        ),
-        onPressed: () {
-          setState(() {
-            pickedButton = Picked_button.trompete;
-          });
-        },
-        child: const Text(
-          "Trompete",
-          textAlign: TextAlign.center,
+          onPressed: () {
+            setState(() {
+              pickedButtonInstrument = Picked_button_Instruments.trompete;
+            });
+          },
+          child: const Text(
+            "Trompete",
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
+      dropDownButton(),
     ];
+  }
+
+  List<Widget> kommissionenButtons() {
+    return [
+      //Vorstand
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Kommissionen.vorstand == pickedButtonKommission
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              pickedButtonKommission = Picked_button_Kommissionen.vorstand;
+            });
+          },
+          child: const Text(
+            "Vorstand",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      //Expedition
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                Picked_button_Kommissionen.expedition == pickedButtonKommission
+                    ? MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(147, 90, 161, 1),
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              pickedButtonKommission = Picked_button_Kommissionen.expedition;
+            });
+          },
+          child: const Text(
+            "Expedition",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      //Sujetkommission
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: Picked_button_Kommissionen.sujetkomission ==
+                    pickedButtonKommission
+                ? MaterialStateProperty.all<Color>(
+                    const Color.fromRGBO(147, 90, 161, 1),
+                  )
+                : MaterialStateProperty.all<Color>(
+                    Colors.grey,
+                  ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              pickedButtonKommission =
+                  Picked_button_Kommissionen.sujetkomission;
+            });
+          },
+          child: const Text(
+            "Sujetkommission",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      //MuKo
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: Picked_button_Kommissionen.musikkomission ==
+                    pickedButtonKommission
+                ? MaterialStateProperty.all<Color>(
+                    const Color.fromRGBO(147, 90, 161, 1),
+                  )
+                : MaterialStateProperty.all<Color>(
+                    Colors.grey,
+                  ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              pickedButtonKommission =
+                  Picked_button_Kommissionen.musikkomission;
+            });
+          },
+          child: const Text(
+            "Musikkommission",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      dropDownButton(),
+    ];
+  }
+
+  Widget dropDownButton() {
+    return PopupMenuButton(
+      onSelected: (result) {
+        if (result == 0) {
+          setState(() {
+            buttonType = ButtonType.Instrumente;
+          });
+        } else if (result == 1) {
+          setState(() {
+            buttonType = ButtonType.Kommissionen;
+          });
+        }
+      },
+      itemBuilder: (context) {
+        return List.generate(
+          2,
+          (index) {
+            return PopupMenuItem(
+              value: index,
+              child: Row(
+                children: [
+                  if (index == 0)
+                    const Text("Instrumente")
+                  else
+                    const Text("Ämtli"),
+                ],
+              ),
+            );
+          },
+        );
+      },
+      child: SizedBox(
+        width: 160,
+        height: 40,
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Colors.black87,
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            ),
+          ),
+          alignment: Alignment.center,
+          child: DropdownButton(
+            value: buttonType == ButtonType.Instrumente ? 0 : 1,
+            items: const [
+              DropdownMenuItem(
+                value: 0,
+                child: Text(
+                  "Instrumente",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              DropdownMenuItem(
+                value: 1,
+                child: Text(
+                  "Ämtli",
+                  style: TextStyle(color: Colors.white),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
