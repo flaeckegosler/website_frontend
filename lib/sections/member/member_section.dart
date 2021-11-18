@@ -277,7 +277,7 @@ class _MemberSectionState extends State<MemberSection> {
               : kommissionenButtons(),
         ),
       );
-    } else {
+    } else if (width > 520) {
       return Container(
         height: 120,
         padding: const EdgeInsets.only(left: 10, right: 10),
@@ -310,6 +310,63 @@ class _MemberSectionState extends State<MemberSection> {
                   instrumenteButtons()[3]
                 else
                   kommissionenButtons()[3],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[4]
+                else
+                  kommissionenButtons()[4],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[5]
+                else
+                  const SizedBox(
+                    width: 160,
+                    height: 40,
+                  ),
+              ],
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Container(
+        height: 180,
+        padding: const EdgeInsets.only(left: 10, right: 10),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[0]
+                else
+                  kommissionenButtons()[0],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[1]
+                else
+                  kommissionenButtons()[1],
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[2]
+                else
+                  kommissionenButtons()[2],
+                if (buttonType == ButtonType.Instrumente)
+                  instrumenteButtons()[3]
+                else
+                  kommissionenButtons()[3],
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
                 if (buttonType == ButtonType.Instrumente)
                   instrumenteButtons()[4]
                 else
