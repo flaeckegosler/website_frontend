@@ -235,10 +235,13 @@ class _MemberSectionState extends State<MemberSection> {
               const SizedBox(
                 height: 40,
               ),
-              const SectionTitle(
-                title: "Mitglieder",
-                subTitle: "Sieh dies diese Beauties an!",
-                color: Color.fromRGBO(147, 90, 161, 1),
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0, right: 10),
+                child: SectionTitle(
+                  title: "Mitglieder",
+                  subTitle: "Sieh dies diese Beauties an!",
+                  color: Color.fromRGBO(147, 90, 161, 1),
+                ),
               ),
               const SizedBox(
                 height: 20,
