@@ -61,6 +61,7 @@ class _MemberSectionState extends State<MemberSection> {
   @override
   Widget build(BuildContext context) {
     final _myMemberProvider = context.watch<MemberProvider>();
+    final double width = MediaQuery.of(context).size.width;
 
     List<Widget> getMemberList() {
       if (pickedButton == Picked_button.all) {
@@ -93,6 +94,16 @@ class _MemberSectionState extends State<MemberSection> {
                 _myMemberProvider.getMemberOfInstrument("Posaune")[index]));
       } else {
         return [];
+      }
+    }
+
+    int getCrossAxisCount() {
+      if (width > 1000) {
+        return 5;
+      } else if (width > 750) {
+        return 4;
+      } else {
+        return 3;
       }
     }
 
@@ -133,9 +144,9 @@ class _MemberSectionState extends State<MemberSection> {
               GridView(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: 0.7,
-                  crossAxisCount: 5,
+                  crossAxisCount: getCrossAxisCount(),
                 ),
                 children: getMemberList(),
               ),
