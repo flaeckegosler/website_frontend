@@ -90,7 +90,9 @@ class NewsProvider with ChangeNotifier {
           cropImageURL: newsData['cropImageURL'] as String,
           timeCreatedUnix: newsData['timeCreatedUnix'] as int,
           timeCreatedFormatted: newsData['timeCreatedFormatted'] as String,
-          newsCreatedBy: newsData['newsCreatedBy'] as String,
+          newsCreatedBy: newsData['newsCreatedBy'] != null
+              ? (newsData['newsCreatedBy'] as String)
+              : "Administrator",
           newsIntroText: newsData['newsIntroText'] as String,
           newsMainText: newsData['newsMainText'] as String,
           imageDescription: newsData['imageDescription'] as String?,
