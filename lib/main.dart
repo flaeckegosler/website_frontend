@@ -6,6 +6,9 @@ import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
+import 'package:website_frontend/sections/news/mobile/news_single.dart';
+
+import 'models/news_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,7 +42,10 @@ class MyApp extends StatelessWidget {
           routes: {
             "/": (_, __) => MaterialPage(
                   child: HomeScreen(),
-                )
+                ),
+            "/specific_news": (_, test) => MaterialPage(
+                  child: SingleNews(test as News),
+                ),
           },
         ),
       ),

@@ -7,6 +7,8 @@ import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
 
+import 'mobile/news_widget.dart';
+
 class NewsSection extends StatefulWidget {
   @override
   _NewsSectionState createState() => _NewsSectionState();
@@ -43,7 +45,6 @@ class _NewsSectionState extends State<NewsSection>
     setState(() {
       _isLoading = true;
     });
-    //await Provider.of<NewsProvider>(context, listen: false).createNews();
     await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
     setState(() {
       _isLoading = false;
@@ -52,7 +53,6 @@ class _NewsSectionState extends State<NewsSection>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     fetchNewsList();
     _fadeController = AnimationController(
@@ -60,15 +60,10 @@ class _NewsSectionState extends State<NewsSection>
       duration: const Duration(milliseconds: 1500),
     );
     _fadeInAnimation = Tween(begin: 0.0, end: 1.0).animate(_fadeController);
-    // _animationController =
-    // AnimationController(duration: const Duration(seconds: 1), vsync: this);
-    //_animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
-    // _animation.addListener(() => setState(() {}));
   }
 
   @override
   void dispose() {
-    //  _animationController.dispose();
     _fadeController.dispose();
     super.dispose();
   }
@@ -291,6 +286,8 @@ class _NewsSectionState extends State<NewsSection>
       );
     }
 
+    double width = MediaQuery.of(context).size.width;
+    final _newsProvider = context.watch<NewsProvider>();
     return Align(
       child: Container(
         alignment: Alignment.center,
@@ -306,23 +303,26 @@ class _NewsSectionState extends State<NewsSection>
                 color: Color(0xFF00B1FF),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                if (_isLoading == true)
-                  const CircularProgressIndicator()
-                else
-                  newsWidget(0, activeNews),
-                if (_isLoading == true)
-                  const CircularProgressIndicator()
-                else
-                  newsWidget(1, activeNews),
-                if (_isLoading == true)
-                  const CircularProgressIndicator()
-                else
-                  newsWidget(2, activeNews),
-              ],
-            ),
+            if (width < 1250)
+              NewsWidget(news: _newsProvider.allNews)
+            else
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (_isLoading == true)
+                    const CircularProgressIndicator()
+                  else
+                    newsWidget(0, activeNews),
+                  if (_isLoading == true)
+                    const CircularProgressIndicator()
+                  else
+                    newsWidget(1, activeNews),
+                  if (_isLoading == true)
+                    const CircularProgressIndicator()
+                  else
+                    newsWidget(2, activeNews),
+                ],
+              ),
             const SizedBox(
               height: 40,
             ),
