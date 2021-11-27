@@ -1,5 +1,6 @@
 //import 'package:Flaeckegosler/widgets/news/buildRedakteur.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/src/extensions/context_ext.dart';
 import 'package:website_frontend/models/news_model.dart';
 
 class NewsCardExtended extends StatelessWidget {
@@ -9,7 +10,7 @@ class NewsCardExtended extends StatelessWidget {
 
   Widget _buildTitle() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 5),
+      padding: const EdgeInsets.only(left: 8),
       child: Text(
         ' ${singleNews.newsTitle} ',
         textAlign: TextAlign.start,
@@ -34,7 +35,7 @@ class NewsCardExtended extends StatelessWidget {
 
   Widget _buildNewsTags(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 5, left: 5),
+      padding: const EdgeInsets.only(left: 10),
       child: Text(
         ' ${singleNews.newsTags} ',
         textAlign: TextAlign.start,
@@ -60,7 +61,7 @@ class NewsCardExtended extends StatelessWidget {
       );
     } else {
       return Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(left: 15.0, bottom: 15, top: 5),
         child: Text(
           'von ${singleNews.newsCreatedBy}',
           textAlign: TextAlign.start,
@@ -87,35 +88,30 @@ class NewsCardExtended extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed<bool>(
-          context, '/specific_news/' + singleNews.id,
-          arguments: singleNews),
-      child: Container(
+      onTap: () =>
+          context.vxNav.push(Uri(path: '/specific_news'), params: singleNews),
+      child: Padding(
         padding: const EdgeInsets.all(15.0),
-        height: 300,
-        //MediaQuery.of(context).size.heiSght,
-        // width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          border: const Border(
-            left: BorderSide(color: Colors.white, width: 10.0),
-            top: BorderSide(color: Colors.white, width: 10.0),
-            right: BorderSide(color: Colors.white, width: 10.0),
-            bottom: BorderSide(color: Colors.white, width: 0.0),
+        child: Container(
+          height: 300,
+          //MediaQuery.of(context).size.heiSght,
+          // width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.white,
+            image: DecorationImage(
+                image: NetworkImage(singleNews.imageURL), fit: BoxFit.cover),
           ),
-          //borderRadius: BorderRadius.circular(15),
-          color: Colors.white,
-          image: DecorationImage(
-              image: NetworkImage(singleNews.imageURL), fit: BoxFit.cover),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            //  buildRedakteurNewsList(singleNews.newsCreatedBy),
-            _buildNewsTags(context),
-            _buildTitle(),
-            _buildAuthor(),
-          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              //  buildRedakteurNewsList(singleNews.newsCreatedBy),
+              _buildNewsTags(context),
+              _buildTitle(),
+              _buildAuthor(),
+            ],
+          ),
         ),
       ),
     );
