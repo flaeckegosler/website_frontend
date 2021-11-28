@@ -1,6 +1,6 @@
 // ignore: avoid_classes_with_only_static_members
 class Authors {
-  static String? getRedakteur(String newsCreatedBy) {
+  static String getRedakteur(String newsCreatedBy) {
     if (newsCreatedBy == "Administrator") {
       return "";
     } else if (newsCreatedBy == "Carmen Andermatt") {
