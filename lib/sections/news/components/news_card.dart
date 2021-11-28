@@ -138,14 +138,14 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
   }
 
   Widget buildRedakteur(String newsCreatedBy) {
-    if (Authors.getRedakteur(newsCreatedBy) != null) {
+    if (Authors.getRedakteur(newsCreatedBy) != "") {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
             radius: 45,
             backgroundImage: AssetImage(
-              Authors.getRedakteur(newsCreatedBy)!,
+              Authors.getRedakteur(newsCreatedBy),
             ),
           ),
           const SizedBox(

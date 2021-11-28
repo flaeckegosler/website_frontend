@@ -21,7 +21,7 @@ Widget _buildNewsList(List<News> news) {
   if (news.isNotEmpty) {
     newsCards = ListView.builder(
       shrinkWrap: true,
-      //physics: const ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         if (news[index].newsTags == '') {
           return NewsCard(news[index]);
