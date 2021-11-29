@@ -19,15 +19,38 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: width < 1250
+          ? AppBar(
+              leading: GestureDetector(
+                child: Image.asset(
+                  'assets/goslergrend.png',
+                  fit: BoxFit.fitHeight,
+                ),
+                onLongPress: () => {},
+              ),
+              flexibleSpace: FlexibleSpaceBar(
+                titlePadding: const EdgeInsets.only(top: 5, bottom: 5),
+                title: Image.asset(
+                  'assets/goslermythos_title.png',
+                  height: 50,
+                ),
+                centerTitle: true,
+                background: Image.asset(
+                  'assets/MUSTER_REPETIEREND.png',
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            )
+          : PreferredSize(
+              preferredSize: const Size.fromHeight(0.0),
+              child: AppBar(),
+            ),
       body: ScrollablePositionedList.builder(
         itemScrollController: ScrollSingleton.navBarScrollController,
         itemBuilder: (context, index) {
           if (index == 0) {
             if (width < 1250) {
-              return AppBar(
-                backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
-                actions: const [],
-              );
+              return const SizedBox();
             } else {
               return TopSection();
             }
