@@ -15,6 +15,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  ScrollSingleton myScrollSingleton = ScrollSingleton();
+
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
@@ -40,6 +42,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   fit: BoxFit.fitWidth,
                 ),
               ),
+              actions: [
+                PopupMenuButton<String>(
+                  icon: const Icon(Icons.menu),
+                  onSelected: (String result) {
+                    switch (result) {
+                      case 'option1':
+                        print('option 1 clicked');
+                        myScrollSingleton.scrollToItem("News");
+                        break;
+                      case 'option2':
+                        print('option 2 clicked');
+                        myScrollSingleton.scrollToItem("Fotos");
+                        break;
+                      case 'option3':
+                        print('option 3 clicked');
+                        myScrollSingleton.scrollToItem("Mitglieder");
+                        break;
+                      default:
+                    }
+                  },
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
+                    const PopupMenuItem<String>(
+                      value: 'option1',
+                      child: Text('News'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option2',
+                      child: Text('Fotos'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option3',
+                      child: Text('Mitglieder'),
+                    ),
+                  ],
+                )
+              ],
             )
           : PreferredSize(
               preferredSize: const Size.fromHeight(0.0),
