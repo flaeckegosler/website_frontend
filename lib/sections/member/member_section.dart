@@ -742,6 +742,7 @@ class _MemberSectionState extends State<MemberSection> {
                 ),
               )
             ],
+            onChanged: (int? value) {},
           ),
         ),
       ),
