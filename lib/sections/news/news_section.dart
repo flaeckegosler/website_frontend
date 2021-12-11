@@ -300,7 +300,7 @@ class _NewsSectionState extends State<NewsSection>
               child: SectionTitle(
                 title: "News",
                 subTitle: "Aktuelles auf einen Blick!",
-                color: Color(0xFF00B1FF),
+                color: Color.fromRGBO(147, 90, 162, 1),
               ),
             ),
             if (width < 1250)

@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
         title: 'Fläckegosler',
         theme: ThemeData(
           inputDecorationTheme: kDefaultInputDecorationTheme,
