@@ -17,6 +17,8 @@ class _GallerySectionState extends State<GallerySection> {
   int activeIndex = 0;
   final controller = CarouselController();
 
+  late Pictures _selectedGallery;
+
   //Fetch all Listings
   Future fetchGalleryList() async {
     setState(() {
@@ -24,6 +26,8 @@ class _GallerySectionState extends State<GallerySection> {
     });
     await Provider.of<PicturesProvider>(context, listen: false)
         .fetchPicturesList();
+    _selectedGallery =
+        Provider.of<PicturesProvider>(context, listen: false).allPictures[0];
     setState(() {
       _isLoading = false;
     });
@@ -79,13 +83,9 @@ class _GallerySectionState extends State<GallerySection> {
             setState(() => activeIndex = index),
           },
         ),
-        itemCount: (_pictureProvider.allPictures[0].specificImage.length / 8)
-            .ceil() as int,
+        itemCount: (_selectedGallery.specificImage.length / 8).ceil(),
         itemBuilder: (context, index, realIndex) {
-          return buildGridView(
-              _pictureProvider.allPictures[0].specificImage
-                  as List<SpecificImage>,
-              index);
+          return buildGridView(_selectedGallery.specificImage, index);
         },
       ),
     );
@@ -142,6 +142,60 @@ class _GallerySectionState extends State<GallerySection> {
 
   void animateToSlide(int index) => controller.animateToPage(index);
 
+  Widget dropDownButton() {
+    return PopupMenuButton(
+      onSelected: (result) {
+        setState(() {
+          _selectedGallery =
+              Provider.of<PicturesProvider>(context, listen: false)
+                  .allPictures[result as int];
+        });
+      },
+      itemBuilder: (context) {
+        return List.generate(
+          10,
+          (index) {
+            return PopupMenuItem(
+              value: index,
+              child: Row(
+                children: [
+                  Text(Provider.of<PicturesProvider>(context, listen: false)
+                      .allPictures[index]
+                      .albumTitle),
+                ],
+              ),
+            );
+          },
+        );
+      },
+      child: SizedBox(
+        width: 200,
+        height: 40,
+        child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.black87,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+            ),
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  _selectedGallery.albumTitle,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                const Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                ),
+              ],
+            )),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final _pictureProvider = context.watch<PicturesProvider>();
@@ -157,12 +211,18 @@ class _GallerySectionState extends State<GallerySection> {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 10),
-                child: SectionTitle(
-                  title: "Fotos",
-                  subTitle: "Schau dir unsere Bilder an!",
-                  color: Color.fromRGBO(147, 90, 162, 1),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const SectionTitle(
+                      title: "Fotos",
+                      subTitle: "Schau dir unsere Bilder an!",
+                      color: Color.fromRGBO(147, 90, 162, 1),
+                    ),
+                    if (_isLoading) const SizedBox() else dropDownButton(),
+                  ],
                 ),
               ),
               const SizedBox(
@@ -176,8 +236,7 @@ class _GallerySectionState extends State<GallerySection> {
                 const SizedBox()
               else
                 buildIndicator(
-                  (_pictureProvider.allPictures[0].specificImage.length / 8)
-                      .ceil(),
+                  (_selectedGallery.specificImage.length / 8).ceil(),
                 ),
               const SizedBox(
                 height: 20,

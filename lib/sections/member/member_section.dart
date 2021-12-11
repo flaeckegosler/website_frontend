@@ -717,34 +717,33 @@ class _MemberSectionState extends State<MemberSection> {
         width: 160,
         height: 40,
         child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black87,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
-          ),
-          alignment: Alignment.center,
-          child: DropdownButton(
-            value: buttonType == ButtonType.Instrumente ? 0 : 1,
-            items: const [
-              DropdownMenuItem(
-                value: 0,
-                child: Text(
-                  "Instrumente",
-                  style: TextStyle(color: Colors.white),
-                ),
+            decoration: const BoxDecoration(
+              color: Colors.black87,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
               ),
-              DropdownMenuItem(
-                value: 1,
-                child: Text(
-                  "Ämtli",
-                  style: TextStyle(color: Colors.white),
+            ),
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  child: (buttonType == ButtonType.Instrumente)
+                      ? const Text(
+                          "Instrumente",
+                          style: TextStyle(color: Colors.white),
+                        )
+                      : const Text(
+                          "Ämtli",
+                          style: TextStyle(color: Colors.white),
+                        ),
                 ),
-              )
-            ],
-            onChanged: (int? value) {},
-          ),
-        ),
+                const Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                ),
+              ],
+            )),
       ),
     );
   }
