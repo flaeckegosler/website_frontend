@@ -243,9 +243,12 @@ class _NewsSectionState extends State<NewsSection>
 
     Widget newsWidget(int index, ActiveNews activeNews) {
       final _newsProvider = context.watch<NewsProvider>();
-      final NewsCard newsCard1 = NewsCard(index: index, key: newsCardKey1);
-      final NewsCard newsCard2 = NewsCard(index: index, key: newsCardKey2);
-      final NewsCard newsCard3 = NewsCard(index: index, key: newsCardKey3);
+      final NewsCard newsCard1 =
+          NewsCard(index: index + startIndex, key: newsCardKey1);
+      final NewsCard newsCard2 =
+          NewsCard(index: index + startIndex, key: newsCardKey2);
+      final NewsCard newsCard3 =
+          NewsCard(index: index + startIndex, key: newsCardKey3);
       return Container(
         //  color: Colors.red,
         height: 575, //25+  NewsCard$
@@ -312,7 +315,8 @@ class _NewsSectionState extends State<NewsSection>
                         // padding: const EdgeInsets.all(20),
                         color: Colors.grey[200],
                         child: Html(
-                          data: _newsProvider.allNews[index].newsMainText,
+                          data: _newsProvider
+                              .allNews[index + startIndex].newsMainText,
                           style: {
                             "h1": Style(
                               fontFamily: 'serif',
