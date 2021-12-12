@@ -30,7 +30,7 @@ jobs:
    #     run: flutter test
     
     - name: Build release project
-      run: flutter build web
+      run: flutter build web --web-renderer html
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
