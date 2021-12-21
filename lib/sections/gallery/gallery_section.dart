@@ -243,7 +243,7 @@ class _GallerySectionState extends State<GallerySection> {
               ),
               if (_isLoading) const SizedBox() else buildButtons(),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
             ],
           ),

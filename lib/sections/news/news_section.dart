@@ -20,6 +20,7 @@ class _NewsSectionState extends State<NewsSection>
     with TickerProviderStateMixin {
   // late AnimationController _animationController;
   // late Animation _animation;
+  int startIndex = 0;
 
   GlobalKey<NewsCardState> newsCardKey1 = GlobalKey<NewsCardState>();
   GlobalKey<NewsCardState> newsCardKey2 = GlobalKey<NewsCardState>();
@@ -102,6 +103,56 @@ class _NewsSectionState extends State<NewsSection>
     newsCardKey1.currentState!.fadeController.reverse();
     newsCardKey2.currentState!.fadeController.reverse();
     newsCardKey3.currentState!.fadeController.reverse();
+  }
+
+  Widget buildButtons({bool stretch = false}) => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: startIndex < 2
+                    ? Colors.grey
+                    : const Color.fromRGBO(147, 90, 162, 1),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+            onPressed: previous,
+            child: const Icon(
+              Icons.arrow_back,
+              size: 32,
+            ),
+          ),
+          if (stretch)
+            const Spacer()
+          else
+            const SizedBox(
+              width: 32,
+            ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: const Color.fromRGBO(147, 90, 162, 1),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+            onPressed: next,
+            child: const Icon(
+              Icons.arrow_forward,
+              size: 32,
+            ),
+          ),
+        ],
+      );
+
+  void previous() {
+    if (startIndex > 2) {
+      setState(() {
+        startIndex = startIndex - 3;
+      });
+    }
+  }
+
+  void next() {
+    setState(() {
+      startIndex = startIndex + 3;
+    });
   }
 
   @override
@@ -192,9 +243,12 @@ class _NewsSectionState extends State<NewsSection>
 
     Widget newsWidget(int index, ActiveNews activeNews) {
       final _newsProvider = context.watch<NewsProvider>();
-      final NewsCard newsCard1 = NewsCard(index: index, key: newsCardKey1);
-      final NewsCard newsCard2 = NewsCard(index: index, key: newsCardKey2);
-      final NewsCard newsCard3 = NewsCard(index: index, key: newsCardKey3);
+      final NewsCard newsCard1 =
+          NewsCard(index: index + startIndex, key: newsCardKey1);
+      final NewsCard newsCard2 =
+          NewsCard(index: index + startIndex, key: newsCardKey2);
+      final NewsCard newsCard3 =
+          NewsCard(index: index + startIndex, key: newsCardKey3);
       return Container(
         //  color: Colors.red,
         height: 575, //25+  NewsCard$
@@ -261,7 +315,8 @@ class _NewsSectionState extends State<NewsSection>
                         // padding: const EdgeInsets.all(20),
                         color: Colors.grey[200],
                         child: Html(
-                          data: _newsProvider.allNews[index].newsMainText,
+                          data: _newsProvider
+                              .allNews[index + startIndex].newsMainText,
                           style: {
                             "h1": Style(
                               fontFamily: 'serif',
@@ -304,7 +359,10 @@ class _NewsSectionState extends State<NewsSection>
               ),
             ),
             if (width < 1250)
-              NewsWidget(news: _newsProvider.allNews)
+              NewsWidget(
+                news: _newsProvider.allNews,
+                startIndex: startIndex,
+              )
             else
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -324,7 +382,11 @@ class _NewsSectionState extends State<NewsSection>
                 ],
               ),
             const SizedBox(
-              height: 40,
+              height: 20,
+            ),
+            buildButtons(),
+            const SizedBox(
+              height: 30,
             ),
           ],
         ),
