@@ -39,7 +39,7 @@ jobs:
         path: ./build/web
   
   deploy:
-    name: Deploy gh-pages
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -65,4 +65,4 @@ jobs:
         args: deploy --only hosting:flaeckegosler
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        PROJECT_PATH: ./build/web
+        PROJECT_PATH: ./build
