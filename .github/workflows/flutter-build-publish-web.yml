@@ -39,7 +39,7 @@ jobs:
         path: ./build/web
   
   deploy-github:
-    name: Deploy
+    name: Deploy gh-pages
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -59,14 +59,22 @@ jobs:
         publish_dir: ./build
 
   hosting:
-      name: Deploy Website
-      runs-on: ubuntu-latest
-      steps:
-      # Deploy Firebase Hosting
-        - name: Deploy Firebase Hosting
-          uses: w9jds/firebase-action@master
-          with:
-            args: deploy --only hosting:flaeckegosler
-          env:
-            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-            PROJECT_PATH: ./build
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Download artifact
+    uses: actions/download-artifact@v2
+    with:
+      name: production-files
+      path: ./build
+
+    # Deploy Firebase Hosting
+      - name: Deploy Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:flaeckegosler
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: ./build/web
