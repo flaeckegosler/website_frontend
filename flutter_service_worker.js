@@ -73,8 +73,8 @@ const RESOURCES = {
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "5178af1d278432bec8fc830d50996d6f",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "aa1ec80f1b30a51d64c72f669c1326a7",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"index.html": "1de4498e12655b34e56a65e3d3694704",
-"/": "1de4498e12655b34e56a65e3d3694704",
+"index.html": "1a388d46bbd6da803bd84a0ac2d5e93c",
+"/": "1a388d46bbd6da803bd84a0ac2d5e93c",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
 
