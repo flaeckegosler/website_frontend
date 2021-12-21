@@ -71,10 +71,10 @@ jobs:
       path: ./build
 
     # Deploy Firebase Hosting
-      - name: Deploy Firebase Hosting
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting:flaeckegosler
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_PATH: ./build/web
+    - name: Deploy Firebase Hosting
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting:flaeckegosler
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        PROJECT_PATH: ./build/web
