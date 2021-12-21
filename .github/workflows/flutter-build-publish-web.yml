@@ -31,7 +31,6 @@ jobs:
     
     - name: Build release project
       run: flutter build web --release
-      working-directory: ./ #For firebase hosting
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
@@ -59,11 +58,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
 
-    # Deploy Firebase Hosting
-    - name: Deploy Firebase Hosting
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting:flaeckegosler
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        PROJECT_PATH: ./build
