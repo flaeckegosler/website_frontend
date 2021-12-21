@@ -38,7 +38,7 @@ jobs:
         name: production-files
         path: ./build/web
   
-  deploy:
+  deploy-github:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
@@ -57,12 +57,16 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
-    
-    # Deploy Firebase Hosting
-    - name: Deploy Firebase Hosting
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting:flaeckegosler
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        PROJECT_PATH: ./
+
+  hosting:
+      name: Deploy Website
+      runs-on: ubuntu-latest
+      steps:
+      # Deploy Firebase Hosting
+        - name: Deploy Firebase Hosting
+          uses: w9jds/firebase-action@master
+          with:
+            args: deploy --only hosting:flaeckegosler
+          env:
+            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+            PROJECT_PATH: ./
