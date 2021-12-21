@@ -38,7 +38,7 @@ jobs:
         name: production-files
         path: ./build/web
   
-  deploy-github:
+  deploy:
     name: Deploy gh-pages
     needs: build
     runs-on: ubuntu-latest
@@ -57,18 +57,6 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
-
-  hosting:
-    name: Deploy Website
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-    - name: Download artifact
-    uses: actions/download-artifact@v2
-    with:
-      name: production-files
-      path: ./build
 
     # Deploy Firebase Hosting
     - name: Deploy Firebase Hosting
