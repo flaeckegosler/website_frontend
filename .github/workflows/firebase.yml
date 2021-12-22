@@ -1,5 +1,8 @@
 name: Build and Release APK
-on: push
+on: 
+    push:
+        branches:
+            - develop
 jobs:
     hosting:
       name: Deploy Website
@@ -12,14 +15,14 @@ jobs:
         - uses: subosito/flutter-action@v1
           with:
             channel: "stable"
-            flutter-version: '2.8.0'
+            flutter-version: '2.8.1'
 
         # Build Website
         - name: Build Website
           run: |
             flutter config --enable-web
             flutter pub get
-            flutter build web --release
+            flutter build web --web-renderer canvaskit --release
           working-directory: ./
 
         # Deploy Firebase Hosting
