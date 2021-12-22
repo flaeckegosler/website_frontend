@@ -34,7 +34,7 @@ dependencies:
   scrollable_positioned_list: ^0.2.2
   smooth_page_indicator: ^1.0.0+2
   url_launcher: ^6.0.12
-  velocity_x: ^3.3.0
+  velocity_x: ^3.2.0
 
 dev_dependencies:
   flutter_test:

@@ -96,12 +96,11 @@ class _HomeScreenState extends State<HomeScreen> {
           } else if (index == 1) {
             return const SizedBox(height: kDefaultPadding * 2);
           } else if (index == 2) {
-            return Container(); //NewsSection();
+            return NewsSection();
           } else if (index == 3) {
-            return Container();
-            //GallerySection();
+            return GallerySection();
           } else if (index == 4) {
-            return Container(); //MemberSection();
+            return MemberSection();
           } else if (index == 5) {
             return const BottomBar();
           } else {

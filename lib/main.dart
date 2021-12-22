@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: true,
-        title: 'Fläckegosler',
+        title: 'Fläckegosler Roteborg',
         theme: ThemeData(
           inputDecorationTheme: kDefaultInputDecorationTheme,
           visualDensity: VisualDensity.adaptivePlatformDensity,

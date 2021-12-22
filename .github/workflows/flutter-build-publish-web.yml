@@ -21,7 +21,7 @@ jobs:
       uses: subosito/flutter-action@v1
       with:
         channel: "stable"
-        flutter-version: '2.2.0'
+        flutter-version: '2.8.0'
     
     - name: Get dependencies
       run: flutter pub get
@@ -30,7 +30,7 @@ jobs:
    #     run: flutter test
     
     - name: Build release project
-      run: flutter build web
+      run: flutter build web --release
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
@@ -51,8 +51,10 @@ jobs:
         name: production-files
         path: ./build
 
+    # Deploy to gh-pages
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+
