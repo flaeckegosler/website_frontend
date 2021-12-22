@@ -94804,7 +94804,7 @@ A.Sd.prototype={
 I(a,b){var s=null,r=t.Z,q=A.a([A.aHZ(new A.F7(A.a([],t.Fe),A.aj(0,s,!1,r)),t.oB),A.aHZ(new A.EK(A.a([],t.Ye),A.aj(0,s,!1,r)),t.ek),A.aHZ(new A.FC(A.a([],t.qq),A.aj(0,s,!1,r)),t.pW)],t.Ds),p=A.aR6(s,B.alP,A.aRt()),o=A.X(["/",new A.aiv(),"/specific_news",new A.aiw()],t.lq,t.xe)
 r=new A.Id(new A.bC(s,t.b7),A.aj(0,s,!1,r))
 r.a8u(s,s,o)
-return A.b3n(new A.Ew(new A.asA(),r,"Fl\xe4ckegosler",p,!0,s),q)}}
+return A.b3n(new A.Ew(new A.asA(),r,"Fl\xe4ckegosler Roteborg",p,!0,s),q)}}
 A.aiv.prototype={
 $2(a,b){return A.aJ2(new A.Dv(null),t.z)},
 $S:220}
