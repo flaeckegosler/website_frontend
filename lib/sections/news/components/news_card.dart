@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/models/authors.dart';
+import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -50,7 +51,9 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final _newsProvider = context.watch<NewsProvider>();
     if (_isLoading) {
-      return const CircularProgressIndicator();
+      return CircularProgressIndicator(
+        color: ColorSingleton().loadingIndicatorColor,
+      );
     } else {
       return Stack(
         children: [
@@ -143,6 +146,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
+            backgroundColor: ColorSingleton().placeHolderColor,
             radius: 45,
             backgroundImage: AssetImage(
               Authors.getRedakteur(newsCreatedBy),

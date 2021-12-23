@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
 
@@ -368,15 +369,21 @@ class _NewsSectionState extends State<NewsSection>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (_isLoading == true)
-                    const CircularProgressIndicator()
+                    CircularProgressIndicator(
+                      color: ColorSingleton().loadingIndicatorColor,
+                    )
                   else
                     newsWidget(0, activeNews),
                   if (_isLoading == true)
-                    const CircularProgressIndicator()
+                    CircularProgressIndicator(
+                      color: ColorSingleton().loadingIndicatorColor,
+                    )
                   else
                     newsWidget(1, activeNews),
                   if (_isLoading == true)
-                    const CircularProgressIndicator()
+                    CircularProgressIndicator(
+                      color: ColorSingleton().loadingIndicatorColor,
+                    )
                   else
                     newsWidget(2, activeNews),
                 ],

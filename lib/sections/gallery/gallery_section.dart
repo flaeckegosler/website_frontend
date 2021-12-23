@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/pictures.dart';
+import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
 import 'package:website_frontend/sections/gallery/image_card.dart';
 
@@ -229,7 +230,9 @@ class _GallerySectionState extends State<GallerySection> {
                 height: 20,
               ),
               if (_isLoading)
-                const CircularProgressIndicator()
+                CircularProgressIndicator(
+                  color: ColorSingleton().loadingIndicatorColor,
+                )
               else
                 buildCarousel(_pictureProvider),
               if (_isLoading)
