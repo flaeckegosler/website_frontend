@@ -43,7 +43,7 @@ class _NewsSectionState extends State<NewsSection>
   ActiveNews activeNews = ActiveNews.none;
 
   //Fetch all Listings
-  Future fetchNewsList() async {
+  Future fetchNewsListAsync() async {
     setState(() {
       _isLoading = true;
     });
@@ -56,7 +56,7 @@ class _NewsSectionState extends State<NewsSection>
   @override
   void initState() {
     super.initState();
-    fetchNewsList();
+    fetchNewsListAsync();
     _fadeController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1500),

@@ -24,25 +24,12 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
 
   @override
   initState() {
-    fetchNewsList();
     fadeController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
     );
     _fadeInAnimation = Tween(begin: 1.0, end: 0.0).animate(fadeController);
     super.initState();
-  }
-
-  //Fetch all Listings
-  Future fetchNewsList() async {
-    setState(() {
-      _isLoading = true;
-    });
-    //await Provider.of<NewsProvider>(context, listen: false).createNews();
-    await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
-    setState(() {
-      _isLoading = false;
-    });
   }
 
   Duration duration = const Duration(milliseconds: 200);
