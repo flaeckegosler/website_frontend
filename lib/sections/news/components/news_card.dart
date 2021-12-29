@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/models/authors.dart';
+import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -23,7 +24,6 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
 
   @override
   initState() {
-    fetchNewsList();
     fadeController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
@@ -32,25 +32,15 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
     super.initState();
   }
 
-  //Fetch all Listings
-  Future fetchNewsList() async {
-    setState(() {
-      _isLoading = true;
-    });
-    //await Provider.of<NewsProvider>(context, listen: false).createNews();
-    await Provider.of<NewsProvider>(context, listen: false).fetchNewsList();
-    setState(() {
-      _isLoading = false;
-    });
-  }
-
   Duration duration = const Duration(milliseconds: 200);
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
     final _newsProvider = context.watch<NewsProvider>();
     if (_isLoading) {
-      return const CircularProgressIndicator();
+      return CircularProgressIndicator(
+        color: ColorSingleton().loadingIndicatorColor,
+      );
     } else {
       return Stack(
         children: [
@@ -143,6 +133,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
+            backgroundColor: ColorSingleton().placeHolderColor,
             radius: 45,
             backgroundImage: AssetImage(
               Authors.getRedakteur(newsCreatedBy),

@@ -1,11 +1,11 @@
-name: Build and Release APK
+name: Build & Deploy Firebase
 on: 
     push:
         branches:
             - develop
 jobs:
     hosting:
-      name: Deploy Website
+      name: Build & Deploy Firebase Website
       runs-on: ubuntu-latest
       steps:
         # Checkout Repository
