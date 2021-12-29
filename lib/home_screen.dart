@@ -17,6 +17,50 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   ScrollSingleton myScrollSingleton = ScrollSingleton();
+  final itemListener = ItemPositionsListener.create();
+
+  List indices = [];
+  List indices2 = [];
+  bool showRightNavbar = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    itemListener.itemPositions.addListener(() {
+      indices = itemListener.itemPositions.value
+          .where((element) {
+            final isTopVisible = element.itemLeadingEdge >= 0;
+            final isBottomVisible = element.itemTrailingEdge <= 1;
+            return isBottomVisible;
+          })
+          .map((item) => item.index)
+          .toList();
+      indices2 = itemListener.itemPositions.value
+          .where((element) {
+            final isTopVisible = element.itemLeadingEdge >= 0.2;
+            final isBottomVisible = element.itemTrailingEdge <= 0.8;
+            return isBottomVisible && isTopVisible;
+          })
+          .map((item) => item.index)
+          .toList();
+      checkVisibility();
+      print(indices);
+      print("i2:" + indices2.toString());
+    });
+  }
+
+  void checkVisibility() {
+    if (!indices.contains(0) && (showRightNavbar == false)) {
+      setState(() {
+        showRightNavbar = true;
+      });
+    } else if (indices.contains(0) && (showRightNavbar == true)) {
+      setState(() {
+        showRightNavbar = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,30 +130,75 @@ class _HomeScreenState extends State<HomeScreen> {
               preferredSize: const Size.fromHeight(0.0),
               child: AppBar(),
             ),
-      body: ScrollablePositionedList.builder(
-        itemScrollController: ScrollSingleton.navBarScrollController,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            if (width < 1250) {
-              return const SizedBox();
-            } else {
-              return TopSection();
-            }
-          } else if (index == 1) {
-            return const SizedBox(height: kDefaultPadding * 2);
-          } else if (index == 2) {
-            return NewsSection();
-          } else if (index == 3) {
-            return GallerySection();
-          } else if (index == 4) {
-            return MemberSection();
-          } else if (index == 5) {
-            return const BottomBar();
-          } else {
-            return Container();
-          }
-        },
-        itemCount: 6,
+      body: Stack(
+        children: [
+          ScrollablePositionedList.builder(
+            itemScrollController: ScrollSingleton.navBarScrollController,
+            itemBuilder: (context, index) {
+              if (index == 0) {
+                if (width < 1250) {
+                  return const SizedBox();
+                } else {
+                  return TopSection();
+                }
+              } else if (index == 1) {
+                return const SizedBox(height: kDefaultPadding * 2);
+              } else if (index == 2) {
+                return NewsSection();
+              } else if (index == 3) {
+                return GallerySection();
+              } else if (index == 4) {
+                return MemberSection();
+              } else if (index == 5) {
+                return const BottomBar();
+              } else {
+                return Container();
+              }
+            },
+            itemCount: 6,
+            itemPositionsListener: itemListener,
+          ),
+          if (showRightNavbar)
+            Container(
+              margin: const EdgeInsets.only(right: 40),
+              alignment: Alignment.centerRight,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () => myScrollSingleton.scrollToItem("News"),
+                    child: const Text(
+                      "News",
+                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () => myScrollSingleton.scrollToItem("Fotos"),
+                    child: const Text(
+                      "Fotos",
+                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () => myScrollSingleton.scrollToItem("Mitglieder"),
+                    child: const Text(
+                      "Mitglieder",
+                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          else
+            Container(),
+        ],
       ),
     );
   }
