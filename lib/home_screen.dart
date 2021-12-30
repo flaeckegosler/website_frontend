@@ -3,6 +3,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
+import 'package:website_frontend/sections/expedition/expedition_section.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
@@ -104,6 +105,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         print('option 3 clicked');
                         myScrollSingleton.scrollToItem("Mitglieder");
                         break;
+                      case 'option4':
+                        print('option 4 clicked');
+                        myScrollSingleton.scrollToItem("Expedition");
+                        break;
                       default:
                     }
                   },
@@ -120,6 +125,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     const PopupMenuItem<String>(
                       value: 'option3',
                       child: Text('Mitglieder'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option4',
+                      child: Text('Expedition'),
                     ),
                   ],
                 )
@@ -150,12 +159,14 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (index == 4) {
                 return MemberSection();
               } else if (index == 5) {
+                return ExpeditionSection();
+              } else if (index == 6) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 6,
+            itemCount: 7,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar)
@@ -190,6 +201,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => myScrollSingleton.scrollToItem("Mitglieder"),
                     child: const Text(
                       "Mitglieder",
+                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () => myScrollSingleton.scrollToItem("Expedition"),
+                    child: const Text(
+                      "Expedition",
                       style: TextStyle(fontSize: 24, color: Colors.black87),
                     ),
                   ),
