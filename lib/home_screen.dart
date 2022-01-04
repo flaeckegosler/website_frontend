@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
             itemCount: 7,
             itemPositionsListener: itemListener,
           ),
-          if (showRightNavbar)
+          if (showRightNavbar && width > 1500)
             Container(
               margin: const EdgeInsets.only(right: 40),
               alignment: Alignment.centerRight,
@@ -181,7 +181,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => myScrollSingleton.scrollToItem("News"),
                     child: const Text(
                       "News",
-                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black87),
                     ),
                   ),
                   const SizedBox(
@@ -191,7 +194,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => myScrollSingleton.scrollToItem("Fotos"),
                     child: const Text(
                       "Fotos",
-                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black87),
                     ),
                   ),
                   const SizedBox(
@@ -201,7 +207,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => myScrollSingleton.scrollToItem("Mitglieder"),
                     child: const Text(
                       "Mitglieder",
-                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black87),
                     ),
                   ),
                   const SizedBox(
@@ -211,7 +220,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => myScrollSingleton.scrollToItem("Expedition"),
                     child: const Text(
                       "Expedition",
-                      style: TextStyle(fontSize: 24, color: Colors.black87),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black87),
                     ),
                   ),
                 ],
