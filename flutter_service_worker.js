@@ -7,13 +7,13 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "f3bfccc993a1e0bfdd3440af60d99df4",
 "canvaskit/profiling/canvaskit.wasm": "a9610cf39260f60fbe7524a785c66101",
 "canvaskit/canvaskit.wasm": "04ed3c745ff1dee16504be01f9623498",
-"main.dart.js": "df0555c91097df984725805617671e82",
+"main.dart.js": "7e431a13d2f95c3ec652e9c974bd0561",
 "version.json": "1571572e1330d672e2303b86bc90a510",
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/favicon_64x64.png": "6746a7c0d50c92e52bfd7309dc40e1f2",
-"assets/NOTICES": "79206d1430cf9a4917769bce7e331ffc",
+"assets/NOTICES": "b6369dfdc12ef09d4890fee99dad5eb2",
 "assets/AssetManifest.json": "2bea4087959c79ff4a4c8a7fb0653d5c",
 "assets/FontManifest.json": "3ba95e877e8d977ed295b7a8efefeff7",
 "assets/assets/redakteure/fabio.png": "690c154d4edbb7c9d85ef5564bb29626",
@@ -70,8 +70,8 @@ const RESOURCES = {
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "5178af1d278432bec8fc830d50996d6f",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "aa1ec80f1b30a51d64c72f669c1326a7",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"index.html": "b343ad18968e614b0080733d034cd959",
-"/": "b343ad18968e614b0080733d034cd959",
+"index.html": "1c31d89eeab7c2e2bcb3f74da5e6cfb4",
+"/": "1c31d89eeab7c2e2bcb3f74da5e6cfb4",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
 
