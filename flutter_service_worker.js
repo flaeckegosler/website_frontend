@@ -36,7 +36,7 @@ const RESOURCES = {
 "assets/assets/redakteure/justin.png": "ee88bb6da5f38b729241ade6522db422",
 "assets/assets/redakteure/martin.png": "659ddbf3b65153072698f750f85e6be3",
 "assets/assets/goslermythos_title.png": "18d4d9d52ef5ff427ca490e4dcaa379c",
-"assets/NOTICES": "ff89bbe9d632b047e197c0d0839831f2",
+"assets/NOTICES": "b6369dfdc12ef09d4890fee99dad5eb2",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "b37ae0f14cbc958316fac4635383b6e8",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "5178af1d278432bec8fc830d50996d6f",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "aa1ec80f1b30a51d64c72f669c1326a7",
@@ -64,15 +64,15 @@ const RESOURCES = {
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Math-Italic.ttf": "a7732ecb5840a15be39e1eda377bc21d",
 "assets/FontManifest.json": "3ba95e877e8d977ed295b7a8efefeff7",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"index.html": "f6a1407effb8c74f971d47a99e877698",
-"/": "f6a1407effb8c74f971d47a99e877698",
+"index.html": "54a640a71d3ba8642f33438694161977",
+"/": "54a640a71d3ba8642f33438694161977",
 "version.json": "1571572e1330d672e2303b86bc90a510",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "47a87979956082018517a6b546a94969",
-"canvaskit/profiling/canvaskit.js": "3783918f48ef691e230156c251169480",
-"canvaskit/profiling/canvaskit.wasm": "6d1b0fc1ec88c3110db88caa3393c580",
-"canvaskit/canvaskit.js": "62b9906717d7215a6ff4cc24efbd1b5c",
-"canvaskit/canvaskit.wasm": "b179ba02b7a9f61ebc108f82c5a1ecdb"
+"main.dart.js": "7e431a13d2f95c3ec652e9c974bd0561",
+"canvaskit/profiling/canvaskit.js": "f3bfccc993a1e0bfdd3440af60d99df4",
+"canvaskit/profiling/canvaskit.wasm": "a9610cf39260f60fbe7524a785c66101",
+"canvaskit/canvaskit.js": "43fa9e17039a625450b6aba93baf521e",
+"canvaskit/canvaskit.wasm": "04ed3c745ff1dee16504be01f9623498"
 };
 
 // The application shell files that are downloaded before a service worker can
