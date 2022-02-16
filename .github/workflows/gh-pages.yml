@@ -22,7 +22,6 @@ jobs:
       with:
         channel: "stable"
         flutter-version: '2.10.0'
-    
     - name: Get dependencies
       run: flutter pub get
     
