@@ -25,6 +25,8 @@ class ScrollSingleton {
       index = 3;
     } else if (section == "Mitglieder") {
       index = 4;
+    } else if (section == "Expedition") {
+      index = 5;
     }
     navBarScrollController.scrollTo(
       index: index,
