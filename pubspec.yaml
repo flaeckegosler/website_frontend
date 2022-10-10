@@ -31,6 +31,7 @@ dependencies:
   google_fonts: ^2.1.0
   lint: ^1.5.3
   provider: ^6.0.3
+  timeline_tile: ^2.0.0
   scrollable_positioned_list: ^0.3.2
   smooth_page_indicator: ^1.0.0+2
   url_launcher: ^6.1.5

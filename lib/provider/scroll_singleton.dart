@@ -23,10 +23,12 @@ class ScrollSingleton {
       index = 2;
     } else if (section == "Fotos") {
       index = 3;
-    } else if (section == "Mitglieder") {
+    } else if (section == "Agenda") {
       index = 4;
-    } else if (section == "Expedition") {
+    } else if (section == "Mitglieder") {
       index = 5;
+    } else if (section == "Expedition") {
+      index = 6;
     }
     navBarScrollController.scrollTo(
       index: index,

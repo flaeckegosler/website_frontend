@@ -3,6 +3,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
+import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/expedition/expedition_section.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
@@ -103,10 +104,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         break;
                       case 'option3':
                         print('option 3 clicked');
-                        myScrollSingleton.scrollToItem("Mitglieder");
+                        myScrollSingleton.scrollToItem("Agenda");
                         break;
                       case 'option4':
                         print('option 4 clicked');
+                        myScrollSingleton.scrollToItem("Mitglieder");
+                        break;
+                      case 'option5':
+                        print('option 5 clicked');
                         myScrollSingleton.scrollToItem("Expedition");
                         break;
                       default:
@@ -124,10 +129,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'option3',
-                      child: Text('Mitglieder'),
+                      child: Text('Agenda'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'option4',
+                      child: Text('Mitglieder'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option5',
                       child: Text('Expedition'),
                     ),
                   ],
@@ -157,16 +166,18 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (index == 3) {
                 return GallerySection();
               } else if (index == 4) {
-                return MemberSection();
+                return AgendaSection();
               } else if (index == 5) {
-                return ExpeditionSection();
+                return MemberSection();
               } else if (index == 6) {
+                return ExpeditionSection();
+              } else if (index == 7) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 7,
+            itemCount: 8,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)
@@ -194,6 +205,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => myScrollSingleton.scrollToItem("Fotos"),
                     child: const Text(
                       "Fotos",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black87),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () => myScrollSingleton.scrollToItem("Agenda"),
+                    child: const Text(
+                      "Agenda",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24,

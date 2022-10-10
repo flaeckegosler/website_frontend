@@ -96,8 +96,30 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                                       ),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            width: 250,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10.0),
+                                    ),
+                                  ),
+                                  primary: Colors.red,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 28, vertical: 15)),
+                              onPressed: () {},
+                              child: const Text(
+                                "Webseite",
+                                style: TextStyle(fontSize: 30),
+                              ),
                             ),
                           ),
                           Expanded(
