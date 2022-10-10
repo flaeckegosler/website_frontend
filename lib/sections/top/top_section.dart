@@ -26,7 +26,7 @@ class TopSection extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         // color: Colors.red,
         margin: const EdgeInsets.only(top: kDefaultPadding),
-        width: 1200, //See class_content.dart
+        width: 1250, //See class_content.dart
         child: Stack(
           children: [
             Container(

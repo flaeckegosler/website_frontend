@@ -24,17 +24,18 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cached_network_image: ^3.2.0
-  carousel_slider: ^4.0.0
+  cached_network_image: ^3.2.1
+  carousel_slider: ^4.1.1
   flutter_html: ^2.2.1
   font_awesome_flutter: ^9.2.0
   google_fonts: ^2.1.0
   lint: ^1.5.3
-  provider: ^6.0.1
-  scrollable_positioned_list: ^0.2.2
+  provider: ^6.0.3
+  timeline_tile: ^2.0.0
+  scrollable_positioned_list: ^0.3.2
   smooth_page_indicator: ^1.0.0+2
-  url_launcher: ^6.0.12
-  velocity_x: ^3.2.0
+  url_launcher: ^6.1.5
+  velocity_x: ^3.5.1
 
 dev_dependencies:
   flutter_test:

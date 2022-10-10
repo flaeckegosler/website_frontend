@@ -223,9 +223,9 @@ class _MemberSectionState extends State<MemberSection> {
       }
     }
 
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      //color: const Color.fromRGBO(141, 66, 245, 1),
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           alignment: Alignment.center,
@@ -248,6 +248,9 @@ class _MemberSectionState extends State<MemberSection> {
               ),
               // Here comes the buttons
               memberButtonsResponsive(),
+              const SizedBox(
+                height: 30,
+              ),
               GridView(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
