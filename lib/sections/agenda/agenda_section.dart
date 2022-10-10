@@ -33,7 +33,7 @@ class _AgendaSectionState extends State<AgendaSection> {
               const Padding(
                 padding: EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
-                  title: "Agenda",
+                  title: "Agenda 2023",
                   subTitle: "Komm vorbei!",
                   color: Color.fromRGBO(147, 90, 161, 1),
                 ),
@@ -64,7 +64,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 7. Januar 2023"),
+                            Text("Samstag, 7. Januar"),
                             Text("Expedition, Roteborg")
                           ],
                         ),
@@ -85,7 +85,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 14. Januar 2023"),
+                            Text("Samstag, 14. Januar"),
                             Text("Inthronisation, Roteborg &"),
                             Text("Suugerguggete, Emmenbrücke")
                           ],
@@ -107,7 +107,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 21. Januar 2023"),
+                            Text("Samstag, 21. Januar"),
                             Text("Räbibock, Hochdorf")
                           ],
                         ),
@@ -128,7 +128,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Freitag, 27. Januar 2023"),
+                            Text("Freitag, 27. Januar"),
                             Text("5-Liter-Humpen (interner Anlass)")
                           ],
                         ),
@@ -149,7 +149,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Sonntag, 29. Januar 2023"),
+                            Text("Sonntag, 29. Januar"),
                             Text("Öffentliche Probe, Roteborg")
                           ],
                         ),
@@ -170,7 +170,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 4. Februar 2023"),
+                            Text("Samstag, 4. Februar"),
                             Text("Hammerball, Hünenberg")
                           ],
                         ),
@@ -191,7 +191,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Freitag, 10. Februar 2023"),
+                            Text("Freitag, 10. Februar"),
                             Text("Igüüglete, Roteborg")
                           ],
                         ),
@@ -213,7 +213,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 11. Februar 2023"),
+                            Text("Samstag, 11. Februar"),
                             Text("Waldhötteball, Meierskappel")
                           ],
                         ),
