@@ -21,7 +21,7 @@ class SectionTitle extends StatelessWidget {
             margin: const EdgeInsets.only(right: kDefaultPadding),
             padding: const EdgeInsets.only(bottom: 52),
             width: 8,
-            height: 75,
+            height: 78,
             color: Colors.black,
             child: DecoratedBox(
               decoration: BoxDecoration(
@@ -44,16 +44,16 @@ class SectionTitle extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 3,
+                height: 5,
               ),
               SizedBox(
-                height: 54,
+                height: 57,
                 child: Text(
                   title,
                   style: Theme.of(context).textTheme.headline2!.copyWith(
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
-                        fontSize: 50,
+                        fontSize: 48,
                       ),
                 ),
               )
