@@ -64,7 +64,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 7. Januar"),
+                            Text(
+                              "Samstag, 7. Januar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("Expedition, Roteborg")
                           ],
                         ),
@@ -85,8 +88,11 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 14. Januar"),
-                            Text("Inthronisation, Roteborg &"),
+                            Text(
+                              "Samstag, 14. Januar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text("Inthronisation, Roteborg"),
                             Text("Suugerguggete, Emmenbrücke")
                           ],
                         ),
@@ -107,7 +113,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 21. Januar"),
+                            Text(
+                              "Samstag, 21. Januar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("Räbibock, Hochdorf")
                           ],
                         ),
@@ -128,7 +137,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Freitag, 27. Januar"),
+                            Text(
+                              "Freitag, 27. Januar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("5-Liter-Humpen (interner Anlass)")
                           ],
                         ),
@@ -149,7 +161,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Sonntag, 29. Januar"),
+                            Text(
+                              "Sonntag, 29. Januar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("Öffentliche Probe, Roteborg")
                           ],
                         ),
@@ -170,7 +185,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 4. Februar"),
+                            Text(
+                              "Samstag, 4. Februar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("Hammerball, Hünenberg")
                           ],
                         ),
@@ -191,7 +209,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Freitag, 10. Februar"),
+                            Text(
+                              "Freitag, 10. Februar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("Igüüglete, Roteborg")
                           ],
                         ),
@@ -213,7 +234,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Samstag, 11. Februar"),
+                            Text(
+                              "Samstag, 11. Februar",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             Text("Waldhötteball, Meierskappel")
                           ],
                         ),

@@ -70,10 +70,42 @@ class BottomBar extends StatelessWidget {
         padding: const EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Text(
+              "Ehrenmitglieder",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(2.5, 2.5),
+                    blurRadius: 5.0,
+                    color: Color.fromARGB(255, 0, 0, 1),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(
-              height: 20,
+              height: 10,
+            ),
+            const Text(
+              "Geschichte",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(2.5, 2.5),
+                    blurRadius: 5.0,
+                    color: Color.fromARGB(255, 0, 0, 1),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             const Text(
               "Sponsoring",
@@ -174,20 +206,61 @@ class BottomBar extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Text(
-                  "Sponsoring",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(2.5, 2.5),
-                        blurRadius: 5.0,
-                        color: Color.fromARGB(255, 0, 0, 1),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      "Ehrenmitglieder",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(2.5, 2.5),
+                            blurRadius: 5.0,
+                            color: Color.fromARGB(255, 0, 0, 1),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Geschichte",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(2.5, 2.5),
+                            blurRadius: 5.0,
+                            color: Color.fromARGB(255, 0, 0, 1),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Sponsoring",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(2.5, 2.5),
+                            blurRadius: 5.0,
+                            color: Color.fromARGB(255, 0, 0, 1),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 150,

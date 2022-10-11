@@ -15,14 +15,13 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       //margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-      height: 100,
       child: Row(
         children: [
           Container(
             margin: const EdgeInsets.only(right: kDefaultPadding),
-            padding: const EdgeInsets.only(bottom: 72),
+            padding: const EdgeInsets.only(bottom: 52),
             width: 8,
-            height: 100,
+            height: 75,
             color: Colors.black,
             child: DecoratedBox(
               decoration: BoxDecoration(
@@ -32,19 +31,31 @@ class SectionTitle extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                subTitle,
-                style: const TextStyle(
-                    fontWeight: FontWeight.w200, color: kTextColor),
+              const SizedBox(
+                height: 3,
               ),
-              Text(
-                title,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline2!
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+              SizedBox(
+                height: 15,
+                child: Text(
+                  subTitle,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w200, color: kTextColor),
+                ),
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              SizedBox(
+                height: 54,
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline2!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 50,
+                      ),
+                ),
               )
             ],
           )
