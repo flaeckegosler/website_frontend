@@ -27,7 +27,7 @@ class ScrollSingleton {
       index = 4;
     } else if (section == "Mitglieder") {
       index = 5;
-    } else if (section == "Expedition") {
+    } else if (section == "Sound") {
       index = 6;
     }
     navBarScrollController.scrollTo(

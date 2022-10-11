@@ -4,12 +4,11 @@ import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
 import 'package:website_frontend/sections/agenda/agenda_section.dart';
-import 'package:website_frontend/sections/expedition/expedition_section.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
-
+import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -112,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         break;
                       case 'option5':
                         print('option 5 clicked');
-                        myScrollSingleton.scrollToItem("Expedition");
+                        myScrollSingleton.scrollToItem("Sound");
                         break;
                       default:
                     }
@@ -137,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'option5',
-                      child: Text('Expedition'),
+                      child: Text('Sound'),
                     ),
                   ],
                 )
@@ -170,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (index == 5) {
                 return MemberSection();
               } else if (index == 6) {
-                return ExpeditionSection();
+                return SoundSection();
               } else if (index == 7) {
                 return const BottomBar();
               } else {
@@ -241,9 +240,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 10,
                   ),
                   GestureDetector(
-                    onTap: () => myScrollSingleton.scrollToItem("Expedition"),
+                    onTap: () => myScrollSingleton.scrollToItem("Sound"),
                     child: const Text(
-                      "Expedition",
+                      "Sound",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24,
