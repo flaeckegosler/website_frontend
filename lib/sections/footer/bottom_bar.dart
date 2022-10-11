@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'info_text.dart';
-
 enum SocialMedia { facebook, twitter, email, linkedin, whatsapp, instagram }
 
 class BottomBar extends StatelessWidget {
@@ -168,7 +166,7 @@ class BottomBar extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Copyright © 2021 | Fläckegosler Roteborg',
+              'Copyright © 2022 | Fläckegosler Roteborg',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12,
@@ -307,7 +305,7 @@ class BottomBar extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Copyright © 2021 | Fläckegosler Roteborg',
+              'Copyright © 2022 | Fläckegosler Roteborg',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
