@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "c17c1953d4007c2bab1894f26dcd84c5",
-"index.html": "e9b27279091f95fb88486ee6ccbd7b36",
-"/": "e9b27279091f95fb88486ee6ccbd7b36",
+"main.dart.js": "281e23e98179cf159fa82b7c33570dae",
+"index.html": "09ac384de29dd0282e57f2363c405698",
+"/": "09ac384de29dd0282e57f2363c405698",
 "flutter.js": "0816e65a103ba8ba51b174eeeeb2cb67",
 "manifest.json": "b84b0de356f29e9e3dc25ed02f59993c",
 "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
@@ -69,7 +69,7 @@ const RESOURCES = {
 "assets/assets/goslermythos_title.png": "18d4d9d52ef5ff427ca490e4dcaa379c",
 "assets/assets/goslergrend.png": "50f17fabf1b95bf199ac8b9187249ca8",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
-"assets/NOTICES": "360e453592efabd7e9d39fc18ac92e9c",
+"assets/NOTICES": "339aef6fee5c2ed770ace203f4d662fd",
 "version.json": "1571572e1330d672e2303b86bc90a510",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
