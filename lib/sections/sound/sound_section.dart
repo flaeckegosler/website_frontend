@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:website_frontend/components/expedition_widget.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class SoundSection extends StatefulWidget {
   @override
@@ -8,9 +8,20 @@ class SoundSection extends StatefulWidget {
 }
 
 class _SoundSectionState extends State<SoundSection> {
+  late YoutubePlayerController controller;
+
   @override
   void initState() {
     super.initState();
+
+    const url = 'https://www.youtube.com/watch?v=vlq1-nWLDh8';
+
+    controller = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId(url)!,
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
+      ),
+    );
   }
 
   @override
@@ -26,11 +37,11 @@ class _SoundSectionState extends State<SoundSection> {
           alignment: Alignment.center,
           constraints: const BoxConstraints(maxWidth: 1250),
           child: Column(
-            children: const [
-              SizedBox(
+            children: [
+              const SizedBox(
                 height: 40,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Sound",
@@ -40,6 +51,15 @@ class _SoundSectionState extends State<SoundSection> {
               ),
               SizedBox(
                 height: 500,
+                child: YoutubePlayerBuilder(
+                  player: YoutubePlayer(
+                    controlsTimeOut: Duration(seconds: 10),
+                    controller: controller,
+                  ),
+                  builder: (context, player) => Container(
+                    child: player,
+                  ),
+                ),
               ),
             ],
           ),
