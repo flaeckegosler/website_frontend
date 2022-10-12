@@ -10,8 +10,8 @@ class MemberSection extends StatefulWidget {
 }
 
 enum ButtonType {
-  Instrumente,
-  Kommissionen,
+  instrumente,
+  kommissionen,
 }
 
 enum Picked_button_Instruments {
@@ -31,7 +31,7 @@ enum Picked_button_Kommissionen {
 }
 
 class _MemberSectionState extends State<MemberSection> {
-  ButtonType buttonType = ButtonType.Instrumente;
+  ButtonType buttonType = ButtonType.instrumente;
 
   @override
   void initState() {
@@ -144,34 +144,35 @@ class _MemberSectionState extends State<MemberSection> {
   Widget build(BuildContext context) {
     final _myMemberProvider = context.watch<MemberProvider>();
     final double width = MediaQuery.of(context).size.width;
+    List<Widget> result = [];
 
     List<Widget> getMemberList() {
-      if (buttonType == ButtonType.Instrumente) {
+      if (buttonType == ButtonType.instrumente) {
         if (pickedButtonInstrument == Picked_button_Instruments.drums) {
           return List.generate(
               _myMemberProvider.getMemberOfInstrument("Drums").length,
               (index) => createMemberCard(
                   _myMemberProvider.getMemberOfInstrument("Drums")[index]));
         } else if (pickedButtonInstrument == Picked_button_Instruments.horn) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfInstrument("Horn").length,
               (index) => createMemberCard(
                   _myMemberProvider.getMemberOfInstrument("Horn")[index]));
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.sousaphon) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
               (index) => createMemberCard(
                   _myMemberProvider.getMemberOfInstrument("Sousaphon")[index]));
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.trompete) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfInstrument("Trompete").length,
               (index) => createMemberCard(
                   _myMemberProvider.getMemberOfInstrument("Trompete")[index]));
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.posaune) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfInstrument("Posaune").length,
               (index) => createMemberCard(
                   _myMemberProvider.getMemberOfInstrument("Posaune")[index]));
@@ -181,28 +182,28 @@ class _MemberSectionState extends State<MemberSection> {
       } else {
         //ButtonType == Kommissionen
         if (pickedButtonKommission == Picked_button_Kommissionen.vorstand) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfVorstand().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfVorstand()[index],
                   Picked_button_Kommissionen.vorstand));
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.expedition) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfExpedition().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfExpedition()[index],
                   Picked_button_Kommissionen.expedition));
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.sujetkomission) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfSujetkommission().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfSujetkommission()[index],
                   Picked_button_Kommissionen.sujetkomission));
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.musikkomission) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfMuKo().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfMuKo()[index],
@@ -278,7 +279,7 @@ class _MemberSectionState extends State<MemberSection> {
         padding: const EdgeInsets.only(left: 10, right: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: buttonType == ButtonType.Instrumente
+          children: buttonType == ButtonType.instrumente
               ? instrumenteButtons()
               : kommissionenButtons(),
         ),
@@ -292,15 +293,15 @@ class _MemberSectionState extends State<MemberSection> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[0]
                 else
                   kommissionenButtons()[0],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[1]
                 else
                   kommissionenButtons()[1],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[2]
                 else
                   kommissionenButtons()[2],
@@ -312,15 +313,15 @@ class _MemberSectionState extends State<MemberSection> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[3]
                 else
                   kommissionenButtons()[3],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[4]
                 else
                   kommissionenButtons()[4],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[5]
                 else
                   const SizedBox(
@@ -341,11 +342,11 @@ class _MemberSectionState extends State<MemberSection> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[0]
                 else
                   kommissionenButtons()[0],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[1]
                 else
                   kommissionenButtons()[1],
@@ -357,11 +358,11 @@ class _MemberSectionState extends State<MemberSection> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[2]
                 else
                   kommissionenButtons()[2],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[3]
                 else
                   kommissionenButtons()[3],
@@ -373,11 +374,11 @@ class _MemberSectionState extends State<MemberSection> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[4]
                 else
                   kommissionenButtons()[4],
-                if (buttonType == ButtonType.Instrumente)
+                if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[5]
                 else
                   const SizedBox(
@@ -690,11 +691,11 @@ class _MemberSectionState extends State<MemberSection> {
       onSelected: (result) {
         if (result == 0) {
           setState(() {
-            buttonType = ButtonType.Instrumente;
+            buttonType = ButtonType.instrumente;
           });
         } else if (result == 1) {
           setState(() {
-            buttonType = ButtonType.Kommissionen;
+            buttonType = ButtonType.kommissionen;
           });
         }
       },
@@ -731,7 +732,7 @@ class _MemberSectionState extends State<MemberSection> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  child: (buttonType == ButtonType.Instrumente)
+                  child: (buttonType == ButtonType.instrumente)
                       ? const Text(
                           "Instrumente",
                           style: TextStyle(color: Colors.white),
