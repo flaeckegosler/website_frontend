@@ -68,7 +68,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Samstag, 7. Januar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Expedition, Roteborg")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Expedition, Roteborg"),
+                            )
                           ],
                         ),
                       ),
@@ -92,8 +95,14 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Samstag, 14. Januar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Inthronisation, Roteborg"),
-                            Text("Suugerguggete, Emmenbrücke")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Inthronisation, Roteborg"),
+                            ),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Suugerguggete, Emmenbrücke"),
+                            ),
                           ],
                         ),
                       ),
@@ -117,7 +126,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Samstag, 21. Januar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Räbibock, Hochdorf")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Räbibock, Hochdorf"),
+                            )
                           ],
                         ),
                       ),
@@ -141,7 +153,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Freitag, 27. Januar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("5-Liter-Humpen (interner Anlass)")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("5-Liter-Humpen (interner Anlass)"),
+                            )
                           ],
                         ),
                       ),
@@ -165,7 +180,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Sonntag, 29. Januar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Öffentliche Probe, Roteborg")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Öffentliche Probe, Roteborg"),
+                            ),
                           ],
                         ),
                       ),
@@ -189,7 +207,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Samstag, 4. Februar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Hammerball, Hünenberg")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Hammerball, Hünenberg"),
+                            )
                           ],
                         ),
                       ),
@@ -213,7 +234,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Freitag, 10. Februar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Igüüglete, Roteborg")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Igüüglete, Roteborg"),
+                            )
                           ],
                         ),
                       ),
@@ -238,7 +262,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                               "Samstag, 11. Februar",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("Waldhötteball, Meierskappel")
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Waldhötteball, Meierskappel"),
+                            )
                           ],
                         ),
                       ),
