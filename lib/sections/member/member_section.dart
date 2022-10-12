@@ -144,15 +144,17 @@ class _MemberSectionState extends State<MemberSection> {
   Widget build(BuildContext context) {
     final _myMemberProvider = context.watch<MemberProvider>();
     final double width = MediaQuery.of(context).size.width;
-    List<Widget> result = [];
 
     List<Widget> getMemberList() {
+      List<Widget> result = [];
       if (buttonType == ButtonType.instrumente) {
         if (pickedButtonInstrument == Picked_button_Instruments.drums) {
           return result = List.generate(
-              _myMemberProvider.getMemberOfInstrument("Drums").length,
-              (index) => createMemberCard(
-                  _myMemberProvider.getMemberOfInstrument("Drums")[index]));
+            _myMemberProvider.getMemberOfInstrument("Drums").length,
+            (index) => createMemberCard(
+              _myMemberProvider.getMemberOfInstrument("Drums")[index],
+            ),
+          );
         } else if (pickedButtonInstrument == Picked_button_Instruments.horn) {
           return result = List.generate(
               _myMemberProvider.getMemberOfInstrument("Horn").length,
