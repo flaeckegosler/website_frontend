@@ -146,7 +146,8 @@ class _MemberSectionState extends State<MemberSection> {
     final double width = MediaQuery.of(context).size.width;
 
     List<Widget> getMemberList() {
-      List<Widget> result = [];
+      final List<Widget> result = [];
+      result.clear();
       if (buttonType == ButtonType.instrumente) {
         if (pickedButtonInstrument == Picked_button_Instruments.drums) {
           result.addAll(
