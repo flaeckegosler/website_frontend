@@ -149,67 +149,106 @@ class _MemberSectionState extends State<MemberSection> {
       List<Widget> result = [];
       if (buttonType == ButtonType.instrumente) {
         if (pickedButtonInstrument == Picked_button_Instruments.drums) {
-          return result = List.generate(
-            _myMemberProvider.getMemberOfInstrument("Drums").length,
-            (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Drums")[index],
+          result.addAll(
+            List.generate(
+              _myMemberProvider.getMemberOfInstrument("Drums").length,
+              (index) => createMemberCard(
+                _myMemberProvider.getMemberOfInstrument("Drums")[index],
+              ),
             ),
           );
+          return result;
         } else if (pickedButtonInstrument == Picked_button_Instruments.horn) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfInstrument("Horn").length,
               (index) => createMemberCard(
-                  _myMemberProvider.getMemberOfInstrument("Horn")[index]));
+                _myMemberProvider.getMemberOfInstrument("Horn")[index],
+              ),
+            ),
+          );
+          return result;
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.sousaphon) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
               (index) => createMemberCard(
-                  _myMemberProvider.getMemberOfInstrument("Sousaphon")[index]));
+                _myMemberProvider.getMemberOfInstrument("Sousaphon")[index],
+              ),
+            ),
+          );
+          return result;
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.trompete) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfInstrument("Trompete").length,
               (index) => createMemberCard(
-                  _myMemberProvider.getMemberOfInstrument("Trompete")[index]));
+                _myMemberProvider.getMemberOfInstrument("Trompete")[index],
+              ),
+            ),
+          );
+          return result;
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.posaune) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfInstrument("Posaune").length,
               (index) => createMemberCard(
-                  _myMemberProvider.getMemberOfInstrument("Posaune")[index]));
+                _myMemberProvider.getMemberOfInstrument("Posaune")[index],
+              ),
+            ),
+          );
+          return result;
         } else {
           return [];
         }
       } else {
         //ButtonType == Kommissionen
         if (pickedButtonKommission == Picked_button_Kommissionen.vorstand) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfVorstand().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfVorstand()[index],
-                  Picked_button_Kommissionen.vorstand));
+                  Picked_button_Kommissionen.vorstand),
+            ),
+          );
+          return result;
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.expedition) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfExpedition().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfExpedition()[index],
-                  Picked_button_Kommissionen.expedition));
+                  Picked_button_Kommissionen.expedition),
+            ),
+          );
+          return result;
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.sujetkomission) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfSujetkommission().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfSujetkommission()[index],
-                  Picked_button_Kommissionen.sujetkomission));
+                  Picked_button_Kommissionen.sujetkomission),
+            ),
+          );
+          return result;
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.musikkomission) {
-          return result = List.generate(
+          result.addAll(
+            List.generate(
               _myMemberProvider.getMemberOfMuKo().length,
               (index) => createMemberCardPremium(
                   _myMemberProvider.getMemberOfMuKo()[index],
-                  Picked_button_Kommissionen.musikkomission));
+                  Picked_button_Kommissionen.musikkomission),
+            ),
+          );
+          return result;
         } else {
           return [];
         }
