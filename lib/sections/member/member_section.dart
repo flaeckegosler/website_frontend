@@ -149,7 +149,7 @@ class _MemberSectionState extends State<MemberSection> {
     List<Widget> getMemberList() {
       if (buttonType == ButtonType.instrumente) {
         if (pickedButtonInstrument == Picked_button_Instruments.drums) {
-          return List.generate(
+          return result = List.generate(
               _myMemberProvider.getMemberOfInstrument("Drums").length,
               (index) => createMemberCard(
                   _myMemberProvider.getMemberOfInstrument("Drums")[index]));
