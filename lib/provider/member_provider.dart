@@ -65,726 +65,728 @@ class MemberProvider with ChangeNotifier {
   }
 
   void createMembers() {
-    _member.add(
-      Member(
-          firstName: "Raphael",
-          lastName: "Koch",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2523/raphael_koch.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "Aktuar",
-          sujetKommission: ""),
-    );
+    if (_member.isEmpty) {
+      _member.add(
+        Member(
+            firstName: "Raphael",
+            lastName: "Koch",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2523/raphael_koch.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "Aktuar",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Yannick",
-          lastName: "Egli",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1944/yannickegli.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Yannick",
+            lastName: "Egli",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1944/yannickegli.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Janick",
-          lastName: "Lang",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "Präsident",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
-    _member.add(
-      Member(
-          firstName: "Oliver",
-          lastName: "Schürch",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1066/oliver_schurch.280x0.jpg",
-          instrument: "Tambi",
-          vorstand: "Tambourmajor",
-          expedition: "",
-          muKo: "Tambourmajor",
-          sujetKommission: ""),
-    );
-    _member.add(
-      Member(
-          firstName: "Alex",
-          lastName: "Vogel",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "Kassier",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Janick",
+            lastName: "Lang",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "Präsident",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+      _member.add(
+        Member(
+            firstName: "Oliver",
+            lastName: "Schürch",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1066/oliver_schurch.280x0.jpg",
+            instrument: "Tambi",
+            vorstand: "Tambourmajor",
+            expedition: "",
+            muKo: "Tambourmajor",
+            sujetKommission: ""),
+      );
+      _member.add(
+        Member(
+            firstName: "Alex",
+            lastName: "Vogel",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "Kassier",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Alina",
-          lastName: "Orsi",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Alina",
+            lastName: "Orsi",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Carla",
-          lastName: "Fuchs",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2114/carla_fuchs.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Carla",
+            lastName: "Fuchs",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2114/carla_fuchs.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Chantal",
-          lastName: "Fischer",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Chantal",
+            lastName: "Fischer",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Damian",
-          lastName: "Zurmühle",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2275/damian_zurmuhle.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Damian",
+            lastName: "Zurmühle",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2275/damian_zurmuhle.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Dario",
-          lastName: "Stocker",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2271/dario_stocker.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Dario",
+            lastName: "Stocker",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2271/dario_stocker.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Joanna",
-          lastName: "Zemp",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Joanna",
+            lastName: "Zemp",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Julia",
-          lastName: "Lipp",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
-    _member.add(
-      Member(
-          firstName: "Lukas",
-          lastName: "Lang",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1076/lukas_lang.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "Beisitzer",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Julia",
+            lastName: "Lipp",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+      _member.add(
+        Member(
+            firstName: "Lukas",
+            lastName: "Lang",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1076/lukas_lang.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "Beisitzer",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Marco",
-          lastName: "Schriber",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1080/marco_schriber.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "Festwirtschaft",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Marco",
+            lastName: "Schriber",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1080/marco_schriber.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "Festwirtschaft",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Martin",
-          lastName: "Richli",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2284/martin_richli.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "Vize-Tambi",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Martin",
+            lastName: "Richli",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2284/martin_richli.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "Vize-Tambi",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Maurin",
-          lastName: "Steiger",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2270/maurin_steiger.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Maurin",
+            lastName: "Steiger",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2270/maurin_steiger.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Nick",
-          lastName: "Leber",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2400/dsc06051.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "Aktuar",
-          expedition: "Aktuar",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Nick",
+            lastName: "Leber",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2400/dsc06051.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "Aktuar",
+            expedition: "Aktuar",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Nick",
-          lastName: "Schwarzenberger",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1949/nick_schwarzenberger.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Nick",
+            lastName: "Schwarzenberger",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1949/nick_schwarzenberger.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Patrick",
-          lastName: "Vogel",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2272/patrick_vogel.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "MUKO-Präsident",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Patrick",
+            lastName: "Vogel",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2272/patrick_vogel.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "MUKO-Präsident",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Philippe",
-          lastName: "Schenker",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1079/philippe_schenker.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Philippe",
+            lastName: "Schenker",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1079/philippe_schenker.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Ramona",
-          lastName: "La Colla",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1075/ramona_la_colla.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "Grind"),
-    );
+      _member.add(
+        Member(
+            firstName: "Ramona",
+            lastName: "La Colla",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1075/ramona_la_colla.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: "Grind"),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Sibille",
-          lastName: "Brunner",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2274/sibille_brunner.280x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Sibille",
+            lastName: "Brunner",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2274/sibille_brunner.280x0.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Silvia",
-          lastName: "Krummenacher",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Silvia",
+            lastName: "Krummenacher",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Carmen",
-          lastName: "Andermatt",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1945/carmen_andermatt.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Carmen",
+            lastName: "Andermatt",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1945/carmen_andermatt.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Chiara",
-          lastName: "Köchli",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1961/chiara_kochli.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "Vize-Präsidentin",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Chiara",
+            lastName: "Köchli",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1961/chiara_kochli.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "Vize-Präsidentin",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Daniela",
-          lastName: "Hotz",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1100/daniela_hotz.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Daniela",
+            lastName: "Hotz",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1100/daniela_hotz.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Dario",
-          lastName: "Köchli",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1092/dario_kochli.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Dario",
+            lastName: "Köchli",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1092/dario_kochli.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Fabian",
-          lastName: "Benz",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2054/fabian_benz.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "Wagenbau"),
-    );
+      _member.add(
+        Member(
+            firstName: "Fabian",
+            lastName: "Benz",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2054/fabian_benz.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: "Wagenbau"),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Fabio",
-          lastName: "Roos",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2055/fabio_roos.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Fabio",
+            lastName: "Roos",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2055/fabio_roos.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Gabriel",
-          lastName: "Graf",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2276/gabu.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Gabriel",
+            lastName: "Graf",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2276/gabu.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Lorena",
-          lastName: "Lang",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2277/lorenalang.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "Marketing",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Lorena",
+            lastName: "Lang",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2277/lorenalang.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "Marketing",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Lukas",
-          lastName: "Dünki",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1089/lukas_dunki.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Lukas",
+            lastName: "Dünki",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1089/lukas_dunki.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Michele",
-          lastName: "Kritzer",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1094/dsc05898.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Michele",
+            lastName: "Kritzer",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1094/dsc05898.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Nico",
-          lastName: "Muschietti",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2056/nico_muschietti.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Nico",
+            lastName: "Muschietti",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2056/nico_muschietti.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Noah",
-          lastName: "Berwert",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2111/noah_berwert.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
-    _member.add(
-      Member(
-          firstName: "Oliver",
-          lastName: "Köchli",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Noah",
+            lastName: "Berwert",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2111/noah_berwert.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+      _member.add(
+        Member(
+            firstName: "Oliver",
+            lastName: "Köchli",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Raphael",
-          lastName: "Scheidegger",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1097/raphael_scheidegger.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Raphael",
+            lastName: "Scheidegger",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1097/raphael_scheidegger.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Reto",
-          lastName: "Bättig",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1088/reto_battig.280x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Reto",
+            lastName: "Bättig",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1088/reto_battig.280x0.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Andrea",
-          lastName: "Mattmann",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1108/andrea_mattmann.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Andrea",
+            lastName: "Mattmann",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1108/andrea_mattmann.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Dominic",
-          lastName: "Mauron",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1105/dominic_mauron.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "Kleid"),
-    );
+      _member.add(
+        Member(
+            firstName: "Dominic",
+            lastName: "Mauron",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1105/dominic_mauron.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: "Kleid"),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Fabian",
-          lastName: "Koch",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1103/fabian_koch.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Fabian",
+            lastName: "Koch",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1103/fabian_koch.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Justin",
-          lastName: "Faesi",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1943/justinfaesi.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "Bau/Logistik",
-          muKo: "",
-          sujetKommission: "Grind"),
-    );
+      _member.add(
+        Member(
+            firstName: "Justin",
+            lastName: "Faesi",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1943/justinfaesi.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "Bau/Logistik",
+            muKo: "",
+            sujetKommission: "Grind"),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Markus",
-          lastName: "Studer",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1106/markus_studer.280x0.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
-    _member.add(
-      Member(
-          firstName: "Raphaela",
-          lastName: "Zimmermann",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Markus",
+            lastName: "Studer",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1106/markus_studer.280x0.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+      _member.add(
+        Member(
+            firstName: "Raphaela",
+            lastName: "Zimmermann",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Diego",
-          lastName: "Zimmermann",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1942/diego_zimmermann.280x0.jpg",
-          instrument: "Sousaphon",
-          vorstand: "Sujet-Chef",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "Sujetchef"),
-    );
+      _member.add(
+        Member(
+            firstName: "Diego",
+            lastName: "Zimmermann",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1942/diego_zimmermann.280x0.jpg",
+            instrument: "Sousaphon",
+            vorstand: "Sujet-Chef",
+            expedition: "",
+            muKo: "",
+            sujetKommission: "Sujetchef"),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Joel",
-          lastName: "Zurmühle",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1115/joel_zurmuhle.280x0.jpg",
-          instrument: "Sousaphon",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Joel",
+            lastName: "Zurmühle",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1115/joel_zurmuhle.280x0.jpg",
+            instrument: "Sousaphon",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Lukas",
-          lastName: "Studer",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1116/lukas_studer.280x0.jpg",
-          instrument: "Sousaphon",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Lukas",
+            lastName: "Studer",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1116/lukas_studer.280x0.jpg",
+            instrument: "Sousaphon",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Marco",
-          lastName: "Andermatt",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1117/marco_andermatt.280x0.jpg",
-          instrument: "Sousaphon",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Marco",
+            lastName: "Andermatt",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1117/marco_andermatt.280x0.jpg",
+            instrument: "Sousaphon",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Patrick",
-          lastName: "Roos",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1112/patrick_roos.280x0.jpg",
-          instrument: "Sousaphon",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Patrick",
+            lastName: "Roos",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1112/patrick_roos.280x0.jpg",
+            instrument: "Sousaphon",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Domenik",
-          lastName: "Bucher",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2280/domenik.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "",
-          expedition: "OK-Präsident Stv.",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Domenik",
+            lastName: "Bucher",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2280/domenik.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "OK-Präsident Stv.",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Joel",
-          lastName: "Bisang",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2281/joelbisang.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "Grind"),
-    );
+      _member.add(
+        Member(
+            firstName: "Joel",
+            lastName: "Bisang",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2281/joelbisang.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: "Grind"),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Kay",
-          lastName: "Wicki",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Kay",
+            lastName: "Wicki",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Manuel",
-          lastName: "Mühlebach",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "Matierialverwalter",
-          expedition: "",
-          muKo: "Schlag-Chef",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Manuel",
+            lastName: "Mühlebach",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "Matierialverwalter",
+            expedition: "",
+            muKo: "Schlag-Chef",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Pascal",
-          lastName: "Huber",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Pascal",
+            lastName: "Huber",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
 
-    _member.add(
-      Member(
-          firstName: "Sebastian",
-          lastName: "Moos",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "",
-          expedition: "OK-Präsident",
-          muKo: "",
-          sujetKommission: ""),
-    );
-    _member.add(
-      Member(
-          firstName: "Sven",
-          lastName: "Lötscher",
-          pictureUrl:
-              "https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.280x0.jpg",
-          instrument: "Drums",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: ""),
-    );
+      _member.add(
+        Member(
+            firstName: "Sebastian",
+            lastName: "Moos",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "OK-Präsident",
+            muKo: "",
+            sujetKommission: ""),
+      );
+      _member.add(
+        Member(
+            firstName: "Sven",
+            lastName: "Lötscher",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.280x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+    }
   }
 }
