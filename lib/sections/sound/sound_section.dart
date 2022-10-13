@@ -49,17 +49,66 @@ class _SoundSectionState extends State<SoundSection> {
                   color: Color.fromRGBO(147, 90, 161, 1),
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
               SizedBox(
-                height: 500,
-                child: YoutubePlayerBuilder(
-                  player: YoutubePlayer(
-                    controlsTimeOut: Duration(seconds: 10),
-                    controller: controller,
-                  ),
-                  builder: (context, player) => Container(
-                    child: player,
-                  ),
+                height: 250,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          color: Colors.red,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 100,
+                    ),
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              SizedBox(
+                height: 250,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          color: Colors.yellow,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 100,
+                    ),
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          color: Colors.purple,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 30,
               ),
             ],
           ),
