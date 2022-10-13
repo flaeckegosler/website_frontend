@@ -369,8 +369,8 @@ class _NewsSectionState extends State<NewsSection>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (_isLoading == true)
-                    CircularProgressIndicator(
-                      color: ColorSingleton().loadingIndicatorColor,
+                    const SizedBox(
+                      height: 200,
                     )
                   else
                     newsWidget(0, activeNews),
@@ -381,8 +381,8 @@ class _NewsSectionState extends State<NewsSection>
                   else
                     newsWidget(1, activeNews),
                   if (_isLoading == true)
-                    CircularProgressIndicator(
-                      color: ColorSingleton().loadingIndicatorColor,
+                    const SizedBox(
+                      height: 200,
                     )
                   else
                     newsWidget(2, activeNews),
