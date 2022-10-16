@@ -62,8 +62,10 @@ class _SoundSectionState extends State<SoundSection> {
                       child: Row(
                         children: [
                           Expanded(
-                            child: newSoundCard("Rothuusstäge 2020",
-                                "youtube/youtube_diadamas_2020.jpg"),
+                            child: newSoundCard(
+                              "Rothuusstäge 2020",
+                              "assets/youtube_diadamas_2020.jpg",
+                            ),
                           ),
                           const SizedBox(
                             width: 100,
@@ -113,8 +115,10 @@ class _SoundSectionState extends State<SoundSection> {
               else
                 Column(
                   children: [
-                    newSoundCard("Rothuusstäge 2020",
-                        "youtube/youtube_diadamas_2020.jpg"),
+                    newSoundCard(
+                      "Rothuusstäge 2020",
+                      "youtube/youtube_diadamas_2020.jpg",
+                    ),
                   ],
                 ),
               const SizedBox(
