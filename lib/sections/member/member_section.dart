@@ -41,7 +41,7 @@ class _MemberSectionState extends State<MemberSection> {
 
   Widget createMemberCard(Member member) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       child: Stack(
         children: [
           ClipRRect(
@@ -88,13 +88,17 @@ class _MemberSectionState extends State<MemberSection> {
     } else if (buttonType == Picked_button_Kommissionen.musikkomission) {
       aemtli = member.muKo;
     }
-    return Card(
+    return Container(
+      padding: const EdgeInsets.all(5),
       child: Stack(
         children: [
-          Center(
-            child: Image.network(
-              member.pictureUrl,
-              fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Center(
+              child: Image.network(
+                member.pictureUrl,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Container(
