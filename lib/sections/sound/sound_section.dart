@@ -54,120 +54,140 @@ class _SoundSectionState extends State<SoundSection> {
               const SizedBox(
                 height: 30,
               ),
-              SizedBox(
-                height: 250,
-                child: Row(
+              if (MediaQuery.of(context).size.width > 750)
+                Column(
                   children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: InkWell(
-                          onTap: _launchURL,
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  'youtube/youtube_diadamas_2020.jpg',
-                                ),
+                    SizedBox(
+                      height: 250,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: newSoundCard("Rothuusstäge 2020",
+                                "youtube/youtube_diadamas_2020.jpg"),
+                          ),
+                          const SizedBox(
+                            width: 100,
+                          ),
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                color: Colors.green,
                               ),
                             ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    child: const Text(
-                                      'Rothuusstäge 2020',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 24,
-                                        shadows: <Shadow>[
-                                          Shadow(
-                                            offset: Offset(2.5, 2.5),
-                                            blurRadius: 5.0,
-                                            color: Color.fromARGB(255, 0, 0, 1),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 130,
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Container(
-                                    padding: const EdgeInsets.only(right: 30),
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        color: Color.fromRGBO(147, 90, 161, 1),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(50),
-                                        ),
-                                      ),
-                                      child: const Icon(
-                                        Icons.arrow_forward_rounded,
-                                        color: Colors.white,
-                                        size: 50,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 80,
+                    ),
+                    SizedBox(
+                      height: 250,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                color: Colors.yellow,
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 100,
-                    ),
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                          const SizedBox(
+                            width: 100,
+                          ),
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                color: Colors.purple,
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ],
-                ),
-              ),
-              const SizedBox(
-                height: 80,
-              ),
-              SizedBox(
-                height: 250,
-                child: Row(
+                )
+              else
+                Column(
                   children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          color: Colors.yellow,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 100,
-                    ),
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          color: Colors.purple,
-                        ),
-                      ),
-                    )
+                    newSoundCard("Rothuusstäge 2020",
+                        "youtube/youtube_diadamas_2020.jpg"),
                   ],
                 ),
-              ),
               const SizedBox(
                 height: 30,
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  ClipRRect newSoundCard(
+    String title,
+    String assetImage,
+  ) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: InkWell(
+        onTap: _launchURL,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                assetImage,
               ),
+            ),
+          ),
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.5, 2.5),
+                          blurRadius: 5.0,
+                          color: Color.fromARGB(255, 0, 0, 1),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 130,
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  padding: const EdgeInsets.only(right: 30, bottom: 22),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromRGBO(147, 90, 161, 1),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(50),
+                      ),
+                    ),
+                    child: const Icon(
+                      Icons.arrow_forward_rounded,
+                      color: Colors.white,
+                      size: 50,
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
