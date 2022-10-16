@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -13,15 +14,15 @@ class _SoundSectionState extends State<SoundSection> {
   @override
   void initState() {
     super.initState();
+  }
 
-    const url = 'https://www.youtube.com/watch?v=vlq1-nWLDh8';
-
-    controller = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId(url)!,
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-      ),
-    );
+  _launchURL() async {
+    const url = 'https://www.youtube.com/watch?v=2xE9i5t4mXQ';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   @override
@@ -33,6 +34,7 @@ class _SoundSectionState extends State<SoundSection> {
       // color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: 1250,
           alignment: Alignment.center,
           constraints: const BoxConstraints(maxWidth: 1250),
@@ -59,8 +61,64 @@ class _SoundSectionState extends State<SoundSection> {
                     Expanded(
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          color: Colors.red,
+                        child: InkWell(
+                          onTap: _launchURL,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  'youtube/youtube_diadamas_2020.jpg',
+                                ),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: const Text(
+                                      'Rothuusstäge 2020',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 24,
+                                        shadows: <Shadow>[
+                                          Shadow(
+                                            offset: Offset(2.5, 2.5),
+                                            blurRadius: 5.0,
+                                            color: Color.fromARGB(255, 0, 0, 1),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 130,
+                                ),
+                                Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Container(
+                                    padding: const EdgeInsets.only(right: 30),
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        color: Color.fromRGBO(147, 90, 161, 1),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(50),
+                                        ),
+                                      ),
+                                      child: const Icon(
+                                        Icons.arrow_forward_rounded,
+                                        color: Colors.white,
+                                        size: 50,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
