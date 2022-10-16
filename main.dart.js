@@ -94390,12 +94390,12 @@ break
 case 4:throw A.e("Could not launch https://www.youtube.com/watch?v=2xE9i5t4mXQ")
 case 3:return A.I(null,r)}})
 return A.J($async$tT,r)},
-I(a){var s,r,q=null,p="Rothuusst\xe4ge 2020",o="youtube/youtube_diadamas_2020.jpg",n=t.l
-a.R(n).toString
+I(a){var s,r,q=null,p="Rothuusst\xe4ge 2020",o=t.l
+a.R(o).toString
 s=t.p
 r=A.a([B.io,B.aFR,B.im],s)
-if(a.R(n).f.a.a>750)r.push(A.c3(A.a([A.cx(A.c_(A.a([A.iq(this.Vh(p,o),1),B.LG,A.iq(A.im(A.cC(20),A.a4(q,q,B.e,B.Hz,q,q,q,q,q,q,q,q,q,q)),1)],s),B.w,q,B.J,B.t,q,q),250,q),B.db,A.cx(A.c_(A.a([A.iq(A.im(A.cC(20),A.a4(q,q,B.e,B.HA,q,q,q,q,q,q,q,q,q,q)),1),B.LG,A.iq(A.im(A.cC(20),A.a4(q,q,B.e,B.aBD,q,q,q,q,q,q,q,q,q,q)),1)],s),B.w,q,B.J,B.t,q,q),250,q)],s),B.w,B.J,B.t,B.L))
-else r.push(A.c3(A.a([this.Vh(p,o)],s),B.w,B.J,B.t,B.L))
+if(a.R(o).f.a.a>750)r.push(A.c3(A.a([A.cx(A.c_(A.a([A.iq(this.Vh(p,"assets/youtube_diadamas_2020.jpg"),1),B.LG,A.iq(A.im(A.cC(20),A.a4(q,q,B.e,B.Hz,q,q,q,q,q,q,q,q,q,q)),1)],s),B.w,q,B.J,B.t,q,q),250,q),B.db,A.cx(A.c_(A.a([A.iq(A.im(A.cC(20),A.a4(q,q,B.e,B.HA,q,q,q,q,q,q,q,q,q,q)),1),B.LG,A.iq(A.im(A.cC(20),A.a4(q,q,B.e,B.aBD,q,q,q,q,q,q,q,q,q,q)),1)],s),B.w,q,B.J,B.t,q,q),250,q)],s),B.w,B.J,B.t,B.L))
+else r.push(A.c3(A.a([this.Vh(p,"youtube/youtube_diadamas_2020.jpg")],s),B.w,B.J,B.t,B.L))
 r.push(B.im)
 return A.a4(q,new A.eg(B.y,q,q,A.a4(B.y,A.c3(r,B.w,B.J,B.t,B.L),B.e,q,B.eO,q,q,q,q,q,B.akP,q,q,1250),q),B.e,q,q,q,q,q,q,q,q,q,q,1/0)},
 Vh(a,b){var s=null,r=A.cC(20),q=A.Cr(B.bA,new A.mW(b,s,s),s)
