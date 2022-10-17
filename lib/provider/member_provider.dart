@@ -103,7 +103,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2110/janick_lang.jpg",
             instrument: "Drums",
             vorstand: "Präsident",
             expedition: "",
@@ -773,7 +773,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki.jpg",
             instrument: "Drums",
             vorstand: "",
             expedition: "",
@@ -788,7 +788,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach.jpg",
             instrument: "Drums",
             vorstand: "Matierialverwalter",
             expedition: "",
@@ -803,7 +803,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber.jpg",
             instrument: "Drums",
             vorstand: "",
             expedition: "",
@@ -818,7 +818,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos.jpg",
             instrument: "Drums",
             vorstand: "",
             expedition: "OK-Präsident",
@@ -832,7 +832,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher.jpg",
             instrument: "Drums",
             vorstand: "",
             expedition: "",
