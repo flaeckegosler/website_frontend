@@ -45,7 +45,7 @@ class _MemberSectionState extends State<MemberSection> {
       padding: const EdgeInsets.all(5),
       child: InkWell(
         onTap: () => context.vxNav
-            .push(Uri(path: '/specific_image'), params: member.pictureUrl),
+            .push(Uri(path: '/specific_image'), params: member.pictureUrlMax),
         child: Stack(
           children: [
             ClipRRect(

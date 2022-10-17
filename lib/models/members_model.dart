@@ -4,6 +4,7 @@ class Member with ChangeNotifier {
   final String firstName;
   final String lastName;
   final String pictureUrl;
+  final String pictureUrlMax;
   final String instrument;
   final String vorstand;
   final String expedition;
@@ -14,6 +15,7 @@ class Member with ChangeNotifier {
     required this.firstName,
     required this.lastName,
     required this.pictureUrl,
+    required this.pictureUrlMax,
     required this.instrument,
     required this.vorstand,
     required this.expedition,
