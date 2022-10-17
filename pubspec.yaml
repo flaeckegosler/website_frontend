@@ -36,6 +36,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   url_launcher: ^6.1.5
   velocity_x: ^3.5.1
+  photo_view: ^0.14.0
   youtube_player_flutter: ^8.1.1
 
 dev_dependencies:
