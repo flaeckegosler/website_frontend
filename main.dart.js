@@ -94763,7 +94763,7 @@ s=A.fo(s,!1,t.ek).a
 if(s.length===0){r=$.b1()
 s.push(new A.br("Raphael","Koch","https://flaeckegosler.ch/site/assets/files/2523/raphael_koch.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2523/raphael_koch.jpg",q,"","",p,"",r))
 s.push(new A.br("Yannick","Egli","https://flaeckegosler.ch/site/assets/files/1944/yannickegli.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1944/yannickegli.jpg",q,"","","","",r))
-s.push(new A.br("Janick",o,"https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.jpg",n,"Pr\xe4sident","","","",r))
+s.push(new A.br("Janick",o,"https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2110/janick_lang.jpg",n,"Pr\xe4sident","","","",r))
 s.push(new A.br("Oliver","Sch\xfcrch","https://flaeckegosler.ch/site/assets/files/1066/oliver_schurch.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1066/oliver_schurch.jpg","Tambi",m,"",m,"",r))
 s.push(new A.br("Alex","Vogel","https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.jpg",l,"Kassier","","","",r))
 s.push(new A.br("Alina","Orsi",k,j,l,"","","","",r))
@@ -94808,11 +94808,11 @@ s.push(new A.br("Marco","Andermatt","https://flaeckegosler.ch/site/assets/files/
 s.push(new A.br("Patrick","Roos","https://flaeckegosler.ch/site/assets/files/1112/patrick_roos.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1112/patrick_roos.jpg",e,"","","","",r))
 s.push(new A.br("Domenik","Bucher","https://flaeckegosler.ch/site/assets/files/2280/domenik.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2280/domenik.jpg",n,"","OK-Pr\xe4sident Stv.","","",r))
 s.push(new A.br("Joel","Bisang","https://flaeckegosler.ch/site/assets/files/2281/joelbisang.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2281/joelbisang.jpg",n,"","","",g,r))
-s.push(new A.br("Kay","Wicki","https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.jpg",n,"","","","",r))
-s.push(new A.br("Manuel","M\xfchlebach","https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.jpg",n,"Matierialverwalter","","Schlag-Chef","",r))
-s.push(new A.br("Pascal","Huber","https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.jpg",n,"","","","",r))
-s.push(new A.br("Sebastian","Moos","https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.jpg",n,"","OK-Pr\xe4sident","","",r))
-s.push(new A.br("Sven","L\xf6tscher","https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.jpg",n,"","","","",r))}},
+s.push(new A.br("Kay","Wicki","https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1952/kay_wicki.jpg",n,"","","","",r))
+s.push(new A.br("Manuel","M\xfchlebach","https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach.jpg",n,"Matierialverwalter","","Schlag-Chef","",r))
+s.push(new A.br("Pascal","Huber","https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/2198/pascal_huber.jpg",n,"","","","",r))
+s.push(new A.br("Sebastian","Moos","https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos.jpg",n,"","OK-Pr\xe4sident","","",r))
+s.push(new A.br("Sven","L\xf6tscher","https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher-1.280x0.jpg","https://flaeckegosler.ch/site/assets/files/1939/sven_lotscher.jpg",n,"","","","",r))}},
 uO(a){var s=null
 return A.a2(s,A.jn(!1,!0,A.es(B.aB,A.a([A.ja(A.cL(15),A.eK(A.DS(a.c,B.bA,s,s,s,s),s,s)),A.a2(B.m_,A.bO(a.a,s,B.tP,s,s),B.e,s,s,s,s,s,s,s,B.ng,s,s,s)],t.p),B.az),s,!0,s,s,s,s,s,s,s,s,s,new A.aAr(this,a),s,s,s,s,s),B.e,s,s,s,s,s,s,s,B.hv,s,s,s)},
 zo(a,b){var s,r,q=null
