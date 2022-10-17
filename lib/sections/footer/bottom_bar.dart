@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:velocity_x/velocity_x.dart';
+import 'package:website_frontend/sections/footer/pages/history.dart';
 
 enum SocialMedia { facebook, twitter, email, linkedin, whatsapp, instagram }
 
@@ -69,37 +71,47 @@ class BottomBar extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Ehrenmitglieder",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.5, 2.5),
-                    blurRadius: 5.0,
-                    color: Color.fromARGB(255, 0, 0, 1),
-                  ),
-                ],
+            InkWell(
+              onTap: () => context.vxNav.push(
+                Uri(path: '/honorary_members'),
+              ),
+              child: const Text(
+                "Ehrenmitglieder",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              "Geschichte",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.5, 2.5),
-                    blurRadius: 5.0,
-                    color: Color.fromARGB(255, 0, 0, 1),
-                  ),
-                ],
+            InkWell(
+              onTap: () => context.vxNav.push(
+                Uri(path: '/history'),
+              ),
+              child: const Text(
+                "Geschichte",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(

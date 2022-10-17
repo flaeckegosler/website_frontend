@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/members_model.dart';
 import 'package:website_frontend/provider/member_provider.dart';
@@ -42,36 +43,40 @@ class _MemberSectionState extends State<MemberSection> {
   Widget createMemberCard(Member member) {
     return Container(
       padding: const EdgeInsets.all(5),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15.0),
-            child: Center(
-              child: Image.network(
-                member.pictureUrl,
-                fit: BoxFit.cover,
+      child: InkWell(
+        onTap: () => context.vxNav
+            .push(Uri(path: '/specific_image'), params: member.pictureUrl),
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15.0),
+              child: Center(
+                child: Image.network(
+                  member.pictureUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(20),
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              member.firstName,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.5, 2.5),
-                    blurRadius: 5.0,
-                    color: Color.fromARGB(255, 0, 0, 1),
-                  ),
-                ],
+            Container(
+              padding: const EdgeInsets.all(20),
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                member.firstName,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
