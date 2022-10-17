@@ -35,6 +35,11 @@ class _SimplePhotoViewPageState extends State<SimplePhotoViewPage> {
         imageProvider: NetworkImage(
           widget.galleryLink,
         ),
+        loadingBuilder: (context, event) => const Center(
+          child: CircularProgressIndicator(
+            color: Color.fromRGBO(147, 90, 161, 1),
+          ),
+        ),
         // Contained = the smallest possible size to fit one dimension of the screen
         minScale: PhotoViewComputedScale.contained * 0.8,
         // Covered = the smallest possible size to fit the whole screen
