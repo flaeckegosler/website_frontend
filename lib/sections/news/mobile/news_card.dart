@@ -69,7 +69,8 @@ class NewsCard extends StatelessWidget {
       onTap: () =>
           context.vxNav.push(Uri(path: '/specific_news'), params: singleNews),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding:
+            const EdgeInsets.only(bottom: 7.5, top: 7.5, left: 10, right: 10),
         child: Container(
           height: 250,
           //MediaQuery.of(context).size.heiSght,
