@@ -359,6 +359,9 @@ class _NewsSectionState extends State<NewsSection>
                 color: Color.fromRGBO(147, 90, 162, 1),
               ),
             ),
+            const SizedBox(
+              height: 12.5,
+            ),
             if (width < 1250)
               NewsWidget(
                 news: _newsProvider.allNews,

@@ -16,8 +16,7 @@ class _SoundSectionState extends State<SoundSection> {
     super.initState();
   }
 
-  _launchURL() async {
-    const url = 'https://www.youtube.com/watch?v=2xE9i5t4mXQ';
+  _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -65,17 +64,17 @@ class _SoundSectionState extends State<SoundSection> {
                             child: newSoundCard(
                               "Rothuusstäge 2020",
                               "assets/youtube_diadamas_2020.jpg",
+                              "https://www.youtube.com/watch?v=2xE9i5t4mXQ",
                             ),
                           ),
                           const SizedBox(
                             width: 100,
                           ),
                           Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Container(
-                                color: Colors.green,
-                              ),
+                            child: newSoundCard(
+                              "Rothuusstäge 2019",
+                              "assets/youtube_vampir_2019.jpg",
+                              "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
                             ),
                           ),
                         ],
@@ -116,8 +115,16 @@ class _SoundSectionState extends State<SoundSection> {
                 Column(
                   children: [
                     newSoundCard(
-                      "Rothuusstäge 2020",
-                      "youtube/youtube_diadamas_2020.jpg",
+                        "Rothuusstäge 2020",
+                        "assets/youtube_diadamas_2020.jpg",
+                        "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    newSoundCard(
+                      "Rothuusstäge 2019",
+                      "assets/youtube_vampir_2019.jpg",
+                      "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
                     ),
                   ],
                 ),
@@ -134,11 +141,14 @@ class _SoundSectionState extends State<SoundSection> {
   ClipRRect newSoundCard(
     String title,
     String assetImage,
+    String youtubeLink,
   ) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: InkWell(
-        onTap: _launchURL,
+        onTap: () {
+          _launchURL(youtubeLink);
+        },
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
