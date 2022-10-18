@@ -11,8 +11,8 @@ class ImageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => context.vxNav
-          .push(Uri(path: '/specific_image'), params: imageData.pictureUrl),
+      onTap: () =>
+          context.vxNav.push(Uri(path: '/image'), params: imageData.pictureUrl),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16.0),
         child: CachedNetworkImage(
