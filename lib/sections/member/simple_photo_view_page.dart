@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -33,7 +34,7 @@ class _SimplePhotoViewPageState extends State<SimplePhotoViewPage> {
         backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
       ),
       body: PhotoView(
-        imageProvider: NetworkImage(
+        imageProvider: CachedNetworkImageProvider(
           widget.galleryLink,
         ),
         loadingBuilder: (context, event) => const Center(
