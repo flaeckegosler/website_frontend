@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/components/section_title.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class SoundSection extends StatefulWidget {
   @override
@@ -9,8 +8,6 @@ class SoundSection extends StatefulWidget {
 }
 
 class _SoundSectionState extends State<SoundSection> {
-  late YoutubePlayerController controller;
-
   @override
   void initState() {
     super.initState();
