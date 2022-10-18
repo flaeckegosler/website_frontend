@@ -41,7 +41,8 @@ class _GallerySectionState extends State<GallerySection> {
     fetchGalleryList();
   }
 
-  Widget buildGridView(List<SpecificImage> imageList, int index) {
+  Widget buildGridView(
+      List<SpecificImage> imageList, int index, bool isMobile) {
     final double width = MediaQuery.of(context).size.width;
 
     return Container(
@@ -49,16 +50,16 @@ class _GallerySectionState extends State<GallerySection> {
       child: GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 8,
+          itemCount: isMobile ? 6 : 8,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: width > 1250 ? 4 : 2,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
           ),
           itemBuilder: (context, index2) {
-            if (index2 + (index * 8) < imageList.length) {
+            if (index2 + (index * (isMobile ? 6 : 8)) < imageList.length) {
               return ImageCard(
-                imageData: imageList[index2 + (index * 8)],
+                imageData: imageList[index2 + (index * (isMobile ? 6 : 8))],
               );
             } else {
               return Container();
@@ -67,14 +68,16 @@ class _GallerySectionState extends State<GallerySection> {
     );
   }
 
-  Widget buildCarousel(dynamic _pictureProvider) {
+  Widget buildCarousel(dynamic _pictureProvider, bool isMobile) {
+    int divider;
+    isMobile ? divider = 6 : divider = 8;
     final double width = MediaQuery.of(context).size.width;
     return Container(
       // color: Colors.red,
       child: CarouselSlider.builder(
         carouselController: controller,
         options: CarouselOptions(
-          aspectRatio: width > 1250 ? (2 / 1) : (1 / 2),
+          aspectRatio: width > 1250 ? (2 / 1) : (1 / 1.5),
           autoPlay: true,
           viewportFraction: 1,
           enableInfiniteScroll: false,
@@ -84,24 +87,26 @@ class _GallerySectionState extends State<GallerySection> {
             setState(() => activeIndex = index),
           },
         ),
-        itemCount: (_selectedGallery.specificImage.length / 8).ceil(),
+        itemCount: (_selectedGallery.specificImage.length / divider).ceil(),
         itemBuilder: (context, index, realIndex) {
-          return buildGridView(_selectedGallery.specificImage, index);
+          return buildGridView(_selectedGallery.specificImage, index, isMobile);
         },
       ),
     );
   }
 
-  Widget buildIndicator(int numberOfCarousels) => AnimatedSmoothIndicator(
-        activeIndex: activeIndex,
-        count: numberOfCarousels,
-        onDotClicked: animateToSlide,
-        effect: const WormEffect(
-          activeDotColor: Color.fromRGBO(147, 90, 162, 1),
-        ),
-      );
+  Widget buildIndicator(int numberOfCarousels) {
+    return AnimatedSmoothIndicator(
+      activeIndex: activeIndex,
+      count: numberOfCarousels,
+      onDotClicked: animateToSlide,
+      effect: const WormEffect(
+        activeDotColor: Color.fromRGBO(147, 90, 162, 1),
+      ),
+    );
+  }
 
-  Widget buildButtons({bool stretch = false}) => Row(
+  Widget buildButtons(int numberOfCarousels) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
@@ -115,8 +120,27 @@ class _GallerySectionState extends State<GallerySection> {
               size: 32,
             ),
           ),
-          if (stretch)
-            const Spacer()
+          if (numberOfCarousels > 9)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                height: 30,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(147, 90, 162, 1),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Text(
+                    "${activeIndex + 1} / $numberOfCarousels",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ),
+            )
           else
             const SizedBox(
               width: 32,
@@ -199,7 +223,8 @@ class _GallerySectionState extends State<GallerySection> {
 
   @override
   Widget build(BuildContext context) {
-    final _pictureProvider = context.watch<PicturesProvider>();
+    final bool isMobile = MediaQuery.of(context).size.width < 1250;
+    final pictureProvider = context.watch<PicturesProvider>();
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(230, 230, 230, 1),
@@ -230,21 +255,39 @@ class _GallerySectionState extends State<GallerySection> {
                 height: 20,
               ),
               if (_isLoading)
-                CircularProgressIndicator(
-                  color: ColorSingleton().loadingIndicatorColor,
+                SizedBox(
+                  height: 200,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      color: ColorSingleton().loadingIndicatorColor,
+                    ),
+                  ),
                 )
               else
-                buildCarousel(_pictureProvider),
-              if (_isLoading)
+                buildCarousel(pictureProvider, isMobile),
+              const SizedBox(
+                height: 10,
+              ),
+              if (_isLoading ||
+                  (isMobile &&
+                      (_selectedGallery.specificImage.length /
+                                  (isMobile ? 6 : 8))
+                              .ceil() >
+                          11))
                 const SizedBox()
               else
                 buildIndicator(
-                  (_selectedGallery.specificImage.length / 8).ceil(),
+                  (_selectedGallery.specificImage.length / (isMobile ? 6 : 8))
+                      .ceil(),
                 ),
               const SizedBox(
                 height: 20,
               ),
-              if (_isLoading) const SizedBox() else buildButtons(),
+              if (!_isLoading)
+                buildButtons(
+                  (_selectedGallery.specificImage.length / (isMobile ? 6 : 8))
+                      .ceil(),
+                ),
               const SizedBox(
                 height: 30,
               ),
