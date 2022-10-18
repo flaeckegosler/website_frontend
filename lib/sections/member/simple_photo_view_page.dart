@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class SimplePhotoViewPage extends StatefulWidget {
   final String galleryLink;
@@ -27,27 +28,33 @@ class _SimplePhotoViewPageState extends State<SimplePhotoViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
-      ),
-      body: PhotoView(
-        imageProvider: NetworkImage(
-          widget.galleryLink,
+    return WillPopScope(
+      onWillPop: () async {
+        context.vxNav.pop();
+        return true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
         ),
-        loadingBuilder: (context, event) => const Center(
-          child: CircularProgressIndicator(
-            color: Color.fromRGBO(147, 90, 161, 1),
+        body: PhotoView(
+          imageProvider: NetworkImage(
+            widget.galleryLink,
           ),
-        ),
-        // Contained = the smallest possible size to fit one dimension of the screen
-        minScale: PhotoViewComputedScale.contained * 0.8,
-        // Covered = the smallest possible size to fit the whole screen
-        maxScale: PhotoViewComputedScale.covered * 2,
-        enableRotation: true,
-        // Set the background color to the "classic white"
-        backgroundDecoration: BoxDecoration(
-          color: Theme.of(context).canvasColor,
+          loadingBuilder: (context, event) => const Center(
+            child: CircularProgressIndicator(
+              color: Color.fromRGBO(147, 90, 161, 1),
+            ),
+          ),
+          // Contained = the smallest possible size to fit one dimension of the screen
+          minScale: PhotoViewComputedScale.contained * 0.8,
+          // Covered = the smallest possible size to fit the whole screen
+          maxScale: PhotoViewComputedScale.covered * 2,
+          enableRotation: true,
+          // Set the background color to the "classic white"
+          backgroundDecoration: BoxDecoration(
+            color: Theme.of(context).canvasColor,
+          ),
         ),
       ),
     );

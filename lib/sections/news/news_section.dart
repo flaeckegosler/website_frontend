@@ -363,10 +363,20 @@ class _NewsSectionState extends State<NewsSection>
               height: 12.5,
             ),
             if (width < 1250)
-              NewsWidget(
-                news: _newsProvider.allNews,
-                startIndex: startIndex,
-              )
+              if (_isLoading == true)
+                SizedBox(
+                  height: 200,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      color: ColorSingleton().loadingIndicatorColor,
+                    ),
+                  ),
+                )
+              else
+                NewsWidget(
+                  news: _newsProvider.allNews,
+                  startIndex: startIndex,
+                )
             else
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -378,8 +388,13 @@ class _NewsSectionState extends State<NewsSection>
                   else
                     newsWidget(0, activeNews),
                   if (_isLoading == true)
-                    CircularProgressIndicator(
-                      color: ColorSingleton().loadingIndicatorColor,
+                    SizedBox(
+                      height: 200,
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          color: ColorSingleton().loadingIndicatorColor,
+                        ),
+                      ),
                     )
                   else
                     newsWidget(1, activeNews),
@@ -394,7 +409,7 @@ class _NewsSectionState extends State<NewsSection>
             const SizedBox(
               height: 20,
             ),
-            buildButtons(),
+            if (_isLoading == false) buildButtons(),
             const SizedBox(
               height: 30,
             ),

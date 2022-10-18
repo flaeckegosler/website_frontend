@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
+import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
@@ -10,8 +11,6 @@ import 'package:website_frontend/sections/footer/pages/history.dart';
 import 'package:website_frontend/sections/footer/pages/honorary_members.dart';
 import 'package:website_frontend/sections/member/simple_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
-
-import 'models/news_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,10 +45,10 @@ class MyApp extends StatelessWidget {
             "/": (_, __) => MaterialPage(
                   child: HomeScreen(),
                 ),
-            "/specific_news": (_, news) => MaterialPage(
+            "/news": (_, news) => MaterialPage(
                   child: SingleNews(news as News),
                 ),
-            "/specific_image": (_, pictureUrl) => MaterialPage(
+            "/image": (_, pictureUrl) => MaterialPage(
                   child: SimplePhotoViewPage(pictureUrl as String),
                 ),
             "/history": (_, __) => MaterialPage(

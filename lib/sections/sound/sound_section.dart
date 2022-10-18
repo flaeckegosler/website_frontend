@@ -81,33 +81,7 @@ class _SoundSectionState extends State<SoundSection> {
                       ),
                     ),
                     const SizedBox(
-                      height: 80,
-                    ),
-                    SizedBox(
-                      height: 250,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Container(
-                                color: Colors.yellow,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 100,
-                          ),
-                          Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Container(
-                                color: Colors.purple,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                      height: 30,
                     ),
                   ],
                 )
