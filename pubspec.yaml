@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cached_network_image: ^3.2.1
+  cached_network_image: ^3.2.2
   carousel_slider: ^4.1.1
   flutter_html: ^2.2.1
   font_awesome_flutter: ^9.2.0
