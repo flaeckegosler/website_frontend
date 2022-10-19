@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class SimplePhotoViewPage extends StatefulWidget {
   final String galleryLink;

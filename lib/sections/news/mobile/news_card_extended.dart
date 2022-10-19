@@ -1,6 +1,6 @@
 //import 'package:Flaeckegosler/widgets/news/buildRedakteur.dart';
 import 'package:flutter/material.dart';
-import 'package:velocity_x/src/extensions/context_ext.dart';
+import 'package:go_router/go_router.dart';
 import 'package:website_frontend/models/news_model.dart';
 
 class NewsCardExtended extends StatelessWidget {
@@ -88,7 +88,7 @@ class NewsCardExtended extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.vxNav.push(Uri(path: '/news'), params: singleNews),
+      onTap: () => GoRouter.of(context).go('/news', extra: singleNews),
       child: Padding(
         padding:
             const EdgeInsets.only(bottom: 7.5, top: 7.5, left: 10, right: 10),
