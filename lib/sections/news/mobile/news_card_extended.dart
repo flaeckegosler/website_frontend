@@ -88,7 +88,7 @@ class NewsCardExtended extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).go('/news', extra: singleNews),
+      onTap: () => GoRouter.of(context).push('/news', extra: singleNews),
       child: Padding(
         padding:
             const EdgeInsets.only(bottom: 7.5, top: 7.5, left: 10, right: 10),
