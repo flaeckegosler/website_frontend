@@ -103,7 +103,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2110/janick_lang.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2110/janick_lang-1.420x0.jpg",
             instrument: "Drums",
             vorstand: "Präsident",
             expedition: "",
@@ -131,7 +131,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2273/alex_vogel.420x0.jpg",
             instrument: "Trompete",
             vorstand: "Kassier",
             expedition: "",
@@ -144,9 +144,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Alina",
             lastName: "Orsi",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2482/16452899684114946276611766015906.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.png",
+                "https://flaeckegosler.ch/site/assets/files/2482/16452899684114946276611766015906.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "",
@@ -174,9 +174,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Chantal",
             lastName: "Fischer",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2480/img-20220219-wa0007.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.png",
+                "https://flaeckegosler.ch/site/assets/files/2480/img-20220219-wa0007.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "",
@@ -204,9 +204,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Joanna",
             lastName: "Zemp",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2483/16452896202434578746414091912680.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.png",
+                "https://flaeckegosler.ch/site/assets/files/2483/16452896202434578746414091912680.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "",
@@ -219,9 +219,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Julia",
             lastName: "Lipp",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2481/16452898967475335831440091871298.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.png",
+                "https://flaeckegosler.ch/site/assets/files/2481/16452898967475335831440091871298.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "",
@@ -235,7 +235,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1076/lukas_lang.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1076/lukas_lang.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1076/lukas_lang.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "",
@@ -250,7 +250,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1080/marco_schriber.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1080/marco_schriber.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1080/marco_schriber.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "Festwirtschaft",
@@ -383,9 +383,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Silvia",
             lastName: "Krummenacher",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2484/16452897699215684303164215610438.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.png",
+                "https://flaeckegosler.ch/site/assets/files/2484/16452897699215684303164215610438.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
             expedition: "",
@@ -430,7 +430,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2054/fabian_benz.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2054/fabian_benz.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2054/fabian_benz.420x0.jpg",
             instrument: "Sousaphon",
             vorstand: "",
             expedition: "",
@@ -490,7 +490,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1089/lukas_dunki.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1089/lukas_dunki.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1089/lukas_dunki.420x0.jpg",
             instrument: "Posaune",
             vorstand: "",
             expedition: "",
@@ -520,7 +520,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2056/nico_muschietti.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2056/nico_muschietti.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2056/nico_muschietti.420x0.jpg",
             instrument: "Posaune",
             vorstand: "",
             expedition: "",
@@ -535,7 +535,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2111/noah_berwert.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2111/noah_berwert.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2111/noah_berwert.420x0.jpg",
             instrument: "Posaune",
             vorstand: "",
             expedition: "",
@@ -547,9 +547,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Oliver",
             lastName: "Köchli",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2278/16452911702394712349943898148741.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2278/16452911702394712349943898148741.420x0.jpg",
             instrument: "Posaune",
             vorstand: "",
             expedition: "",
@@ -579,7 +579,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1088/reto_battig.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1088/reto_battig.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1088/reto_battig.420x0.jpg",
             instrument: "Posaune",
             vorstand: "",
             expedition: "",
@@ -639,7 +639,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1106/markus_studer.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1106/markus_studer.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1106/markus_studer.420x0.jpg",
             instrument: "Horn",
             vorstand: "",
             expedition: "",
@@ -651,9 +651,9 @@ class MemberProvider with ChangeNotifier {
             firstName: "Raphaela",
             lastName: "Zimmermann",
             pictureUrl:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.280x0.png",
+                "https://flaeckegosler.ch/site/assets/files/2521/16452896833671721955893723840724.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2482/gosler.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2521/16452896833671721955893723840724.420x0.jpg",
             instrument: "Posaune",
             vorstand: "",
             expedition: "",
@@ -668,7 +668,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1942/diego_zimmermann.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1942/diego_zimmermann.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1942/diego_zimmermann.420x0.jpg",
             instrument: "Sousaphon",
             vorstand: "Sujet-Chef",
             expedition: "",
@@ -698,7 +698,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1116/lukas_studer.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1116/lukas_studer.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1116/lukas_studer.420x0.jpg",
             instrument: "Sousaphon",
             vorstand: "",
             expedition: "",
@@ -713,7 +713,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1117/marco_andermatt.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1117/marco_andermatt.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1117/marco_andermatt.420x0.jpg",
             instrument: "Sousaphon",
             vorstand: "",
             expedition: "",
@@ -773,7 +773,22 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.420x0.jpg",
+            instrument: "Drums",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Luis",
+            lastName: "Blunschi",
+            pictureUrl:
+                "https://flaeckegosler.ch/site/assets/files/1127/whatsapp_image_2022-01-30_at_21_46_28.280x0.jpeg",
+            pictureUrlMax:
+                "https://flaeckegosler.ch/site/assets/files/1127/whatsapp_image_2022-01-30_at_21_46_28.jpeg",
             instrument: "Drums",
             vorstand: "",
             expedition: "",
@@ -788,7 +803,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.420x0.jpg",
             instrument: "Drums",
             vorstand: "Matierialverwalter",
             expedition: "",
@@ -803,7 +818,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber.jpg",
+                "https://flaeckegosler.ch/site/assets/files/2198/pascal_huber-1.420x0.jpg",
             instrument: "Drums",
             vorstand: "",
             expedition: "",
@@ -818,7 +833,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrl:
                 "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.280x0.jpg",
             pictureUrlMax:
-                "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos.jpg",
+                "https://flaeckegosler.ch/site/assets/files/1123/sebastian_moos-1.420x0.jpg",
             instrument: "Drums",
             vorstand: "",
             expedition: "OK-Präsident",
