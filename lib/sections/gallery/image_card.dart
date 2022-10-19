@@ -12,7 +12,7 @@ class ImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () =>
-          GoRouter.of(context).go('/image', extra: imageData.pictureUrl),
+          GoRouter.of(context).push('/image', extra: imageData.pictureUrl),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16.0),
         child: CachedNetworkImage(
