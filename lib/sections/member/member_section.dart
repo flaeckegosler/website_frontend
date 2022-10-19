@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/members_model.dart';
 import 'package:website_frontend/provider/member_provider.dart';
@@ -44,8 +44,8 @@ class _MemberSectionState extends State<MemberSection> {
     return Container(
       padding: const EdgeInsets.all(5),
       child: InkWell(
-        onTap: () => context.vxNav
-            .push(Uri(path: '/image'), params: member.pictureUrlMax),
+        onTap: () =>
+            GoRouter.of(context).go('/image', extra: member.pictureUrlMax),
         child: Stack(
           children: [
             ClipRRect(

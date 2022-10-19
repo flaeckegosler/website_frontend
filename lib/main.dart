@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
@@ -17,6 +17,41 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  final GoRouter _router = GoRouter(
+    routes: <GoRoute>[
+      GoRoute(
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return HomeScreen();
+        },
+      ),
+      GoRoute(
+        path: '/news',
+        builder: (BuildContext context, GoRouterState state) {
+          return SingleNews(state.extra! as News);
+        },
+      ),
+      GoRoute(
+        path: '/image',
+        builder: (BuildContext context, GoRouterState state) {
+          return SimplePhotoViewPage(state.extra! as String);
+        },
+      ),
+      GoRoute(
+        path: '/history',
+        builder: (BuildContext context, GoRouterState state) {
+          return HistoryPage();
+        },
+      ),
+      GoRoute(
+        path: '/honorary_members',
+        builder: (BuildContext context, GoRouterState state) {
+          return HonoraryMembersPage();
+        },
+      ),
+    ],
+  );
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -33,31 +68,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        routerConfig: _router,
         debugShowCheckedModeBanner: true,
         title: 'Fläckegosler Roteborg',
         theme: ThemeData(
           inputDecorationTheme: kDefaultInputDecorationTheme,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        routeInformationParser: VxInformationParser(),
-        routerDelegate: VxNavigator(
-          routes: {
-            "/": (_, __) => MaterialPage(
-                  child: HomeScreen(),
-                ),
-            "/news": (_, news) => MaterialPage(
-                  child: SingleNews(news as News),
-                ),
-            "/image": (_, pictureUrl) => MaterialPage(
-                  child: SimplePhotoViewPage(pictureUrl as String),
-                ),
-            "/history": (_, __) => MaterialPage(
-                  child: HistoryPage(),
-                ),
-            "/honorary_members": (_, __) => MaterialPage(
-                  child: HonoraryMembersPage(),
-                ),
-          },
         ),
       ),
     );

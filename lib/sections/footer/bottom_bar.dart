@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'package:website_frontend/sections/footer/pages/history.dart';
 
 enum SocialMedia { facebook, twitter, email, linkedin, whatsapp, instagram }
@@ -72,9 +72,7 @@ class BottomBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () => context.vxNav.push(
-                Uri(path: '/honorary_members'),
-              ),
+              onTap: () => GoRouter.of(context).go('/honorary_members'),
               child: const Text(
                 "Ehrenmitglieder",
                 style: TextStyle(
@@ -95,9 +93,7 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () => context.vxNav.push(
-                Uri(path: '/history'),
-              ),
+              onTap: () => GoRouter.of(context).go('/history'),
               child: const Text(
                 "Geschichte",
                 style: TextStyle(
