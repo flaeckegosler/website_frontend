@@ -72,7 +72,7 @@ class BottomBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () => GoRouter.of(context).go('/honorary_members'),
+              onTap: () => GoRouter.of(context).push('/honorary_members'),
               child: const Text(
                 "Ehrenmitglieder",
                 style: TextStyle(
@@ -93,7 +93,7 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () => GoRouter.of(context).go('/history'),
+              onTap: () => GoRouter.of(context).push('/history'),
               child: const Text(
                 "Geschichte",
                 style: TextStyle(

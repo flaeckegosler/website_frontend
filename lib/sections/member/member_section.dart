@@ -45,7 +45,7 @@ class _MemberSectionState extends State<MemberSection> {
       padding: const EdgeInsets.all(5),
       child: InkWell(
         onTap: () =>
-            GoRouter.of(context).go('/image', extra: member.pictureUrlMax),
+            GoRouter.of(context).push('/image', extra: member.pictureUrlMax),
         child: Stack(
           children: [
             ClipRRect(
