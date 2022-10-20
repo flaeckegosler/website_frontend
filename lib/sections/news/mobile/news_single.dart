@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/models/authors.dart';
 import 'package:website_frontend/models/news_model.dart';
+import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/sections/news/mobile/title_default.dart';
 
 Future launchURL(String url) async {
@@ -83,6 +84,7 @@ class SingleNews extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
+                backgroundColor: ColorSingleton().mainTheme,
                 radius: 35,
                 backgroundImage: AssetImage(
                   Authors.getRedakteur(newsCreatedBy),
