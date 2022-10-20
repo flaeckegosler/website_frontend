@@ -12,4 +12,6 @@ class ColorSingleton {
   Color placeHolderColor = const Color.fromRGBO(147, 90, 162, 1);
 
   Color loadingIndicatorColor = const Color.fromRGBO(147, 90, 162, 1);
+
+  Color mainTheme = const Color.fromRGBO(147, 90, 162, 1);
 }

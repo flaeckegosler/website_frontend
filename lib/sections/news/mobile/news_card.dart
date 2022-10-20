@@ -9,24 +9,25 @@ class NewsCard extends StatelessWidget {
 
   Widget _buildTitle() {
     return Padding(
-      padding: const EdgeInsets.only(left: 8),
-      child: Text(
-        ' ${singleNews.newsTitle} ',
-        textAlign: TextAlign.start,
-        style: const TextStyle(
-          height: 1.8,
-          fontSize: 20.0,
-          color: Colors.white,
-          shadows: <Shadow>[
-            Shadow(
-              offset: Offset(2.0, 2.0),
-              blurRadius: 3.0,
+      padding: const EdgeInsets.only(left: 8, right: 8),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5), color: Colors.white),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              singleNews.newsTitle,
+              textAlign: TextAlign.start,
+              style: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Oswald',
+                color: Colors.black,
+              ),
             ),
-            Shadow(
-              offset: Offset(2.0, 2.0),
-              blurRadius: 8.0,
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -39,22 +40,26 @@ class NewsCard extends StatelessWidget {
       );
     } else {
       return Padding(
-        padding: const EdgeInsets.only(left: 15.0, bottom: 15, top: 5),
+        padding: const EdgeInsets.only(left: 12.0, bottom: 8, top: 5),
         child: Text(
           'von ${singleNews.newsCreatedBy}',
           textAlign: TextAlign.start,
           style: const TextStyle(
             height: 1.2,
             fontSize: 12.0,
+            fontWeight: FontWeight.w100,
+            fontFamily: 'Oswald',
             color: Colors.white,
             shadows: <Shadow>[
               Shadow(
                 offset: Offset(2.0, 2.0),
                 blurRadius: 3.0,
+                color: Colors.black,
               ),
               Shadow(
                 offset: Offset(2.0, 2.0),
                 blurRadius: 8.0,
+                color: Colors.black,
               ),
             ],
           ),
@@ -71,11 +76,11 @@ class NewsCard extends StatelessWidget {
         padding:
             const EdgeInsets.only(bottom: 7.5, top: 7.5, left: 10, right: 10),
         child: Container(
-          height: 250,
+          height: 220,
           //MediaQuery.of(context).size.heiSght,
           // width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(10),
             color: Colors.white,
             image: DecorationImage(
                 image: NetworkImage(singleNews.imageURL), fit: BoxFit.cover),
