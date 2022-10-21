@@ -133,20 +133,31 @@ class _SoundSectionState extends State<SoundSection> {
             children: [
               Align(
                 alignment: Alignment.topLeft,
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Text(
-                    title,
-                    style: const TextStyle(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
-                      fontSize: 24,
-                      shadows: <Shadow>[
-                        Shadow(
-                          offset: Offset(2.5, 2.5),
-                          blurRadius: 5.0,
-                          color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 4.0,
+                        vertical: 4.0,
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          title,
+                          textAlign: TextAlign.start,
+                          style: const TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Oswald',
+                            color: Colors.black,
+                          ),
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
