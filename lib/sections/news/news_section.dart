@@ -351,6 +351,9 @@ class _NewsSectionState extends State<NewsSection>
         constraints: const BoxConstraints(maxWidth: 1250),
         child: Column(
           children: [
+            const SizedBox(
+              height: 40,
+            ),
             const Padding(
               padding: EdgeInsets.only(left: 8.0, right: 10),
               child: SectionTitle(

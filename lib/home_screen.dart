@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
@@ -20,8 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
   ScrollSingleton myScrollSingleton = ScrollSingleton();
   final itemListener = ItemPositionsListener.create();
 
+//  double _navBarNewsTextSize = 16;
+//  double _navBarFotosTextSize = 16;
+//  double _navBarAgendaTextSize = 16;
+
   List indices = [];
-  List indices2 = [];
   bool showRightNavbar = false;
 
   @override
@@ -30,27 +34,55 @@ class _HomeScreenState extends State<HomeScreen> {
 
     itemListener.itemPositions.addListener(() {
       indices = itemListener.itemPositions.value
-          .where((element) {
-            final isTopVisible = element.itemLeadingEdge >= 0;
-            final isBottomVisible = element.itemTrailingEdge <= 1;
-            return isBottomVisible;
-          })
-          .map((item) => item.index)
-          .toList();
-      indices2 = itemListener.itemPositions.value
-          .where((element) {
-            final isTopVisible = element.itemLeadingEdge >= 0.2;
-            final isBottomVisible = element.itemTrailingEdge <= 0.8;
-            return isBottomVisible && isTopVisible;
-          })
+          // .where((element) {
+          //    print("INDEXTEST:" + element.index.toString());
+          //  final isTopVisible = element.itemLeadingEdge >= 0;
+          //  final isBottomVisible = element.itemTrailingEdge <= 1;
+          //  return isBottomVisible;
+          // })
           .map((item) => item.index)
           .toList();
       checkVisibility();
+      //   setNavBarSizes();
       print(indices);
-      print("i2:" + indices2.toString());
     });
   }
 
+/*
+  void setNavBarSizes() {
+    if (indices.first == 1 && (_navBarNewsTextSize.toInt() == 16)) {
+      setState(() {
+        _navBarNewsTextSize = 40;
+        _navBarFotosTextSize = 16;
+        _navBarAgendaTextSize = 16;
+      });
+      print("eins");
+    } else if (indices.first == 2 && (_navBarFotosTextSize.toInt() == 16)) {
+      setState(() {
+        _navBarNewsTextSize = 16;
+        _navBarFotosTextSize = 40;
+        _navBarAgendaTextSize = 16;
+      });
+      print("zwei");
+    } else if (indices.first == 3 && (_navBarAgendaTextSize.toInt() == 16)) {
+      setState(() {
+        _navBarNewsTextSize = 16;
+        _navBarFotosTextSize = 16;
+        _navBarAgendaTextSize = 40;
+      });
+      print("drei");
+    } else if (indices.first == 4) {
+      _navBarNewsTextSize = 12;
+      print("vier");
+    } else if (indices.first == 5) {
+      _navBarNewsTextSize = 12;
+      print("fünf");
+    } else if (indices.first == 5) {
+      _navBarNewsTextSize = 12;
+      print("sechs");
+    }
+  }
+*/
   void checkVisibility() {
     if (!indices.contains(0) && (showRightNavbar == false)) {
       setState(() {
@@ -159,24 +191,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   return TopSection();
                 }
               } else if (index == 1) {
-                return const SizedBox(height: kDefaultPadding * 2);
-              } else if (index == 2) {
                 return NewsSection();
-              } else if (index == 3) {
+              } else if (index == 2) {
                 return GallerySection();
-              } else if (index == 4) {
+              } else if (index == 3) {
                 return AgendaSection();
-              } else if (index == 5) {
+              } else if (index == 4) {
                 return MemberSection();
-              } else if (index == 6) {
+              } else if (index == 5) {
                 return SoundSection();
-              } else if (index == 7) {
+              } else if (index == 6) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 8,
+            itemCount: 7,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)
@@ -187,66 +217,195 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  GestureDetector(
-                    onTap: () => myScrollSingleton.scrollToItem("News"),
-                    child: const Text(
-                      "News",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.black87),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.newspaper,
+                      ),
+                    ),
+                    isFirst: true,
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () => myScrollSingleton.scrollToItem("News"),
+                            child: /* TweenAnimationBuilder<double>(
+                              duration: const Duration(milliseconds: 500),
+                              tween: Tween<double>(
+                                begin: _navBarNewsTextSize,
+                                end: _navBarNewsTextSize,
+                              ),
+                              builder: (_, size, __) =>*/
+                                Text(
+                              "News",
+                              style: TextStyle(
+                                fontSize: 16, //size,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            //      ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () => myScrollSingleton.scrollToItem("Fotos"),
-                    child: const Text(
-                      "Fotos",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.black87),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.image,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Fotos"),
+                            child: /* TweenAnimationBuilder<double>(
+                              duration: const Duration(milliseconds: 500),
+                              tween: Tween<double>(
+                                begin: _navBarFotosTextSize,
+                                end: _navBarFotosTextSize,
+                              ),
+                              builder: (_, size, __) => */
+                                Text(
+                              "Fotos",
+                              style: TextStyle(
+                                  fontSize: 16, //size,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            //      ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () => myScrollSingleton.scrollToItem("Agenda"),
-                    child: const Text(
-                      "Agenda",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.black87),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.event_available,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Agenda"),
+                            child: /* TweenAnimationBuilder<double>(
+                              duration: const Duration(milliseconds: 500),
+                              tween: Tween<double>(
+                                begin: _navBarAgendaTextSize,
+                                end: _navBarAgendaTextSize,
+                              ),
+                              builder: (_, size, __) => */
+                                Text(
+                              "Agenda",
+                              style: TextStyle(
+                                  fontSize: 16, //size,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            //     ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () => myScrollSingleton.scrollToItem("Mitglieder"),
-                    child: const Text(
-                      "Mitglieder",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.black87),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.people_alt_rounded,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Mitglieder"),
+                            child: const Text(
+                              "Mitglieder",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () => myScrollSingleton.scrollToItem("Sound"),
-                    child: const Text(
-                      "Sound",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.black87),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.music_note,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    isLast: true,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Sound"),
+                            child: const Text(
+                              "Sound",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
