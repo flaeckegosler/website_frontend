@@ -20,15 +20,15 @@ class ScrollSingleton {
     // index == 4  MemberSection();
     // index == 5  BottomBar();
     if (section == "News") {
-      index = 2;
+      index = 1;
     } else if (section == "Fotos") {
-      index = 3;
+      index = 2;
     } else if (section == "Agenda") {
-      index = 4;
+      index = 3;
     } else if (section == "Mitglieder") {
-      index = 5;
+      index = 4;
     } else if (section == "Sound") {
-      index = 6;
+      index = 5;
     }
     navBarScrollController.scrollTo(
       index: index,
