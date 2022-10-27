@@ -256,7 +256,7 @@ class _GallerySectionState extends State<GallerySection> {
               ),
               if (_isLoading)
                 SizedBox(
-                  height: 200,
+                  height: 300,
                   child: Center(
                     child: CircularProgressIndicator(
                       color: ColorSingleton().loadingIndicatorColor,

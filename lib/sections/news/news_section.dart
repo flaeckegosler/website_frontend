@@ -368,7 +368,7 @@ class _NewsSectionState extends State<NewsSection>
             if (width < 1250)
               if (_isLoading == true)
                 SizedBox(
-                  height: 200,
+                  height: 300,
                   child: Center(
                     child: CircularProgressIndicator(
                       color: ColorSingleton().loadingIndicatorColor,
@@ -386,13 +386,13 @@ class _NewsSectionState extends State<NewsSection>
                 children: [
                   if (_isLoading == true)
                     const SizedBox(
-                      height: 200,
+                      height: 300,
                     )
                   else
                     newsWidget(0, activeNews),
                   if (_isLoading == true)
                     SizedBox(
-                      height: 200,
+                      height: 300,
                       child: Center(
                         child: CircularProgressIndicator(
                           color: ColorSingleton().loadingIndicatorColor,
@@ -403,7 +403,7 @@ class _NewsSectionState extends State<NewsSection>
                     newsWidget(1, activeNews),
                   if (_isLoading == true)
                     const SizedBox(
-                      height: 200,
+                      height: 300,
                     )
                   else
                     newsWidget(2, activeNews),

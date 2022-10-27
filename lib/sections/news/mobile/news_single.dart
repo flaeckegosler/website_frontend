@@ -20,19 +20,20 @@ class SingleNews extends StatelessWidget {
   const SingleNews(this.singleNews);
 
   Widget _buildTitelBild() {
-    return Container(
+    return SizedBox(
       height: 300,
-      decoration: BoxDecoration(
-        border: const Border(
-          left: BorderSide(color: Colors.white, width: 10.0),
-          top: BorderSide(color: Colors.white, width: 10.0),
-          right: BorderSide(color: Colors.white, width: 10.0),
-          bottom: BorderSide(color: Colors.white, width: 10.0),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.white,
+            image: DecorationImage(
+              image: NetworkImage(singleNews.imageURL),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
-        //borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
-        image: DecorationImage(
-            image: NetworkImage(singleNews.imageURL), fit: BoxFit.cover),
       ),
     );
   }
@@ -40,7 +41,7 @@ class SingleNews extends StatelessWidget {
   Widget _buildImageDescription() {
     if (singleNews.imageDescription != null) {
       return Container(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
         child: Text(
           singleNews.imageDescription!,
           style: const TextStyle(color: Colors.grey, fontSize: 10),
@@ -55,7 +56,7 @@ class SingleNews extends StatelessWidget {
 
   Widget _buildMainText() {
     return Container(
-      padding: EdgeInsets.only(top: 10.0, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
       child: Html(
         data: singleNews.newsMainText,
         /* onLinkTap: (url) {

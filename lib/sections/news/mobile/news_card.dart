@@ -12,7 +12,9 @@ class NewsCard extends StatelessWidget {
       padding: const EdgeInsets.only(left: 8, right: 8),
       child: DecoratedBox(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5), color: Colors.white),
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.white,
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
           child: FittedBox(
