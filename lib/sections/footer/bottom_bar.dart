@@ -72,7 +72,7 @@ class BottomBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () => GoRouter.of(context).push('/honorary_members'),
+              onTap: () => GoRouter.of(context).push('/ehrenmitglieder'),
               child: const Text(
                 "Ehrenmitglieder",
                 style: TextStyle(
@@ -93,9 +93,30 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () => GoRouter.of(context).push('/history'),
+              onTap: () => GoRouter.of(context).push('/geschichte'),
               child: const Text(
                 "Geschichte",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            InkWell(
+              onTap: () => GoRouter.of(context).push('/kleiderverkauf'),
+              child: const Text(
+                "Kleiderverkauf",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,

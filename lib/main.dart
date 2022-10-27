@@ -9,6 +9,7 @@ import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
 import 'package:website_frontend/sections/footer/pages/history.dart';
 import 'package:website_frontend/sections/footer/pages/honorary_members.dart';
+import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
 import 'package:website_frontend/sections/member/simple_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
 
@@ -38,15 +39,21 @@ class MyApp extends StatelessWidget {
         },
       ),
       GoRoute(
-        path: '/history',
+        path: '/ehrenmitglieder',
+        builder: (BuildContext context, GoRouterState state) {
+          return HonoraryMembersPage();
+        },
+      ),
+      GoRoute(
+        path: '/geschichte',
         builder: (BuildContext context, GoRouterState state) {
           return HistoryPage();
         },
       ),
       GoRoute(
-        path: '/honorary_members',
+        path: '/kleiderverkauf',
         builder: (BuildContext context, GoRouterState state) {
-          return HonoraryMembersPage();
+          return const Kleiderverkauf();
         },
       ),
     ],
