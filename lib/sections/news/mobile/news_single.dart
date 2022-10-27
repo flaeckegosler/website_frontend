@@ -22,18 +22,9 @@ class SingleNews extends StatelessWidget {
   Widget _buildTitelBild() {
     return SizedBox(
       height: 300,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: Colors.white,
-            image: DecorationImage(
-              image: NetworkImage(singleNews.imageURL),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
+      child: Image(
+        image: NetworkImage(singleNews.imageURL),
+        fit: BoxFit.cover,
       ),
     );
   }

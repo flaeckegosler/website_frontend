@@ -6,27 +6,18 @@ class Kleiderverkauf extends StatelessWidget {
   const Kleiderverkauf();
 
   Widget _buildTitelBild() {
-    return SizedBox(
+    return const SizedBox(
       height: 300,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: Colors.white,
-            image: const DecorationImage(
-              image: AssetImage('assets/genesis.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
+      child: Image(
+        image: AssetImage('assets/genesis.jpg'),
+        fit: BoxFit.cover,
       ),
     );
   }
 
   Widget _buildImageDescription() {
     return Container(
-      padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 10, left: 30, right: 20),
       child: const Text(
         "Unser Sujet Kobolde des Winters!",
         style: TextStyle(color: Colors.grey, fontSize: 10),
