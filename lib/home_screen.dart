@@ -8,6 +8,7 @@ import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
+import 'package:website_frontend/sections/mobile/mitglied_werden.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
@@ -200,13 +201,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 return MemberSection();
               } else if (index == 5) {
                 return SoundSection();
-              } else if (index == 6) {
+              } else if (index == 6 && width < 1250) {
+                return const MitgliedWerden();
+              } else if (index == 7) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 7,
+            itemCount: 8,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)
