@@ -4,11 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
+import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
+import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
 import 'package:website_frontend/sections/footer/pages/history.dart';
-import 'package:website_frontend/sections/footer/pages/honorary_members.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
 import 'package:website_frontend/sections/member/simple_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/ehrenmitglieder',
         builder: (BuildContext context, GoRouterState state) {
-          return HonoraryMembersPage();
+          return EhrenMitgliederPage();
         },
       ),
       GoRoute(
@@ -72,6 +73,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: PicturesProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: EhrenMitgliederProvider(),
         ),
       ],
       child: MaterialApp.router(
