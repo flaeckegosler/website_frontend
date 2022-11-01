@@ -56,7 +56,9 @@ class _NewsSectionState extends State<NewsSection>
   @override
   void initState() {
     super.initState();
-    fetchNewsListAsync();
+    if (Provider.of<NewsProvider>(context, listen: false).allNews.isEmpty) {
+      fetchNewsListAsync();
+    }
     _fadeController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1500),
@@ -158,7 +160,7 @@ class _NewsSectionState extends State<NewsSection>
 
   @override
   Widget build(BuildContext context) {
-    Widget addIcon(int index, ActiveNews _activeNews) {
+    Widget addIcon(int index, ActiveNews activeNews) {
       return Container(
         margin: const EdgeInsets.only(right: 5),
         height: 50.0,
@@ -166,39 +168,39 @@ class _NewsSectionState extends State<NewsSection>
           size: const Size(50, 50), // button width and height
           child: ClipOval(
             child: Material(
-              color: ActiveNews.none == _activeNews
+              color: ActiveNews.none == activeNews
                   ? Colors.green
                   : Colors.red, // button color
               child: InkWell(
                 splashColor: const Color.fromRGBO(248, 177, 1, 1),
                 // splash color
                 onTap: () {
-                  if (index == 0 && _activeNews == ActiveNews.none) {
+                  if (index == 0 && activeNews == ActiveNews.none) {
                     setState(() {
-                      activeNews = ActiveNews.first;
+                      this.activeNews = ActiveNews.first;
                       n1preview = 0;
                       n2preview = 0;
                     });
                     _asyncPauseAndContinueAnimationForward(index);
-                  } else if (index == 1 && _activeNews == ActiveNews.none) {
+                  } else if (index == 1 && activeNews == ActiveNews.none) {
                     setState(() {
-                      activeNews = ActiveNews.second;
+                      this.activeNews = ActiveNews.second;
                       n0preview = 0;
                       n1text = 875;
                       n2preview = 0;
                     });
                     _asyncPauseAndContinueAnimationForward(index);
-                  } else if (index == 2 && _activeNews == ActiveNews.none) {
+                  } else if (index == 2 && activeNews == ActiveNews.none) {
                     setState(() {
-                      activeNews = ActiveNews.third;
+                      this.activeNews = ActiveNews.third;
                       n0preview = 0;
                       n1preview = 0;
                       n2text = 875;
                     });
                     _asyncPauseAndContinueAnimationForward(index);
-                  } else if (_activeNews == ActiveNews.first ||
-                      _activeNews == ActiveNews.second ||
-                      _activeNews == ActiveNews.third) {
+                  } else if (activeNews == ActiveNews.first ||
+                      activeNews == ActiveNews.second ||
+                      activeNews == ActiveNews.third) {
                     _asyncPauseAndContinueAnimationReverse();
                   }
                 },
@@ -243,14 +245,14 @@ class _NewsSectionState extends State<NewsSection>
     }
 
     Widget newsWidget(int index, ActiveNews activeNews) {
-      final _newsProvider = context.watch<NewsProvider>();
+      final newsProvider = context.watch<NewsProvider>();
       final NewsCard newsCard1 =
           NewsCard(index: index + startIndex, key: newsCardKey1);
       final NewsCard newsCard2 =
           NewsCard(index: index + startIndex, key: newsCardKey2);
       final NewsCard newsCard3 =
           NewsCard(index: index + startIndex, key: newsCardKey3);
-      return Container(
+      return SizedBox(
         //  color: Colors.red,
         height: 575, //25+  NewsCard$
         child: Row(
@@ -305,7 +307,7 @@ class _NewsSectionState extends State<NewsSection>
                 duration: const Duration(seconds: 1),
                 child: ListView(
                   children: [
-                    Container(
+                    const SizedBox(
                       height: 25,
                       width: 0,
                       //  color: Colors.yellow,
@@ -316,7 +318,7 @@ class _NewsSectionState extends State<NewsSection>
                         // padding: const EdgeInsets.all(20),
                         color: Colors.grey[200],
                         child: Html(
-                          data: _newsProvider
+                          data: newsProvider
                               .allNews[index + startIndex].newsMainText,
                           style: {
                             "h1": Style(
@@ -342,8 +344,8 @@ class _NewsSectionState extends State<NewsSection>
       );
     }
 
-    double width = MediaQuery.of(context).size.width;
-    final _newsProvider = context.watch<NewsProvider>();
+    final double width = MediaQuery.of(context).size.width;
+    final newsProvider = context.watch<NewsProvider>();
     return Align(
       child: Container(
         alignment: Alignment.center,
@@ -377,7 +379,7 @@ class _NewsSectionState extends State<NewsSection>
                 )
               else
                 NewsWidget(
-                  news: _newsProvider.allNews,
+                  news: newsProvider.allNews,
                   startIndex: startIndex,
                 )
             else

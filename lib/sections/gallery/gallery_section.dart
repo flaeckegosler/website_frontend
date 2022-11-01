@@ -38,7 +38,11 @@ class _GallerySectionState extends State<GallerySection> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchGalleryList();
+    if (Provider.of<PicturesProvider>(context, listen: false)
+        .allPictures
+        .isEmpty) {
+      fetchGalleryList();
+    }
   }
 
   Widget buildGridView(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:website_frontend/sections/footer/pages/history.dart';
 
 enum SocialMedia { facebook, twitter, email, linkedin, whatsapp, instagram }
 
@@ -93,9 +92,9 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () => GoRouter.of(context).push('/geschichte'),
+              onTap: () => GoRouter.of(context).push('/sujet'),
               child: const Text(
-                "Geschichte",
+                "Sujet",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -255,7 +254,7 @@ class BottomBar extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      "Geschichte",
+                      "Sujet",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
