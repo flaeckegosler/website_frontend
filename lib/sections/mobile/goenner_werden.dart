@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 
-class MitgliedWerden extends StatelessWidget {
-  const MitgliedWerden({Key? key}) : super(key: key);
+class GoennerWerden extends StatelessWidget {
+  const GoennerWerden({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,32 +28,19 @@ class MitgliedWerden extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Mitglied werden!',
+                'Gönner werden!',
                 style: TextStyle(
                   fontSize: 26,
                   fontFamily: 'Gosler',
                 ),
               ),
               RichText(
-                text: TextSpan(
+                text: const TextSpan(
                   children: [
-                    const TextSpan(
-                      text:
-                          "Wenn auch du gerne mit uns die Fasnacht verbringen möchtest und dir bewusst bist, dass ein Gosler nicht nur Party macht sondern zuerst eine lange Zeit hart dafür arbeitet (ganz nach dem Motto: zuerst die Arbeit, dann das Vergnügen), so melde Dich doch bei unserem Präsident per ",
-                    ),
                     TextSpan(
-                      text: "E-Mail",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                      ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = (() {
-                          launch(
-                              "mailto:werde_ein@flaeckegosler.ch?subject=Mitglied%20werden%20Fläckegosler&body=Salüü%20Janick,");
-                        }),
+                      text:
+                          "Musikalische Unterhaltung und ein feines Z’nacht, inkl. bekannter Küchenmannschaft und langjährig geschultem, “ISO-zertifiziertem” Personal an Flaschenöffner und Korkenzieher, lassen keine Wünsche offen. Und das Ganze hat noch den positiven Nebeneffekt, dass du einen äusserst junggebliebenen, innovativen Verein in seinem Tun unterstützt.",
                     ),
-                    TextSpan(text: "."),
                   ],
                 ),
               ),
@@ -61,10 +49,12 @@ class MitgliedWerden extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                  text: "» Bewerbungsformular.pdf",
+                  text: "» Mehr erfahren!",
                   style: TextStyle(
-                    shadows: [
-                      Shadow(color: Colors.black, offset: Offset(0, -5))
+                    shadows: const [
+                      Shadow(
+                        offset: Offset(0, -5),
+                      ),
                     ],
                     color: Colors.transparent,
                     decoration: TextDecoration.underline,
@@ -74,8 +64,7 @@ class MitgliedWerden extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = (() {
-                      launch(
-                          "https://flaeckegosler.ch/site/assets/files/1029/kandidatenformular23.pdf");
+                      GoRouter.of(context).push('/goenner');
                     }),
                 ),
               ),
