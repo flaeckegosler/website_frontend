@@ -73,14 +73,19 @@ class Goenner extends StatelessWidget {
                   recognizer: TapGestureRecognizer()
                     ..onTap = (() {
                       launch(
-                          "mailto:joannazemp+gosler@gmail.com?subject=Gönner%20werden%20Fläckegosler&body=Hallo%20Joanna,");
+                        "mailto:joannazemp+gosler@gmail.com?subject=Gönner%20werden%20Fläckegosler&body=Hallo%20Joanna,",
+                      );
                     }),
                 ),
-                TextSpan(
-                    text:
-                        ", damit wir dich mit näheren Infos und dem Einzahlungsschein ausrüsten können. Vielen Dank!"),
+                const TextSpan(
+                  text:
+                      ", damit wir dich mit näheren Infos und dem Einzahlungsschein ausrüsten können. Vielen Dank!",
+                ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 10,
           ),
         ],
       ),
