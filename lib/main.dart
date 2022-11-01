@@ -9,8 +9,8 @@ import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
-import 'package:website_frontend/sections/footer/pages/history.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
+import 'package:website_frontend/sections/footer/pages/sujet.dart';
 import 'package:website_frontend/sections/member/simple_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
 
@@ -46,9 +46,9 @@ class MyApp extends StatelessWidget {
         },
       ),
       GoRoute(
-        path: '/geschichte',
+        path: '/sujet',
         builder: (BuildContext context, GoRouterState state) {
-          return HistoryPage();
+          return SujetPage();
         },
       ),
       GoRoute(
