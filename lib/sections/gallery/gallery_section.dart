@@ -42,6 +42,9 @@ class _GallerySectionState extends State<GallerySection> {
         .allPictures
         .isEmpty) {
       fetchGalleryList();
+    } else {
+      _selectedGallery =
+          Provider.of<PicturesProvider>(context, listen: false).allPictures[0];
     }
   }
 
