@@ -115,6 +115,9 @@ class Goenner extends StatelessWidget {
                 "Mittendrin oder zumindest ganz Nahe dran!",
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Container(
               padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
               child: const Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -229,7 +230,7 @@ class BottomBar extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 100,
+              height: 50,
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -237,58 +238,92 @@ class BottomBar extends StatelessWidget {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Ehrenmitglieder",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(2.5, 2.5),
-                            blurRadius: 5.0,
-                            color: Color.fromARGB(255, 0, 0, 1),
-                          ),
-                        ],
+                  children: [
+                    InkWell(
+                      onTap: () =>
+                          GoRouter.of(context).push('/ehrenmitglieder'),
+                      child: const Text(
+                        "Ehrenmitglieder",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      "Sujet",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(2.5, 2.5),
-                            blurRadius: 5.0,
-                            color: Color.fromARGB(255, 0, 0, 1),
-                          ),
-                        ],
+                    InkWell(
+                      onTap: () => GoRouter.of(context).push('/goenner'),
+                      child: const Text(
+                        "Gönner",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      "Sponsoring",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(2.5, 2.5),
-                            blurRadius: 5.0,
-                            color: Color.fromARGB(255, 0, 0, 1),
-                          ),
-                        ],
+                    InkWell(
+                      onTap: () => GoRouter.of(context).push('/sujet'),
+                      child: const Text(
+                        "Sujet",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () => GoRouter.of(context).push('/kleiderverkauf'),
+                      child: const Text(
+                        "Kleiderverkauf",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    )
                   ],
                 ),
                 SizedBox(
