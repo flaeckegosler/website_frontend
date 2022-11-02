@@ -20,7 +20,7 @@ class Goenner extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 10, left: 20),
       child: const Text(
-        "Bild: Der legendäre Gönnerauftritts der Fasnacht 2020!",
+        "Bild: Der legendäre Gönnerauftritt der Fasnacht 2020!",
         style: TextStyle(color: Colors.grey, fontSize: 10),
       ),
     );
@@ -73,7 +73,7 @@ class Goenner extends StatelessWidget {
                   recognizer: TapGestureRecognizer()
                     ..onTap = (() {
                       launch(
-                        "mailto:joannazemp+gosler@gmail.com?subject=Gönner%20werden%20Fläckegosler&body=Hallo%20Joanna,",
+                        "mailto:joannazemp%2Bgosler@gmail.com?subject=Gönner%20werden%20Fläckegosler&body=Hallo%20Joanna,",
                       );
                     }),
                 ),
@@ -114,6 +114,9 @@ class Goenner extends StatelessWidget {
               child: const TitleDefault(
                 "Mittendrin oder zumindest ganz Nahe dran!",
               ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Container(
               padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:website_frontend/sections/news/mobile/title_default.dart';
 
 class Kleiderverkauf extends StatelessWidget {
@@ -17,7 +16,7 @@ class Kleiderverkauf extends StatelessWidget {
 
   Widget _buildImageDescription() {
     return Container(
-      padding: const EdgeInsets.only(top: 10, left: 30, right: 20),
+      padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
       child: const Text(
         "Unser Sujet Kobolde des Winters!",
         style: TextStyle(color: Colors.grey, fontSize: 10),
@@ -28,9 +27,8 @@ class Kleiderverkauf extends StatelessWidget {
   Widget _buildMainText() {
     return Container(
       padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
-      child: Html(
-        data:
-            "Haben wir mit unseren Sujets euer Interesse geweckt? Unser Materialverwalter Manuel Mühlebach steht für weitere Auskünfte (Besichtigungstermin, Verkaufspreis etc.) gerne zur Verfügung.",
+      child: const Text(
+        "Haben wir mit unseren Sujets euer Interesse geweckt? Unser Materialverwalter Manuel Mühlebach steht für weitere Auskünfte (Besichtigungstermin, Verkaufspreis etc.) gerne zur Verfügung.",
       ),
     );
   }
@@ -56,11 +54,16 @@ class Kleiderverkauf extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20.0, left: 20, right: 20),
               child: const TitleDefault("Kobole des Winters"),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Container(
               padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
-              child: Html(
-                data:
-                    "<b>Max. 17 Stk. Kleider (Jacke, Hose) mit Grind und Tambi-Kleid/Grind</b>",
+              child: const Text(
+                "Max. 17 Stk. Kleider (Jacke, Hose) mit Grind und Tambi-Kleid/Grind",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             _buildMainText(),

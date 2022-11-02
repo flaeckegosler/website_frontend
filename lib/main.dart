@@ -8,6 +8,7 @@ import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/pictures_provider.dart';
+import 'package:website_frontend/provider/sujet_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
 import 'package:website_frontend/sections/footer/pages/goenner.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
@@ -83,6 +84,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: EhrenMitgliederProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: SujetProvider(),
         ),
       ],
       child: MaterialApp.router(

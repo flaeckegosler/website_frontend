@@ -7,8 +7,7 @@ import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
-
-import 'mobile/news_widget.dart';
+import 'package:website_frontend/sections/news/mobile/news_widget.dart';
 
 class NewsSection extends StatefulWidget {
   @override
@@ -147,6 +146,7 @@ class _NewsSectionState extends State<NewsSection>
   void previous() {
     if (startIndex > 2) {
       setState(() {
+        NewsWidget;
         startIndex = startIndex - 3;
       });
     }
@@ -154,6 +154,7 @@ class _NewsSectionState extends State<NewsSection>
 
   void next() {
     setState(() {
+      NewsWidget;
       startIndex = startIndex + 3;
     });
   }
