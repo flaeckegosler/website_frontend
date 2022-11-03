@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/sujet.dart';
 import 'package:website_frontend/provider/sujet_provider.dart';
+import 'package:website_frontend/sections/footer/bottom_bar.dart';
 
 class SujetPage extends StatelessWidget {
   final List<String> column = [
@@ -29,13 +31,32 @@ class SujetPage extends StatelessWidget {
       return dataRowResult;
     }
 
+    List<DataColumn> getColumns() {
+      final double width = MediaQuery.of(context).size.width;
+      final List<DataColumn> dataColumnResult = [
+        DataColumn(
+          label: SizedBox(
+            width: width * 0.2,
+            child: const Text("Jahr"),
+          ),
+        ),
+        DataColumn(
+          label: SizedBox(
+            width: width * 0.8,
+            child: const Text("Sujetname"),
+          ),
+        ),
+      ];
+      return dataColumnResult;
+    }
+
     Widget buildDataTable() {
       final DataTable dataTable = DataTable(
         headingRowColor: MaterialStateProperty.all(Colors.grey[300]),
         headingTextStyle: const TextStyle(fontWeight: FontWeight.bold),
         dataRowHeight: 35,
         sortAscending: false,
-        columns: getColumns(column),
+        columns: getColumns(),
         rows: getRows(),
       );
       return dataTable;
@@ -45,21 +66,31 @@ class SujetPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
       ),
-      body: SizedBox.expand(
-        child: buildDataTable(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0, right: 10),
+              child: SectionTitle(
+                title: "Sujet",
+                subTitle: "Wir sind nicht seit gestern dabei!",
+                color: Color.fromRGBO(147, 90, 162, 1),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            buildDataTable(),
+            Container(
+              height: 400,
+              child: const BottomBar(),
+            ),
+          ],
+        ),
       ),
     );
-  }
-
-  List<DataColumn> getColumns(List<String> columns) {
-    final List<DataColumn> dataColumnResult = [];
-    for (int i = 0; i < columns.length; i++) {
-      dataColumnResult.add(
-        DataColumn(
-          label: Text(columns[i]),
-        ),
-      );
-    }
-    return dataColumnResult;
   }
 }
