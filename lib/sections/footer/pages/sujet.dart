@@ -84,6 +84,9 @@ class SujetPage extends StatelessWidget {
               height: 20,
             ),
             buildDataTable(),
+            SizedBox(
+              height: 40,
+            ),
             Container(
               height: 400,
               child: const BottomBar(),

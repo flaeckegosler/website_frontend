@@ -1,14 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/ehrenmitglied.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
+import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/footer/configuration/MyCustomScrollBehavior.dart';
 
-class EhrenMitgliederPage extends StatelessWidget {
+class EhrenMitgliederPage extends StatefulWidget {
+  @override
+  State<EhrenMitgliederPage> createState() => _EhrenMitgliederPageState();
+}
+
+class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    if (Provider.of<EhrenMitgliederProvider>(context, listen: false)
+        .allEhrenMitglieder
+        .isEmpty) {
+      fetchEhrenMitgliederAsync();
+    }
+    super.initState();
+  }
+
+  //Fetch all Listings
+  Future fetchEhrenMitgliederAsync() async {
+    setState(() {
+      _isLoading = true;
+    });
+    await Provider.of<EhrenMitgliederProvider>(context, listen: false)
+        .readEhrenMitgliederJson();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   final List<String> column = [
-    "Vorname",
-    "Nachname",
+    "Name",
     "Ort",
+    "Aktivehrenmitglied",
     "Anerkennungsjahr"
   ];
 
@@ -18,17 +49,15 @@ class EhrenMitgliederPage extends StatelessWidget {
         cells.map((data) => DataCell(Text('$data'))).toList();
 
     List<DataRow> getRows() {
-      Provider.of<EhrenMitgliederProvider>(context, listen: false)
-          .createMembers();
-      final _ehrenMigliedProvider = context.watch<EhrenMitgliederProvider>();
-      List<EhrenMitglied> results = _ehrenMigliedProvider.allEhrenMitglieder;
+      List<EhrenMitglied> results =
+          context.watch<EhrenMitgliederProvider>().allEhrenMitglieder;
       final List<DataRow> dataRowResult = [];
       for (int i = 0; i < results.length; i++) {
         final cells = [];
-        cells.add(results[i].firstName);
-        cells.add(results[i].lastName);
-        cells.add(results[i].town);
-        cells.add(results[i].recognationYear.toString());
+        cells.add(results[i].name);
+        cells.add(results[i].ortschaft);
+        cells.add(results[i].isAktivEhrenMitglied.toString());
+        cells.add(results[i].anerkennungsjahr);
 
         dataRowResult.add(DataRow(cells: getCells(cells)));
       }
@@ -68,8 +97,46 @@ class EhrenMitgliederPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
       ),
-      body: Container(
-        child: buildDataTable(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0, right: 10),
+              child: SectionTitle(
+                title: "Ehrenmitglieder",
+                subTitle: "Ehre dem Ehre gebührt!",
+                color: Color.fromRGBO(147, 90, 162, 1),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: _isLoading
+                  ? SizedBox(
+                      height: 300,
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          color: Color.fromRGBO(147, 90, 162, 1),
+                        ),
+                      ),
+                    )
+                  : buildDataTable(),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            _isLoading
+                ? SizedBox()
+                : Container(
+                    height: 400,
+                    child: const BottomBar(),
+                  ),
+          ],
+        ),
       ),
     );
   }
