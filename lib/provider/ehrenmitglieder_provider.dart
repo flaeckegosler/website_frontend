@@ -1,45 +1,26 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:website_frontend/models/ehrenmitglied.dart';
 
 class EhrenMitgliederProvider with ChangeNotifier {
   final List<EhrenMitglied> _ehrenMitglieder = [];
 
   List<EhrenMitglied> get allEhrenMitglieder {
-    _ehrenMitglieder.sort((a, b) => a.lastName.compareTo(b.lastName));
+    _ehrenMitglieder.sort((a, b) => a.name.compareTo(b.name));
     return List.from(_ehrenMitglieder);
   }
 
-  void createMembers() {
+  List<EhrenMitglied> ehrenMitgliedFromJson(String str) =>
+      List<EhrenMitglied>.from(
+          json.decode(str).map((x) => EhrenMitglied.fromJson(x)));
+
+  Future<void> readEhrenMitgliederJson() async {
+    final String response =
+        await rootBundle.loadString('assets/jsons/ehrenmitglieder.json');
     if (_ehrenMitglieder.isEmpty) {
-      _ehrenMitglieder.add(
-        EhrenMitglied(
-          aktivEhrenMitglied: true,
-          firstName: "Carmen",
-          lastName: "Andermatt",
-          town: "Luzern",
-          recognationYear: "2023",
-        ),
-      );
-
-      _ehrenMitglieder.add(
-        EhrenMitglied(
-          aktivEhrenMitglied: true,
-          firstName: "Marco",
-          lastName: "Andermatt",
-          town: "Rothenburg",
-          recognationYear: "2023",
-        ),
-      );
-
-      _ehrenMitglieder.add(
-        EhrenMitglied(
-          aktivEhrenMitglied: true,
-          firstName: "André",
-          lastName: "Aregger",
-          town: "Rothenburg",
-          recognationYear: "-",
-        ),
-      );
+      _ehrenMitglieder.addAll(ehrenMitgliedFromJson(response));
     }
   }
 }

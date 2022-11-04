@@ -13,6 +13,14 @@ class SujetProvider with ChangeNotifier {
     if (_sujet.isEmpty) {
       _sujet.add(
         Sujet(
+          name: "Gründungsjahr 🥳",
+          jahr: "1989",
+          vierzeiler: "-",
+        ),
+      );
+
+      _sujet.add(
+        Sujet(
           name: "Fläckegosler",
           jahr: "1990",
           vierzeiler: "-",
