@@ -12,7 +12,7 @@ class EhrenMitgliederPage extends StatefulWidget {
 }
 
 class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
-  bool _isLoading = true;
+  bool _isLoading = false;
 
   @override
   void initState() {
