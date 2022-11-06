@@ -12,6 +12,24 @@ class EhrenMitgliederProvider with ChangeNotifier {
     return List.from(_ehrenMitglieder);
   }
 
+  List<EhrenMitglied> get allAktivEhrenMitglieder {
+    List<EhrenMitglied> _aktivEhrenmitglieder = [];
+    _aktivEhrenmitglieder = _ehrenMitglieder
+        .where((element) => element.isAktivEhrenMitglied == true)
+        .toList();
+    _aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
+    return List.from(_aktivEhrenmitglieder);
+  }
+
+  List<EhrenMitglied> get allNichtAktivEhrenMitglieder {
+    List<EhrenMitglied> _aktivEhrenmitglieder = [];
+    _aktivEhrenmitglieder = _ehrenMitglieder
+        .where((element) => element.isAktivEhrenMitglied == false)
+        .toList();
+    _aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
+    return List.from(_aktivEhrenmitglieder);
+  }
+
   List<EhrenMitglied> ehrenMitgliedFromJson(String str) =>
       List<EhrenMitglied>.from(
           json.decode(str).map((x) => EhrenMitglied.fromJson(x)));
