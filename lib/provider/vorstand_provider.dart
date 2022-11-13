@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:website_frontend/models/Vorstand.dart';
+import 'package:website_frontend/models/vorstand.dart';
 
 class VorstandProvider with ChangeNotifier {
   final List<Vorstand> _vorstand = [];
