@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
-import 'package:website_frontend/models/Vorstand.dart';
+import 'package:website_frontend/models/vorstand.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/footer/configuration/MyCustomScrollBehavior.dart';
