@@ -93,6 +93,27 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
+              onTap: () => launch("https://expedition-rothenburg.ch/"),
+              child: const Text(
+                "Expedition",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            InkWell(
               onTap: () => GoRouter.of(context).push('/goenner'),
               child: const Text(
                 "Gönner",
@@ -138,6 +159,27 @@ class BottomBar extends StatelessWidget {
               onTap: () => GoRouter.of(context).push('/kleiderverkauf'),
               child: const Text(
                 "Kleiderverkauf",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            InkWell(
+              onTap: () => GoRouter.of(context).push('/vorstand'),
+              child: const Text(
+                "Vorstand seit 1989",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -262,6 +304,27 @@ class BottomBar extends StatelessWidget {
                       height: 10,
                     ),
                     InkWell(
+                      onTap: () => launch("https://expedition-rothenburg.ch/"),
+                      child: const Text(
+                        "Expedition",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
                       onTap: () => GoRouter.of(context).push('/goenner'),
                       child: const Text(
                         "Gönner",
@@ -323,7 +386,28 @@ class BottomBar extends StatelessWidget {
                     ),
                     const SizedBox(
                       height: 50,
-                    )
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () => GoRouter.of(context).push('/vorstand'),
+                      child: const Text(
+                        "Vorstand seit 1989",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
