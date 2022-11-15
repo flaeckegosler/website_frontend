@@ -32,17 +32,14 @@ class SujetPage extends StatelessWidget {
     }
 
     List<DataColumn> getColumns() {
-      final double width = MediaQuery.of(context).size.width;
       final List<DataColumn> dataColumnResult = [
         DataColumn(
           label: SizedBox(
-            width: width * 0.2,
             child: const Text("Jahr"),
           ),
         ),
         DataColumn(
           label: SizedBox(
-            width: width * 0.8,
             child: const Text("Sujetname"),
           ),
         ),
@@ -69,23 +66,32 @@ class SujetPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 8.0, right: 10),
-              child: SectionTitle(
-                title: "Sujet",
-                subTitle: "Wir sind nicht seit gestern dabei!",
-                color: Color.fromRGBO(147, 90, 162, 1),
+            Center(
+              child: SizedBox(
+                width: 430,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8.0, right: 10),
+                      child: SectionTitle(
+                        title: "Sujet",
+                        subTitle: "Wir sind nicht seit gestern dabei!",
+                        color: Color.fromRGBO(147, 90, 162, 1),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    buildDataTable(),
+                    SizedBox(
+                      height: 40,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildDataTable(),
-            SizedBox(
-              height: 40,
             ),
             Container(
               height: 400,
