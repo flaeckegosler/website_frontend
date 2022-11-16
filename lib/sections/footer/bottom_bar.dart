@@ -385,9 +385,6 @@ class BottomBar extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 50,
-                    ),
-                    const SizedBox(
                       height: 10,
                     ),
                     InkWell(
@@ -407,6 +404,9 @@ class BottomBar extends StatelessWidget {
                           ],
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 50,
                     ),
                   ],
                 ),
