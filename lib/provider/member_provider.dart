@@ -9,6 +9,14 @@ class MemberProvider with ChangeNotifier {
     return List.from(_member);
   }
 
+  String getPictureLink(firstName, lastName) {
+    return _member
+        .firstWhere((element) =>
+            (element.firstName.toString().toLowerCase() == firstName &&
+                element.lastName.toString().toLowerCase() == lastName))
+        .pictureUrlMax;
+  }
+
   List<Member> getMemberOfInstrument(String instrument) {
     final List<Member> _instrument = [];
     for (final element in _member) {

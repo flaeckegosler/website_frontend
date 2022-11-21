@@ -15,7 +15,8 @@ import 'package:website_frontend/sections/footer/pages/goenner.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
 import 'package:website_frontend/sections/footer/pages/sujet.dart';
 import 'package:website_frontend/sections/footer/pages/vorstand_page.dart';
-import 'package:website_frontend/sections/member/simple_photo_view_page.dart';
+import 'package:website_frontend/sections/member/galerie_photo_view_page.dart';
+import 'package:website_frontend/sections/member/mitglieder_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
 
 void main() {
@@ -38,15 +39,27 @@ class MyApp extends StatelessWidget {
         },
       ),
       GoRoute(
-        path: '/image',
+        path: '/mitglied/:firstName/:lastName',
         builder: (BuildContext context, GoRouterState state) {
-          return SimplePhotoViewPage(state.extra! as String);
+          return MitgliederPhotoViewPage(
+            state.params["firstName"]!,
+            state.params["lastName"]!,
+          );
         },
       ),
       GoRoute(
         path: '/ehrenmitglieder',
         builder: (BuildContext context, GoRouterState state) {
           return EhrenMitgliederPage();
+        },
+      ),
+      GoRoute(
+        path: '/galerie/:albumTitle/:pictureName',
+        builder: (BuildContext context, GoRouterState state) {
+          return GaleriePhotoViewPage(
+            state.params["albumTitle"]!,
+            state.params["pictureName"]!,
+          );
         },
       ),
       GoRoute(
