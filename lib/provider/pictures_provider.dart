@@ -11,6 +11,13 @@ class PicturesProvider with ChangeNotifier {
     return List.from(_pictures);
   }
 
+  SpecificImage getGalleryLink(albumTitle, pictureName) {
+    Pictures selectedGalerie =
+        _pictures.firstWhere((element) => (element.albumTitle == albumTitle));
+    return selectedGalerie.specificImage
+        .firstWhere((element) => element.pictureName == pictureName);
+  }
+
   Future<void> fetchPicturesList() async {
     final url = Uri.parse('https://flaeckegosler.ch/app/pics-to-json/');
     final response = await http.get(

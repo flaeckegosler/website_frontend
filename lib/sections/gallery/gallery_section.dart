@@ -65,8 +65,9 @@ class _GallerySectionState extends State<GallerySection> {
           ),
           itemBuilder: (context, index2) {
             if (index2 + (index * (isMobile ? 6 : 8)) < imageList.length) {
-              return ImageCard(
+              return GalerieImageCard(
                 imageData: imageList[index2 + (index * (isMobile ? 6 : 8))],
+                albumTitle: this._selectedGallery.albumTitle,
               );
             } else {
               return Container();
