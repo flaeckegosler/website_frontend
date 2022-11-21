@@ -95,55 +95,59 @@ class _MemberSectionState extends State<MemberSection> {
     }
     return Container(
       padding: const EdgeInsets.all(5),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15.0),
-            child: Center(
-              child: Image.network(
-                member.pictureUrl,
-                fit: BoxFit.cover,
+      child: InkWell(
+        onTap: () =>
+            GoRouter.of(context).push('/image', extra: member.pictureUrlMax),
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15.0),
+              child: Center(
+                child: Image.network(
+                  member.pictureUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  member.firstName,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(2.5, 2.5),
-                        blurRadius: 5.0,
-                        color: Color.fromARGB(255, 0, 0, 1),
-                      ),
-                    ],
+            Container(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    member.firstName,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.5, 2.5),
+                          blurRadius: 5.0,
+                          color: Color.fromARGB(255, 0, 0, 1),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Text(
-                  aemtli,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(2.5, 2.5),
-                        blurRadius: 5.0,
-                        color: Color.fromARGB(255, 0, 0, 1),
-                      ),
-                    ],
+                  Text(
+                    aemtli,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.5, 2.5),
+                          blurRadius: 5.0,
+                          color: Color.fromARGB(255, 0, 0, 1),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
