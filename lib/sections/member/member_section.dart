@@ -44,8 +44,10 @@ class _MemberSectionState extends State<MemberSection> {
     return Container(
       padding: const EdgeInsets.all(5),
       child: InkWell(
-        onTap: () =>
-            GoRouter.of(context).push('/image', extra: member.pictureUrlMax),
+        onTap: () => context.push(
+          '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
+          extra: member.pictureUrlMax,
+        ),
         child: Stack(
           children: [
             ClipRRect(
@@ -96,8 +98,9 @@ class _MemberSectionState extends State<MemberSection> {
     return Container(
       padding: const EdgeInsets.all(5),
       child: InkWell(
-        onTap: () =>
-            GoRouter.of(context).push('/image', extra: member.pictureUrlMax),
+        onTap: () => GoRouter.of(context).push(
+            '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
+            extra: member.pictureUrlMax),
         child: Stack(
           children: [
             ClipRRect(

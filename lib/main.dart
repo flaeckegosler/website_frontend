@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         },
       ),
       GoRoute(
-        path: '/image',
+        path: '/mitglied/:firstName/:lastName',
         builder: (BuildContext context, GoRouterState state) {
           return SimplePhotoViewPage(state.extra! as String);
         },
