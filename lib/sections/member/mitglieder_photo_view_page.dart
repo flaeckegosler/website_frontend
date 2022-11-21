@@ -2,49 +2,43 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:provider/provider.dart';
-import 'package:website_frontend/models/pictures.dart';
-import 'package:website_frontend/provider/pictures_provider.dart';
+import 'package:website_frontend/provider/member_provider.dart';
 
-class GaleriePhotoViewPage extends StatefulWidget {
-  final String albumTitle;
-  final String pictureName;
+class MitgliederPhotoViewPage extends StatefulWidget {
+  final String firstName;
+  final String lastName;
 
-  const GaleriePhotoViewPage(this.albumTitle, this.pictureName);
+  const MitgliederPhotoViewPage(this.firstName, this.lastName);
 
   @override
-  _GaleriePhotoViewPageState createState() => _GaleriePhotoViewPageState();
+  _MitgliederPhotoViewPageState createState() =>
+      _MitgliederPhotoViewPageState();
 }
 
-class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
+class _MitgliederPhotoViewPageState extends State<MitgliederPhotoViewPage> {
   late PhotoViewController controller;
-  late SpecificImage specificImage;
-  bool _isLoading = false;
+  late String galleryLink;
+  bool isLoading = false;
 
   @override
   void initState() {
     super.initState();
     setState(() {
-      _isLoading = true;
+      isLoading = true;
     });
-    if (Provider.of<PicturesProvider>(context, listen: false)
-        .allPictures
+    if (Provider.of<MemberProvider>(context, listen: false)
+        .allMembers
         .isEmpty) {
-      Provider.of<PicturesProvider>(context, listen: false)
-          .fetchPicturesList()
-          .then((value) => specificImage =
-              Provider.of<PicturesProvider>(context, listen: false)
-                  .getGalleryLink(
-                      this.widget.albumTitle, this.widget.pictureName))
-          .then((value) => setState(() {
-                _isLoading = false;
-              }));
+      Provider.of<MemberProvider>(context, listen: false).createMembers();
+      galleryLink = Provider.of<MemberProvider>(context, listen: false)
+          .getPictureLink(this.widget.firstName, this.widget.lastName);
     } else {
-      specificImage = Provider.of<PicturesProvider>(context, listen: false)
-          .getGalleryLink(this.widget.albumTitle, this.widget.pictureName);
-      setState(() {
-        _isLoading = false;
-      });
+      galleryLink = Provider.of<MemberProvider>(context, listen: false)
+          .getPictureLink(this.widget.firstName, this.widget.lastName);
     }
+    setState(() {
+      isLoading = false;
+    });
     controller = PhotoViewController();
   }
 
@@ -60,7 +54,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
       ),
-      body: _isLoading
+      body: isLoading
           ? Center(
               child: CircularProgressIndicator(
                 color: Color.fromRGBO(147, 90, 161, 1),
@@ -68,7 +62,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
             )
           : PhotoView(
               imageProvider: CachedNetworkImageProvider(
-                specificImage.pictureUrl,
+                galleryLink,
               ),
               loadingBuilder: (context, event) => const Center(
                 child: CircularProgressIndicator(
