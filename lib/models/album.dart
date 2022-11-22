@@ -1,4 +1,4 @@
-class Pictures {
+class Album {
   final String id;
   final String menuTitle;
   final String albumTitle;
@@ -7,7 +7,7 @@ class Pictures {
   final String dateFormatted;
   final List<SpecificImage> specificImage;
 
-  Pictures({
+  Album({
     required this.id,
     required this.menuTitle,
     required this.albumTitle,
@@ -19,10 +19,12 @@ class Pictures {
 }
 
 class SpecificImage {
+  final String pictureIndex;
   final String pictureName;
   final String pictureUrl;
 
   SpecificImage({
+    required this.pictureIndex,
     required this.pictureName,
     required this.pictureUrl,
   });

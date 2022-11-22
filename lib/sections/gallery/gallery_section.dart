@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:website_frontend/components/section_title.dart';
-import 'package:website_frontend/models/pictures.dart';
+import 'package:website_frontend/models/album.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
-import 'package:website_frontend/provider/pictures_provider.dart';
+import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/sections/gallery/image_card.dart';
 
 class GallerySection extends StatefulWidget {
@@ -18,7 +18,7 @@ class _GallerySectionState extends State<GallerySection> {
   int activeIndex = 0;
   final controller = CarouselController();
 
-  late Pictures _selectedGallery;
+  late Album _selectedGallery;
 
   //Fetch all Listings
   Future fetchGalleryList() async {
@@ -26,7 +26,7 @@ class _GallerySectionState extends State<GallerySection> {
       _isLoading = true;
     });
     await Provider.of<PicturesProvider>(context, listen: false)
-        .fetchPicturesList();
+        .fetchAlbumList();
     _selectedGallery =
         Provider.of<PicturesProvider>(context, listen: false).allPictures[0];
     setState(() {

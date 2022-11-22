@@ -7,7 +7,7 @@ import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
-import 'package:website_frontend/provider/pictures_provider.dart';
+import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/provider/sujet_provider.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
@@ -15,7 +15,7 @@ import 'package:website_frontend/sections/footer/pages/goenner.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
 import 'package:website_frontend/sections/footer/pages/sujet.dart';
 import 'package:website_frontend/sections/footer/pages/vorstand_page.dart';
-import 'package:website_frontend/sections/member/galerie_photo_view_page.dart';
+import 'package:website_frontend/sections/gallery/galerie_photo_view_page.dart';
 import 'package:website_frontend/sections/member/mitglieder_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
 
@@ -54,11 +54,11 @@ class MyApp extends StatelessWidget {
         },
       ),
       GoRoute(
-        path: '/galerie/:albumTitle/:pictureName',
+        path: '/galerie/:albumTitle/:pictureIndex',
         builder: (BuildContext context, GoRouterState state) {
           return GaleriePhotoViewPage(
             state.params["albumTitle"]!,
-            state.params["pictureName"]!,
+            state.params["pictureIndex"]!,
           );
         },
       ),
