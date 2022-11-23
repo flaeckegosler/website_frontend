@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:website_frontend/models/news_model.dart';
-import 'package:website_frontend/sections/news/mobile/news_card.dart';
 import 'package:website_frontend/sections/news/mobile/news_card_extended.dart';
 
 class NewsWidget extends StatelessWidget {
@@ -22,11 +21,7 @@ class NewsWidget extends StatelessWidget {
         shrinkWrap: true,
         physics: const ClampingScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
-          if (news[index].newsTags == '') {
-            return NewsCard(news[index + startIndex]);
-          } else {
-            return NewsCardExtended(news[index + startIndex]);
-          }
+          return NewsCardExtended(news[index + startIndex]);
         },
         itemCount: 3, //news.length
       );
