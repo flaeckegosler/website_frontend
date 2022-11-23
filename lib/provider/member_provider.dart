@@ -813,7 +813,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.420x0.jpg",
             instrument: "Drums",
-            vorstand: "Matierialverwalter",
+            vorstand: "Materialverwalter",
             expedition: "",
             muKo: "Schlag-Chef",
             sujetKommission: ""),

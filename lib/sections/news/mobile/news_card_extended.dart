@@ -104,7 +104,7 @@ class NewsCardExtended extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push('/news', extra: singleNews),
+      onTap: () => GoRouter.of(context).push('news', extra: singleNews),
       child: Padding(
         padding:
             const EdgeInsets.only(bottom: 7.5, top: 7.5, left: 10, right: 10),
@@ -122,8 +122,12 @@ class NewsCardExtended extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              buildRedakteurHomeNews(singleNews.newsCreatedBy),
-              _buildNewsTags(context),
+              (singleNews.newsTags == "")
+                  ? SizedBox()
+                  : buildRedakteurHomeNews(singleNews.newsCreatedBy),
+              (singleNews.newsTags == "")
+                  ? SizedBox()
+                  : _buildNewsTags(context),
               _buildTitle(),
               _buildAuthor(),
             ],
