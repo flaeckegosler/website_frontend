@@ -27,64 +27,68 @@ class MyApp extends StatelessWidget {
   final GoRouter _router = GoRouter(
     routes: <GoRoute>[
       GoRoute(
+        name: 'home',
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
           return HomeScreen();
         },
-      ),
-      GoRoute(
-        path: '/news',
-        builder: (BuildContext context, GoRouterState state) {
-          return SingleNews(state.extra! as News);
-        },
-      ),
-      GoRoute(
-        path: '/mitglied/:firstName/:lastName',
-        builder: (BuildContext context, GoRouterState state) {
-          return MitgliederPhotoViewPage(
-            state.params["firstName"]!,
-            state.params["lastName"]!,
-          );
-        },
-      ),
-      GoRoute(
-        path: '/ehrenmitglieder',
-        builder: (BuildContext context, GoRouterState state) {
-          return EhrenMitgliederPage();
-        },
-      ),
-      GoRoute(
-        path: '/galerie/:albumTitle/:pictureIndex',
-        builder: (BuildContext context, GoRouterState state) {
-          return GaleriePhotoViewPage(
-            state.params["albumTitle"]!,
-            state.params["pictureIndex"]!,
-          );
-        },
-      ),
-      GoRoute(
-        path: '/sujet',
-        builder: (BuildContext context, GoRouterState state) {
-          return SujetPage();
-        },
-      ),
-      GoRoute(
-        path: '/kleiderverkauf',
-        builder: (BuildContext context, GoRouterState state) {
-          return const Kleiderverkauf();
-        },
-      ),
-      GoRoute(
-        path: '/goenner',
-        builder: (BuildContext context, GoRouterState state) {
-          return const Goenner();
-        },
-      ),
-      GoRoute(
-        path: '/vorstand',
-        builder: (BuildContext context, GoRouterState state) {
-          return VorstandPage();
-        },
+        routes: <GoRoute>[
+          GoRoute(
+            path: 'news',
+            builder: (BuildContext context, GoRouterState state) {
+              return SingleNews(state.extra! as News);
+            },
+          ),
+          GoRoute(
+            path: 'mitglied/:firstName/:lastName',
+            builder: (BuildContext context, GoRouterState state) {
+              return MitgliederPhotoViewPage(
+                state.params["firstName"]!,
+                state.params["lastName"]!,
+              );
+            },
+          ),
+          GoRoute(
+            path: 'ehrenmitglieder',
+            builder: (BuildContext context, GoRouterState state) {
+              return EhrenMitgliederPage();
+            },
+          ),
+          GoRoute(
+            name: 'galerie',
+            path: 'galerie/:albumTitleRoute/:pictureIndex',
+            builder: (BuildContext context, GoRouterState state) {
+              return GaleriePhotoViewPage(
+                state.params["albumTitleRoute"]!,
+                state.params["pictureIndex"]!,
+              );
+            },
+          ),
+          GoRoute(
+            path: 'sujet',
+            builder: (BuildContext context, GoRouterState state) {
+              return SujetPage();
+            },
+          ),
+          GoRoute(
+            path: 'kleiderverkauf',
+            builder: (BuildContext context, GoRouterState state) {
+              return const Kleiderverkauf();
+            },
+          ),
+          GoRoute(
+            path: 'goenner',
+            builder: (BuildContext context, GoRouterState state) {
+              return const Goenner();
+            },
+          ),
+          GoRoute(
+            path: 'vorstand',
+            builder: (BuildContext context, GoRouterState state) {
+              return VorstandPage();
+            },
+          ),
+        ],
       ),
     ],
   );

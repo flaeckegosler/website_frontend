@@ -4,16 +4,27 @@ import 'package:go_router/go_router.dart';
 import 'package:website_frontend/models/album.dart';
 
 class GalerieImageCard extends StatelessWidget {
-  const GalerieImageCard({required this.albumTitle, required this.imageData});
+  const GalerieImageCard({
+    required this.albumTitleRoute,
+    required this.imageData,
+  });
 
   final SpecificImage imageData;
-  final String albumTitle;
+  final String albumTitleRoute;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context)
-          .push('/galerie/$albumTitle/${imageData.pictureIndex}'),
+      onTap: () => context.push(
+        //change to go to see route...
+        context.namedLocation(
+          'galerie',
+          params: <String, String>{
+            'albumTitleRoute': albumTitleRoute,
+            'pictureIndex': imageData.pictureIndex,
+          },
+        ),
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16.0),
         child: CachedNetworkImage(

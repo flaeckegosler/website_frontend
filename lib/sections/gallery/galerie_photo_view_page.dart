@@ -7,10 +7,10 @@ import 'package:website_frontend/models/album.dart';
 import 'package:website_frontend/provider/album_provider.dart';
 
 class GaleriePhotoViewPage extends StatefulWidget {
-  final String albumTitle;
+  final String albumTitleRoute;
   final String pictureIndex;
 
-  const GaleriePhotoViewPage(this.albumTitle, this.pictureIndex);
+  const GaleriePhotoViewPage(this.albumTitleRoute, this.pictureIndex);
 
   @override
   _GaleriePhotoViewPageState createState() => _GaleriePhotoViewPageState();
@@ -38,17 +38,18 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
           .then((value) => specificImage =
               Provider.of<PicturesProvider>(context, listen: false)
                   .getGalleryLink(
-                      this.widget.albumTitle, this.widget.pictureIndex))
+                      this.widget.albumTitleRoute, this.widget.pictureIndex))
           .then((value) => setState(() {
                 maxIndex = Provider.of<PicturesProvider>(context, listen: false)
-                    .getAmountOfPictures(widget.albumTitle);
+                    .getAmountOfPictures(widget.albumTitleRoute);
                 _isLoading = false;
               }));
     } else {
       specificImage = Provider.of<PicturesProvider>(context, listen: false)
-          .getGalleryLink(this.widget.albumTitle, this.widget.pictureIndex);
+          .getGalleryLink(
+              this.widget.albumTitleRoute, this.widget.pictureIndex);
       maxIndex = Provider.of<PicturesProvider>(context, listen: false)
-          .getAmountOfPictures(widget.albumTitle);
+          .getAmountOfPictures(widget.albumTitleRoute);
       setState(() {
         _isLoading = false;
       });
@@ -101,22 +102,36 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
       );
 
   void previous() {
-    print(maxIndex);
-
     if (startIndex > 2) {
       setState(() {
-        context.push('/galerie/${this.widget.albumTitle}/${startIndex - 1}');
+        String newIndex = (startIndex + 1).toString();
+        context.replace(
+          context.namedLocation(
+            'galerie',
+            params: <String, String>{
+              'albumTitleRoute': this.widget.albumTitleRoute,
+              'pictureIndex': "${startIndex - 1}",
+            },
+          ),
+        );
       });
     }
   }
 
   void next() {
-    setState(() {
-      print(maxIndex);
-      if (startIndex < maxIndex) {
-        context.push('/galerie/${this.widget.albumTitle}/${startIndex + 1}');
-      }
-    });
+    if (startIndex < maxIndex) {
+      setState(() {
+        context.replace(
+          context.namedLocation(
+            'galerie',
+            params: <String, String>{
+              'albumTitleRoute': this.widget.albumTitleRoute,
+              'pictureIndex': "${startIndex + 1}",
+            },
+          ),
+        );
+      });
+    }
   }
 
   @override
