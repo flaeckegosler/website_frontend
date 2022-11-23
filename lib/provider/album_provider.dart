@@ -11,18 +11,18 @@ class PicturesProvider with ChangeNotifier {
     return List.from(_albums);
   }
 
-  int getAmountOfPictures(String albumTitle) {
+  int getAmountOfPictures(String albumTitleRoute) {
     return int.parse(_albums
-        .where((element) => element.albumTitle == albumTitle)
+        .where((element) => element.albumTitleRoute == albumTitleRoute)
         .first
         .specificImage
         .last
         .pictureIndex);
   }
 
-  SpecificImage getGalleryLink(albumTitle, pictureIndex) {
-    Album selectedGalerie =
-        _albums.firstWhere((element) => (element.albumTitle == albumTitle));
+  SpecificImage getGalleryLink(albumTitleRoute, pictureIndex) {
+    Album selectedGalerie = _albums
+        .firstWhere((element) => (element.albumTitleRoute == albumTitleRoute));
     return selectedGalerie.specificImage.firstWhere((element) =>
         element.pictureIndex.toString() == pictureIndex.toString());
   }
@@ -60,6 +60,10 @@ class PicturesProvider with ChangeNotifier {
           id: picturesId.toString(),
           menuTitle: picturesData['menuTitle'] as String,
           albumTitle: picturesData['albumTitle'] as String,
+          albumTitleRoute: (picturesData['albumTitle'])
+              .toString()
+              .toLowerCase()
+              .replaceAll(" ", "-"),
           bodyText: picturesData['bodyText'] as String,
           dateUnix: picturesData['dateUnix'] as int,
           dateFormatted: picturesData['dateFormatted'] as String,

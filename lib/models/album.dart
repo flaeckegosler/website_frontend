@@ -2,6 +2,7 @@ class Album {
   final String id;
   final String menuTitle;
   final String albumTitle;
+  final String albumTitleRoute;
   final String bodyText;
   final int dateUnix;
   final String dateFormatted;
@@ -11,6 +12,7 @@ class Album {
     required this.id,
     required this.menuTitle,
     required this.albumTitle,
+    required this.albumTitleRoute,
     required this.bodyText,
     required this.dateUnix,
     required this.dateFormatted,

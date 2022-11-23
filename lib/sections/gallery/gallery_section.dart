@@ -67,7 +67,7 @@ class _GallerySectionState extends State<GallerySection> {
             if (index2 + (index * (isMobile ? 6 : 8)) < imageList.length) {
               return GalerieImageCard(
                 imageData: imageList[index2 + (index * (isMobile ? 6 : 8))],
-                albumTitle: this._selectedGallery.albumTitle,
+                albumTitleRoute: this._selectedGallery.albumTitleRoute,
               );
             } else {
               return Container();
