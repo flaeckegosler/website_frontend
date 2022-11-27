@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/news/mobile/title_default.dart';
 
 class Goenner extends StatelessWidget {
@@ -16,9 +18,9 @@ class Goenner extends StatelessWidget {
     );
   }
 
-  Widget _buildImageDescription() {
+  Widget _buildImageDescription({double leftPadding = 0}) {
     return Container(
-      padding: const EdgeInsets.only(top: 10, left: 20),
+      padding: EdgeInsets.only(top: 10, left: leftPadding),
       child: const Text(
         "Bild: Der legendäre Gönnerauftritt der Fasnacht 2020!",
         style: TextStyle(color: Colors.grey, fontSize: 10),
@@ -26,9 +28,9 @@ class Goenner extends StatelessWidget {
     );
   }
 
-  Widget _buildMainText() {
+  Widget _buildMainText({double leftPadding = 0}) {
     return Container(
-      padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
+      padding: EdgeInsets.only(top: 10.0, left: leftPadding, right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -105,31 +107,93 @@ class Goenner extends StatelessWidget {
           automaticallyImplyLeading: true,
           backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
         ),
-        body: ListView(
-          children: <Widget>[
-            _buildTitelBild(),
-            _buildImageDescription(),
-            Container(
-              padding: const EdgeInsets.only(top: 20.0, left: 20, right: 20),
-              child: const TitleDefault(
-                "Mittendrin oder zumindest ganz Nahe dran!",
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
-              child: const Text(
-                "Hörst Du gerne gepflegte, kakaphonische Klänge? Bist Du eine Person, die nicht nein sagen kann, wenn es darum geht, ein reichhaltiges Essen in guter Gesellschaft zu geniessen? Ist deine Lachmuskulatur für den Härtetest bereit?",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+        body: MediaQuery.of(context).size.width > 500
+            ? SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Center(
+                      child: Container(
+                        //  color: Colors.red,
+                        width: 480,
+
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 8.0, right: 10),
+                              child: SectionTitle(
+                                title: "Gönner",
+                                subTitle: "Unterstütze uns!",
+                                color: Color.fromRGBO(147, 90, 162, 1),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            _buildTitelBild(),
+                            _buildImageDescription(),
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(top: 20.0, right: 20),
+                              child: const TitleDefault(
+                                "Mittendrin oder zumindest ganz Nahe dran!",
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, right: 20),
+                              child: const Text(
+                                "Hörst Du gerne gepflegte, kakaphonische Klänge? Bist Du eine Person, die nicht nein sagen kann, wenn es darum geht, ein reichhaltiges Essen in guter Gesellschaft zu geniessen? Ist deine Lachmuskulatur für den Härtetest bereit?",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            _buildMainText(),
+                            SizedBox(
+                              height: 20,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    BottomBar(),
+                  ],
                 ),
+              )
+            : ListView(
+                children: <Widget>[
+                  _buildTitelBild(),
+                  _buildImageDescription(leftPadding: 20),
+                  Container(
+                    padding:
+                        const EdgeInsets.only(top: 20.0, left: 20, right: 20),
+                    child: const TitleDefault(
+                      "Mittendrin oder zumindest ganz Nahe dran!",
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding:
+                        const EdgeInsets.only(top: 10.0, left: 20, right: 20),
+                    child: const Text(
+                      "Hörst Du gerne gepflegte, kakaphonische Klänge? Bist Du eine Person, die nicht nein sagen kann, wenn es darum geht, ein reichhaltiges Essen in guter Gesellschaft zu geniessen? Ist deine Lachmuskulatur für den Härtetest bereit?",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  _buildMainText(leftPadding: 20),
+                ],
               ),
-            ),
-            _buildMainText(),
-          ],
-        ),
       ),
     );
   }
