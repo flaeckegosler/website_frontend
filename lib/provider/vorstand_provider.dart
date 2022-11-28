@@ -13,7 +13,7 @@ class VorstandProvider with ChangeNotifier {
   }
 
   List<Vorstand> VorstandFromJson(String str) =>
-      List<Vorstand>.from(json.decode(str).map((x) => Vorstand.fromJson(x as Map<String, String>)) as Iterable<dynamic>);
+      List<Vorstand>.from(json.decode(str).map((x) => Vorstand.fromJson(x as Map<String, dynamic>)) as Iterable<dynamic>);
 
   Future<void> readVorstandJson() async {
     final String response =

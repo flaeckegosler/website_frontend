@@ -53,10 +53,7 @@ class _MemberSectionState extends State<MemberSection> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Center(
-                child: Image.network(
-                  member.pictureUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: _buildMember(member),
               ),
             ),
             Container(
@@ -106,10 +103,7 @@ class _MemberSectionState extends State<MemberSection> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Center(
-                child: Image.network(
-                  member.pictureUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: _buildMember(member),
               ),
             ),
             Container(
@@ -154,6 +148,18 @@ class _MemberSectionState extends State<MemberSection> {
       ),
     );
   }
+
+
+Widget _buildMember(Member member) {
+  if (member.pictureUrl.contains("https://")) {
+  return Image.network(
+  member.pictureUrl,
+  fit: BoxFit.cover,);
+  } else {
+  return Image.asset(
+  member.pictureUrl,
+  fit: BoxFit.cover,);
+}}
 
   Picked_button_Instruments pickedButtonInstrument =
       Picked_button_Instruments.drums;
