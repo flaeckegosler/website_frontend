@@ -330,7 +330,7 @@ class _NewsSectionState extends State<NewsSection>
                             "p": Style(
                               fontFamily: 'serif',
                               padding: const EdgeInsets.all(1),
-                              fontSize: FontSize.em(1),
+                              fontSize: FontSize.medium,
                             ),
                           },
                         ),

@@ -76,6 +76,123 @@ class MemberProvider with ChangeNotifier {
     if (_member.isEmpty) {
       _member.add(
         Member(
+            firstName: "Cedric (Kandidat)",
+            lastName: "Egli",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Silja (Kandidatin)",
+            lastName: "Graf",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Jasmina (Kandidatin)",
+            lastName: "Hartenstein",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Fabio (Kandidat)",
+            lastName: "Wettstein",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Horn",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Adrian (Kandidat)",
+            lastName: "Muschietti",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Pascal (Kandidat)",
+            lastName: "Rachow",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Trompete",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Manuela (Kandidatin)",
+            lastName: "Najer",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Andri (Kandidat)",
+            lastName: "Wigger",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
+            firstName: "Joel (Kandidat)",
+            lastName: "Zeier",
+            pictureUrl: "assets/bild_kandidaten_2022.jpg",
+            pictureUrlMax: "assets/bild_kandidaten_2022.jpg",
+            instrument: "Posaune",
+            vorstand: "",
+            expedition: "",
+            muKo: "",
+            sujetKommission: ""),
+      );
+
+      _member.add(
+        Member(
             firstName: "Raphael",
             lastName: "Koch",
             pictureUrl:
