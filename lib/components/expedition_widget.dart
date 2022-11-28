@@ -11,7 +11,6 @@ class ExpeditionWidget extends StatelessWidget {
       height: 500,
       width: 1250,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
             child: Container(),

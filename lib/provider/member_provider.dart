@@ -9,7 +9,7 @@ class MemberProvider with ChangeNotifier {
     return List.from(_member);
   }
 
-  String getPictureLink(firstName, lastName) {
+  String getPictureLink(String firstName, String lastName) {
     return _member
         .firstWhere((element) =>
             (element.firstName.toString().toLowerCase() == firstName &&
@@ -18,25 +18,25 @@ class MemberProvider with ChangeNotifier {
   }
 
   List<Member> getMemberOfInstrument(String instrument) {
-    final List<Member> _instrument = [];
+    final List<Member> instrument = [];
     for (final element in _member) {
       if (element.instrument == instrument) {
-        _instrument.add(element);
+        instrument.add(element);
       }
     }
-    _instrument.sort((a, b) => a.lastName.compareTo(b.lastName));
-    return List.from(_instrument);
+    instrument.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(instrument);
   }
 
   List<Member> getMemberOfVorstand() {
-    final List<Member> _vorstand = [];
+    final List<Member> vorstand = [];
     for (final element in _member) {
       if (element.vorstand != "") {
-        _vorstand.add(element);
+        vorstand.add(element);
       }
     }
-    _vorstand.sort((a, b) => a.lastName.compareTo(b.lastName));
-    return List.from(_vorstand);
+    vorstand.sort((a, b) => a.lastName.compareTo(b.lastName));
+    return List.from(vorstand);
   }
 
   List<Member> getMemberOfExpedition() {

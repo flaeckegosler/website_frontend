@@ -1,6 +1,6 @@
 {
-    "name": "website_frontend",
-    "short_name": "website_frontend",
+    "name": "website_flaeckegosler",
+    "short_name": "website_flaeckegosler",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
