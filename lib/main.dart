@@ -124,6 +124,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           inputDecorationTheme: kDefaultInputDecorationTheme,
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          primaryColor: const Color.fromRGBO(147, 90, 162, 1),
         ),
       ),
     );
