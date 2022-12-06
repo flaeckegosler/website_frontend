@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/album.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/album_provider.dart';
+import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/sections/gallery/image_card.dart';
 
 class GallerySection extends StatefulWidget {
@@ -67,7 +67,7 @@ class _GallerySectionState extends State<GallerySection> {
             if (index2 + (index * (isMobile ? 6 : 8)) < imageList.length) {
               return GalerieImageCard(
                 imageData: imageList[index2 + (index * (isMobile ? 6 : 8))],
-                albumTitleRoute: this._selectedGallery.albumTitleRoute,
+                albumTitleRoute: _selectedGallery.albumTitleRoute,
               );
             } else {
               return Container();
@@ -76,30 +76,27 @@ class _GallerySectionState extends State<GallerySection> {
     );
   }
 
-  Widget buildCarousel(dynamic _pictureProvider, bool isMobile) {
+  Widget buildCarousel(dynamic pictureProvider, bool isMobile) {
     int divider;
     isMobile ? divider = 6 : divider = 8;
     final double width = MediaQuery.of(context).size.width;
-    return Container(
-      // color: Colors.red,
-      child: CarouselSlider.builder(
-        carouselController: controller,
-        options: CarouselOptions(
-          aspectRatio: width > 1250 ? (2 / 1) : (1 / 1.5),
-          autoPlay: true,
-          viewportFraction: 1,
-          enableInfiniteScroll: false,
-          autoPlayInterval: const Duration(seconds: 7),
-          autoPlayAnimationDuration: const Duration(seconds: 4),
-          onPageChanged: (index, reason) => {
-            setState(() => activeIndex = index),
-          },
-        ),
-        itemCount: (_selectedGallery.specificImage.length / divider).ceil(),
-        itemBuilder: (context, index, realIndex) {
-          return buildGridView(_selectedGallery.specificImage, index, isMobile);
+    return CarouselSlider.builder(
+      carouselController: controller,
+      options: CarouselOptions(
+        aspectRatio: width > 1250 ? (2 / 1) : (1 / 1.5),
+        autoPlay: true,
+        viewportFraction: 1,
+        enableInfiniteScroll: false,
+        autoPlayInterval: const Duration(seconds: 7),
+        autoPlayAnimationDuration: const Duration(seconds: 4),
+        onPageChanged: (index, reason) => {
+          setState(() => activeIndex = index),
         },
       ),
+      itemCount: (_selectedGallery.specificImage.length / divider).ceil(),
+      itemBuilder: (context, index, realIndex) {
+        return buildGridView(_selectedGallery.specificImage, index, isMobile);
+      },
     );
   }
 

@@ -38,7 +38,6 @@ class Kleiderverkauf extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        print('Back button pressed!');
         Navigator.pop(context, false);
         return Future.value(false);
       },
@@ -51,7 +50,7 @@ class Kleiderverkauf extends StatelessWidget {
             ? Column(
                 children: [
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       //  color: Colors.red,
                       width: 480,
                       child: Column(
@@ -96,8 +95,8 @@ class Kleiderverkauf extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
-                  BottomBar(),
+                  const Spacer(),
+                  const BottomBar(),
                 ],
               )
             : ListView(

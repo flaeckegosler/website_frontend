@@ -112,10 +112,9 @@ class Goenner extends StatelessWidget {
                 child: Column(
                   children: [
                     Center(
-                      child: Container(
+                      child: SizedBox(
                         //  color: Colors.red,
                         width: 480,
-
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -156,14 +155,14 @@ class Goenner extends StatelessWidget {
                               ),
                             ),
                             _buildMainText(),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             )
                           ],
                         ),
                       ),
                     ),
-                    BottomBar(),
+                    const BottomBar(),
                   ],
                 ),
               )

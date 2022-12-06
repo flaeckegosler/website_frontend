@@ -17,7 +17,7 @@ class _AgendaSectionState extends State<AgendaSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
       // color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
@@ -42,7 +42,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                 height: 20,
               ),
               // Here comes the buttons
-              Container(
+              SizedBox(
                 height: 700,
                 width: 1250,
                 child: Column(

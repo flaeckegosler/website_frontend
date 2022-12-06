@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/models/authors.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/news_provider.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 class NewsCard extends StatefulWidget {
   final key;
@@ -80,8 +80,9 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                       children: <Widget>[
                         const Icon(Icons.access_time, size: 14),
                         Text(
-                            " ${newsProvider.allNews[widget.index].timeCreatedFormatted}",
-                            style: const TextStyle(fontSize: 12),),
+                          " ${newsProvider.allNews[widget.index].timeCreatedFormatted}",
+                          style: const TextStyle(fontSize: 12),
+                        ),
                       ],
                     ),
                     Column(
@@ -94,7 +95,9 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                             child: Text(
                               newsProvider.allNews[widget.index].newsTitle,
                               style: const TextStyle(
-                                  fontWeight: FontWeight.w800, fontSize: 16,),
+                                fontWeight: FontWeight.w800,
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         ),

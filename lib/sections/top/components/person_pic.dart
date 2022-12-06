@@ -5,8 +5,7 @@ class PersonPic extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          margin: const EdgeInsets.only(right: 0),
+        SizedBox(
           height: 650,
           // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
           child: Image.asset(

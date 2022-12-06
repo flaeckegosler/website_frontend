@@ -29,25 +29,33 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
     setState(() {
       _isLoading = true;
     });
-    startIndex = int.parse(this.widget.pictureIndex);
+    startIndex = int.parse(widget.pictureIndex);
     if (Provider.of<PicturesProvider>(context, listen: false)
         .allPictures
         .isEmpty) {
       Provider.of<PicturesProvider>(context, listen: false)
           .fetchAlbumList()
-          .then((value) => specificImage =
-              Provider.of<PicturesProvider>(context, listen: false)
-                  .getGalleryLink(
-                      this.widget.albumTitleRoute, this.widget.pictureIndex))
-          .then((value) => setState(() {
-                maxIndex = Provider.of<PicturesProvider>(context, listen: false)
-                    .getAmountOfPictures(widget.albumTitleRoute);
-                _isLoading = false;
-              }));
+          .then(
+            (value) => specificImage =
+                Provider.of<PicturesProvider>(context, listen: false)
+                    .getGalleryLink(
+              widget.albumTitleRoute,
+              widget.pictureIndex,
+            ),
+          )
+          .then(
+            (value) => setState(() {
+              maxIndex = Provider.of<PicturesProvider>(context, listen: false)
+                  .getAmountOfPictures(widget.albumTitleRoute);
+              _isLoading = false;
+            }),
+          );
     } else {
-      specificImage = Provider.of<PicturesProvider>(context, listen: false)
-          .getGalleryLink(
-              this.widget.albumTitleRoute, this.widget.pictureIndex);
+      specificImage =
+          Provider.of<PicturesProvider>(context, listen: false).getGalleryLink(
+        widget.albumTitleRoute,
+        widget.pictureIndex,
+      );
       maxIndex = Provider.of<PicturesProvider>(context, listen: false)
           .getAmountOfPictures(widget.albumTitleRoute);
       setState(() {
@@ -68,11 +76,11 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: startIndex < 2
-                    ? Colors.grey
-                    : const Color.fromRGBO(147, 90, 162, 1),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+              primary: startIndex < 2
+                  ? Colors.grey
+                  : const Color.fromRGBO(147, 90, 162, 1),
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+            ),
             onPressed: previous,
             child: const Icon(
               Icons.arrow_back,
@@ -87,11 +95,11 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: startIndex > (maxIndex - 1)
-                    ? Colors.grey
-                    : const Color.fromRGBO(147, 90, 162, 1),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+              primary: startIndex > (maxIndex - 1)
+                  ? Colors.grey
+                  : const Color.fromRGBO(147, 90, 162, 1),
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+            ),
             onPressed: next,
             child: const Icon(
               Icons.arrow_forward,
@@ -109,7 +117,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
           context.namedLocation(
             'galerie',
             params: <String, String>{
-              'albumTitleRoute': this.widget.albumTitleRoute,
+              'albumTitleRoute': widget.albumTitleRoute,
               'pictureIndex': "${startIndex - 1}",
             },
           ),
@@ -125,7 +133,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
           context.namedLocation(
             'galerie',
             params: <String, String>{
-              'albumTitleRoute': this.widget.albumTitleRoute,
+              'albumTitleRoute': widget.albumTitleRoute,
               'pictureIndex': "${startIndex + 1}",
             },
           ),

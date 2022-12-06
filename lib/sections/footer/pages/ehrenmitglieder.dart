@@ -123,9 +123,9 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: const Text(
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
                         'Aktivehrenmitglieder!',
                         style: TextStyle(
                           fontSize: 26,
@@ -133,15 +133,15 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
                       child: Text(
                         "Seit der Gründung 1989 haben wir Fläckegosler schon viel erlebt und erreicht. Möglich gemacht haben dies unter anderem unsere Aktiv-Ehrenmitglieder. Ihre Unterstützung, auf die wir immer wieder zählen dürfen, hat uns zu einem aktiven und attraktiven Verein werden lassen. Herzlichen Dank dafür!",
                       ),
                     ),
                     Container(
                       child: _isLoading
-                          ? SizedBox(
+                          ? const SizedBox(
                               height: 300,
                               child: Center(
                                 child: CircularProgressIndicator(
@@ -151,12 +151,12 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                             )
                           : buildDataTable(isAktivEhrenmitglied: true),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: const Text(
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
                         'Ehrenmitglieder!',
                         style: TextStyle(
                           fontSize: 26,
@@ -164,15 +164,15 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
                       child: Text(
                         "Seit der Gründung 1989 haben wir Fläckegosler schon viel erlebt und erreicht. Möglich gemacht haben dies unter anderem unsere Ehrenmitglieder. Ihre Unterstützung, auf die wir immer wieder zählen dürfen, hat uns zu einem aktiven und attraktiven Verein werden lassen. Herzlichen Dank dafür!",
                       ),
                     ),
                     Container(
                       child: _isLoading
-                          ? SizedBox(
+                          ? const SizedBox(
                               height: 300,
                               child: Center(
                                 child: CircularProgressIndicator(
@@ -186,15 +186,16 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            _isLoading
-                ? SizedBox()
-                : Container(
-                    height: 400,
-                    child: const BottomBar(),
-                  ),
+            if (_isLoading)
+              const SizedBox()
+            else
+              Container(
+                height: 400,
+                child: const BottomBar(),
+              ),
           ],
         ),
       ),

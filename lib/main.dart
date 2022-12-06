@@ -4,10 +4,10 @@ import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
+import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
-import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/provider/sujet_provider.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
@@ -119,7 +119,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         routerConfig: _router,
-        debugShowCheckedModeBanner: true,
         title: 'Fläckegosler Roteborg',
         theme: ThemeData(
           inputDecorationTheme: kDefaultInputDecorationTheme,
