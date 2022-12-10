@@ -53,10 +53,7 @@ class _MemberSectionState extends State<MemberSection> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Center(
-                child: Image.network(
-                  member.pictureUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: _buildMember(member),
               ),
             ),
             Container(
@@ -106,10 +103,7 @@ class _MemberSectionState extends State<MemberSection> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Center(
-                child: Image.network(
-                  member.pictureUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: _buildMember(member),
               ),
             ),
             Container(
@@ -153,6 +147,20 @@ class _MemberSectionState extends State<MemberSection> {
         ),
       ),
     );
+  }
+
+  Widget _buildMember(Member member) {
+    if (member.pictureUrl.contains("https://")) {
+      return Image.network(
+        member.pictureUrl,
+        fit: BoxFit.cover,
+      );
+    } else {
+      return Image.asset(
+        member.pictureUrl,
+        fit: BoxFit.cover,
+      );
+    }
   }
 
   Picked_button_Instruments pickedButtonInstrument =
@@ -305,7 +313,7 @@ class _MemberSectionState extends State<MemberSection> {
   }
 
   Widget memberButtonsResponsive() {
-    double width = MediaQuery.of(context).size.width;
+    final double width = MediaQuery.of(context).size.width;
     if (width > 1000) {
       return Container(
         height: 60,
@@ -754,33 +762,34 @@ class _MemberSectionState extends State<MemberSection> {
         width: 160,
         height: 40,
         child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.black87,
-              borderRadius: BorderRadius.all(
-                Radius.circular(20),
-              ),
+          decoration: const BoxDecoration(
+            color: Colors.black87,
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
             ),
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: (buttonType == ButtonType.instrumente)
-                      ? const Text(
-                          "Instrumente",
-                          style: TextStyle(color: Colors.white),
-                        )
-                      : const Text(
-                          "Ämtli",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                ),
-                const Icon(
-                  Icons.expand_more,
-                  color: Colors.white,
-                ),
-              ],
-            )),
+          ),
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: (buttonType == ButtonType.instrumente)
+                    ? const Text(
+                        "Instrumente",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    : const Text(
+                        "Ämtli",
+                        style: TextStyle(color: Colors.white),
+                      ),
+              ),
+              const Icon(
+                Icons.expand_more,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

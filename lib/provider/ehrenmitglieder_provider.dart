@@ -5,40 +5,40 @@ import 'package:flutter/services.dart';
 import 'package:website_frontend/models/ehrenmitglied.dart';
 
 class EhrenMitgliederProvider with ChangeNotifier {
-  final List<EhrenMitglied> _ehrenMitglieder = [];
+  final List<EhrenMitglied> ehrenMitglieder = [];
 
   List<EhrenMitglied> get allEhrenMitglieder {
-    _ehrenMitglieder.sort((a, b) => a.name.compareTo(b.name));
-    return List.from(_ehrenMitglieder);
+    ehrenMitglieder.sort((a, b) => a.name.compareTo(b.name));
+    return List.from(ehrenMitglieder);
   }
 
   List<EhrenMitglied> get allAktivEhrenMitglieder {
-    List<EhrenMitglied> _aktivEhrenmitglieder = [];
-    _aktivEhrenmitglieder = _ehrenMitglieder
+    List<EhrenMitglied> aktivEhrenmitglieder = [];
+    aktivEhrenmitglieder = ehrenMitglieder
         .where((element) => element.isAktivEhrenMitglied == true)
         .toList();
-    _aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
-    return List.from(_aktivEhrenmitglieder);
+    aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
+    return List.from(aktivEhrenmitglieder);
   }
 
   List<EhrenMitglied> get allNichtAktivEhrenMitglieder {
-    List<EhrenMitglied> _aktivEhrenmitglieder = [];
-    _aktivEhrenmitglieder = _ehrenMitglieder
+    List<EhrenMitglied> aktivEhrenmitglieder = [];
+    aktivEhrenmitglieder = ehrenMitglieder
         .where((element) => element.isAktivEhrenMitglied == false)
         .toList();
-    _aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
-    return List.from(_aktivEhrenmitglieder);
+    aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
+    return List.from(aktivEhrenmitglieder);
   }
 
   List<EhrenMitglied> ehrenMitgliedFromJson(String str) =>
       List<EhrenMitglied>.from(
-          json.decode(str).map((x) => EhrenMitglied.fromJson(x)));
+          json.decode(str).map((x) => EhrenMitglied.fromJson(x as Map<String, dynamic>)) as Iterable<dynamic>);
 
   Future<void> readEhrenMitgliederJson() async {
     final String response =
         await rootBundle.loadString('assets/jsons/ehrenmitglieder.json');
-    if (_ehrenMitglieder.isEmpty) {
-      _ehrenMitglieder.addAll(ehrenMitgliedFromJson(response));
+    if (ehrenMitglieder.isEmpty) {
+      ehrenMitglieder.addAll(ehrenMitgliedFromJson(response));
     }
   }
 }

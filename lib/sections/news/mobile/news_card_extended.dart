@@ -122,12 +122,14 @@ class NewsCardExtended extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              (singleNews.newsTags == "")
-                  ? SizedBox()
-                  : buildRedakteurHomeNews(singleNews.newsCreatedBy),
-              (singleNews.newsTags == "")
-                  ? SizedBox()
-                  : _buildNewsTags(context),
+              if (singleNews.newsTags == "")
+                const SizedBox()
+              else
+                buildRedakteurHomeNews(singleNews.newsCreatedBy),
+              if (singleNews.newsTags == "")
+                const SizedBox()
+              else
+                _buildNewsTags(context),
               _buildTitle(),
               _buildAuthor(),
             ],

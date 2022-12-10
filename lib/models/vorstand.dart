@@ -24,14 +24,14 @@ class Vorstand with ChangeNotifier {
   });
 
   factory Vorstand.fromJson(Map<String, dynamic> json) => Vorstand(
-        jahr: json["Jahr"],
-        praesident: json["Präsident"],
-        tambourmajor: json["Tambourmajor"],
-        vizePraesident: json["Vize-Präsident"],
-        kassier: json["Kassier"],
-        sujetchef: json["Sujetchef"],
-        materialverwalter: json["Materialverwalter"],
-        aktuar: json["Aktuar"],
-        sujet: json["Sujet"],
+        jahr: json["Jahr"].toString(),
+        praesident: json["Präsident"].toString(),
+        tambourmajor: json["Tambourmajor"].toString(),
+        vizePraesident: json["Vize-Präsident"].toString(),
+        kassier: json["Kassier"].toString(),
+        sujetchef: json["Sujetchef"].toString(),
+        materialverwalter: json["Materialverwalter"].toString(),
+        aktuar: json["Aktuar"].toString(),
+        sujet: json["Sujet"].toString(),
       );
 }

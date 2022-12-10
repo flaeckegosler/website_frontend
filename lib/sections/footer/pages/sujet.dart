@@ -19,7 +19,7 @@ class SujetPage extends StatelessWidget {
     List<DataRow> getRows() {
       Provider.of<SujetProvider>(context, listen: false).createMembers();
       final sujetProvider = context.watch<SujetProvider>();
-      List<Sujet> results = sujetProvider.allSujetsByYear;
+      final List<Sujet> results = sujetProvider.allSujetsByYear;
       final List<DataRow> dataRowResult = [];
       for (int i = 0; i < results.length; i++) {
         final cells = [];
@@ -33,14 +33,14 @@ class SujetPage extends StatelessWidget {
 
     List<DataColumn> getColumns() {
       final List<DataColumn> dataColumnResult = [
-        DataColumn(
+        const DataColumn(
           label: SizedBox(
-            child: const Text("Jahr"),
+            child: Text("Jahr"),
           ),
         ),
-        DataColumn(
+        const DataColumn(
           label: SizedBox(
-            child: const Text("Sujetname"),
+            child: Text("Sujetname"),
           ),
         ),
       ];
@@ -86,16 +86,16 @@ class SujetPage extends StatelessWidget {
                       height: 20,
                     ),
                     buildDataTable(),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                   ],
                 ),
               ),
             ),
-            Container(
+            const SizedBox(
               height: 400,
-              child: const BottomBar(),
+              child: BottomBar(),
             ),
           ],
         ),

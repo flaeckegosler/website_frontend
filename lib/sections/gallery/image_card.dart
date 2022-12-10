@@ -28,7 +28,9 @@ class GalerieImageCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16.0),
         child: CachedNetworkImage(
-            imageUrl: imageData.pictureUrl, fit: BoxFit.cover),
+          imageUrl: imageData.pictureUrl,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

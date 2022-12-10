@@ -18,8 +18,6 @@ enum ActiveNews { none, first, second, third }
 
 class _NewsSectionState extends State<NewsSection>
     with TickerProviderStateMixin {
-  // late AnimationController _animationController;
-  // late Animation _animation;
   int startIndex = 0;
 
   GlobalKey<NewsCardState> newsCardKey1 = GlobalKey<NewsCardState>();
@@ -112,7 +110,7 @@ class _NewsSectionState extends State<NewsSection>
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: startIndex < 2
+                backgroundColor: startIndex == 0
                     ? Colors.grey
                     : const Color.fromRGBO(147, 90, 162, 1),
                 padding:
@@ -131,7 +129,7 @@ class _NewsSectionState extends State<NewsSection>
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: const Color.fromRGBO(147, 90, 162, 1),
+                backgroundColor: const Color.fromRGBO(147, 90, 162, 1),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: next,
@@ -144,18 +142,24 @@ class _NewsSectionState extends State<NewsSection>
       );
 
   void previous() {
-    if (startIndex > 2) {
+    if (startIndex > 0) {
       setState(() {
-        NewsWidget;
-        startIndex = startIndex - 3;
+        if (activeNews == ActiveNews.none && startIndex > 2) {
+          startIndex = startIndex - 3;
+        } else {
+          startIndex = startIndex - 1;
+        }
       });
     }
   }
 
   void next() {
     setState(() {
-      NewsWidget;
-      startIndex = startIndex + 3;
+      if (activeNews == ActiveNews.none) {
+        startIndex = startIndex + 3;
+      } else {
+        startIndex = startIndex + 1;
+      }
     });
   }
 
@@ -174,7 +178,6 @@ class _NewsSectionState extends State<NewsSection>
                   : Colors.red, // button color
               child: InkWell(
                 splashColor: const Color.fromRGBO(248, 177, 1, 1),
-                // splash color
                 onTap: () {
                   if (index == 0 && activeNews == ActiveNews.none) {
                     setState(() {
@@ -330,7 +333,7 @@ class _NewsSectionState extends State<NewsSection>
                             "p": Style(
                               fontFamily: 'serif',
                               padding: const EdgeInsets.all(1),
-                              fontSize: FontSize.medium,
+                              fontSize: FontSize.em(1),
                             ),
                           },
                         ),

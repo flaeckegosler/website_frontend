@@ -251,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 end: _navBarNewsTextSize,
                               ),
                               builder: (_, size, __) =>*/
-                                Text(
+                                const Text(
                               "News",
                               style: TextStyle(
                                 fontSize: 16, //size,
@@ -293,11 +293,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 end: _navBarFotosTextSize,
                               ),
                               builder: (_, size, __) => */
-                                Text(
+                                const Text(
                               "Fotos",
                               style: TextStyle(
-                                  fontSize: 16, //size,
-                                  fontWeight: FontWeight.bold),
+                                fontSize: 16, //size,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             //      ),
                           ),
@@ -334,7 +335,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 end: _navBarAgendaTextSize,
                               ),
                               builder: (_, size, __) => */
-                                Text(
+                                const Text(
                               "Agenda",
                               style: TextStyle(
                                   fontSize: 16, //size,

@@ -130,9 +130,9 @@ class _VorstandPageState extends State<VorstandPage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: const Text(
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
                         'Zusammensetzung seit 1989!',
                         style: TextStyle(
                           fontSize: 26,
@@ -142,7 +142,7 @@ class _VorstandPageState extends State<VorstandPage> {
                     ),
                     Container(
                       child: _isLoading
-                          ? SizedBox(
+                          ? const SizedBox(
                               height: 300,
                               child: Center(
                                 child: CircularProgressIndicator(
@@ -156,15 +156,16 @@ class _VorstandPageState extends State<VorstandPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            _isLoading
-                ? SizedBox()
-                : Container(
-                    height: 400,
-                    child: const BottomBar(),
-                  ),
+            if (_isLoading)
+              const SizedBox()
+            else
+              Container(
+                height: 400,
+                child: const BottomBar(),
+              ),
           ],
         ),
       ),

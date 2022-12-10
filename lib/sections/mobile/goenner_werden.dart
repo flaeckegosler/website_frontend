@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 
 class GoennerWerden extends StatelessWidget {
@@ -9,7 +8,7 @@ class GoennerWerden extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       //  height: 250,
       color: const Color.fromRGBO(230, 230, 230, 1),
       child: Padding(

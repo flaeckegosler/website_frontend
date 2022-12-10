@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -38,7 +37,7 @@ class BottomBar extends StatelessWidget {
           required VoidCallback onClicked}) =>
       InkWell(
         onTap: onClicked,
-        child: Container(
+        child: DecoratedBox(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
               boxShadow: const [
@@ -204,7 +203,7 @@ class BottomBar extends StatelessWidget {
                 children: [
                   buildSocialButton(
                     icon: FontAwesomeIcons.instagram,
-                    color: Color(0xFF0075fc),
+                    color: const Color(0xFF0075fc),
                     onClicked: () => share(SocialMedia.instagram),
                   ),
                   const SizedBox(
@@ -212,7 +211,7 @@ class BottomBar extends StatelessWidget {
                   ),
                   buildSocialButton(
                     icon: FontAwesomeIcons.facebook,
-                    color: Color(0xFF0075fc),
+                    color: const Color(0xFF0075fc),
                     onClicked: () => share(SocialMedia.facebook),
                   ),
                   const SizedBox(
@@ -220,7 +219,7 @@ class BottomBar extends StatelessWidget {
                   ),
                   buildSocialButton(
                     icon: FontAwesomeIcons.linkedin,
-                    color: Color(0xFF0075fc),
+                    color: const Color(0xFF0075fc),
                     onClicked: () => share(SocialMedia.linkedin),
                   ),
                   const SizedBox(
@@ -228,7 +227,7 @@ class BottomBar extends StatelessWidget {
                   ),
                   buildSocialButton(
                     icon: FontAwesomeIcons.whatsapp,
-                    color: Color(0xFF0075fc),
+                    color: const Color(0xFF0075fc),
                     onClicked: () => share(SocialMedia.whatsapp),
                   ),
                 ],
@@ -275,7 +274,6 @@ class BottomBar extends StatelessWidget {
               height: 50,
             ),
             Row(
-              mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
@@ -417,7 +415,7 @@ class BottomBar extends StatelessWidget {
                     children: [
                       buildSocialButton(
                         icon: FontAwesomeIcons.instagram,
-                        color: Color(0xFF0075fc),
+                        color: const Color(0xFF0075fc),
                         onClicked: () => share(SocialMedia.instagram),
                       ),
                       const SizedBox(
@@ -425,7 +423,7 @@ class BottomBar extends StatelessWidget {
                       ),
                       buildSocialButton(
                         icon: FontAwesomeIcons.facebook,
-                        color: Color(0xFF0075fc),
+                        color: const Color(0xFF0075fc),
                         onClicked: () => share(SocialMedia.facebook),
                       ),
                       const SizedBox(
@@ -433,7 +431,7 @@ class BottomBar extends StatelessWidget {
                       ),
                       buildSocialButton(
                         icon: FontAwesomeIcons.linkedin,
-                        color: Color(0xFF0075fc),
+                        color: const Color(0xFF0075fc),
                         onClicked: () => share(SocialMedia.linkedin),
                       ),
                       const SizedBox(
@@ -441,7 +439,7 @@ class BottomBar extends StatelessWidget {
                       ),
                       buildSocialButton(
                         icon: FontAwesomeIcons.whatsapp,
-                        color: Color(0xFF0075fc),
+                        color: const Color(0xFF0075fc),
                         onClicked: () => share(SocialMedia.whatsapp),
                       ),
                     ],

@@ -25,7 +25,7 @@ class _SoundSectionState extends State<SoundSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
       // color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
@@ -120,7 +120,7 @@ class _SoundSectionState extends State<SoundSection> {
         onTap: () {
           _launchURL(youtubeLink);
         },
-        child: Container(
+        child: DecoratedBox(
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,

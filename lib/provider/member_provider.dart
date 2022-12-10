@@ -17,10 +17,10 @@ class MemberProvider with ChangeNotifier {
         .pictureUrlMax;
   }
 
-  List<Member> getMemberOfInstrument(String instrument) {
+  List<Member> getMemberOfInstrument(String instrument2) {
     final List<Member> _instrument = [];
     for (final element in _member) {
-      if (element.instrument == instrument) {
+      if (element.instrument == instrument2) {
         _instrument.add(element);
       }
     }
@@ -303,7 +303,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://test.flaeckegosler.ch/site/assets/files/2480/img-20220219-wa0007.420x0.jpg",
             instrument: "Trompete",
-            vorstand: "",
+            vorstand: "Vize-Präsidentin",
             expedition: "",
             muKo: "",
             sujetKommission: ""),
@@ -378,7 +378,7 @@ class MemberProvider with ChangeNotifier {
                 "https://test.flaeckegosler.ch/site/assets/files/1080/marco_schriber.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
-            expedition: "Festwirtschaft",
+            expedition: "",
             muKo: "",
             sujetKommission: ""),
       );
@@ -410,7 +410,7 @@ class MemberProvider with ChangeNotifier {
             vorstand: "",
             expedition: "",
             muKo: "",
-            sujetKommission: ""),
+            sujetKommission: "Grind"),
       );
 
       _member.add(
@@ -513,7 +513,7 @@ class MemberProvider with ChangeNotifier {
                 "https://test.flaeckegosler.ch/site/assets/files/2484/16452897699215684303164215610438.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
-            expedition: "",
+            expedition: "Festwirtschaft",
             muKo: "",
             sujetKommission: ""),
       );
@@ -527,7 +527,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://test.flaeckegosler.ch/site/assets/files/1961/chiara_kochli.jpg",
             instrument: "Posaune",
-            vorstand: "Vize-Präsidentin",
+            vorstand: "",
             expedition: "",
             muKo: "",
             sujetKommission: ""),
@@ -754,7 +754,7 @@ class MemberProvider with ChangeNotifier {
             vorstand: "",
             expedition: "Bau/Logistik",
             muKo: "",
-            sujetKommission: "Grind"),
+            sujetKommission: ""),
       );
 
       _member.add(

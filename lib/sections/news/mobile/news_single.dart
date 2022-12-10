@@ -86,8 +86,9 @@ class SingleNews extends StatelessWidget {
             ],
           ),
           const Padding(
-              padding: EdgeInsets.only(top: 10.0, left: 20, right: 20),
-              child: Divider()),
+            padding: EdgeInsets.only(top: 10.0, left: 20, right: 20),
+            child: Divider(),
+          ),
         ],
       );
     } else {
@@ -99,7 +100,6 @@ class SingleNews extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        print('Back button pressed!');
         Navigator.pop(context, false);
         return Future.value(false);
       },

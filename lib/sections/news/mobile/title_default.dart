@@ -12,7 +12,10 @@ class TitleDefault extends StatelessWidget {
       child: Text(
         title,
         style: const TextStyle(
-            fontSize: 34.0, fontWeight: FontWeight.bold, fontFamily: 'Oswald'),
+          fontSize: 34.0,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Oswald',
+        ),
       ),
     );
   }

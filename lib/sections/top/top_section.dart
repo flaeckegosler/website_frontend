@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/sections/top/components/logo_blur_box.dart';

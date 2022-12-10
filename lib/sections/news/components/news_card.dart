@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/models/authors.dart';
 import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/news_provider.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 class NewsCard extends StatefulWidget {
   final key;
@@ -17,7 +17,7 @@ class NewsCard extends StatefulWidget {
 }
 
 class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
-  bool _isLoading = false;
+  bool isLoading = false;
 
   late AnimationController fadeController;
   late Animation _fadeInAnimation;
@@ -36,8 +36,8 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    final _newsProvider = context.watch<NewsProvider>();
-    if (_isLoading) {
+    final newsProvider = context.watch<NewsProvider>();
+    if (isLoading) {
       return CircularProgressIndicator(
         color: ColorSingleton().loadingIndicatorColor,
       );
@@ -71,7 +71,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10.0),
                         image: DecorationImage(
                             image: NetworkImage(
-                                _newsProvider.allNews[widget.index].imageURL),
+                                newsProvider.allNews[widget.index].imageURL),
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -80,8 +80,9 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                       children: <Widget>[
                         const Icon(Icons.access_time, size: 14),
                         Text(
-                            " ${_newsProvider.allNews[widget.index].timeCreatedFormatted}",
-                            style: const TextStyle(fontSize: 12)),
+                          " ${newsProvider.allNews[widget.index].timeCreatedFormatted}",
+                          style: const TextStyle(fontSize: 12),
+                        ),
                       ],
                     ),
                     Column(
@@ -92,15 +93,17 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                           child: Container(
                             padding: const EdgeInsets.only(left: 18, right: 18),
                             child: Text(
-                              _newsProvider.allNews[widget.index].newsTitle,
+                              newsProvider.allNews[widget.index].newsTitle,
                               style: const TextStyle(
-                                  fontWeight: FontWeight.w800, fontSize: 16),
+                                fontWeight: FontWeight.w800,
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         ),
                         Html(
                           data:
-                              _newsProvider.allNews[widget.index].newsIntroText,
+                              newsProvider.allNews[widget.index].newsIntroText,
                           style: {
                             "p": Style(
                               fontFamily: 'serif',
@@ -108,14 +111,14 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                                 left: 10,
                                 right: 10,
                               ),
-                              fontSize: FontSize.medium,
+                              fontSize: FontSize.em(1),
                             ),
                           },
                         ),
                       ],
                     ),
                     buildRedakteur(
-                        _newsProvider.allNews[widget.index].newsCreatedBy),
+                        newsProvider.allNews[widget.index].newsCreatedBy),
                     const SizedBox(height: 20),
                   ],
                 ),

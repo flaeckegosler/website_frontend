@@ -31,10 +31,10 @@ class _MitgliederPhotoViewPageState extends State<MitgliederPhotoViewPage> {
         .isEmpty) {
       Provider.of<MemberProvider>(context, listen: false).createMembers();
       galleryLink = Provider.of<MemberProvider>(context, listen: false)
-          .getPictureLink(this.widget.firstName, this.widget.lastName);
+          .getPictureLink(widget.firstName, widget.lastName);
     } else {
       galleryLink = Provider.of<MemberProvider>(context, listen: false)
-          .getPictureLink(this.widget.firstName, this.widget.lastName);
+          .getPictureLink(widget.firstName, widget.lastName);
     }
     setState(() {
       isLoading = false;
@@ -55,7 +55,7 @@ class _MitgliederPhotoViewPageState extends State<MitgliederPhotoViewPage> {
         backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
       ),
       body: isLoading
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(
                 color: Color.fromRGBO(147, 90, 161, 1),
               ),
