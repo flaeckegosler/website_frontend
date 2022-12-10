@@ -378,7 +378,7 @@ class MemberProvider with ChangeNotifier {
                 "https://test.flaeckegosler.ch/site/assets/files/1080/marco_schriber.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
-            expedition: "Festwirtschaft",
+            expedition: "",
             muKo: "",
             sujetKommission: ""),
       );
@@ -513,7 +513,7 @@ class MemberProvider with ChangeNotifier {
                 "https://test.flaeckegosler.ch/site/assets/files/2484/16452897699215684303164215610438.420x0.jpg",
             instrument: "Trompete",
             vorstand: "",
-            expedition: "",
+            expedition: "Festwirtschaft",
             muKo: "",
             sujetKommission: ""),
       );
