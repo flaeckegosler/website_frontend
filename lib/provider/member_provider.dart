@@ -303,7 +303,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://test.flaeckegosler.ch/site/assets/files/2480/img-20220219-wa0007.420x0.jpg",
             instrument: "Trompete",
-            vorstand: "",
+            vorstand: "Vize-Präsidentin",
             expedition: "",
             muKo: "",
             sujetKommission: ""),
@@ -410,7 +410,7 @@ class MemberProvider with ChangeNotifier {
             vorstand: "",
             expedition: "",
             muKo: "",
-            sujetKommission: ""),
+            sujetKommission: "Grind"),
       );
 
       _member.add(
@@ -527,7 +527,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://test.flaeckegosler.ch/site/assets/files/1961/chiara_kochli.jpg",
             instrument: "Posaune",
-            vorstand: "Vize-Präsidentin",
+            vorstand: "",
             expedition: "",
             muKo: "",
             sujetKommission: ""),
@@ -754,7 +754,7 @@ class MemberProvider with ChangeNotifier {
             vorstand: "",
             expedition: "Bau/Logistik",
             muKo: "",
-            sujetKommission: "Grind"),
+            sujetKommission: ""),
       );
 
       _member.add(
