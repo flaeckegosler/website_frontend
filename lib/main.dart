@@ -13,6 +13,7 @@ import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
 import 'package:website_frontend/sections/footer/pages/goenner.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
+import 'package:website_frontend/sections/footer/pages/kontakt.dart';
 import 'package:website_frontend/sections/footer/pages/sujet.dart';
 import 'package:website_frontend/sections/footer/pages/vorstand_page.dart';
 import 'package:website_frontend/sections/gallery/galerie_photo_view_page.dart';
@@ -65,6 +66,12 @@ class MyApp extends StatelessWidget {
             },
           ),
           GoRoute(
+            path: 'goenner',
+            builder: (BuildContext context, GoRouterState state) {
+              return const Goenner();
+            },
+          ),
+          GoRoute(
             path: 'sujet',
             builder: (BuildContext context, GoRouterState state) {
               return SujetPage();
@@ -77,9 +84,9 @@ class MyApp extends StatelessWidget {
             },
           ),
           GoRoute(
-            path: 'goenner',
+            path: 'kontakt',
             builder: (BuildContext context, GoRouterState state) {
-              return const Goenner();
+              return const Kontakt();
             },
           ),
           GoRoute(

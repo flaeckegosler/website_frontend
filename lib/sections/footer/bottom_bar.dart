@@ -66,7 +66,7 @@ class BottomBar extends StatelessWidget {
             scale: 0.2,
           ),
         ),
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -176,6 +176,27 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
+              onTap: () => GoRouter.of(context).push('/kontakt'),
+              child: const Text(
+                "Kontakt",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            InkWell(
               onTap: () => GoRouter.of(context).push('/vorstand'),
               child: const Text(
                 "Vorstand seit 1989",
@@ -197,7 +218,7 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-              height: 100,
+              height: 90,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -271,7 +292,7 @@ class BottomBar extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 50,
+              height: 25,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -386,6 +407,27 @@ class BottomBar extends StatelessWidget {
                       height: 10,
                     ),
                     InkWell(
+                      onTap: () => GoRouter.of(context).push('/kontakt'),
+                      child: const Text(
+                        "Kontakt",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(2.5, 2.5),
+                              blurRadius: 5.0,
+                              color: Color.fromARGB(255, 0, 0, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
                       onTap: () => GoRouter.of(context).push('/vorstand'),
                       child: const Text(
                         "Vorstand seit 1989",
@@ -409,7 +451,6 @@ class BottomBar extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 150,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
