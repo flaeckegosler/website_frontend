@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website_frontend/models/authors.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 
-Widget buildRedakteurHomeNews(String newsCreatedBy) {
+Widget buildRedakteurHomeNews(String newsCreatedBy, BuildContext context) {
   if (Authors.getRedakteur(newsCreatedBy) != "") {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -18,7 +17,7 @@ Widget buildRedakteurHomeNews(String newsCreatedBy) {
         ),
         child: CircleAvatar(
           radius: 35,
-          backgroundColor: ColorSingleton().mainTheme,
+          backgroundColor: Theme.of(context).primaryColor,
           backgroundImage: AssetImage(
             Authors.getRedakteur(newsCreatedBy),
           ),

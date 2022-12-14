@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 
 class GoennerWerden extends StatelessWidget {
   const GoennerWerden({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class GoennerWerden extends StatelessWidget {
             borderRadius: BorderRadius.circular(0),
             color: Colors.white,
             border: Border.all(
-              color: ColorSingleton().mainTheme,
+              color: Theme.of(context).primaryColor,
               width: 15,
             ),
           ),
@@ -57,7 +56,7 @@ class GoennerWerden extends StatelessWidget {
                     ],
                     color: Colors.transparent,
                     decoration: TextDecoration.underline,
-                    decorationColor: ColorSingleton().mainTheme,
+                    decorationColor: Theme.of(context).primaryColor,
                     decorationThickness: 2,
                     decorationStyle: TextDecorationStyle.solid,
                   ),

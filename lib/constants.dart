@@ -19,6 +19,8 @@ final kDefaultCardShadow = BoxShadow(
 
 // TextField dedign
 const kDefaultInputDecorationTheme = InputDecorationTheme(
+  fillColor: Colors.orange,
+  filled: true,
   border: kDefaultOutlineInputBorder,
   enabledBorder: kDefaultOutlineInputBorder,
   focusedBorder: kDefaultOutlineInputBorder,

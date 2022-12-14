@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:website_frontend/models/news_model.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/sections/news/mobile/buildRedakteur.dart';
 
 class NewsCardExtended extends StatelessWidget {
@@ -42,7 +41,7 @@ class NewsCardExtended extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: ColorSingleton().mainTheme,
+          color: Theme.of(context).primaryColor,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
@@ -125,7 +124,7 @@ class NewsCardExtended extends StatelessWidget {
               if (singleNews.newsTags == "")
                 const SizedBox()
               else
-                buildRedakteurHomeNews(singleNews.newsCreatedBy),
+                buildRedakteurHomeNews(singleNews.newsCreatedBy, context),
               if (singleNews.newsTags == "")
                 const SizedBox()
               else
