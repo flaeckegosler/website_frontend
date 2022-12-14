@@ -51,12 +51,17 @@ class Kontakt extends StatelessWidget {
               builder: (context) => AlertDialog(
                 title: const Text("Fehler!"),
                 content: const Text(
-                  "Beim Versand ist ein Fehler aufgetreten. Bitte versuchen sie es später nochmals!",
+                  "Beim Versand ist ein Fehler aufgetreten. Bitte versuche es später nochmals!",
                 ),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: const Text('Schliessen'),
+                    child: Text(
+                      'Schliessen',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -74,12 +79,17 @@ class Kontakt extends StatelessWidget {
         builder: (context) => AlertDialog(
           title: const Text("Kontaktanfrage versendet!"),
           content: const Text(
-            "Überprüfen sie Ihren Posteingang, sie sollten eine Email erhalten haben!",
+            "Überprüfe deinen Posteingang, du solltest eine Email erhalten haben!",
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Schliessen'),
+              child: Text(
+                'Schliessen',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
             ),
           ],
         ),
@@ -95,7 +105,12 @@ class Kontakt extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Schliessen'),
+              child: Text(
+                'Schliessen',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
             ),
           ],
         ),
@@ -127,13 +142,17 @@ class Kontakt extends StatelessWidget {
             cursorColor: Theme.of(context).primaryColor,
             maxLines: maxLines,
             decoration: InputDecoration(
-              fillColor: Colors.red,
-              focusColor: Colors.yellow,
-              hoverColor: Colors.green,
-              enabledBorder: OutlineInputBorder(
+              fillColor: Colors.grey[100],
+              focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Theme.of(context).primaryColor,
                   width: 2.5,
+                ),
+              ),
+              hoverColor: Colors.grey[300],
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
@@ -221,13 +240,39 @@ class Kontakt extends StatelessWidget {
                                 backgroundColor: Theme.of(context).primaryColor,
                               ),
                               onPressed: () {
-                                if (controllerFromEmail.text != '') {
+                                if (controllerFromName.text != '' &&
+                                    controllerFromEmail.text != '' &&
+                                    controllerSubject.text != '' &&
+                                    controllerMessage.text != '') {
                                   sendEmail(
                                       name: controllerFromName.text,
                                       email: controllerFromEmail.text,
                                       subject: controllerSubject.text,
                                       message: controllerMessage.text,
                                       ctx: context);
+                                } else {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      title: const Text("Nice try!"),
+                                      content: const Text(
+                                        "Bitte fülle alle Felder aus!",
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context),
+                                          child: Text(
+                                            'Schliessen',
+                                            style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .primaryColor,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
                                 }
                               },
                               child: const Text('Senden'),
