@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 
 class MitgliedWerden extends StatelessWidget {
   const MitgliedWerden({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class MitgliedWerden extends StatelessWidget {
             borderRadius: BorderRadius.circular(0),
             color: Colors.white,
             border: Border.all(
-              color: ColorSingleton().mainTheme,
+              color: Theme.of(context).primaryColor,
               width: 15,
             ),
           ),
@@ -52,7 +51,7 @@ class MitgliedWerden extends StatelessWidget {
                               "mailto:werde_ein@flaeckegosler.ch?subject=Mitglied%20werden%20Fläckegosler&body=Salüü%20Janick,");
                         }),
                     ),
-                    TextSpan(text: "."),
+                    const TextSpan(text: "."),
                   ],
                 ),
               ),
@@ -63,12 +62,12 @@ class MitgliedWerden extends StatelessWidget {
                 text: TextSpan(
                   text: "» Bewerbungsformular.pdf",
                   style: TextStyle(
-                    shadows: [
-                      Shadow(color: Colors.black, offset: Offset(0, -5))
+                    shadows: const [
+                      Shadow(offset: Offset(0, -5)),
                     ],
                     color: Colors.transparent,
                     decoration: TextDecoration.underline,
-                    decorationColor: ColorSingleton().mainTheme,
+                    decorationColor: Theme.of(context).primaryColor,
                     decorationThickness: 2,
                     decorationStyle: TextDecorationStyle.solid,
                   ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
 import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
@@ -174,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 )
               ],
-              backgroundColor: ColorSingleton().placeHolderColor,
+              backgroundColor: Theme.of(context).primaryColor,
             )
           : PreferredSize(
               preferredSize: const Size.fromHeight(0.0),

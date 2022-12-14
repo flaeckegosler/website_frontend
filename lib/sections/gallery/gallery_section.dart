@@ -5,7 +5,6 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/album.dart';
 import 'package:website_frontend/provider/album_provider.dart';
-import 'package:website_frontend/provider/color_singleton.dart';
 import 'package:website_frontend/sections/gallery/image_card.dart';
 
 class GallerySection extends StatefulWidget {
@@ -264,7 +263,7 @@ class _GallerySectionState extends State<GallerySection> {
                   height: 300,
                   child: Center(
                     child: CircularProgressIndicator(
-                      color: ColorSingleton().loadingIndicatorColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 )
