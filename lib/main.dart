@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/album_provider.dart';
@@ -19,6 +18,7 @@ import 'package:website_frontend/sections/footer/pages/vorstand_page.dart';
 import 'package:website_frontend/sections/gallery/galerie_photo_view_page.dart';
 import 'package:website_frontend/sections/member/mitglieder_photo_view_page.dart';
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
+import 'package:website_frontend/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: 'kontakt',
             builder: (BuildContext context, GoRouterState state) {
-              return const Kontakt();
+              return Kontakt();
             },
           ),
           GoRoute(
@@ -127,11 +127,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: _router,
         title: 'Fläckegosler Roteborg',
-        theme: ThemeData(
-          inputDecorationTheme: kDefaultInputDecorationTheme,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          primaryColor: const Color.fromRGBO(147, 90, 162, 1),
-        ),
+        theme: mythosTheme,
       ),
     );
   }

@@ -1,38 +1,145 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
-import 'package:website_frontend/sections/news/mobile/title_default.dart';
 
 class Kontakt extends StatelessWidget {
-  const Kontakt();
+  final controllerFromName = TextEditingController();
+  final controllerFromEmail = TextEditingController();
+  final controllerSubject = TextEditingController();
+  final controllerMessage = TextEditingController();
 
-  Widget _buildTitelBild() {
-    return const SizedBox(
-      child: Image(
-        image: AssetImage('assets/genesis.jpg'),
-        fit: BoxFit.cover,
-      ),
-    );
+  Future sendEmail({
+    required String name,
+    required String email,
+    required String subject,
+    required String message,
+    required BuildContext ctx,
+  }) async {
+    const serviceId = '*';
+    const templateId = '*';
+    const userId = '*';
+
+    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+    final response = await http
+        .post(
+          url,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: json.encode(
+            {
+              'service_id': serviceId,
+              'template_id': templateId,
+              'user_id': userId,
+              'template_params': {
+                'user_name': name,
+                'user_email': email,
+                'user_subject': subject,
+                'user_message': message,
+              }
+            },
+          ),
+        )
+        .catchError(
+          // ignore: invalid_return_type_for_catch_error
+          (onError) => {
+            showDialog(
+              context: ctx,
+              builder: (context) => AlertDialog(
+                title: const Text("Fehler!"),
+                content: const Text(
+                  "Beim Versand ist ein Fehler aufgetreten. Bitte versuchen sie es später nochmals!",
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('Schliessen'),
+                  ),
+                ],
+              ),
+            ),
+          },
+        );
+    print(response.body);
+    if (response.statusCode == 200) {
+      controllerFromName.text = '';
+      controllerFromEmail.text = '';
+      controllerSubject.text = '';
+      controllerMessage.text = '';
+      showDialog(
+        context: ctx,
+        builder: (context) => AlertDialog(
+          title: const Text("Kontaktanfrage versendet!"),
+          content: const Text(
+            "Überprüfen sie Ihren Posteingang, sie sollten eine Email erhalten haben!",
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Schliessen'),
+            ),
+          ],
+        ),
+      );
+    } else {
+      showDialog(
+        context: ctx,
+        builder: (context) => AlertDialog(
+          title: const Text("Fehler!"),
+          content: const Text(
+            "Beim Versand ist ein Fehler aufgetreten. Bitte versuchen sie es später nochmals!",
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Schliessen'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
-  Widget _buildImageDescription({double leftPadding = 0}) {
-    return Container(
-      padding: EdgeInsets.only(top: 10, left: leftPadding, right: 20),
-      child: const Text(
-        "Unser Sujet Kobolde des Winters!",
-        style: TextStyle(color: Colors.grey, fontSize: 10),
-      ),
-    );
-  }
-
-  Widget _buildMainText({double leftPadding = 0}) {
-    return Container(
-      padding: EdgeInsets.only(top: 10.0, left: leftPadding, right: 20),
-      child: const Text(
-        "Haben wir mit unseren Sujets euer Interesse geweckt? Unser Materialverwalter Manuel Mühlebach steht für weitere Auskünfte (Besichtigungstermin, Verkaufspreis etc.) gerne zur Verfügung.",
-      ),
-    );
-  }
+  Widget buildTextField({
+    required String title,
+    required TextEditingController controller,
+    required BuildContext context,
+    int maxLines = 1,
+  }) =>
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          TextField(
+            controller: controller,
+            cursorColor: Theme.of(context).primaryColor,
+            maxLines: maxLines,
+            decoration: InputDecoration(
+              fillColor: Colors.red,
+              focusColor: Colors.yellow,
+              hoverColor: Colors.green,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 2.5,
+                ),
+              ),
+            ),
+          )
+        ],
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +153,11 @@ class Kontakt extends StatelessWidget {
           automaticallyImplyLeading: true,
           backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
         ),
-        body: MediaQuery.of(context).size.width > 500
-            ? Column(
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
                 children: [
                   Center(
                     child: SizedBox(
@@ -70,60 +180,70 @@ class Kontakt extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          _buildTitelBild(),
-                          _buildImageDescription(),
-                          Container(
-                            padding:
-                                const EdgeInsets.only(top: 20.0, right: 20),
-                            child: const TitleDefault("Kobole des Winters"),
+                          buildTextField(
+                            title: 'Dein Name',
+                            controller: controllerFromName,
+                            context: context,
                           ),
                           const SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            padding:
-                                const EdgeInsets.only(top: 10.0, right: 20),
-                            child: const Text(
-                              "Max. 17 Stk. Kleider (Jacke, Hose) mit Grind und Tambi-Kleid/Grind",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          buildTextField(
+                            title: 'Deine Email',
+                            controller: controllerFromEmail,
+                            context: context,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          buildTextField(
+                            title: 'Betreff',
+                            controller: controllerSubject,
+                            context: context,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          buildTextField(
+                            title: 'Nachricht',
+                            controller: controllerMessage,
+                            context: context,
+                            maxLines: 12,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            height: 40,
+                            width: 480,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Theme.of(context).primaryColor,
                               ),
+                              onPressed: () {
+                                if (controllerFromEmail.text != '') {
+                                  sendEmail(
+                                      name: controllerFromName.text,
+                                      email: controllerFromEmail.text,
+                                      subject: controllerSubject.text,
+                                      message: controllerMessage.text,
+                                      ctx: context);
+                                }
+                              },
+                              child: const Text('Senden'),
                             ),
                           ),
-                          _buildMainText(),
                         ],
                       ),
                     ),
                   ),
-                  const Spacer(),
-                  const BottomBar(),
-                ],
-              )
-            : ListView(
-                children: <Widget>[
-                  _buildTitelBild(),
-                  _buildImageDescription(leftPadding: 20),
-                  Container(
-                    padding:
-                        const EdgeInsets.only(top: 20.0, left: 20, right: 20),
-                    child: const TitleDefault("Kobole des Winters"),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    padding:
-                        const EdgeInsets.only(top: 10.0, left: 20, right: 20),
-                    child: const Text(
-                      "Max. 17 Stk. Kleider (Jacke, Hose) mit Grind und Tambi-Kleid/Grind",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  _buildMainText(leftPadding: 20),
                 ],
               ),
+            ),
+            const Spacer(),
+            const BottomBar(),
+          ],
+        ),
       ),
     );
   }
