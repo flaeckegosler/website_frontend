@@ -170,123 +170,133 @@ class Kontakt extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Center(
-                    child: SizedBox(
-                      //  color: Colors.red,
-                      width: 480,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 8.0, right: 10),
-                            child: SectionTitle(
-                              title: "Kontakt",
-                              subTitle: "Tell me more!",
-                              color: Color.fromRGBO(147, 90, 162, 1),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          buildTextField(
-                            title: 'Dein Name',
-                            controller: controllerFromName,
-                            context: context,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          buildTextField(
-                            title: 'Deine Email',
-                            controller: controllerFromEmail,
-                            context: context,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          buildTextField(
-                            title: 'Betreff',
-                            controller: controllerSubject,
-                            context: context,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          buildTextField(
-                            title: 'Nachricht',
-                            controller: controllerMessage,
-                            context: context,
-                            maxLines: 12,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          SizedBox(
-                            height: 40,
-                            width: 480,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Theme.of(context).primaryColor,
+        body: ListView(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Center(
+                        child: SizedBox(
+                          //  color: Colors.red,
+                          height: 800,
+                          width: 480,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                height: 20,
                               ),
-                              onPressed: () {
-                                if (controllerFromName.text != '' &&
-                                    controllerFromEmail.text != '' &&
-                                    controllerSubject.text != '' &&
-                                    controllerMessage.text != '') {
-                                  sendEmail(
-                                      name: controllerFromName.text,
-                                      email: controllerFromEmail.text,
-                                      subject: controllerSubject.text,
-                                      message: controllerMessage.text,
-                                      ctx: context);
-                                } else {
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                      title: const Text("Nice try!"),
-                                      content: const Text(
-                                        "Bitte fülle alle Felder aus!",
-                                      ),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context),
-                                          child: Text(
-                                            'Schliessen',
-                                            style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor,
-                                            ),
+                              const Padding(
+                                padding: EdgeInsets.only(left: 8.0, right: 10),
+                                child: SectionTitle(
+                                  title: "Kontakt",
+                                  subTitle: "Tell me more!",
+                                  color: Color.fromRGBO(147, 90, 162, 1),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              buildTextField(
+                                title: 'Dein Name',
+                                controller: controllerFromName,
+                                context: context,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              buildTextField(
+                                title: 'Deine Email',
+                                controller: controllerFromEmail,
+                                context: context,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              buildTextField(
+                                title: 'Betreff',
+                                controller: controllerSubject,
+                                context: context,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              buildTextField(
+                                title: 'Nachricht',
+                                controller: controllerMessage,
+                                context: context,
+                                maxLines: 12,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              SizedBox(
+                                height: 40,
+                                width: 480,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor:
+                                        Theme.of(context).primaryColor,
+                                  ),
+                                  onPressed: () {
+                                    if (controllerFromName.text != '' &&
+                                        controllerFromEmail.text != '' &&
+                                        controllerSubject.text != '' &&
+                                        controllerMessage.text != '') {
+                                      sendEmail(
+                                          name: controllerFromName.text,
+                                          email: controllerFromEmail.text,
+                                          subject: controllerSubject.text,
+                                          message: controllerMessage.text,
+                                          ctx: context);
+                                    } else {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) => AlertDialog(
+                                          title: const Text("Nice try!"),
+                                          content: const Text(
+                                            "Bitte fülle alle Felder aus!",
                                           ),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'Schliessen',
+                                                style: TextStyle(
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
-                                  );
-                                }
-                              },
-                              child: const Text('Senden'),
-                            ),
+                                      );
+                                    }
+                                  },
+                                  child: const Text('Senden'),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: (MediaQuery.of(context).size.height < 1272)
+                      ? 0
+                      : MediaQuery.of(context).size.height - 1272,
+                ),
+                const BottomBar(),
+              ],
             ),
-            const Spacer(),
-            const BottomBar(),
           ],
         ),
       ),

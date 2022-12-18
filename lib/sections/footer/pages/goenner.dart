@@ -105,7 +105,6 @@ class Goenner extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
         ),
         body: MediaQuery.of(context).size.width > 500
             ? SingleChildScrollView(

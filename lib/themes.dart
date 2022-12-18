@@ -6,6 +6,10 @@ ThemeData get mythosTheme {
     inputDecorationTheme: kDefaultInputDecorationTheme,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: const Color.fromRGBO(147, 90, 162, 1),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color.fromRGBO(147, 90, 162, 1),
+    ),
+    splashColor: Colors.white, // Tested, no impact
     backgroundColor: Colors.white,
     scaffoldBackgroundColor: Colors.white,
     /*  textTheme: const TextTheme(
