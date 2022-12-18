@@ -170,7 +170,6 @@ class Kontakt extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
         ),
         body: ListView(
           children: <Widget>[

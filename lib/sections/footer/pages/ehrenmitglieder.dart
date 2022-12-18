@@ -97,9 +97,7 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

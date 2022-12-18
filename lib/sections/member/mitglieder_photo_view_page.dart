@@ -51,9 +51,7 @@ class _MitgliederPhotoViewPageState extends State<MitgliederPhotoViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
-      ),
+      appBar: AppBar(),
       body: isLoading
           ? const Center(
               child: CircularProgressIndicator(

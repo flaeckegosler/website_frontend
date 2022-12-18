@@ -144,9 +144,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
-      ),
+      appBar: AppBar(),
       body: _isLoading
           ? const Center(
               child: CircularProgressIndicator(
