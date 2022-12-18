@@ -242,21 +242,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
+                            borderRadius: BorderRadius.circular(20),
                             onTap: () => myScrollSingleton.scrollToItem("News"),
                             child: /* TweenAnimationBuilder<double>(
-                              duration: const Duration(milliseconds: 500),
-                              tween: Tween<double>(
-                                begin: _navBarNewsTextSize,
-                                end: _navBarNewsTextSize,
-                              ),
-                              builder: (_, size, __) =>*/
-                                const Text(
-                              "News",
-                              style: TextStyle(
-                                fontSize: 16, //size,
-                                fontWeight: FontWeight.bold,
+                                  duration: const Duration(milliseconds: 500),
+                                  tween: Tween<double>(
+                                    begin: _navBarNewsTextSize,
+                                    end: _navBarNewsTextSize,
+                                  ),
+                                  builder: (_, size, __) =>*/
+                                const Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                "News",
+                                style: TextStyle(
+                                  fontSize: 16, //size,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
+
                             //      ),
                           ),
                         ],
@@ -283,24 +288,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
-                            onTap: () =>
-                                myScrollSingleton.scrollToItem("Fotos"),
-                            child: /* TweenAnimationBuilder<double>(
+                              borderRadius: BorderRadius.circular(20),
+                              onTap: () =>
+                                  myScrollSingleton.scrollToItem("Fotos"),
+                              child: /* TweenAnimationBuilder<double>(
                               duration: const Duration(milliseconds: 500),
                               tween: Tween<double>(
                                 begin: _navBarFotosTextSize,
                                 end: _navBarFotosTextSize,
                               ),
                               builder: (_, size, __) => */
-                                const Text(
-                              "Fotos",
-                              style: TextStyle(
-                                fontSize: 16, //size,
-                                fontWeight: FontWeight.bold,
+                                  const Padding(
+                                padding: EdgeInsets.all(10),
+                                child: Text(
+                                  "Fotos",
+                                  style: TextStyle(
+                                    fontSize: 16, //size,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              )
+                              //      ),
                               ),
-                            ),
-                            //      ),
-                          ),
                         ],
                       ),
                     ),
@@ -325,6 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
+                            borderRadius: BorderRadius.circular(20),
                             onTap: () =>
                                 myScrollSingleton.scrollToItem("Agenda"),
                             child: /* TweenAnimationBuilder<double>(
@@ -334,11 +344,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 end: _navBarAgendaTextSize,
                               ),
                               builder: (_, size, __) => */
-                                const Text(
-                              "Agenda",
-                              style: TextStyle(
-                                  fontSize: 16, //size,
-                                  fontWeight: FontWeight.bold),
+                                const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Agenda",
+                                style: TextStyle(
+                                    fontSize: 16, //size,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             //     ),
                           ),
@@ -366,13 +379,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
+                            borderRadius: BorderRadius.circular(20),
                             onTap: () =>
                                 myScrollSingleton.scrollToItem("Mitglieder"),
-                            child: const Text(
-                              "Mitglieder",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
+                            child: const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Mitglieder",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -401,12 +418,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
+                            borderRadius: BorderRadius.circular(20),
                             onTap: () =>
                                 myScrollSingleton.scrollToItem("Sound"),
-                            child: const Text(
-                              "Sound",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            child: const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Sound",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ],
