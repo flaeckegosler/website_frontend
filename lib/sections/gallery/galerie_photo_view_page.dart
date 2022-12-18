@@ -76,7 +76,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: startIndex < 2
+              backgroundColor: startIndex < 2
                   ? Colors.grey
                   : const Color.fromRGBO(147, 90, 162, 1),
               padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
@@ -95,7 +95,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: startIndex > (maxIndex - 1)
+              backgroundColor: startIndex > (maxIndex - 1)
                   ? Colors.grey
                   : const Color.fromRGBO(147, 90, 162, 1),
               padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
@@ -110,9 +110,8 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
       );
 
   void previous() {
-    if (startIndex > 2) {
+    if (startIndex > 1) {
       setState(() {
-        String newIndex = (startIndex + 1).toString();
         context.replace(
           context.namedLocation(
             'galerie',
@@ -149,7 +148,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
         backgroundColor: const Color.fromRGBO(147, 90, 161, 1),
       ),
       body: _isLoading
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(
                 color: Color.fromRGBO(147, 90, 161, 1),
               ),
