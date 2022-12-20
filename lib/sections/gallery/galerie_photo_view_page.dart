@@ -112,7 +112,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
   void previous() {
     if (startIndex > 1) {
       setState(() {
-        context.replace(
+        context.pushReplacement(
           context.namedLocation(
             'galerie',
             params: <String, String>{
@@ -128,7 +128,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
   void next() {
     if (startIndex < maxIndex) {
       setState(() {
-        context.replace(
+        context.pushReplacement(
           context.namedLocation(
             'galerie',
             params: <String, String>{
