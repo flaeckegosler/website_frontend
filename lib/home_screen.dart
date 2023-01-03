@@ -3,6 +3,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
 import 'package:website_frontend/sections/agenda/agenda_section.dart';
+import 'package:website_frontend/sections/expedition/expedition.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
@@ -186,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index) {
               if (index == 0) {
                 if (width < 1250) {
-                  return const SizedBox();
+                  return ExpeditionSection();
                 } else {
                   return TopSection();
                 }
