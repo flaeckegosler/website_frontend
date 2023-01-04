@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "main.dart.js": "7e7a87a7eb9ddc8e6654cd7998fd0937",
+  "main.dart.js": "6c11b933e1c33f1495a297da33697cd1",
 "canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
 "canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
 "canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
@@ -11,7 +11,7 @@ const RESOURCES = {
 "manifest.json": "ac9cfe989fecefa5032728047dc8f9c7",
 "favicon_64x64.png": "6746a7c0d50c92e52bfd7309dc40e1f2",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
-"assets/AssetManifest.json": "fb8e19718d367e9c21fcbabb993717a3",
+"assets/AssetManifest.json": "f39bd4637d612505c4c6f9302248e2e1",
 "assets/shaders/ink_sparkle.frag": "73e4ebc6468abc93b2f556aabb23e49f",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
@@ -70,6 +70,7 @@ const RESOURCES = {
 "assets/assets/genesis.jpg": "e9fa7f75fd397588076025a053c40a59",
 "assets/assets/tambi_2020_vektor.png": "14c38aaad2f14d51f8a63f8d6794bf75",
 "assets/assets/MUSTER_REPETIEREND.png": "f1cae12403936b65fc61e501987ad8df",
+"assets/assets/expedition.png": "213d9bf8f60d933ecfa787231b8c5dca",
 "assets/assets/goslermythos_title.png": "18d4d9d52ef5ff427ca490e4dcaa379c",
 "assets/assets/flaeckegosler_webseite_logo.png": "3271b8cdf7c4f8ca5dd0a386d8e2c263",
 "assets/assets/goslergrend.png": "50f17fabf1b95bf199ac8b9187249ca8",
@@ -78,8 +79,8 @@ const RESOURCES = {
 "assets/assets/youtube_diadamas_2020.jpg": "cf2be5a623165280a21cdf1df43ef8ff",
 "assets/assets/goenner.jpg": "880521191a45f5703fbc065e5ca3ecf3",
 "assets/NOTICES": "2bcc225ce6442d769cadccd479cb8984",
-"index.html": "c205bb00798927b9ff8cccfdcca7da5a",
-"/": "c205bb00798927b9ff8cccfdcca7da5a",
+"index.html": "242630d9f2eceef3b66fdf6585b9902b",
+"/": "242630d9f2eceef3b66fdf6585b9902b",
 "version.json": "1571572e1330d672e2303b86bc90a510"
 };
 
