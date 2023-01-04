@@ -58,7 +58,6 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                     child: newSoundCard(
                       "7. Januar 2023",
                       "assets/expedition.png",
-                      "https://www.expedition-rothenburg.ch",
                     ),
                   ),
                   const SizedBox(
@@ -103,14 +102,11 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
   ClipRRect newSoundCard(
     String title,
     String assetImage,
-    String youtubeLink,
   ) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: InkWell(
-        onTap: () {
-          _launchURL(youtubeLink);
-        },
+        onTap: () => launch("https://expedition-rothenburg.ch/"),
         child: DecoratedBox(
           decoration: BoxDecoration(
             image: DecorationImage(
