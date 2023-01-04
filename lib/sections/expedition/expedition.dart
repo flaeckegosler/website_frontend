@@ -55,9 +55,8 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
               Column(
                 children: [
                   SizedBox(
-                    child: newSoundCard(
+                    child: expeditionCard(
                       "7. Januar 2023",
-                      "assets/expedition.png",
                     ),
                   ),
                   const SizedBox(
@@ -80,7 +79,8 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                   ),
                   onPressed: () {
                     _launchURL(
-                        "https://eventfrog.ch/de/p/fasnacht-fasching-karneval/party/expedition-2023-6986362871014655249.html");
+                      "https://eventfrog.ch/de/p/fasnacht-fasching-karneval/party/expedition-2023-6986362871014655249.html",
+                    );
                   },
                   child: const Text(
                     "Tickets kaufen!",
@@ -99,9 +99,8 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
     );
   }
 
-  ClipRRect newSoundCard(
+  ClipRRect expeditionCard(
     String title,
-    String assetImage,
   ) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
@@ -111,46 +110,53 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(
-                assetImage,
-              ),
+              image: MediaQuery.of(context).size.width < 1250
+                  ? const AssetImage(
+                      "assets/expedition.png",
+                    )
+                  : const AssetImage(
+                      "assets/expedition_2023.png",
+                    ),
             ),
           ),
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 4.0,
-                        vertical: 4.0,
+              if (MediaQuery.of(context).size.width < 1250)
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          title,
-                          textAlign: TextAlign.start,
-                          style: const TextStyle(
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Oswald',
-                            color: Colors.black,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0,
+                          vertical: 4.0,
+                        ),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            title,
+                            textAlign: TextAlign.start,
+                            style: const TextStyle(
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Oswald',
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(
-                height: 130,
+                )
+              else
+                const SizedBox(),
+              SizedBox(
+                height: MediaQuery.of(context).size.width < 1250 ? 130 : 380,
               ),
               Align(
                 alignment: Alignment.bottomRight,

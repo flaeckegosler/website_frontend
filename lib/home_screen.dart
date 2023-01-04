@@ -189,7 +189,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (width < 1250) {
                   return ExpeditionSection();
                 } else {
-                  return TopSection();
+                  return Column(
+                    children: [
+                      TopSection(),
+                      ExpeditionSection(),
+                    ],
+                  );
                 }
               } else if (index == 1) {
                 return NewsSection();
