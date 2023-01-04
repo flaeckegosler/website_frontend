@@ -258,7 +258,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://test.flaeckegosler.ch/site/assets/files/2273/alex_vogel.420x0.jpg",
             instrument: "Trompete",
-            vorstand: "Kassier",
+            vorstand: "",
             expedition: "",
             muKo: "",
             sujetKommission: ""),
@@ -647,7 +647,7 @@ class MemberProvider with ChangeNotifier {
             pictureUrlMax:
                 "https://test.flaeckegosler.ch/site/assets/files/2056/nico_muschietti.420x0.jpg",
             instrument: "Posaune",
-            vorstand: "",
+            vorstand: "Kassier",
             expedition: "",
             muKo: "",
             sujetKommission: ""),
