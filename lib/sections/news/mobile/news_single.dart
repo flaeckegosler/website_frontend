@@ -91,7 +91,9 @@ class SingleNews extends StatelessWidget {
         ],
       );
     } else {
-      return const SizedBox();
+      return const SizedBox(
+        height: 0,
+      );
     }
   }
 
