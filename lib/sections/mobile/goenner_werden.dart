@@ -7,9 +7,9 @@ class GoennerWerden extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
+    return SizedBox(
       //  height: 250,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Container(

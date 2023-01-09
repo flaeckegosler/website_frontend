@@ -64,7 +64,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                   ),
                 ],
               ),
-              SizedBox(
+              /*     SizedBox(
                 height: 40,
                 child: ElevatedButton(
                   style: ButtonStyle(
@@ -88,7 +88,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-              ),
+              ), */
               const SizedBox(
                 height: 30,
               )
