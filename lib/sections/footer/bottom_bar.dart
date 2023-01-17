@@ -239,7 +239,7 @@ class BottomBar extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Copyright © 2022 | Fläckegosler Roteborg',
+              'Copyright © 2023 | Fläckegosler Roteborg',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12,
