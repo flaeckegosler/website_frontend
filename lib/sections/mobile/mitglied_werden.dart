@@ -74,7 +74,7 @@ class MitgliedWerden extends StatelessWidget {
                   recognizer: TapGestureRecognizer()
                     ..onTap = (() {
                       launch(
-                          "https://test.flaeckegosler.ch/site/assets/files/1029/kandidatenformular23.pdf");
+                          "https://api.flaeckegosler.ch/site/assets/files/1029/kandidatenformular23.pdf");
                     }),
                 ),
               ),
