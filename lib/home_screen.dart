@@ -146,6 +146,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         print('option 5 clicked');
                         myScrollSingleton.scrollToItem("Sound");
                         break;
+                      case 'option6':
+                        print('option 6 clicked');
+                        myScrollSingleton.scrollToItem("Expedition");
+                        break;
                       default:
                     }
                   },
@@ -171,6 +175,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       value: 'option5',
                       child: Text('Sound'),
                     ),
+                    const PopupMenuItem<String>(
+                      value: 'option6',
+                      child: Text('Expedition'),
+                    ),
                   ],
                 )
               ],
@@ -187,9 +195,13 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index) {
               if (index == 0) {
                 if (width < 1250) {
-                  return ExpeditionSection();
+                  return const SizedBox();
                 } else {
-                  return TopSection();
+                  return Column(
+                    children: [
+                      TopSection(),
+                    ],
+                  );
                 }
               } else if (index == 1) {
                 return NewsSection();
@@ -201,17 +213,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 return MemberSection();
               } else if (index == 5) {
                 return SoundSection();
-              } else if (index == 6 && width < 1250) {
-                return const GoennerWerden();
+              } else if (index == 6) {
+                return ExpeditionSection();
               } else if (index == 7 && width < 1250) {
+                return const GoennerWerden();
+              } else if (index == 8 && width < 1250) {
                 return const MitgliedWerden();
-              } else if (index == 8) {
+              } else if (index == 9) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 9,
+            itemCount: 10,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)
@@ -410,7 +424,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     beforeLineStyle: const LineStyle(thickness: 2),
                     alignment: TimelineAlign.end,
-                    isLast: true,
                     startChild: Container(
                       height: 50,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -426,6 +439,43 @@ class _HomeScreenState extends State<HomeScreen> {
                               padding: EdgeInsets.all(10.0),
                               child: Text(
                                 "Sound",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.local_fire_department,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    isLast: true,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Expedition"),
+                            child: const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Expedition",
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.bold),
                               ),

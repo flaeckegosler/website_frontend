@@ -92,27 +92,6 @@ class BottomBar extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () => launch("https://expedition-rothenburg.ch/"),
-              child: const Text(
-                "Expedition",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  shadows: <Shadow>[
-                    Shadow(
-                      offset: Offset(2.5, 2.5),
-                      blurRadius: 5.0,
-                      color: Color.fromARGB(255, 0, 0, 1),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            InkWell(
               onTap: () => GoRouter.of(context).push('/goenner'),
               child: const Text(
                 "Gönner",
@@ -260,7 +239,7 @@ class BottomBar extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Copyright © 2022 | Fläckegosler Roteborg',
+              'Copyright © 2023 | Fläckegosler Roteborg',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12,
@@ -305,27 +284,6 @@ class BottomBar extends StatelessWidget {
                           GoRouter.of(context).push('/ehrenmitglieder'),
                       child: const Text(
                         "Ehrenmitglieder",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          shadows: <Shadow>[
-                            Shadow(
-                              offset: Offset(2.5, 2.5),
-                              blurRadius: 5.0,
-                              color: Color.fromARGB(255, 0, 0, 1),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    InkWell(
-                      onTap: () => launch("https://expedition-rothenburg.ch/"),
-                      child: const Text(
-                        "Expedition",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
