@@ -117,12 +117,12 @@ class _VorstandPageState extends State<VorstandPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8.0, right: 10),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 10),
                       child: SectionTitle(
                         title: "Vorstand",
                         subTitle: "Zusammensetzung seit 1989!",
-                        color: Color.fromRGBO(147, 90, 162, 1),
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                     const SizedBox(
@@ -140,11 +140,11 @@ class _VorstandPageState extends State<VorstandPage> {
                     ),
                     Container(
                       child: _isLoading
-                          ? const SizedBox(
+                          ? SizedBox(
                               height: 300,
                               child: Center(
                                 child: CircularProgressIndicator(
-                                  color: Color.fromRGBO(147, 90, 162, 1),
+                                  color: Theme.of(context).primaryColor,
                                 ),
                               ),
                             )

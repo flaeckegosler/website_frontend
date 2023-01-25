@@ -238,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
-                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      color: Theme.of(context).primaryColor,
                       height: 30,
                       width: 30,
                       iconStyle: IconStyle(
@@ -285,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
-                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      color: Theme.of(context).primaryColor,
                       height: 30,
                       width: 30,
                       iconStyle: IconStyle(
@@ -331,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
-                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      color: Theme.of(context).primaryColor,
                       height: 30,
                       width: 30,
                       iconStyle: IconStyle(
@@ -376,7 +376,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
-                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      color: Theme.of(context).primaryColor,
                       height: 30,
                       width: 30,
                       iconStyle: IconStyle(
@@ -414,7 +414,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
-                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      color: Theme.of(context).primaryColor,
                       height: 30,
                       width: 30,
                       iconStyle: IconStyle(
@@ -450,7 +450,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
-                      color: const Color.fromRGBO(147, 90, 161, 1),
+                      color: Theme.of(context).primaryColor,
                       height: 30,
                       width: 30,
                       iconStyle: IconStyle(

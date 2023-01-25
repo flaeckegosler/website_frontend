@@ -40,12 +40,12 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Expedition",
                   subTitle: "Unser Fasnachtsfest!",
-                  color: Color.fromRGBO(147, 90, 161, 1),
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               const SizedBox(

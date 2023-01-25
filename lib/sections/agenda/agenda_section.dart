@@ -30,12 +30,12 @@ class _AgendaSectionState extends State<AgendaSection> {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Agenda 2023",
                   subTitle: "Komm vorbei!",
-                  color: Color.fromRGBO(147, 90, 161, 1),
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               const SizedBox(
@@ -49,8 +49,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       isFirst: true,
@@ -77,8 +77,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),
@@ -108,8 +108,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),
@@ -135,8 +135,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),
@@ -162,8 +162,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),
@@ -189,8 +189,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),
@@ -216,8 +216,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),
@@ -243,8 +243,8 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                     ),
                     TimelineTile(
-                      indicatorStyle: const IndicatorStyle(
-                          color: Color.fromRGBO(147, 90, 161, 1),
+                      indicatorStyle: IndicatorStyle(
+                          color: Theme.of(context).primaryColor,
                           height: 15,
                           width: 15),
                       beforeLineStyle: const LineStyle(thickness: 2),

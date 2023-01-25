@@ -39,12 +39,12 @@ class _SoundSectionState extends State<SoundSection> {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Sound",
                   subTitle: "Nimm eine Kostprobe!",
-                  color: Color.fromRGBO(147, 90, 161, 1),
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               const SizedBox(
@@ -170,9 +170,9 @@ class _SoundSectionState extends State<SoundSection> {
                 child: Container(
                   padding: const EdgeInsets.only(right: 30, bottom: 22),
                   child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(147, 90, 161, 1),
-                      borderRadius: BorderRadius.all(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(50),
                       ),
                     ),

@@ -76,9 +76,8 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: startIndex < 2
-                  ? Colors.grey
-                  : const Color.fromRGBO(147, 90, 162, 1),
+              backgroundColor:
+                  startIndex < 2 ? Colors.grey : Theme.of(context).primaryColor,
               padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
             ),
             onPressed: previous,
@@ -97,7 +96,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
             style: ElevatedButton.styleFrom(
               backgroundColor: startIndex > (maxIndex - 1)
                   ? Colors.grey
-                  : const Color.fromRGBO(147, 90, 162, 1),
+                  : Theme.of(context).primaryColor,
               padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
             ),
             onPressed: next,
@@ -146,9 +145,9 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
     return Scaffold(
       appBar: AppBar(),
       body: _isLoading
-          ? const Center(
+          ? Center(
               child: CircularProgressIndicator(
-                color: Color.fromRGBO(147, 90, 161, 1),
+                color: Theme.of(context).primaryColor,
               ),
             )
           : Column(
@@ -158,9 +157,9 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
                     imageProvider: CachedNetworkImageProvider(
                       specificImage.pictureUrl,
                     ),
-                    loadingBuilder: (context, event) => const Center(
+                    loadingBuilder: (context, event) => Center(
                       child: CircularProgressIndicator(
-                        color: Color.fromRGBO(147, 90, 161, 1),
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                     // Contained = the smallest possible size to fit one dimension of the screen

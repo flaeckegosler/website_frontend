@@ -111,7 +111,7 @@ class _NewsSectionState extends State<NewsSection>
             style: ElevatedButton.styleFrom(
                 backgroundColor: startIndex == 0
                     ? Colors.grey
-                    : const Color.fromRGBO(147, 90, 162, 1),
+                    : Theme.of(context).primaryColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: previous,
@@ -128,7 +128,7 @@ class _NewsSectionState extends State<NewsSection>
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(147, 90, 162, 1),
+                backgroundColor: Theme.of(context).primaryColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: next,
@@ -359,12 +359,12 @@ class _NewsSectionState extends State<NewsSection>
             const SizedBox(
               height: 40,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 8.0, right: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 10),
               child: SectionTitle(
                 title: "News",
                 subTitle: "Aktuelles auf einen Blick!",
-                color: Color.fromRGBO(147, 90, 162, 1),
+                color: Theme.of(context).primaryColor,
               ),
             ),
             const SizedBox(

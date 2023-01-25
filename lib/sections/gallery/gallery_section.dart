@@ -104,8 +104,8 @@ class _GallerySectionState extends State<GallerySection> {
       activeIndex: activeIndex,
       count: numberOfCarousels,
       onDotClicked: animateToSlide,
-      effect: const WormEffect(
-        activeDotColor: Color.fromRGBO(147, 90, 162, 1),
+      effect: WormEffect(
+        activeDotColor: Theme.of(context).primaryColor,
       ),
     );
   }
@@ -115,7 +115,7 @@ class _GallerySectionState extends State<GallerySection> {
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: const Color.fromRGBO(147, 90, 162, 1),
+                primary: Theme.of(context).primaryColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: previous,
@@ -131,7 +131,7 @@ class _GallerySectionState extends State<GallerySection> {
                 height: 30,
                 width: 60,
                 decoration: BoxDecoration(
-                  color: const Color.fromRGBO(147, 90, 162, 1),
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
@@ -151,7 +151,7 @@ class _GallerySectionState extends State<GallerySection> {
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: const Color.fromRGBO(147, 90, 162, 1),
+                primary: Theme.of(context).primaryColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: next,
@@ -246,10 +246,10 @@ class _GallerySectionState extends State<GallerySection> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SectionTitle(
+                    SectionTitle(
                       title: "Fotos",
                       subTitle: "Schau dir unsere Bilder an!",
-                      color: Color.fromRGBO(147, 90, 162, 1),
+                      color: Theme.of(context).primaryColor,
                     ),
                     if (_isLoading) const SizedBox() else dropDownButton(),
                   ],

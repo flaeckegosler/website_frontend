@@ -34,9 +34,9 @@ class _SimplePhotoViewPageState extends State<SimplePhotoViewPage> {
         imageProvider: CachedNetworkImageProvider(
           widget.galleryLink,
         ),
-        loadingBuilder: (context, event) => const Center(
+        loadingBuilder: (context, event) => Center(
           child: CircularProgressIndicator(
-            color: Color.fromRGBO(147, 90, 161, 1),
+            color: Theme.of(context).primaryColor,
           ),
         ),
         // Contained = the smallest possible size to fit one dimension of the screen
