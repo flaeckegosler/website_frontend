@@ -30,7 +30,6 @@ class _SoundSectionState extends State<SoundSection> {
       // color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: 1250,
           alignment: Alignment.center,
           constraints: const BoxConstraints(maxWidth: 1250),
@@ -50,10 +49,10 @@ class _SoundSectionState extends State<SoundSection> {
               const SizedBox(
                 height: 30,
               ),
-              if (MediaQuery.of(context).size.width > 750)
+              if (MediaQuery.of(context).size.width > 1250)
                 Column(
                   children: [
-                    SizedBox(
+                    Container(
                       height: 250,
                       child: Row(
                         children: [
@@ -83,21 +82,24 @@ class _SoundSectionState extends State<SoundSection> {
                   ],
                 )
               else
-                Column(
-                  children: [
-                    newSoundCard(
-                        "Rothuusstäge 2020",
-                        "assets/youtube_diadamas_2020.jpg",
-                        "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    newSoundCard(
-                      "Rothuusstäge 2019",
-                      "assets/youtube_vampir_2019.jpg",
-                      "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
-                    ),
-                  ],
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      newSoundCard(
+                          "Rothuusstäge 2020",
+                          "assets/youtube_diadamas_2020.jpg",
+                          "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      newSoundCard(
+                        "Rothuusstäge 2019",
+                        "assets/youtube_vampir_2019.jpg",
+                        "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
+                      ),
+                    ],
+                  ),
                 ),
               const SizedBox(
                 height: 30,

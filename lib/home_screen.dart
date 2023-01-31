@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:timeline_tile/timeline_tile.dart';
+import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
 import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/expedition/expedition.dart';
@@ -10,6 +11,7 @@ import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/mobile/goenner_werden.dart';
 import 'package:website_frontend/sections/mobile/mitglied_werden.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
+import 'package:website_frontend/sections/programm/programm.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
 
@@ -112,12 +114,12 @@ class _HomeScreenState extends State<HomeScreen> {
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: const EdgeInsets.only(top: 5, bottom: 5),
                 title: Image.asset(
-                  'assets/goslermythos_title.png',
+                  'assets/operation_kyoto_title.png',
                   height: 50,
                 ),
                 centerTitle: true,
                 background: Image.asset(
-                  'assets/MUSTER_REPETIEREND.png',
+                  'assets/background_kyoto.png',
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -132,22 +134,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         break;
                       case 'option2':
                         print('option 2 clicked');
-                        myScrollSingleton.scrollToItem("Fotos");
+                        myScrollSingleton.scrollToItem("Programm");
                         break;
                       case 'option3':
                         print('option 3 clicked');
-                        myScrollSingleton.scrollToItem("Agenda");
+                        myScrollSingleton.scrollToItem("Fotos");
                         break;
                       case 'option4':
                         print('option 4 clicked');
-                        myScrollSingleton.scrollToItem("Mitglieder");
+                        myScrollSingleton.scrollToItem("Agenda");
                         break;
                       case 'option5':
                         print('option 5 clicked');
-                        myScrollSingleton.scrollToItem("Sound");
+                        myScrollSingleton.scrollToItem("Mitglieder");
                         break;
                       case 'option6':
                         print('option 6 clicked');
+                        myScrollSingleton.scrollToItem("Sound");
+                        break;
+                      case 'option7':
+                        print('option 7 clicked');
                         myScrollSingleton.scrollToItem("Expedition");
                         break;
                       default:
@@ -161,22 +167,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'option2',
-                      child: Text('Fotos'),
+                      child: Text('Programm'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'option3',
-                      child: Text('Agenda'),
+                      child: Text('Fotos'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'option4',
-                      child: Text('Mitglieder'),
+                      child: Text('Agenda'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'option5',
-                      child: Text('Sound'),
+                      child: Text('Mitglieder'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'option6',
+                      child: Text('Sound'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option7',
                       child: Text('Expedition'),
                     ),
                   ],
@@ -203,29 +213,31 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   );
                 }
-              } else if (index == 1) {
+              } else if (index == 1 && vorfasnachtModus == true) {
                 return NewsSection();
               } else if (index == 2) {
-                return GallerySection();
+                return ProgrammSection();
               } else if (index == 3) {
-                return AgendaSection();
+                return GallerySection();
               } else if (index == 4) {
-                return MemberSection();
+                return AgendaSection();
               } else if (index == 5) {
-                return SoundSection();
+                return MemberSection();
               } else if (index == 6) {
+                return SoundSection();
+              } else if (index == 7) {
                 return ExpeditionSection();
-              } else if (index == 7 && width < 1250) {
-                return const GoennerWerden();
               } else if (index == 8 && width < 1250) {
+                return const GoennerWerden();
+              } else if (index == 9 && width < 1250) {
                 return const MitgliedWerden();
-              } else if (index == 9) {
+              } else if (index == 10) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 10,
+            itemCount: 11,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)

@@ -7,17 +7,17 @@ import 'package:website_frontend/sections/top/components/person_pic.dart';
 class TopSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return Container(
       alignment: Alignment.center,
-      height: 700,
+      height: 600,
       //constraints: const BoxConstraints(maxHeight: 700, minHeight: 700),
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          // fit: BoxFit.cover,
-          image: AssetImage("assets/MUSTER_REPETIEREND.png"),
-          repeat: ImageRepeat.repeat,
+          fit: BoxFit.cover,
+          image: AssetImage("assets/background_kyoto.png"),
+          //  repeat: ImageRepeat.repeatX,
         ),
       ),
       child: Container(

@@ -5,6 +5,8 @@ const kTextLightColor = Color(0xFF555555);
 
 const kDefaultPadding = 20.0;
 
+const vorfasnachtModus = true;
+
 final kDefaultShadow = BoxShadow(
   offset: const Offset(0, 50),
   blurRadius: 50,

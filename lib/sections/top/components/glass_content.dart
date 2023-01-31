@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:website_frontend/constants.dart';
 
 class GlassContent extends StatelessWidget {
@@ -16,7 +15,7 @@ class GlassContent extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
         child: Container(
           height: 680,
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 2),
@@ -26,30 +25,37 @@ class GlassContent extends StatelessWidget {
           color: Colors.white.withOpacity(0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 70,
+            children: const [
+              SizedBox(
+                height: 50,
               ),
               SelectableText(
                 "Guuggemusig",
-                style: GoogleFonts.shadowsIntoLight(
-                  fontSize: 40,
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontFamily: 'Shakuro',
                   color: Colors.white,
                 ),
               ),
+              SizedBox(
+                height: 80,
+              ),
               SelectableText(
-                "Fläckegosler \nRoteborg",
-                style: GoogleFonts.shadowsIntoLight(
-                  fontSize: 100,
-                  fontWeight: FontWeight.normal,
+                "FläCkegosler \nRoteborg",
+                style: TextStyle(
+                  fontSize: 100.0,
+                  fontFamily: 'Shakuro',
                   color: Colors.white,
-                  // height: 1.5,
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               SelectableText(
                 "Since 1989",
-                style: GoogleFonts.shadowsIntoLight(
-                  fontSize: 30,
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontFamily: 'Shakuro',
                   color: Colors.white,
                 ),
               )
