@@ -282,6 +282,14 @@ class SujetProvider with ChangeNotifier {
           vierzeiler: "-",
         ),
       );
+
+      _sujet.add(
+        Sujet(
+          name: "Operation Kyoto",
+          jahr: "2023",
+          vierzeiler: "-",
+        ),
+      );
     }
   }
 }

@@ -57,7 +57,7 @@ class _SoundSectionState extends State<ProgrammSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -99,7 +99,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               "MonstErkonZErt, FlECkEn R’BURG",
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             )
           ],
         ),
@@ -117,7 +117,7 @@ class _SoundSectionState extends State<ProgrammSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -147,7 +147,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               'GönnEranlass	PfarrEihEim, RothEnburg ',
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             )
           ],
         ),
@@ -165,7 +165,7 @@ class _SoundSectionState extends State<ProgrammSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -199,7 +199,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               'Raguball (Auftritt 23 Uhr), Rain',
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             )
           ],
         ),
@@ -217,7 +217,7 @@ class _SoundSectionState extends State<ProgrammSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -243,7 +243,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               'BElCantos Ball (Auftritt 23 Uhr), BAAR',
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             )
           ],
         ),
@@ -261,7 +261,7 @@ class _SoundSectionState extends State<ProgrammSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -287,7 +287,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               'AUFTRITT SCHWEIZERHOF, LuZErn',
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             )
           ],
         ),
@@ -305,7 +305,7 @@ class _SoundSectionState extends State<ProgrammSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -331,7 +331,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               'GässlE, LuZErn',
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             )
           ],
         ),
@@ -374,23 +374,23 @@ class _SoundSectionState extends State<ProgrammSection> {
                     children: [
                       thursday(),
                       const SizedBox(
-                        height: 20,
+                        height: 25,
                       ),
                       friday(),
                       const SizedBox(
-                        height: 20,
+                        height: 25,
                       ),
                       saturday(),
                       const SizedBox(
-                        height: 20,
+                        height: 25,
                       ),
                       sunday(),
                       const SizedBox(
-                        height: 20,
+                        height: 25,
                       ),
                       monday(),
                       const SizedBox(
-                        height: 20,
+                        height: 25,
                       ),
                       tuesday(),
                     ],

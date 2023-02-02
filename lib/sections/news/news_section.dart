@@ -5,7 +5,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/provider/news_provider.dart';
-import 'package:website_frontend/sections/mobile/countdown.dart';
+import 'package:website_frontend/mobile/countdown.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
 import 'package:website_frontend/sections/news/mobile/news_widget.dart';
 

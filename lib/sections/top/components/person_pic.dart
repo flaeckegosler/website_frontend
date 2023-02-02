@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:website_frontend/sections/mobile/countdown.dart';
+import 'package:website_frontend/mobile/countdown.dart';
 
 class PersonPic extends StatelessWidget {
   @override
