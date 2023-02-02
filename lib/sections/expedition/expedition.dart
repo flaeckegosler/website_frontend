@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/components/section_title.dart';
-import 'package:website_frontend/sections/mobile/countdown.dart';
 
 class ExpeditionSection extends StatefulWidget {
   @override
@@ -50,7 +49,6 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
               const SizedBox(
                 height: 30,
               ),
-              Countdown(),
               Column(
                 children: [
                   SizedBox(
@@ -115,10 +113,10 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                 fit: BoxFit.cover,
                 image: MediaQuery.of(context).size.width < 1250
                     ? const AssetImage(
-                        "assets/expedition.png",
+                        "assets/expedition_small.png",
                       )
                     : const AssetImage(
-                        "assets/expedition_2023.png",
+                        "assets/expedition_small.png",
                       ),
               ),
             ),
