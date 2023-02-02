@@ -1,6 +1,10 @@
 # website_frontend
 
+Visit https://flaeckegosler.web.app/#/ for the deployed development branch.
+
 Visit https://flaeckegosler.github.io/website_frontend/#/ for the deployed main branch.
+
+Visit https://flaeckegosler.ch for the published website!
 
 ## Getting Started
 
