@@ -29,12 +29,15 @@ class TopSection extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.bottomCenter,
-              child: LogoAndBlurBox(size: size),
+              child: const LogoAndBlurBox(),
             ),
             Positioned(
               bottom: 0,
               right: 0,
-              child: PersonPic(),
+              child: SizedBox(
+                width: 450,
+                child: PersonPic(),
+              ),
             ),
             Container(
               alignment: Alignment.bottomCenter,

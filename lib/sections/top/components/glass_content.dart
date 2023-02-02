@@ -4,11 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:website_frontend/constants.dart';
 
 class GlassContent extends StatelessWidget {
-  const GlassContent({
-    required this.size,
-  }) : super();
-
-  final Size size;
+  const GlassContent() : super();
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +13,7 @@ class GlassContent extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
         child: Container(
-          height: 680,
+          height: 580,
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 2),
           //   constraints:
           //     BoxConstraints(maxWidth: 1110, maxHeight: size.height * 0.7),
