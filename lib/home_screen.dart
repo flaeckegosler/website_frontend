@@ -302,6 +302,53 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 30,
                       iconStyle: IconStyle(
                         color: Colors.white,
+                        iconData: Icons.watch_later_outlined,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Programm"),
+                            child: /* TweenAnimationBuilder<double>(
+                                  duration: const Duration(milliseconds: 500),
+                                  tween: Tween<double>(
+                                    begin: _navBarNewsTextSize,
+                                    end: _navBarNewsTextSize,
+                                  ),
+                                  builder: (_, size, __) =>*/
+                                const Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                "Programm",
+                                style: TextStyle(
+                                  fontSize: 16, //size,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+
+                            //      ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: Theme.of(context).primaryColor,
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
                         iconData: Icons.image,
                       ),
                     ),

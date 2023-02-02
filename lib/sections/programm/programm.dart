@@ -21,31 +21,37 @@ class _SoundSectionState extends State<ProgrammSection> {
   Color color1 = const Color.fromRGBO(165, 102, 19, 1);
   Color color2 = Color.fromRGBO(121, 28, 28, 1);
 
-  Row getProgrammRow(String zeit, String ort) {
-    return Row(
-      children: [
-        const SizedBox(
-          width: 8,
-        ),
-        SizedBox(
-          width: 60,
-          child: Text(
-            zeit,
+  FittedBox getProgrammRow(String zeit, String ort) {
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            width: 8,
+          ),
+          SizedBox(
+            width: 60,
+            child: Text(
+              zeit,
+              style: sujetFontProgramm,
+            ),
+          ),
+          Text(
+            ort,
             style: sujetFontProgramm,
           ),
-        ),
-        Text(
-          ort,
-          style: sujetFontProgramm,
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   ClipRRect thursday() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: ColoredBox(
+      child: Container(
+        width: double.infinity,
         color: Theme.of(context).primaryColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,7 +110,8 @@ class _SoundSectionState extends State<ProgrammSection> {
   ClipRRect friday() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: ColoredBox(
+      child: Container(
+        width: double.infinity,
         color: color2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,7 +158,8 @@ class _SoundSectionState extends State<ProgrammSection> {
   ClipRRect saturday() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: ColoredBox(
+      child: Container(
+        width: double.infinity,
         color: Theme.of(context).primaryColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -202,7 +210,8 @@ class _SoundSectionState extends State<ProgrammSection> {
   ClipRRect sunday() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: ColoredBox(
+      child: Container(
+        width: double.infinity,
         color: color2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -245,7 +254,8 @@ class _SoundSectionState extends State<ProgrammSection> {
   ClipRRect monday() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: ColoredBox(
+      child: Container(
+        width: double.infinity,
         color: Theme.of(context).primaryColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -288,7 +298,8 @@ class _SoundSectionState extends State<ProgrammSection> {
   ClipRRect tuesday() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: ColoredBox(
+      child: Container(
+        width: double.infinity,
         color: color2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -356,7 +367,7 @@ class _SoundSectionState extends State<ProgrammSection> {
               const SizedBox(
                 height: 30,
               ),
-              if (MediaQuery.of(context).size.width < 750)
+              if (MediaQuery.of(context).size.width < 1100)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
