@@ -19,7 +19,11 @@ class _CountdownState extends State<Countdown> {
   }
 
   TextStyle textStyle() {
-    return const TextStyle(color: Colors.white, fontSize: 16);
+    return const TextStyle(
+      color: Colors.white,
+      fontSize: 16,
+      fontFamily: "Shakuro",
+    );
   }
 
   @override
@@ -65,7 +69,7 @@ class _CountdownState extends State<Countdown> {
       return ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
         child: Container(
-            color: Color.fromRGBO(121, 28, 28, 1),
+            color: const Color.fromRGBO(121, 28, 28, 1),
             height: 120,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -76,8 +80,12 @@ class _CountdownState extends State<Countdown> {
                     Row(
                       children: const [
                         Text(
-                          'Fasnachtscountdown  ',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          'FASNACHTSCOUNTDOWN  ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontFamily: "Shakuro",
+                          ),
                         ),
                         Icon(
                           Icons.theater_comedy_rounded,
@@ -86,9 +94,9 @@ class _CountdownState extends State<Countdown> {
                         ),
                       ],
                     ),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
+                    const SizedBox(),
+                    const SizedBox(),
+                    const SizedBox(),
                   ],
                 ),
                 const SizedBox(

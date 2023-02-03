@@ -231,7 +231,7 @@ class _GallerySectionState extends State<GallerySection> {
     final pictureProvider = context.watch<PicturesProvider>();
     return Container(
       width: double.infinity,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           alignment: Alignment.center,
@@ -248,7 +248,7 @@ class _GallerySectionState extends State<GallerySection> {
                   children: [
                     SectionTitle(
                       title: "Fotos",
-                      subTitle: "Schau dir unsere Bilder an!",
+                      subTitle: "Schau dir unsErE BildEr an!",
                       color: Theme.of(context).primaryColor,
                     ),
                     if (_isLoading) const SizedBox() else dropDownButton(),
@@ -293,7 +293,7 @@ class _GallerySectionState extends State<GallerySection> {
                       .ceil(),
                 ),
               const SizedBox(
-                height: 30,
+                height: 40,
               ),
             ],
           ),

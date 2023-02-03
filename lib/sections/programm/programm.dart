@@ -39,7 +39,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
           ),
           Text(
-            ort,
+            "$ort  ",
             style: sujetFontProgramm,
           ),
         ],
@@ -343,9 +343,9 @@ class _SoundSectionState extends State<ProgrammSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      // color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           width: 1250,
@@ -359,8 +359,8 @@ class _SoundSectionState extends State<ProgrammSection> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
-                  title: "Programm 2023",
-                  subTitle: "Komm vorbei!",
+                  title: "Programm",
+                  subTitle: "Komm vorbEi!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -435,7 +435,7 @@ class _SoundSectionState extends State<ProgrammSection> {
                   ],
                 ),
               const SizedBox(
-                height: 30,
+                height: 40,
               )
             ],
           ),

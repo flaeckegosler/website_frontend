@@ -7,11 +7,12 @@ class GoennerWerden extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       //  height: 250,
-      //  color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:
+            const EdgeInsets.only(top: 40, left: 20.0, right: 20, bottom: 20),
         child: Container(
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(

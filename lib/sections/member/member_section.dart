@@ -267,7 +267,7 @@ class _MemberSectionState extends State<MemberSection> {
 
     return Container(
       width: double.infinity,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           alignment: Alignment.center,
@@ -281,7 +281,7 @@ class _MemberSectionState extends State<MemberSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Mitglieder",
-                  subTitle: "Sieh dir diese Beauties an!",
+                  subTitle: "SiEh dir diEsE BEautiEs an!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -303,7 +303,7 @@ class _MemberSectionState extends State<MemberSection> {
                 children: getMemberList(),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               )
             ],
           ),

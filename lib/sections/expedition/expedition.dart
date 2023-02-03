@@ -27,7 +27,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
 
     return Container(
       width: double.infinity,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      //color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           width: 1250,
@@ -42,7 +42,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Expedition",
-                  subTitle: "Unser Fasnachtsfest!",
+                  subTitle: "UnsEr FasnaChtsfEst!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -57,7 +57,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                 ],
               ),
@@ -86,9 +86,6 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                   ),
                 ),
               ), */
-              const SizedBox(
-                height: 30,
-              )
             ],
           ),
         ),

@@ -25,9 +25,9 @@ class _SoundSectionState extends State<SoundSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      // color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           width: 1250,
@@ -42,7 +42,7 @@ class _SoundSectionState extends State<SoundSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Sound",
-                  subTitle: "Nimm eine Kostprobe!",
+                  subTitle: "Nimm EinE KostprobE!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -102,7 +102,7 @@ class _SoundSectionState extends State<SoundSection> {
                   ),
                 ),
               const SizedBox(
-                height: 30,
+                height: 40,
               )
             ],
           ),

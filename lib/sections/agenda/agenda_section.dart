@@ -17,9 +17,9 @@ class _AgendaSectionState extends State<AgendaSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      // color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           width: 1250,
@@ -33,8 +33,8 @@ class _AgendaSectionState extends State<AgendaSection> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
-                  title: "Agenda 2023",
-                  subTitle: "Komm vorbei!",
+                  title: "Agenda",
+                  subTitle: "Komm vorbEi!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -270,6 +270,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 10,
+                    )
                   ],
                 ),
               ),
