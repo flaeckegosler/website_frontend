@@ -160,9 +160,9 @@ class _VorstandPageState extends State<VorstandPage> {
             if (_isLoading)
               const SizedBox()
             else
-              Container(
+              const SizedBox(
                 height: 400,
-                child: const BottomBar(),
+                child: BottomBar(),
               ),
           ],
         ),

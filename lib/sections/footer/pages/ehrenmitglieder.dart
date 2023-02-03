@@ -190,9 +190,9 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
             if (_isLoading)
               const SizedBox()
             else
-              Container(
+              const SizedBox(
                 height: 400,
-                child: const BottomBar(),
+                child: BottomBar(),
               ),
           ],
         ),

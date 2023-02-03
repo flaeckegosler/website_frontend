@@ -52,7 +52,7 @@ class _SoundSectionState extends State<SoundSection> {
               if (MediaQuery.of(context).size.width > 1250)
                 Column(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 250,
                       child: Row(
                         children: [
@@ -87,9 +87,10 @@ class _SoundSectionState extends State<SoundSection> {
                   child: Column(
                     children: [
                       newSoundCard(
-                          "Rothuusstäge 2020",
-                          "assets/youtube_diadamas_2020.jpg",
-                          "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
+                        "Rothuusstäge 2020",
+                        "assets/youtube_diadamas_2020.jpg",
+                        "https://www.youtube.com/watch?v=2xE9i5t4mXQ",
+                      ),
                       const SizedBox(
                         height: 15,
                       ),

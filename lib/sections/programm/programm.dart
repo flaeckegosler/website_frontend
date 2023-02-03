@@ -19,13 +19,12 @@ class _SoundSectionState extends State<ProgrammSection> {
   );
 
   Color color1 = const Color.fromRGBO(165, 102, 19, 1);
-  Color color2 = Color.fromRGBO(121, 28, 28, 1);
+  Color color2 = const Color.fromRGBO(121, 28, 28, 1);
 
   FittedBox getProgrammRow(String zeit, String ort) {
     return FittedBox(
       fit: BoxFit.scaleDown,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(

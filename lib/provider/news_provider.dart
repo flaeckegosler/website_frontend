@@ -33,9 +33,13 @@ class NewsProvider with ChangeNotifier {
           id: newsId.toString(),
           newsTitle: newsData['newsTitle'] as String,
           imageURL: newsData['imageURL'].toString().replaceFirst(
-              'https://flaeckegosler.ch', 'https://api.flaeckegosler.ch'),
+                'https://flaeckegosler.ch',
+                'https://api.flaeckegosler.ch',
+              ),
           cropImageURL: newsData['cropImageURL'].toString().replaceFirst(
-              'https://flaeckegosler.ch', 'https://api.flaeckegosler.ch'),
+                'https://flaeckegosler.ch',
+                'https://api.flaeckegosler.ch',
+              ),
           timeCreatedUnix: newsData['timeCreatedUnix'] as int,
           timeCreatedFormatted: newsData['timeCreatedFormatted'] as String,
           newsCreatedBy: newsData['newsCreatedBy'] != null

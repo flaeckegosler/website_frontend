@@ -32,7 +32,11 @@ class EhrenMitgliederProvider with ChangeNotifier {
 
   List<EhrenMitglied> ehrenMitgliedFromJson(String str) =>
       List<EhrenMitglied>.from(
-          json.decode(str).map((x) => EhrenMitglied.fromJson(x as Map<String, dynamic>)) as Iterable<dynamic>);
+        json
+                .decode(str)
+                .map((x) => EhrenMitglied.fromJson(x as Map<String, dynamic>))
+            as Iterable<dynamic>,
+      );
 
   Future<void> readEhrenMitgliederJson() async {
     final String response =

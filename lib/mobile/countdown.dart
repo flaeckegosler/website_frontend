@@ -29,12 +29,12 @@ class _CountdownState extends State<Countdown> {
   @override
   Widget build(BuildContext context) {
     if (DateTime.parse('2023-02-16 05:00:00').isAfter(DateTime.now())) {
-      var date1 = DateTime.parse('2023-02-16 05:00:00');
+      final date1 = DateTime.parse('2023-02-16 05:00:00');
       _counterSeconds = date1.difference(DateTime.now()).inSeconds % 60;
       _counterMinutes = date1.difference(DateTime.now()).inMinutes % 60;
       _counterHours = date1.difference(DateTime.now()).inHours % 24;
       _counterDays = date1.difference(DateTime.now()).inDays;
-      String _days;
+      String days;
       Timer.periodic(const Duration(seconds: 1), (timer) {
         if (mounted) {
           setState(() {
@@ -44,100 +44,100 @@ class _CountdownState extends State<Countdown> {
       });
 
       if (_counterDays == 1) {
-        _days = 'Tag';
+        days = 'Tag';
       } else {
-        _days = 'Tage';
+        days = 'Tage';
       }
-      String _hours;
+      String hours;
       if (_counterHours == 1) {
-        _hours = 'Stunde';
+        hours = 'Stunde';
       } else {
-        _hours = 'Stunden';
+        hours = 'Stunden';
       }
-      String _minutes;
+      String minutes;
       if (_counterMinutes == 1) {
-        _minutes = 'Minute';
+        minutes = 'Minute';
       } else {
-        _minutes = 'Minuten';
+        minutes = 'Minuten';
       }
-      String _seconds;
+      String seconds;
       if (_counterSeconds == 1) {
-        _seconds = 'Sekunde';
+        seconds = 'Sekunde';
       } else {
-        _seconds = 'Sekunden';
+        seconds = 'Sekunden';
       }
       return ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
         child: Container(
-            color: const Color.fromRGBO(121, 28, 28, 1),
-            height: 120,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Row(
-                      children: const [
-                        Text(
-                          'FASNACHTSCOUNTDOWN  ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: "Shakuro",
-                          ),
-                        ),
-                        Icon(
-                          Icons.theater_comedy_rounded,
+          color: const Color.fromRGBO(121, 28, 28, 1),
+          height: 120,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    children: const [
+                      Text(
+                        'FASNACHTSCOUNTDOWN  ',
+                        style: TextStyle(
                           color: Colors.white,
-                          size: 20.0,
+                          fontSize: 18,
+                          fontFamily: "Shakuro",
                         ),
-                      ],
-                    ),
-                    const SizedBox(),
-                    const SizedBox(),
-                    const SizedBox(),
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(_counterDays.toString(), style: textStyle()),
-                        Text(_days, style: textStyle())
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(_counterHours.toString(), style: textStyle()),
-                        Text(_hours, style: textStyle())
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(_counterMinutes.toString(), style: textStyle()),
-                        Text(_minutes, style: textStyle())
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(_counterSeconds.toString(), style: textStyle()),
-                        Text(_seconds, style: textStyle())
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            )
-            /*  child: Padding(
+                      ),
+                      Icon(
+                        Icons.theater_comedy_rounded,
+                        color: Colors.white,
+                        size: 20.0,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(),
+                  const SizedBox(),
+                  const SizedBox(),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(_counterDays.toString(), style: textStyle()),
+                      Text(days, style: textStyle())
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(_counterHours.toString(), style: textStyle()),
+                      Text(hours, style: textStyle())
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(_counterMinutes.toString(), style: textStyle()),
+                      Text(minutes, style: textStyle())
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(_counterSeconds.toString(), style: textStyle()),
+                      Text(seconds, style: textStyle())
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+          /*  child: Padding(
             padding: const EdgeInsets.only(bottom: 10, top: 10),
             child: SizedBox(
               height: 30,
@@ -156,7 +156,7 @@ class _CountdownState extends State<Countdown> {
               ),
             ),
           ), */
-            ),
+        ),
       );
     } else {
       return const SizedBox(

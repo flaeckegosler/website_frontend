@@ -48,30 +48,34 @@ class _GallerySectionState extends State<GallerySection> {
   }
 
   Widget buildGridView(
-      List<SpecificImage> imageList, int index, bool isMobile) {
+    List<SpecificImage> imageList,
+    int index,
+    bool isMobile,
+  ) {
     final double width = MediaQuery.of(context).size.width;
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: isMobile ? 6 : 8,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: width > 1250 ? 4 : 2,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-          ),
-          itemBuilder: (context, index2) {
-            if (index2 + (index * (isMobile ? 6 : 8)) < imageList.length) {
-              return GalerieImageCard(
-                imageData: imageList[index2 + (index * (isMobile ? 6 : 8))],
-                albumTitleRoute: _selectedGallery.albumTitleRoute,
-              );
-            } else {
-              return Container();
-            }
-          }),
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: isMobile ? 6 : 8,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: width > 1250 ? 4 : 2,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+        ),
+        itemBuilder: (context, index2) {
+          if (index2 + (index * (isMobile ? 6 : 8)) < imageList.length) {
+            return GalerieImageCard(
+              imageData: imageList[index2 + (index * (isMobile ? 6 : 8))],
+              albumTitleRoute: _selectedGallery.albumTitleRoute,
+            );
+          } else {
+            return Container();
+          }
+        },
+      ),
     );
   }
 
@@ -115,9 +119,9 @@ class _GallerySectionState extends State<GallerySection> {
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: Theme.of(context).primaryColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+              backgroundColor: Theme.of(context).primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+            ),
             onPressed: previous,
             child: const Icon(
               Icons.arrow_back,
@@ -151,9 +155,9 @@ class _GallerySectionState extends State<GallerySection> {
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: Theme.of(context).primaryColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+              backgroundColor: Theme.of(context).primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+            ),
             onPressed: next,
             child: const Icon(
               Icons.arrow_forward,
@@ -188,9 +192,11 @@ class _GallerySectionState extends State<GallerySection> {
               value: index,
               child: Row(
                 children: [
-                  Text(Provider.of<PicturesProvider>(context, listen: false)
-                      .allPictures[index]
-                      .albumTitle),
+                  Text(
+                    Provider.of<PicturesProvider>(context, listen: false)
+                        .allPictures[index]
+                        .albumTitle,
+                  ),
                 ],
               ),
             );
@@ -201,26 +207,27 @@ class _GallerySectionState extends State<GallerySection> {
         width: 200,
         height: 40,
         child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.black87,
-              borderRadius: BorderRadius.all(
-                Radius.circular(20),
-              ),
+          decoration: const BoxDecoration(
+            color: Colors.black87,
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
             ),
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  _selectedGallery.albumTitle,
-                  style: const TextStyle(color: Colors.white),
-                ),
-                const Icon(
-                  Icons.expand_more,
-                  color: Colors.white,
-                ),
-              ],
-            )),
+          ),
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                _selectedGallery.albumTitle,
+                style: const TextStyle(color: Colors.white),
+              ),
+              const Icon(
+                Icons.expand_more,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -229,7 +236,7 @@ class _GallerySectionState extends State<GallerySection> {
   Widget build(BuildContext context) {
     final bool isMobile = MediaQuery.of(context).size.width < 1250;
     final pictureProvider = context.watch<PicturesProvider>();
-    return Container(
+    return SizedBox(
       width: double.infinity,
       //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(

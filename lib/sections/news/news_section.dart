@@ -110,11 +110,11 @@ class _NewsSectionState extends State<NewsSection>
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: startIndex == 0
-                    ? Colors.grey
-                    : Theme.of(context).primaryColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+              backgroundColor: startIndex == 0
+                  ? Colors.grey
+                  : Theme.of(context).primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+            ),
             onPressed: previous,
             child: const Icon(
               Icons.arrow_back,
@@ -129,9 +129,9 @@ class _NewsSectionState extends State<NewsSection>
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).primaryColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
+              backgroundColor: Theme.of(context).primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+            ),
             onPressed: next,
             child: const Icon(
               Icons.arrow_forward,

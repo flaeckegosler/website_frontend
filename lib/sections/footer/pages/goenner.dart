@@ -113,9 +113,7 @@ class Goenner extends StatelessWidget {
         return Future.value(false);
       },
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-        ),
+        appBar: AppBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [

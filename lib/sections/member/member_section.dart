@@ -81,7 +81,9 @@ class _MemberSectionState extends State<MemberSection> {
   }
 
   Widget createMemberCardPremium(
-      Member member, Picked_button_Kommissionen buttonType) {
+    Member member,
+    Picked_button_Kommissionen buttonType,
+  ) {
     String aemtli = "";
     if (buttonType == Picked_button_Kommissionen.vorstand) {
       aemtli = member.vorstand;
@@ -96,8 +98,9 @@ class _MemberSectionState extends State<MemberSection> {
       padding: const EdgeInsets.all(5),
       child: InkWell(
         onTap: () => GoRouter.of(context).push(
-            '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
-            extra: member.pictureUrlMax),
+          '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
+          extra: member.pictureUrlMax,
+        ),
         child: Stack(
           children: [
             ClipRRect(
@@ -170,47 +173,47 @@ class _MemberSectionState extends State<MemberSection> {
 
   @override
   Widget build(BuildContext context) {
-    final _myMemberProvider = context.watch<MemberProvider>();
+    final myMemberProvider = context.watch<MemberProvider>();
     final double width = MediaQuery.of(context).size.width;
 
     List<Widget> getMemberList() {
       if (buttonType == ButtonType.instrumente) {
         if (pickedButtonInstrument == Picked_button_Instruments.drums) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Drums").length,
+            myMemberProvider.getMemberOfInstrument("Drums").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Drums")[index],
+              myMemberProvider.getMemberOfInstrument("Drums")[index],
             ),
           );
         } else if (pickedButtonInstrument == Picked_button_Instruments.horn) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Horn").length,
+            myMemberProvider.getMemberOfInstrument("Horn").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Horn")[index],
+              myMemberProvider.getMemberOfInstrument("Horn")[index],
             ),
           );
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.sousaphon) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
+            myMemberProvider.getMemberOfInstrument("Sousaphon").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Sousaphon")[index],
+              myMemberProvider.getMemberOfInstrument("Sousaphon")[index],
             ),
           );
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.trompete) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Trompete").length,
+            myMemberProvider.getMemberOfInstrument("Trompete").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Trompete")[index],
+              myMemberProvider.getMemberOfInstrument("Trompete")[index],
             ),
           );
         } else if (pickedButtonInstrument ==
             Picked_button_Instruments.posaune) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Posaune").length,
+            myMemberProvider.getMemberOfInstrument("Posaune").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Posaune")[index],
+              myMemberProvider.getMemberOfInstrument("Posaune")[index],
             ),
           );
         } else {
@@ -220,34 +223,38 @@ class _MemberSectionState extends State<MemberSection> {
         //ButtonType == Kommissionen
         if (pickedButtonKommission == Picked_button_Kommissionen.vorstand) {
           return List.generate(
-            _myMemberProvider.getMemberOfVorstand().length,
+            myMemberProvider.getMemberOfVorstand().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfVorstand()[index],
-                Picked_button_Kommissionen.vorstand),
+              myMemberProvider.getMemberOfVorstand()[index],
+              Picked_button_Kommissionen.vorstand,
+            ),
           );
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.expedition) {
           return List.generate(
-            _myMemberProvider.getMemberOfExpedition().length,
+            myMemberProvider.getMemberOfExpedition().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfExpedition()[index],
-                Picked_button_Kommissionen.expedition),
+              myMemberProvider.getMemberOfExpedition()[index],
+              Picked_button_Kommissionen.expedition,
+            ),
           );
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.sujetkomission) {
           return List.generate(
-            _myMemberProvider.getMemberOfSujetkommission().length,
+            myMemberProvider.getMemberOfSujetkommission().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfSujetkommission()[index],
-                Picked_button_Kommissionen.sujetkomission),
+              myMemberProvider.getMemberOfSujetkommission()[index],
+              Picked_button_Kommissionen.sujetkomission,
+            ),
           );
         } else if (pickedButtonKommission ==
             Picked_button_Kommissionen.musikkomission) {
           return List.generate(
-            _myMemberProvider.getMemberOfMuKo().length,
+            myMemberProvider.getMemberOfMuKo().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfMuKo()[index],
-                Picked_button_Kommissionen.musikkomission),
+              myMemberProvider.getMemberOfMuKo()[index],
+              Picked_button_Kommissionen.musikkomission,
+            ),
           );
         } else {
           return [];
@@ -265,7 +272,7 @@ class _MemberSectionState extends State<MemberSection> {
       }
     }
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
       //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(

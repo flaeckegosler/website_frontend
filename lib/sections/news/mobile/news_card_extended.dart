@@ -14,7 +14,9 @@ class NewsCardExtended extends StatelessWidget {
       padding: const EdgeInsets.only(left: 8, right: 8),
       child: DecoratedBox(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5), color: Colors.white),
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.white,
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
           child: FittedBox(
@@ -86,12 +88,10 @@ class NewsCardExtended extends StatelessWidget {
               Shadow(
                 offset: Offset(2.0, 2.0),
                 blurRadius: 3.0,
-                color: Colors.black,
               ),
               Shadow(
                 offset: Offset(2.0, 2.0),
                 blurRadius: 8.0,
-                color: Colors.black,
               ),
             ],
           ),
@@ -115,7 +115,9 @@ class NewsCardExtended extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
             image: DecorationImage(
-                image: NetworkImage(singleNews.imageURL), fit: BoxFit.cover),
+              image: NetworkImage(singleNews.imageURL),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

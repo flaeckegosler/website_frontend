@@ -31,25 +31,27 @@ class BottomBar extends StatelessWidget {
     }
   }
 
-  Widget buildSocialButton(
-          {required IconData icon,
-          Color? color,
-          required VoidCallback onClicked}) =>
+  Widget buildSocialButton({
+    required IconData icon,
+    Color? color,
+    required VoidCallback onClicked,
+  }) =>
       InkWell(
         onTap: onClicked,
         child: DecoratedBox(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              boxShadow: const [
-                BoxShadow(
-                  spreadRadius: 5,
-                  offset: Offset(2.5, 2.5),
-                  blurRadius: 5.0,
-                  color: Color.fromARGB(122, 0, 0, 0),
-                ),
-              ],
-            ),
-            child: FaIcon(icon, color: Colors.white, size: 60)),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40),
+            boxShadow: const [
+              BoxShadow(
+                spreadRadius: 5,
+                offset: Offset(2.5, 2.5),
+                blurRadius: 5.0,
+                color: Color.fromARGB(122, 0, 0, 0),
+              ),
+            ],
+          ),
+          child: FaIcon(icon, color: Colors.white, size: 60),
+        ),
       );
 
   @override

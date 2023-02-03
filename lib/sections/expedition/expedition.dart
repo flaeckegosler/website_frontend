@@ -25,7 +25,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
       //color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
