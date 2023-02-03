@@ -4,7 +4,7 @@ import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/ehrenmitglied.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
-import 'package:website_frontend/sections/footer/configuration/MyCustomScrollBehavior.dart';
+import 'package:website_frontend/sections/footer/configuration/my_custom_scroll_behavior.dart';
 
 class EhrenMitgliederPage extends StatefulWidget {
   @override

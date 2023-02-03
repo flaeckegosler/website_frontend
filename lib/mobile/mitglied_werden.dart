@@ -7,7 +7,7 @@ class MitgliedWerden extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       //  height: 250,
       color: const Color.fromRGBO(230, 230, 230, 1),
       child: Padding(

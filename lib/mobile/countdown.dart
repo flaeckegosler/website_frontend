@@ -8,13 +8,13 @@ class Countdown extends StatefulWidget {
 }
 
 class _CountdownState extends State<Countdown> {
-  var _counterSeconds;
-  var _counterMinutes;
-  var _counterHours;
-  var _counterDays;
+  int counterSeconds = 0;
+  int counterMinutes = 0;
+  int counterHours = 0;
+  int counterDays = 0;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
   }
 
@@ -30,38 +30,38 @@ class _CountdownState extends State<Countdown> {
   Widget build(BuildContext context) {
     if (DateTime.parse('2023-02-16 05:00:00').isAfter(DateTime.now())) {
       final date1 = DateTime.parse('2023-02-16 05:00:00');
-      _counterSeconds = date1.difference(DateTime.now()).inSeconds % 60;
-      _counterMinutes = date1.difference(DateTime.now()).inMinutes % 60;
-      _counterHours = date1.difference(DateTime.now()).inHours % 24;
-      _counterDays = date1.difference(DateTime.now()).inDays;
+      counterSeconds = date1.difference(DateTime.now()).inSeconds % 60;
+      counterMinutes = date1.difference(DateTime.now()).inMinutes % 60;
+      counterHours = date1.difference(DateTime.now()).inHours % 24;
+      counterDays = date1.difference(DateTime.now()).inDays;
       String days;
       Timer.periodic(const Duration(seconds: 1), (timer) {
         if (mounted) {
           setState(() {
-            --_counterSeconds;
+            --counterSeconds;
           });
         }
       });
 
-      if (_counterDays == 1) {
+      if (counterDays == 1) {
         days = 'Tag';
       } else {
         days = 'Tage';
       }
       String hours;
-      if (_counterHours == 1) {
+      if (counterHours == 1) {
         hours = 'Stunde';
       } else {
         hours = 'Stunden';
       }
       String minutes;
-      if (_counterMinutes == 1) {
+      if (counterMinutes == 1) {
         minutes = 'Minute';
       } else {
         minutes = 'Minuten';
       }
       String seconds;
-      if (_counterSeconds == 1) {
+      if (counterSeconds == 1) {
         seconds = 'Sekunde';
       } else {
         seconds = 'Sekunden';
@@ -108,28 +108,28 @@ class _CountdownState extends State<Countdown> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(_counterDays.toString(), style: textStyle()),
+                      Text(counterDays.toString(), style: textStyle()),
                       Text(days, style: textStyle())
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(_counterHours.toString(), style: textStyle()),
+                      Text(counterHours.toString(), style: textStyle()),
                       Text(hours, style: textStyle())
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(_counterMinutes.toString(), style: textStyle()),
+                      Text(counterMinutes.toString(), style: textStyle()),
                       Text(minutes, style: textStyle())
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(_counterSeconds.toString(), style: textStyle()),
+                      Text(counterSeconds.toString(), style: textStyle()),
                       Text(seconds, style: textStyle())
                     ],
                   ),

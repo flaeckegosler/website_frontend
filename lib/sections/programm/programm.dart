@@ -340,8 +340,6 @@ class _SoundSectionState extends State<ProgrammSection> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(230, 230, 230, 1),

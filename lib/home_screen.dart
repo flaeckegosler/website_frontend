@@ -47,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
           .toList();
       checkVisibility();
       //   setNavBarSizes();
-      print(indices);
     });
   }
 
@@ -129,31 +128,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   onSelected: (String result) {
                     switch (result) {
                       case 'option1':
-                        print('option 1 clicked');
                         myScrollSingleton.scrollToItem("News");
                         break;
                       case 'option2':
-                        print('option 2 clicked');
                         myScrollSingleton.scrollToItem("Programm");
                         break;
                       case 'option3':
-                        print('option 3 clicked');
                         myScrollSingleton.scrollToItem("Fotos");
                         break;
                       case 'option4':
-                        print('option 4 clicked');
                         myScrollSingleton.scrollToItem("Agenda");
                         break;
                       case 'option5':
-                        print('option 5 clicked');
                         myScrollSingleton.scrollToItem("Mitglieder");
                         break;
                       case 'option6':
-                        print('option 6 clicked');
                         myScrollSingleton.scrollToItem("Sound");
                         break;
                       case 'option7':
-                        print('option 7 clicked');
                         myScrollSingleton.scrollToItem("Expedition");
                         break;
                       default:

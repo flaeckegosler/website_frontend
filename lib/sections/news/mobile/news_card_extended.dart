@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:website_frontend/models/news_model.dart';
-import 'package:website_frontend/sections/news/mobile/buildRedakteur.dart';
+import 'package:website_frontend/sections/news/mobile/build_redakteur.dart';
 
 class NewsCardExtended extends StatelessWidget {
   final News singleNews;

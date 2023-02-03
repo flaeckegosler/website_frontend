@@ -23,8 +23,6 @@ class _SoundSectionState extends State<SoundSection> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(230, 230, 230, 1),
@@ -172,7 +170,7 @@ class _SoundSectionState extends State<SoundSection> {
                 alignment: Alignment.bottomRight,
                 child: Container(
                   padding: const EdgeInsets.only(right: 30, bottom: 22),
-                  child: Container(
+                  child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: const BorderRadius.all(

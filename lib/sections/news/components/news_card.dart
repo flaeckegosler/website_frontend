@@ -23,7 +23,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
   late Animation _fadeInAnimation;
 
   @override
-  initState() {
+  void initState() {
     fadeController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
