@@ -267,7 +267,7 @@ class _MemberSectionState extends State<MemberSection> {
 
     return Container(
       width: double.infinity,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           alignment: Alignment.center,
@@ -277,12 +277,12 @@ class _MemberSectionState extends State<MemberSection> {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Mitglieder",
-                  subTitle: "Sieh dir diese Beauties an!",
-                  color: Color.fromRGBO(147, 90, 161, 1),
+                  subTitle: "SiEh dir diEsE BEautiEs an!",
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               const SizedBox(
@@ -303,7 +303,7 @@ class _MemberSectionState extends State<MemberSection> {
                 children: getMemberList(),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               )
             ],
           ),
@@ -445,7 +445,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Instruments.drums == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -476,7 +476,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Instruments.horn == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -507,7 +507,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Instruments.posaune == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -538,7 +538,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Instruments.sousaphon == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -569,7 +569,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Instruments.trompete == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -606,7 +606,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Kommissionen.vorstand == pickedButtonKommission
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -637,7 +637,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor:
                 Picked_button_Kommissionen.expedition == pickedButtonKommission
                     ? MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(147, 90, 161, 1),
+                        Theme.of(context).primaryColor,
                       )
                     : MaterialStateProperty.all<Color>(
                         Colors.grey,
@@ -668,7 +668,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor: Picked_button_Kommissionen.sujetkomission ==
                     pickedButtonKommission
                 ? MaterialStateProperty.all<Color>(
-                    const Color.fromRGBO(147, 90, 161, 1),
+                    Theme.of(context).primaryColor,
                   )
                 : MaterialStateProperty.all<Color>(
                     Colors.grey,
@@ -700,7 +700,7 @@ class _MemberSectionState extends State<MemberSection> {
             backgroundColor: Picked_button_Kommissionen.musikkomission ==
                     pickedButtonKommission
                 ? MaterialStateProperty.all<Color>(
-                    const Color.fromRGBO(147, 90, 161, 1),
+                    Theme.of(context).primaryColor,
                   )
                 : MaterialStateProperty.all<Color>(
                     Colors.grey,

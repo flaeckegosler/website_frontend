@@ -60,9 +60,9 @@ class BottomBar extends StatelessWidget {
         height: 400,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            // fit: BoxFit.contain,
-            image: AssetImage("assets/MUSTER_REPETIEREND.png"),
-            repeat: ImageRepeat.repeat,
+            fit: BoxFit.fitHeight,
+            image: AssetImage("assets/background_kyoto.png"),
+            //repeat: ImageRepeat.noRepeat,
             scale: 0.2,
           ),
         ),
@@ -260,9 +260,9 @@ class BottomBar extends StatelessWidget {
         height: 400,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            // fit: BoxFit.contain,
-            image: AssetImage("assets/MUSTER_REPETIEREND.png"),
-            repeat: ImageRepeat.repeat,
+            fit: BoxFit.cover,
+            image: AssetImage("assets/background_kyoto.png"),
+            // repeat: ImageRepeat.repeat,
             scale: 0.2,
           ),
         ),
@@ -452,7 +452,7 @@ class BottomBar extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'Copyright © 2022 | Fläckegosler Roteborg',
+              'Copyright © 2023 | Fläckegosler Roteborg',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,

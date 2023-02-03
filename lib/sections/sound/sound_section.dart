@@ -25,12 +25,11 @@ class _SoundSectionState extends State<SoundSection> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      // color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
           width: 1250,
           alignment: Alignment.center,
           constraints: const BoxConstraints(maxWidth: 1250),
@@ -39,21 +38,21 @@ class _SoundSectionState extends State<SoundSection> {
               const SizedBox(
                 height: 40,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Sound",
-                  subTitle: "Nimm eine Kostprobe!",
-                  color: Color.fromRGBO(147, 90, 161, 1),
+                  subTitle: "Nimm EinE KostprobE!",
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               const SizedBox(
                 height: 30,
               ),
-              if (MediaQuery.of(context).size.width > 750)
+              if (MediaQuery.of(context).size.width > 1250)
                 Column(
                   children: [
-                    SizedBox(
+                    Container(
                       height: 250,
                       child: Row(
                         children: [
@@ -83,24 +82,27 @@ class _SoundSectionState extends State<SoundSection> {
                   ],
                 )
               else
-                Column(
-                  children: [
-                    newSoundCard(
-                        "Rothuusstäge 2020",
-                        "assets/youtube_diadamas_2020.jpg",
-                        "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    newSoundCard(
-                      "Rothuusstäge 2019",
-                      "assets/youtube_vampir_2019.jpg",
-                      "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
-                    ),
-                  ],
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      newSoundCard(
+                          "Rothuusstäge 2020",
+                          "assets/youtube_diadamas_2020.jpg",
+                          "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      newSoundCard(
+                        "Rothuusstäge 2019",
+                        "assets/youtube_vampir_2019.jpg",
+                        "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
+                      ),
+                    ],
+                  ),
                 ),
               const SizedBox(
-                height: 30,
+                height: 40,
               )
             ],
           ),
@@ -170,9 +172,9 @@ class _SoundSectionState extends State<SoundSection> {
                 child: Container(
                   padding: const EdgeInsets.only(right: 30, bottom: 22),
                   child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(147, 90, 161, 1),
-                      borderRadius: BorderRadius.all(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(50),
                       ),
                     ),

@@ -20,7 +20,7 @@ class NewsProvider with ChangeNotifier {
   }
 
   Future<void> fetchNewsList() async {
-    final url = Uri.parse('https://test.flaeckegosler.ch/app/news-to-json/');
+    final url = Uri.parse('https://api.flaeckegosler.ch/app/news-to-json/');
     final response = await http.get(
       url,
     );
@@ -33,9 +33,9 @@ class NewsProvider with ChangeNotifier {
           id: newsId.toString(),
           newsTitle: newsData['newsTitle'] as String,
           imageURL: newsData['imageURL'].toString().replaceFirst(
-              'https://flaeckegosler.ch', 'https://test.flaeckegosler.ch'),
+              'https://flaeckegosler.ch', 'https://api.flaeckegosler.ch'),
           cropImageURL: newsData['cropImageURL'].toString().replaceFirst(
-              'https://flaeckegosler.ch', 'https://test.flaeckegosler.ch'),
+              'https://flaeckegosler.ch', 'https://api.flaeckegosler.ch'),
           timeCreatedUnix: newsData['timeCreatedUnix'] as int,
           timeCreatedFormatted: newsData['timeCreatedFormatted'] as String,
           newsCreatedBy: newsData['newsCreatedBy'] != null

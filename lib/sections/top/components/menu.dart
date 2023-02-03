@@ -12,6 +12,7 @@ class _MenuState extends State<Menu> {
   int hoverIndex = 0;
   List<String> menuItems = [
     "News",
+    "Programm",
     "Fotos",
     "Agenda",
     "Mitglieder",
@@ -26,7 +27,7 @@ class _MenuState extends State<Menu> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 2.5),
       constraints: const BoxConstraints(maxWidth: 1250),
-      height: 100,
+      height: 80,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
@@ -82,7 +83,10 @@ class _MenuState extends State<Menu> {
                 left: 0,
                 right: 0,
                 bottom: selectedIndex == index ? -2 : -32,
-                child: Image.asset("assets/Hover.png"),
+                child: Image.asset(
+                  "assets/Hover.png",
+                  height: 25,
+                ),
               ),
             ],
           ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/mobile/countdown.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
 import 'package:website_frontend/sections/news/mobile/news_widget.dart';
@@ -111,7 +112,7 @@ class _NewsSectionState extends State<NewsSection>
             style: ElevatedButton.styleFrom(
                 backgroundColor: startIndex == 0
                     ? Colors.grey
-                    : const Color.fromRGBO(147, 90, 162, 1),
+                    : Theme.of(context).primaryColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: previous,
@@ -128,7 +129,7 @@ class _NewsSectionState extends State<NewsSection>
             ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(147, 90, 162, 1),
+                backgroundColor: Theme.of(context).primaryColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 28, vertical: 15)),
             onPressed: next,
@@ -352,19 +353,24 @@ class _NewsSectionState extends State<NewsSection>
     return Align(
       child: Container(
         alignment: Alignment.center,
-        // color: Colors.blue, //good for debugging
+        // color: const Color.fromRGBO(230, 230, 230, 1), //good for debugging
         constraints: const BoxConstraints(maxWidth: 1250),
         child: Column(
           children: [
+            if (width < 1250)
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+                child: Countdown(),
+              ),
             const SizedBox(
               height: 40,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 8.0, right: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 10),
               child: SectionTitle(
-                title: "News",
-                subTitle: "Aktuelles auf einen Blick!",
-                color: Color.fromRGBO(147, 90, 162, 1),
+                title: "NEws",
+                subTitle: "AktuEllEs auf EinEn BliCk!",
+                color: Theme.of(context).primaryColor,
               ),
             ),
             const SizedBox(
@@ -419,7 +425,7 @@ class _NewsSectionState extends State<NewsSection>
             ),
             if (_isLoading == false) buildButtons(),
             const SizedBox(
-              height: 30,
+              height: 40,
             ),
           ],
         ),

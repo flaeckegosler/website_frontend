@@ -21,16 +21,18 @@ class ScrollSingleton {
     // index == 5  BottomBar();
     if (section == "News") {
       index = 1;
-    } else if (section == "Fotos") {
+    } else if (section == "Programm") {
       index = 2;
-    } else if (section == "Agenda") {
+    } else if (section == "Fotos") {
       index = 3;
-    } else if (section == "Mitglieder") {
+    } else if (section == "Agenda") {
       index = 4;
-    } else if (section == "Sound") {
+    } else if (section == "Mitglieder") {
       index = 5;
-    } else if (section == "Expedition") {
+    } else if (section == "Sound") {
       index = 6;
+    } else if (section == "Expedition") {
+      index = 7;
     }
     navBarScrollController.scrollTo(
       index: index,

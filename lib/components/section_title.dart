@@ -40,7 +40,11 @@ class SectionTitle extends StatelessWidget {
                 child: Text(
                   subTitle,
                   style: const TextStyle(
-                      fontWeight: FontWeight.w200, color: kTextColor),
+                    fontWeight: FontWeight.w200,
+                    color: kTextColor,
+                    fontFamily: "Shakuro",
+                    fontSize: 12,
+                  ),
                 ),
               ),
               const SizedBox(
@@ -53,6 +57,7 @@ class SectionTitle extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline2!.copyWith(
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
+                        fontFamily: "Shakuro",
                         fontSize: 48,
                       ),
                 ),

@@ -28,7 +28,7 @@ class PicturesProvider with ChangeNotifier {
   }
 
   Future<void> fetchAlbumList() async {
-    final url = Uri.parse('https://test.flaeckegosler.ch/app/pics-to-json/');
+    final url = Uri.parse('https://api.flaeckegosler.ch/app/pics-to-json/');
     final response = await http.get(
       url,
     );
@@ -49,7 +49,7 @@ class PicturesProvider with ChangeNotifier {
             SpecificImage(
               pictureName: k as String,
               pictureUrl: v.toString().replaceFirst(
-                  'https://flaeckegosler.ch', 'https://test.flaeckegosler.ch'),
+                  'https://flaeckegosler.ch', 'https://api.flaeckegosler.ch'),
               pictureIndex: pictureIndex.toString(),
             ),
           ),
