@@ -50,9 +50,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                   children: [
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       isFirst: true,
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
@@ -78,9 +79,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       endChild: const SizedBox(height: 80),
@@ -109,9 +111,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       startChild: const SizedBox(height: 80),
@@ -136,9 +139,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       endChild: const SizedBox(height: 80),
@@ -163,9 +167,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       startChild: const SizedBox(height: 80),
@@ -190,9 +195,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       endChild: const SizedBox(height: 80),
@@ -217,9 +223,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       startChild: const SizedBox(height: 80),
@@ -244,9 +251,10 @@ class _AgendaSectionState extends State<AgendaSection> {
                     ),
                     TimelineTile(
                       indicatorStyle: IndicatorStyle(
-                          color: Theme.of(context).primaryColor,
-                          height: 15,
-                          width: 15),
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
                       isLast: true,

@@ -7,7 +7,7 @@ class ExpeditionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 500,
       width: 1250,
       child: Row(
@@ -15,12 +15,11 @@ class ExpeditionWidget extends StatelessWidget {
           Expanded(
             child: Container(),
           ),
-          Container(
+          SizedBox(
             width: 250,
             child: Column(
               children: [
                 Card(
-                  borderOnForeground: true,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -72,14 +71,17 @@ class ExpeditionWidget extends StatelessWidget {
                   width: 250,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10.0),
-                          ),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10.0),
                         ),
-                        primary: Colors.red,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 28, vertical: 15)),
+                      ),
+                      backgroundColor: Colors.red,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 28,
+                        vertical: 15,
+                      ),
+                    ),
                     onPressed: () {},
                     child: const Text(
                       "Webseite",

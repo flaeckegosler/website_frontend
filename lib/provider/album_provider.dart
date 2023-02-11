@@ -12,19 +12,22 @@ class PicturesProvider with ChangeNotifier {
   }
 
   int getAmountOfPictures(String albumTitleRoute) {
-    return int.parse(_albums
-        .where((element) => element.albumTitleRoute == albumTitleRoute)
-        .first
-        .specificImage
-        .last
-        .pictureIndex);
+    return int.parse(
+      _albums
+          .where((element) => element.albumTitleRoute == albumTitleRoute)
+          .first
+          .specificImage
+          .last
+          .pictureIndex,
+    );
   }
 
   SpecificImage getGalleryLink(albumTitleRoute, pictureIndex) {
     Album selectedGalerie = _albums
-        .firstWhere((element) => (element.albumTitleRoute == albumTitleRoute));
-    return selectedGalerie.specificImage.firstWhere((element) =>
-        element.pictureIndex.toString() == pictureIndex.toString());
+        .firstWhere((element) => element.albumTitleRoute == albumTitleRoute);
+    return selectedGalerie.specificImage.firstWhere(
+      (element) => element.pictureIndex.toString() == pictureIndex.toString(),
+    );
   }
 
   Future<void> fetchAlbumList() async {
@@ -49,7 +52,9 @@ class PicturesProvider with ChangeNotifier {
             SpecificImage(
               pictureName: k as String,
               pictureUrl: v.toString().replaceFirst(
-                  'https://flaeckegosler.ch', 'https://api.flaeckegosler.ch'),
+                    'https://flaeckegosler.ch',
+                    'https://api.flaeckegosler.ch',
+                  ),
               pictureIndex: pictureIndex.toString(),
             ),
           ),
@@ -58,17 +63,18 @@ class PicturesProvider with ChangeNotifier {
       );
       pictureIndex = 1;
       final Album pictures = Album(
-          id: picturesId.toString(),
-          menuTitle: picturesData['menuTitle'] as String,
-          albumTitle: picturesData['albumTitle'] as String,
-          albumTitleRoute: (picturesData['albumTitle'])
-              .toString()
-              .toLowerCase()
-              .replaceAll(" ", "-"),
-          bodyText: picturesData['bodyText'] as String,
-          dateUnix: picturesData['dateUnix'] as int,
-          dateFormatted: picturesData['dateFormatted'] as String,
-          specificImage: temp);
+        id: picturesId.toString(),
+        menuTitle: picturesData['menuTitle'] as String,
+        albumTitle: picturesData['albumTitle'] as String,
+        albumTitleRoute: (picturesData['albumTitle'])
+            .toString()
+            .toLowerCase()
+            .replaceAll(" ", "-"),
+        bodyText: picturesData['bodyText'] as String,
+        dateUnix: picturesData['dateUnix'] as int,
+        dateFormatted: picturesData['dateFormatted'] as String,
+        specificImage: temp,
+      );
       fetchedPicturesList.add(pictures);
     });
     _albums = fetchedPicturesList;

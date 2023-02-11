@@ -7,7 +7,7 @@ class MitgliedWerden extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       //  height: 250,
       color: const Color.fromRGBO(230, 230, 230, 1),
       child: Padding(
@@ -53,7 +53,8 @@ class MitgliedWerden extends StatelessWidget {
                       recognizer: TapGestureRecognizer()
                         ..onTap = (() {
                           launch(
-                              "mailto:werde_ein@flaeckegosler.ch?subject=Mitglied%20werden%20Fläckegosler&body=Salüü%20Janick,");
+                            "mailto:werde_ein@flaeckegosler.ch?subject=Mitglied%20werden%20Fläckegosler&body=Salüü%20Janick,",
+                          );
                         }),
                     ),
                     const TextSpan(text: "."),
@@ -79,7 +80,8 @@ class MitgliedWerden extends StatelessWidget {
                   recognizer: TapGestureRecognizer()
                     ..onTap = (() {
                       launch(
-                          "https://api.flaeckegosler.ch/site/assets/files/1029/kandidatenformular23.pdf");
+                        "https://api.flaeckegosler.ch/site/assets/files/1029/kandidatenformular23.pdf",
+                      );
                     }),
                 ),
               ),

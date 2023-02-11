@@ -168,9 +168,7 @@ class Kontakt extends StatelessWidget {
         return Future.value(false);
       },
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-        ),
+        appBar: AppBar(),
         body: ListView(
           children: <Widget>[
             Column(
@@ -250,11 +248,12 @@ class Kontakt extends StatelessWidget {
                                         controllerSubject.text != '' &&
                                         controllerMessage.text != '') {
                                       sendEmail(
-                                          name: controllerFromName.text,
-                                          email: controllerFromEmail.text,
-                                          subject: controllerSubject.text,
-                                          message: controllerMessage.text,
-                                          ctx: context);
+                                        name: controllerFromName.text,
+                                        email: controllerFromEmail.text,
+                                        subject: controllerSubject.text,
+                                        message: controllerMessage.text,
+                                        ctx: context,
+                                      );
                                     } else {
                                       showDialog(
                                         context: context,

@@ -6,6 +6,7 @@ import 'package:website_frontend/models/authors.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 
 class NewsCard extends StatefulWidget {
+  @override
   final key;
   final int index;
 
@@ -22,7 +23,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
   late Animation _fadeInAnimation;
 
   @override
-  initState() {
+  void initState() {
     fadeController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
@@ -69,9 +70,11 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
                         image: DecorationImage(
-                            image: NetworkImage(
-                                newsProvider.allNews[widget.index].imageURL),
-                            fit: BoxFit.cover),
+                          image: NetworkImage(
+                            newsProvider.allNews[widget.index].imageURL,
+                          ),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Row(
@@ -117,7 +120,8 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                       ],
                     ),
                     buildRedakteur(
-                        newsProvider.allNews[widget.index].newsCreatedBy),
+                      newsProvider.allNews[widget.index].newsCreatedBy,
+                    ),
                     const SizedBox(height: 20),
                   ],
                 ),

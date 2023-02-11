@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/constants.dart';
+import 'package:website_frontend/mobile/goenner_werden.dart';
+import 'package:website_frontend/mobile/mitglied_werden.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
 import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/expedition/expedition.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
-import 'package:website_frontend/mobile/goenner_werden.dart';
-import 'package:website_frontend/mobile/mitglied_werden.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 import 'package:website_frontend/sections/programm/programm.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
@@ -47,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
           .toList();
       checkVisibility();
       //   setNavBarSizes();
-      print(indices);
     });
   }
 
@@ -129,31 +128,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   onSelected: (String result) {
                     switch (result) {
                       case 'option1':
-                        print('option 1 clicked');
                         myScrollSingleton.scrollToItem("News");
                         break;
                       case 'option2':
-                        print('option 2 clicked');
                         myScrollSingleton.scrollToItem("Programm");
                         break;
                       case 'option3':
-                        print('option 3 clicked');
                         myScrollSingleton.scrollToItem("Fotos");
                         break;
                       case 'option4':
-                        print('option 4 clicked');
                         myScrollSingleton.scrollToItem("Agenda");
                         break;
                       case 'option5':
-                        print('option 5 clicked');
                         myScrollSingleton.scrollToItem("Mitglieder");
                         break;
                       case 'option6':
-                        print('option 6 clicked');
                         myScrollSingleton.scrollToItem("Sound");
                         break;
                       case 'option7':
-                        print('option 7 clicked');
                         myScrollSingleton.scrollToItem("Expedition");
                         break;
                       default:
@@ -362,28 +354,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
-                              borderRadius: BorderRadius.circular(20),
-                              onTap: () =>
-                                  myScrollSingleton.scrollToItem("Fotos"),
-                              child: /* TweenAnimationBuilder<double>(
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Fotos"),
+                            child: /* TweenAnimationBuilder<double>(
                               duration: const Duration(milliseconds: 500),
                               tween: Tween<double>(
                                 begin: _navBarFotosTextSize,
                                 end: _navBarFotosTextSize,
                               ),
                               builder: (_, size, __) => */
-                                  const Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Text(
-                                  "Fotos",
-                                  style: TextStyle(
-                                    fontSize: 16, //size,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                const Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                "Fotos",
+                                style: TextStyle(
+                                  fontSize: 16, //size,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                              )
-                              //      ),
                               ),
+                            ),
+                            //      ),
+                          ),
                         ],
                       ),
                     ),
@@ -423,8 +415,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Agenda",
                                 style: TextStyle(
-                                    fontSize: 16, //size,
-                                    fontWeight: FontWeight.bold),
+                                  fontSize: 16, //size,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                             //     ),
@@ -499,7 +492,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Sound",
                                 style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -536,7 +531,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Expedition",
                                 style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),

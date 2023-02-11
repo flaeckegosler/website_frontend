@@ -23,8 +23,6 @@ class _SoundSectionState extends State<SoundSection> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(230, 230, 230, 1),
@@ -52,7 +50,7 @@ class _SoundSectionState extends State<SoundSection> {
               if (MediaQuery.of(context).size.width > 1250)
                 Column(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 250,
                       child: Row(
                         children: [
@@ -87,9 +85,10 @@ class _SoundSectionState extends State<SoundSection> {
                   child: Column(
                     children: [
                       newSoundCard(
-                          "Rothuusstäge 2020",
-                          "assets/youtube_diadamas_2020.jpg",
-                          "https://www.youtube.com/watch?v=2xE9i5t4mXQ"),
+                        "Rothuusstäge 2020",
+                        "assets/youtube_diadamas_2020.jpg",
+                        "https://www.youtube.com/watch?v=2xE9i5t4mXQ",
+                      ),
                       const SizedBox(
                         height: 15,
                       ),
@@ -171,7 +170,7 @@ class _SoundSectionState extends State<SoundSection> {
                 alignment: Alignment.bottomRight,
                 child: Container(
                   padding: const EdgeInsets.only(right: 30, bottom: 22),
-                  child: Container(
+                  child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: const BorderRadius.all(

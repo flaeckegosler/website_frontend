@@ -9,15 +9,10 @@ ThemeData get mythosTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: Color.fromRGBO(151, 28, 28, 1),
     ),
-    splashColor: Colors.white, // Tested, no impact
-    backgroundColor: Colors.white,
+    splashColor: Colors.white,
     scaffoldBackgroundColor: Colors.white,
-    /*  textTheme: const TextTheme(
-      headline1: TextStyle(color: Colors.black),
-      headline2: TextStyle(color: Colors.black),
-      bodyText1: TextStyle(color: Colors.black),
-      bodyText2: TextStyle(color: Colors.black),
-    ),*/
-    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(secondary: Colors.white)
+        .copyWith(background: Colors.white),
   );
 }

@@ -4,7 +4,7 @@ import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/models/vorstand.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
-import 'package:website_frontend/sections/footer/configuration/MyCustomScrollBehavior.dart';
+import 'package:website_frontend/sections/footer/configuration/my_custom_scroll_behavior.dart';
 
 class VorstandPage extends StatefulWidget {
   @override
@@ -160,9 +160,9 @@ class _VorstandPageState extends State<VorstandPage> {
             if (_isLoading)
               const SizedBox()
             else
-              Container(
+              const SizedBox(
                 height: 400,
-                child: const BottomBar(),
+                child: BottomBar(),
               ),
           ],
         ),

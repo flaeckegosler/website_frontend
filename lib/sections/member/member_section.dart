@@ -15,7 +15,7 @@ enum ButtonType {
   kommissionen,
 }
 
-enum Picked_button_Instruments {
+enum PickedButtonInstruments {
   trompete,
   posaune,
   horn,
@@ -23,7 +23,7 @@ enum Picked_button_Instruments {
   drums,
 }
 
-enum Picked_button_Kommissionen {
+enum PickedButtonKommissionen {
   vorstand,
   expedition,
   sujetkomission,
@@ -81,23 +81,26 @@ class _MemberSectionState extends State<MemberSection> {
   }
 
   Widget createMemberCardPremium(
-      Member member, Picked_button_Kommissionen buttonType) {
+    Member member,
+    PickedButtonKommissionen buttonType,
+  ) {
     String aemtli = "";
-    if (buttonType == Picked_button_Kommissionen.vorstand) {
+    if (buttonType == PickedButtonKommissionen.vorstand) {
       aemtli = member.vorstand;
-    } else if (buttonType == Picked_button_Kommissionen.expedition) {
+    } else if (buttonType == PickedButtonKommissionen.expedition) {
       aemtli = member.expedition;
-    } else if (buttonType == Picked_button_Kommissionen.sujetkomission) {
+    } else if (buttonType == PickedButtonKommissionen.sujetkomission) {
       aemtli = member.sujetKommission;
-    } else if (buttonType == Picked_button_Kommissionen.musikkomission) {
+    } else if (buttonType == PickedButtonKommissionen.musikkomission) {
       aemtli = member.muKo;
     }
     return Container(
       padding: const EdgeInsets.all(5),
       child: InkWell(
         onTap: () => GoRouter.of(context).push(
-            '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
-            extra: member.pictureUrlMax),
+          '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
+          extra: member.pictureUrlMax,
+        ),
         child: Stack(
           children: [
             ClipRRect(
@@ -163,54 +166,52 @@ class _MemberSectionState extends State<MemberSection> {
     }
   }
 
-  Picked_button_Instruments pickedButtonInstrument =
-      Picked_button_Instruments.drums;
-  Picked_button_Kommissionen pickedButtonKommission =
-      Picked_button_Kommissionen.vorstand;
+  PickedButtonInstruments pickedButtonInstrument =
+      PickedButtonInstruments.drums;
+  PickedButtonKommissionen pickedButtonKommission =
+      PickedButtonKommissionen.vorstand;
 
   @override
   Widget build(BuildContext context) {
-    final _myMemberProvider = context.watch<MemberProvider>();
+    final myMemberProvider = context.watch<MemberProvider>();
     final double width = MediaQuery.of(context).size.width;
 
     List<Widget> getMemberList() {
       if (buttonType == ButtonType.instrumente) {
-        if (pickedButtonInstrument == Picked_button_Instruments.drums) {
+        if (pickedButtonInstrument == PickedButtonInstruments.drums) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Drums").length,
+            myMemberProvider.getMemberOfInstrument("Drums").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Drums")[index],
+              myMemberProvider.getMemberOfInstrument("Drums")[index],
             ),
           );
-        } else if (pickedButtonInstrument == Picked_button_Instruments.horn) {
+        } else if (pickedButtonInstrument == PickedButtonInstruments.horn) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Horn").length,
+            myMemberProvider.getMemberOfInstrument("Horn").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Horn")[index],
-            ),
-          );
-        } else if (pickedButtonInstrument ==
-            Picked_button_Instruments.sousaphon) {
-          return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Sousaphon").length,
-            (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Sousaphon")[index],
+              myMemberProvider.getMemberOfInstrument("Horn")[index],
             ),
           );
         } else if (pickedButtonInstrument ==
-            Picked_button_Instruments.trompete) {
+            PickedButtonInstruments.sousaphon) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Trompete").length,
+            myMemberProvider.getMemberOfInstrument("Sousaphon").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Trompete")[index],
+              myMemberProvider.getMemberOfInstrument("Sousaphon")[index],
             ),
           );
-        } else if (pickedButtonInstrument ==
-            Picked_button_Instruments.posaune) {
+        } else if (pickedButtonInstrument == PickedButtonInstruments.trompete) {
           return List.generate(
-            _myMemberProvider.getMemberOfInstrument("Posaune").length,
+            myMemberProvider.getMemberOfInstrument("Trompete").length,
             (index) => createMemberCard(
-              _myMemberProvider.getMemberOfInstrument("Posaune")[index],
+              myMemberProvider.getMemberOfInstrument("Trompete")[index],
+            ),
+          );
+        } else if (pickedButtonInstrument == PickedButtonInstruments.posaune) {
+          return List.generate(
+            myMemberProvider.getMemberOfInstrument("Posaune").length,
+            (index) => createMemberCard(
+              myMemberProvider.getMemberOfInstrument("Posaune")[index],
             ),
           );
         } else {
@@ -218,36 +219,40 @@ class _MemberSectionState extends State<MemberSection> {
         }
       } else {
         //ButtonType == Kommissionen
-        if (pickedButtonKommission == Picked_button_Kommissionen.vorstand) {
+        if (pickedButtonKommission == PickedButtonKommissionen.vorstand) {
           return List.generate(
-            _myMemberProvider.getMemberOfVorstand().length,
+            myMemberProvider.getMemberOfVorstand().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfVorstand()[index],
-                Picked_button_Kommissionen.vorstand),
+              myMemberProvider.getMemberOfVorstand()[index],
+              PickedButtonKommissionen.vorstand,
+            ),
           );
         } else if (pickedButtonKommission ==
-            Picked_button_Kommissionen.expedition) {
+            PickedButtonKommissionen.expedition) {
           return List.generate(
-            _myMemberProvider.getMemberOfExpedition().length,
+            myMemberProvider.getMemberOfExpedition().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfExpedition()[index],
-                Picked_button_Kommissionen.expedition),
+              myMemberProvider.getMemberOfExpedition()[index],
+              PickedButtonKommissionen.expedition,
+            ),
           );
         } else if (pickedButtonKommission ==
-            Picked_button_Kommissionen.sujetkomission) {
+            PickedButtonKommissionen.sujetkomission) {
           return List.generate(
-            _myMemberProvider.getMemberOfSujetkommission().length,
+            myMemberProvider.getMemberOfSujetkommission().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfSujetkommission()[index],
-                Picked_button_Kommissionen.sujetkomission),
+              myMemberProvider.getMemberOfSujetkommission()[index],
+              PickedButtonKommissionen.sujetkomission,
+            ),
           );
         } else if (pickedButtonKommission ==
-            Picked_button_Kommissionen.musikkomission) {
+            PickedButtonKommissionen.musikkomission) {
           return List.generate(
-            _myMemberProvider.getMemberOfMuKo().length,
+            myMemberProvider.getMemberOfMuKo().length,
             (index) => createMemberCardPremium(
-                _myMemberProvider.getMemberOfMuKo()[index],
-                Picked_button_Kommissionen.musikkomission),
+              myMemberProvider.getMemberOfMuKo()[index],
+              PickedButtonKommissionen.musikkomission,
+            ),
           );
         } else {
           return [];
@@ -265,7 +270,7 @@ class _MemberSectionState extends State<MemberSection> {
       }
     }
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
       //  color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
@@ -443,7 +448,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Instruments.drums == pickedButtonInstrument
+                PickedButtonInstruments.drums == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -458,7 +463,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonInstrument = Picked_button_Instruments.drums;
+              pickedButtonInstrument = PickedButtonInstruments.drums;
             });
           },
           child: const Text(
@@ -474,7 +479,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Instruments.horn == pickedButtonInstrument
+                PickedButtonInstruments.horn == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -489,7 +494,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonInstrument = Picked_button_Instruments.horn;
+              pickedButtonInstrument = PickedButtonInstruments.horn;
             });
           },
           child: const Text(
@@ -505,7 +510,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Instruments.posaune == pickedButtonInstrument
+                PickedButtonInstruments.posaune == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -520,7 +525,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonInstrument = Picked_button_Instruments.posaune;
+              pickedButtonInstrument = PickedButtonInstruments.posaune;
             });
           },
           child: const Text(
@@ -536,7 +541,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Instruments.sousaphon == pickedButtonInstrument
+                PickedButtonInstruments.sousaphon == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -551,7 +556,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonInstrument = Picked_button_Instruments.sousaphon;
+              pickedButtonInstrument = PickedButtonInstruments.sousaphon;
             });
           },
           child: const Text(
@@ -567,7 +572,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Instruments.trompete == pickedButtonInstrument
+                PickedButtonInstruments.trompete == pickedButtonInstrument
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -582,7 +587,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonInstrument = Picked_button_Instruments.trompete;
+              pickedButtonInstrument = PickedButtonInstruments.trompete;
             });
           },
           child: const Text(
@@ -604,7 +609,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Kommissionen.vorstand == pickedButtonKommission
+                PickedButtonKommissionen.vorstand == pickedButtonKommission
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -619,7 +624,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonKommission = Picked_button_Kommissionen.vorstand;
+              pickedButtonKommission = PickedButtonKommissionen.vorstand;
             });
           },
           child: const Text(
@@ -635,7 +640,7 @@ class _MemberSectionState extends State<MemberSection> {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor:
-                Picked_button_Kommissionen.expedition == pickedButtonKommission
+                PickedButtonKommissionen.expedition == pickedButtonKommission
                     ? MaterialStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
@@ -650,7 +655,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonKommission = Picked_button_Kommissionen.expedition;
+              pickedButtonKommission = PickedButtonKommissionen.expedition;
             });
           },
           child: const Text(
@@ -665,7 +670,7 @@ class _MemberSectionState extends State<MemberSection> {
         height: 40,
         child: ElevatedButton(
           style: ButtonStyle(
-            backgroundColor: Picked_button_Kommissionen.sujetkomission ==
+            backgroundColor: PickedButtonKommissionen.sujetkomission ==
                     pickedButtonKommission
                 ? MaterialStateProperty.all<Color>(
                     Theme.of(context).primaryColor,
@@ -681,8 +686,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonKommission =
-                  Picked_button_Kommissionen.sujetkomission;
+              pickedButtonKommission = PickedButtonKommissionen.sujetkomission;
             });
           },
           child: const Text(
@@ -697,7 +701,7 @@ class _MemberSectionState extends State<MemberSection> {
         height: 40,
         child: ElevatedButton(
           style: ButtonStyle(
-            backgroundColor: Picked_button_Kommissionen.musikkomission ==
+            backgroundColor: PickedButtonKommissionen.musikkomission ==
                     pickedButtonKommission
                 ? MaterialStateProperty.all<Color>(
                     Theme.of(context).primaryColor,
@@ -713,8 +717,7 @@ class _MemberSectionState extends State<MemberSection> {
           ),
           onPressed: () {
             setState(() {
-              pickedButtonKommission =
-                  Picked_button_Kommissionen.musikkomission;
+              pickedButtonKommission = PickedButtonKommissionen.musikkomission;
             });
           },
           child: const Text(

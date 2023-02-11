@@ -7,7 +7,7 @@ import 'package:website_frontend/sections/news/mobile/title_default.dart';
 
 Future launchURL(String url) async {
   if (await canLaunch(url)) {
-    await launch(url, forceSafariVC: true, forceWebView: false);
+    await launch(url, forceSafariVC: true);
   } else {
     print('Could not launch $url');
   }
@@ -68,9 +68,10 @@ class SingleNews extends StatelessWidget {
       return Column(
         children: <Widget>[
           const Padding(
-              padding:
-                  EdgeInsets.only(top: 10.0, left: 20, right: 20, bottom: 10),
-              child: Divider()),
+            padding:
+                EdgeInsets.only(top: 10.0, left: 20, right: 20, bottom: 10),
+            child: Divider(),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -105,9 +106,7 @@ class SingleNews extends StatelessWidget {
         return Future.value(false);
       },
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-        ),
+        appBar: AppBar(),
         body: ListView(
           children: <Widget>[
             _buildTitelBild(),

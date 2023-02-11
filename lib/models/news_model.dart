@@ -14,17 +14,18 @@ class News with ChangeNotifier {
   final String newsTags;
   final String galleryLink;
 
-  News(
-      {required this.id,
-      required this.newsTitle,
-      required this.imageURL,
-      required this.cropImageURL,
-      required this.timeCreatedUnix,
-      required this.timeCreatedFormatted,
-      required this.newsCreatedBy,
-      required this.newsIntroText,
-      required this.newsMainText,
-      this.imageDescription,
-      required this.newsTags,
-      required this.galleryLink});
+  News({
+    required this.id,
+    required this.newsTitle,
+    required this.imageURL,
+    required this.cropImageURL,
+    required this.timeCreatedUnix,
+    required this.timeCreatedFormatted,
+    required this.newsCreatedBy,
+    required this.newsIntroText,
+    required this.newsMainText,
+    this.imageDescription,
+    required this.newsTags,
+    required this.galleryLink,
+  });
 }
