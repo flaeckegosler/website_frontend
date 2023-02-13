@@ -43,40 +43,40 @@ class _MemberSectionState extends State<MemberSection> {
   Widget createMemberCard(Member member) {
     return Container(
       padding: const EdgeInsets.all(5),
-      child: InkWell(
+      /* child: InkWell(
         onTap: () => context.push(
           '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
           extra: member.pictureUrlMax,
-        ),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Center(
-                child: _buildMember(member),
+        ),*/
+      child: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Center(
+              child: _buildMember(member),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.bottomLeft,
+            child: Text(
+              member.firstName,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(2.5, 2.5),
+                    blurRadius: 5.0,
+                    color: Color.fromARGB(255, 0, 0, 1),
+                  ),
+                ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                member.firstName,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  shadows: <Shadow>[
-                    Shadow(
-                      offset: Offset(2.5, 2.5),
-                      blurRadius: 5.0,
-                      color: Color.fromARGB(255, 0, 0, 1),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
+      //  ),
     );
   }
 
@@ -96,59 +96,60 @@ class _MemberSectionState extends State<MemberSection> {
     }
     return Container(
       padding: const EdgeInsets.all(5),
-      child: InkWell(
+      child: /* InkWell(
         onTap: () => GoRouter.of(context).push(
           '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
           extra: member.pictureUrlMax,
-        ),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Center(
-                child: _buildMember(member),
-              ),
+        ), 
+        child:*/
+          Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Center(
+              child: _buildMember(member),
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    member.firstName,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      shadows: <Shadow>[
-                        Shadow(
-                          offset: Offset(2.5, 2.5),
-                          blurRadius: 5.0,
-                          color: Color.fromARGB(255, 0, 0, 1),
-                        ),
-                      ],
-                    ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  member.firstName,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(2.5, 2.5),
+                        blurRadius: 5.0,
+                        color: Color.fromARGB(255, 0, 0, 1),
+                      ),
+                    ],
                   ),
-                  Text(
-                    aemtli,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      shadows: <Shadow>[
-                        Shadow(
-                          offset: Offset(2.5, 2.5),
-                          blurRadius: 5.0,
-                          color: Color.fromARGB(255, 0, 0, 1),
-                        ),
-                      ],
-                    ),
+                ),
+                Text(
+                  aemtli,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(2.5, 2.5),
+                        blurRadius: 5.0,
+                        color: Color.fromARGB(255, 0, 0, 1),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+      //  ),
     );
   }
 
