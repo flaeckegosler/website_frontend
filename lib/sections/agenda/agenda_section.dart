@@ -57,9 +57,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       isFirst: true,
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 80),
+                      startChild: const SizedBox(height: 60),
                       endChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,9 +85,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 80),
+                      endChild: const SizedBox(height: 60),
                       startChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -117,9 +117,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 80),
+                      startChild: const SizedBox(height: 60),
                       endChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,9 +145,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 80),
+                      endChild: const SizedBox(height: 60),
                       startChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -173,9 +173,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 80),
+                      startChild: const SizedBox(height: 60),
                       endChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -201,9 +201,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 80),
+                      endChild: const SizedBox(height: 60),
                       startChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -229,9 +229,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 80),
+                      startChild: const SizedBox(height: 60),
                       endChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -257,10 +257,9 @@ class _AgendaSectionState extends State<AgendaSection> {
                       ),
                       beforeLineStyle: const LineStyle(thickness: 2),
                       alignment: TimelineAlign.center,
-                      isLast: true,
-                      endChild: const SizedBox(height: 80),
+                      endChild: const SizedBox(height: 60),
                       startChild: Container(
-                        height: 80,
+                        height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -273,6 +272,63 @@ class _AgendaSectionState extends State<AgendaSection> {
                             FittedBox(
                               fit: BoxFit.scaleDown,
                               child: Text("Waldhötteball, Meierskappel"),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    TimelineTile(
+                      indicatorStyle: IndicatorStyle(
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
+                      beforeLineStyle: const LineStyle(thickness: 2),
+                      alignment: TimelineAlign.center,
+                      startChild: const SizedBox(height: 60),
+                      endChild: Container(
+                        height: 60,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "Freitag, 24. März",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Mitgliederversammlung, Roteborg"),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    TimelineTile(
+                      indicatorStyle: IndicatorStyle(
+                        color: Theme.of(context).primaryColor,
+                        height: 15,
+                        width: 15,
+                      ),
+                      beforeLineStyle: const LineStyle(thickness: 2),
+                      alignment: TimelineAlign.center,
+                      isLast: true,
+                      endChild: const SizedBox(height: 60),
+                      startChild: Container(
+                        height: 60,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "Samstag, 6. Mai",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text("Generalversammlung, Roteborg"),
                             )
                           ],
                         ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -59,18 +60,21 @@ class _MemberSectionState extends State<MemberSection> {
           Container(
             padding: const EdgeInsets.all(20),
             alignment: Alignment.bottomLeft,
-            child: Text(
-              member.firstName,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.5, 2.5),
-                    blurRadius: 5.0,
-                    color: Color.fromARGB(255, 0, 0, 1),
-                  ),
-                ],
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                member.firstName,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 0, 0, 1),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -116,32 +120,38 @@ class _MemberSectionState extends State<MemberSection> {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  member.firstName,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(2.5, 2.5),
-                        blurRadius: 5.0,
-                        color: Color.fromARGB(255, 0, 0, 1),
-                      ),
-                    ],
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    member.firstName,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.5, 2.5),
+                          blurRadius: 5.0,
+                          color: Color.fromARGB(255, 0, 0, 1),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Text(
-                  aemtli,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(2.5, 2.5),
-                        blurRadius: 5.0,
-                        color: Color.fromARGB(255, 0, 0, 1),
-                      ),
-                    ],
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    aemtli,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.5, 2.5),
+                          blurRadius: 5.0,
+                          color: Color.fromARGB(255, 0, 0, 1),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -155,8 +165,8 @@ class _MemberSectionState extends State<MemberSection> {
 
   Widget _buildMember(Member member) {
     if (member.pictureUrl.contains("https://")) {
-      return Image.network(
-        member.pictureUrl,
+      return CachedNetworkImage(
+        imageUrl: member.pictureUrl,
         fit: BoxFit.cover,
       );
     } else {

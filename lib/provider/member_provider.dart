@@ -515,7 +515,7 @@ class MemberProvider with ChangeNotifier {
       _member.add(
         Member(
           firstName: "Sibille",
-          lastName: "Brunner",
+          lastName: "Zurmühle",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/z_sibille_360kb.jpg",
           pictureUrlMax:
@@ -786,7 +786,7 @@ class MemberProvider with ChangeNotifier {
       _member.add(
         Member(
           firstName: "Raphaela",
-          lastName: "Zimmermann",
+          lastName: "Köchli",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/k_raphaela_360kb.jpg",
           pictureUrlMax:
