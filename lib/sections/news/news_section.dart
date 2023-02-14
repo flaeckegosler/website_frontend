@@ -379,7 +379,7 @@ class _NewsSectionState extends State<NewsSection>
             if (width < 1250)
               if (_isLoading == true)
                 SizedBox(
-                  height: 300,
+                  height: 751,
                   child: Center(
                     child: CircularProgressIndicator(
                       color: Theme.of(context).primaryColor,
