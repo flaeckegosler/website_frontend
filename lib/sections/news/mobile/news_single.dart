@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,7 +23,7 @@ class SingleNews extends StatelessWidget {
     return SizedBox(
       height: 300,
       child: Image(
-        image: NetworkImage(singleNews.imageURL),
+        image: CachedNetworkImageProvider(singleNews.imageURL),
         fit: BoxFit.cover,
       ),
     );

@@ -11,13 +11,13 @@ class PersonPic extends StatelessWidget {
           child: SizedBox(
             height: 550,
             // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
-            child: Align(
+            /*    child: Align(
               alignment: Alignment.bottomRight,
               child: Image.asset(
                 "assets/webseite_mann_kyoto.png",
                 fit: BoxFit.fitHeight,
               ),
-            ),
+            ),*/
           ),
         ),
         Positioned.fill(
