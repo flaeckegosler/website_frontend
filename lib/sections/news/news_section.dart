@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
-import 'package:website_frontend/mobile/countdown.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/sections/news/components/news_card.dart';
 import 'package:website_frontend/sections/news/mobile/news_widget.dart';
@@ -357,11 +356,6 @@ class _NewsSectionState extends State<NewsSection>
         constraints: const BoxConstraints(maxWidth: 1250),
         child: Column(
           children: [
-            if (width < 1250)
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
-                child: Countdown(),
-              ),
             const SizedBox(
               height: 40,
             ),
@@ -379,7 +373,7 @@ class _NewsSectionState extends State<NewsSection>
             if (width < 1250)
               if (_isLoading == true)
                 SizedBox(
-                  height: 300,
+                  height: 751,
                   child: Center(
                     child: CircularProgressIndicator(
                       color: Theme.of(context).primaryColor,

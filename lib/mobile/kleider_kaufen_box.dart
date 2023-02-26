@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class GoennerWerden extends StatelessWidget {
-  const GoennerWerden({Key? key}) : super(key: key);
+class KleiderKaufenBox extends StatelessWidget {
+  const KleiderKaufenBox({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class GoennerWerden extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Gönner werden!',
+                'Zu verkaufen!',
                 style: TextStyle(
                   fontSize: 26,
                   fontFamily: 'Gosler',
@@ -42,7 +42,7 @@ class GoennerWerden extends StatelessWidget {
                   children: [
                     TextSpan(
                       text:
-                          "Musikalische Unterhaltung und ein feines Z’nacht, inkl. bekannter Küchenmannschaft und langjährig geschultem, “ISO-zertifiziertem” Personal an Flaschenöffner und Korkenzieher, lassen keine Wünsche offen. Und das Ganze hat noch den positiven Nebeneffekt, dass du einen äusserst junggebliebenen, innovativen Verein in seinem Tun unterstützt.",
+                          "Wir basteln jedes Jahr ein neues Sujet! Deshalb bieten wir unsere ehemaligen Gewänder zum Verkauf an! Die Kleider sind in einem guten Zustand. Unser Materialverwalter steht nach Vereinbarung gerne für eine Begutachtung vor Ort zur Verfügung!",
                     ),
                   ],
                 ),
@@ -67,7 +67,7 @@ class GoennerWerden extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = (() {
-                      GoRouter.of(context).push('/goenner');
+                      GoRouter.of(context).push('/kleiderverkauf');
                     }),
                 ),
               ),

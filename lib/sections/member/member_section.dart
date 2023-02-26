@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -43,22 +44,24 @@ class _MemberSectionState extends State<MemberSection> {
   Widget createMemberCard(Member member) {
     return Container(
       padding: const EdgeInsets.all(5),
-      child: InkWell(
+      /* child: InkWell(
         onTap: () => context.push(
           '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
           extra: member.pictureUrlMax,
-        ),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Center(
-                child: _buildMember(member),
-              ),
+        ),*/
+      child: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Center(
+              child: _buildMember(member),
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              alignment: Alignment.bottomLeft,
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.bottomLeft,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
               child: Text(
                 member.firstName,
                 style: const TextStyle(
@@ -74,9 +77,10 @@ class _MemberSectionState extends State<MemberSection> {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+      //  ),
     );
   }
 
@@ -96,26 +100,29 @@ class _MemberSectionState extends State<MemberSection> {
     }
     return Container(
       padding: const EdgeInsets.all(5),
-      child: InkWell(
+      child: /* InkWell(
         onTap: () => GoRouter.of(context).push(
           '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
           extra: member.pictureUrlMax,
-        ),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Center(
-                child: _buildMember(member),
-              ),
+        ), 
+        child:*/
+          Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Center(
+              child: _buildMember(member),
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
                     member.firstName,
                     style: const TextStyle(
                       color: Colors.white,
@@ -129,7 +136,10 @@ class _MemberSectionState extends State<MemberSection> {
                       ],
                     ),
                   ),
-                  Text(
+                ),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
                     aemtli,
                     style: const TextStyle(
                       color: Colors.white,
@@ -143,19 +153,20 @@ class _MemberSectionState extends State<MemberSection> {
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+      //  ),
     );
   }
 
   Widget _buildMember(Member member) {
     if (member.pictureUrl.contains("https://")) {
-      return Image.network(
-        member.pictureUrl,
+      return CachedNetworkImage(
+        imageUrl: member.pictureUrl,
         fit: BoxFit.cover,
       );
     } else {

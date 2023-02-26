@@ -28,8 +28,8 @@ class _CountdownState extends State<Countdown> {
 
   @override
   Widget build(BuildContext context) {
-    if (DateTime.parse('2023-02-16 05:00:00').isAfter(DateTime.now())) {
-      final date1 = DateTime.parse('2023-02-16 05:00:00');
+    if (DateTime.parse('2024-02-08 05:00:00').isAfter(DateTime.now())) {
+      final date1 = DateTime.parse('2024-02-08 05:00:00');
       counterSeconds = date1.difference(DateTime.now()).inSeconds % 60;
       counterMinutes = date1.difference(DateTime.now()).inMinutes % 60;
       counterHours = date1.difference(DateTime.now()).inHours % 24;

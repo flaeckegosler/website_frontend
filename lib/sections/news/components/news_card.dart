@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
@@ -70,7 +71,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
                         image: DecorationImage(
-                          image: NetworkImage(
+                          image: CachedNetworkImageProvider(
                             newsProvider.allNews[widget.index].imageURL,
                           ),
                           fit: BoxFit.cover,

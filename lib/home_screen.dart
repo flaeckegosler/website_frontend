@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/constants.dart';
+import 'package:website_frontend/mobile/countdown.dart';
 import 'package:website_frontend/mobile/goenner_werden.dart';
+import 'package:website_frontend/mobile/kleider_kaufen_box.dart';
 import 'package:website_frontend/mobile/mitglied_werden.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
 import 'package:website_frontend/sections/agenda/agenda_section.dart';
@@ -221,15 +223,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 return ExpeditionSection();
               } else if (index == 8 && width < 1250) {
                 return const GoennerWerden();
+              } else if (index == 8 && width > 1250) {
+                return const BoxesLargeScale();
               } else if (index == 9 && width < 1250) {
                 return const MitgliedWerden();
-              } else if (index == 10) {
+              } else if (index == 10 && width < 1250) {
+                return const ContdownMobile();
+              } else if (index == 11) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 11,
+            itemCount: 12,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)
@@ -546,6 +552,66 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           else
             Container(),
+        ],
+      ),
+    );
+  }
+}
+
+class ContdownMobile extends StatelessWidget {
+  const ContdownMobile({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color.fromRGBO(230, 230, 230, 1),
+      padding: const EdgeInsets.only(
+        top: 20,
+        left: 20,
+        right: 20,
+        bottom: 40,
+      ),
+      child: Countdown(),
+    );
+  }
+}
+
+class BoxesLargeScale extends StatelessWidget {
+  const BoxesLargeScale({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 340,
+      color: const Color.fromRGBO(230, 230, 230, 1),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          SizedBox(
+            width: 400,
+            height: 300,
+            child: MitgliedWerden(),
+          ),
+          SizedBox(
+            width: 40,
+          ),
+          SizedBox(
+            width: 400,
+            height: 300,
+            child: GoennerWerden(),
+          ),
+          SizedBox(
+            width: 40,
+          ),
+          SizedBox(
+            width: 400,
+            height: 300,
+            child: KleiderKaufenBox(),
+          )
         ],
       ),
     );

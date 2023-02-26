@@ -1,4 +1,5 @@
 //import 'package:Flaeckegosler/widgets/news/buildRedakteur.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:website_frontend/models/news_model.dart';
@@ -115,7 +116,7 @@ class NewsCardExtended extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
             image: DecorationImage(
-              image: NetworkImage(singleNews.imageURL),
+              image: CachedNetworkImageProvider(singleNews.imageURL),
               fit: BoxFit.cover,
             ),
           ),
