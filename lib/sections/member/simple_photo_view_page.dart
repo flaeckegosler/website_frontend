@@ -31,6 +31,7 @@ class _SimplePhotoViewPageState extends State<SimplePhotoViewPage> {
     return Scaffold(
       appBar: AppBar(),
       body: PhotoView(
+        filterQuality: FilterQuality.high,
         imageProvider: CachedNetworkImageProvider(
           widget.galleryLink,
         ),

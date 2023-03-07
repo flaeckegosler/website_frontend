@@ -154,6 +154,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
               children: [
                 Expanded(
                   child: PhotoView(
+                    filterQuality: FilterQuality.high,
                     imageProvider: CachedNetworkImageProvider(
                       specificImage.pictureUrl,
                     ),
