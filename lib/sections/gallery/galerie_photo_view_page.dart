@@ -1,4 +1,8 @@
+import 'dart:html' as html;
+import 'package:http/http.dart' as http;
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:photo_view/photo_view.dart';
@@ -22,6 +26,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
   bool _isLoading = false;
   late int startIndex;
   late int maxIndex;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   void initState() {
@@ -174,9 +179,49 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: buildButtons(),
+                Stack(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8.0),
+                      alignment: Alignment.center,
+                      child: buildButtons(),
+                    ),
+                    if (auth.currentUser != null)
+                      Container(
+                        padding: const EdgeInsets.all(8.0),
+                        alignment: Alignment.centerRight,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: startIndex > (maxIndex - 1)
+                                ? Colors.grey
+                                : Theme.of(context).primaryColor,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 28,
+                              vertical: 15,
+                            ),
+                          ),
+                          onPressed: () async {
+                            final imageUrl = specificImage.pictureUrl;
+                            final response =
+                                await http.get(Uri.parse(imageUrl));
+                            final blob =
+                                html.Blob([response.bodyBytes], 'image/jpg');
+                            final url = html.Url.createObjectUrlFromBlob(blob);
+                            final link = html.AnchorElement(
+                              href: url,
+                            );
+                            link.download = specificImage.pictureName;
+                            link.click();
+                          },
+                          child: const Icon(
+                            Icons.download,
+                            size: 32,
+                          ),
+                        ),
+                      )
+                    else
+                      SizedBox(),
+                  ],
                 )
               ],
             ),
