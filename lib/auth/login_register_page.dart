@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:website_frontend/auth/auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      GoRouter.of(context).pushReplacement('/auth');
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -48,39 +50,76 @@ class _LoginPageState extends State<LoginPage> {
     String title,
     TextEditingController controller,
   ) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(labelText: title),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextField(
+        controller: controller,
+        cursorColor: Theme.of(context).primaryColor,
+        decoration: InputDecoration(
+          labelText: title,
+          labelStyle: const TextStyle(
+            color: Colors.grey,
+          ),
+          fillColor: Colors.grey[100],
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Theme.of(context).primaryColor,
+              width: 2.5,
+            ),
+          ),
+          hoverColor: Colors.grey[300],
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
     );
   }
 
   Widget _errorMessage() {
-    return Text(
-      errorMessage == '' ? '' : 'Humm ? $errorMessage!',
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        errorMessage == '' ? '' : 'Humm? $errorMessage',
+      ),
     );
   }
 
   Widget _submitButton() {
-    return ElevatedButton(
-      onPressed: () {
-        if (isLogin) {
-          signInWithEmailAndPassword();
-        } else {
-          createUserWithEmailAndPassword();
-        }
-      },
-      child: Text(isLogin ? 'Login' : 'Register'),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Theme.of(context).primaryColor,
+        ),
+        onPressed: () {
+          if (isLogin) {
+            signInWithEmailAndPassword();
+          } else {
+            createUserWithEmailAndPassword();
+          }
+        },
+        child: Text(isLogin ? 'Login' : 'Registrieren'),
+      ),
     );
   }
 
   Widget _loginOrRegister() {
-    return TextButton(
-      onPressed: () {
-        setState(() {
-          isLogin = !isLogin;
-        });
-      },
-      child: Text(isLogin ? 'Register instead' : 'Login instead'),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextButton(
+        onPressed: () {
+          setState(() {
+            isLogin = !isLogin;
+          });
+        },
+        child: Text(
+          isLogin ? 'Registrieren' : 'Login',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
+      ),
     );
   }
 

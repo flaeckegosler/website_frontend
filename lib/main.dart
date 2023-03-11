@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:website_frontend/auth/auth.dart';
+import 'package:website_frontend/auth/auth_home_page.dart';
 import 'package:website_frontend/auth/login_register_page.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
@@ -77,6 +80,24 @@ class MyApp extends StatelessWidget {
                 state.params["pictureIndex"]!,
               );
             },
+          ),
+          GoRoute(
+            path: 'auth',
+            builder: (BuildContext context, GoRouterState state) {
+              if (Auth().user != null) {
+                return AuthHomePage();
+              } else {
+                return LoginPage();
+              }
+            },
+            routes: <GoRoute>[
+              GoRoute(
+                path: 'home',
+                builder: (BuildContext context, GoRouterState state) {
+                  return AuthHomePage();
+                },
+              ),
+            ],
           ),
           GoRoute(
             path: 'auth',
