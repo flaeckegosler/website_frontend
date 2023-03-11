@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/constants.dart';
@@ -110,7 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   'assets/goslergrend.png',
                   fit: BoxFit.fitHeight,
                 ),
-                onLongPress: () => {},
+                onLongPress: () => {
+                  GoRouter.of(context).push('/auth'),
+                },
               ),
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: const EdgeInsets.only(top: 5, bottom: 5),

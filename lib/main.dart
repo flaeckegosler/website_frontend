@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:website_frontend/auth/login_register_page.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/album_provider.dart';
@@ -20,7 +23,17 @@ import 'package:website_frontend/sections/member/mitglieder_photo_view_page.dart
 import 'package:website_frontend/sections/news/mobile/news_single.dart';
 import 'package:website_frontend/themes.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: dotenv.env['FIREBASE_API_KEY'].toString(),
+      appId: "1:382871203406:web:c0593d41ed0a4c08fb5d1f",
+      messagingSenderId: "382871203406",
+      projectId: 'flaeckegosler',
+    ),
+  );
   runApp(MyApp());
 }
 
@@ -63,6 +76,12 @@ class MyApp extends StatelessWidget {
                 state.params["albumTitleRoute"]!,
                 state.params["pictureIndex"]!,
               );
+            },
+          ),
+          GoRoute(
+            path: 'auth',
+            builder: (BuildContext context, GoRouterState state) {
+              return LoginPage();
             },
           ),
           GoRoute(
