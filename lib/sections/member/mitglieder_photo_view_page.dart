@@ -59,6 +59,7 @@ class _MitgliederPhotoViewPageState extends State<MitgliederPhotoViewPage> {
               ),
             )
           : PhotoView(
+              filterQuality: FilterQuality.high,
               imageProvider: CachedNetworkImageProvider(
                 galleryLink,
               ),

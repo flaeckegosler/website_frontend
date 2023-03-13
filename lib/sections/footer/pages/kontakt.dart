@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
@@ -18,9 +19,9 @@ class Kontakt extends StatelessWidget {
     required String message,
     required BuildContext ctx,
   }) async {
-    const serviceId = '*';
-    const templateId = '*';
-    const userId = '*';
+    final serviceId = dotenv.env['serviceId'].toString();
+    final templateId = dotenv.env['templateId'].toString();
+    final userId = dotenv.env['userId'].toString();
 
     final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
     final response = await http
