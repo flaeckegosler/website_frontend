@@ -13,7 +13,15 @@ class AuthHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('You are logged in.'),
+            const SizedBox(height: 20),
+            Text(
+              '${Auth().user?.email}',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            const SizedBox(height: 5),
+            const Text('Du bist eingeloggt.'),
+            const SizedBox(height: 20),
+            _premiumFeatures(),
             const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -27,6 +35,37 @@ class AuthHomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _premiumFeatures() {
+    return SizedBox(
+      width: 250,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            'Als registrierter Benutzer hast du aktuell Zugriff auf folgende premium Features:',
+          ),
+          SizedBox(height: 10),
+          Text(
+            'Sektion Fotos:',
+          ),
+          Text(
+            '⦁ Bilder herunterladen',
+          ),
+          SizedBox(height: 10),
+          Text(
+            'Sektion Mitglieder:',
+          ),
+          Text(
+            '⦁ Bilder zoomen',
+          ),
+          Text(
+            '⦁ Bilder herunterladen',
+          )
+        ],
       ),
     );
   }
