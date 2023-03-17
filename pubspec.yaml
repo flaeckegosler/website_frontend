@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: ^2.0.18
   firebase_auth: ^4.2.10
   firebase_core: ^2.7.1
+  cloud_firestore: ^4.4.4
   flutter_dotenv: ^5.0.2
 
 dev_dependencies:

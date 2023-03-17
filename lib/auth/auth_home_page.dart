@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:website_frontend/auth/auth.dart';
 
 class AuthHomePage extends StatelessWidget {
@@ -8,6 +9,44 @@ class AuthHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+              ),
+              child: Text(
+                'Hallo ${Provider.of<Auth>(context, listen: false).goslerUser.firstName}',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Gosler',
+                  fontSize: 30,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Noten'),
+              onTap: () {
+                // do something
+              },
+            ),
+            ListTile(
+              title: const Text('Brand Assets'),
+              onTap: () {
+                // do something
+              },
+            ),
+            ListTile(
+              title: const Text('Premium Features'),
+              onTap: () {
+                GoRouter.of(context).push('/auth/premium/features');
+              },
+            ),
+          ],
+        ),
       ),
       body: Center(
         child: Column(
@@ -21,8 +60,6 @@ class AuthHomePage extends StatelessWidget {
             const SizedBox(height: 5),
             const Text('Du bist eingeloggt.'),
             const SizedBox(height: 20),
-            _premiumFeatures(),
-            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,
@@ -35,37 +72,6 @@ class AuthHomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _premiumFeatures() {
-    return SizedBox(
-      width: 250,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Als registrierter Benutzer hast du aktuell Zugriff auf folgende premium Features:',
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Sektion Fotos:',
-          ),
-          Text(
-            '⦁ Bilder herunterladen',
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Sektion Mitglieder:',
-          ),
-          Text(
-            '⦁ Bilder zoomen',
-          ),
-          Text(
-            '⦁ Bilder herunterladen',
-          )
-        ],
       ),
     );
   }
