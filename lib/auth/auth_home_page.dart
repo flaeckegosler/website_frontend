@@ -28,18 +28,21 @@ class AuthHomePage extends StatelessWidget {
               ),
             ),
             ListTile(
+              leading: const Icon(Icons.library_music),
               title: const Text('Noten'),
               onTap: () {
-                // do something
+                GoRouter.of(context).push('/auth/noten');
               },
             ),
             ListTile(
+              leading: const Icon(Icons.branding_watermark_outlined),
               title: const Text('Brand Assets'),
               onTap: () {
                 // do something
               },
             ),
             ListTile(
+              leading: const Icon(Icons.star),
               title: const Text('Premium Features'),
               onTap: () {
                 GoRouter.of(context).push('/auth/premium/features');

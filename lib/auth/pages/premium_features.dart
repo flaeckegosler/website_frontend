@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PremiumFeatures extends StatelessWidget {
+class PremiumFeaturesPage extends StatelessWidget {
   Widget _premiumFeatures() {
     return SizedBox(
       width: 250,
