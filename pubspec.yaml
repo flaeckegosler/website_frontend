@@ -26,6 +26,7 @@ dependencies:
 
   cached_network_image: ^3.2.3
   carousel_slider: ^4.2.1
+  confetti: ^0.7.0
   flutter_html: ^2.2.1
   font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.3
