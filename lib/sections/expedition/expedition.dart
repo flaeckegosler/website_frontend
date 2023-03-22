@@ -23,8 +23,6 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-
     return SizedBox(
       width: double.infinity,
       //color: const Color.fromRGBO(230, 230, 230, 1),
