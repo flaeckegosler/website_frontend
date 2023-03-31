@@ -1,71 +1,22 @@
 import org.hibernate.EmptyInterceptor;
-import org.hibernate.type.Type;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QueryExecutionTimeInterceptor extends EmptyInterceptor {
-    private static final long serialVersionUID = 1L;
-    private ThreadLocal<Long> startTime = new ThreadLocal<>();
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(QueryExecutionTimeInterceptor.class);
+    private long startTime;
 
     @Override
     public String onPrepareStatement(String sql) {
-        startTime.set(System.currentTimeMillis());
+        startTime = System.currentTimeMillis();
         return super.onPrepareStatement(sql);
     }
 
     @Override
-    public void afterPrepareStatement() {
-        super.afterPrepareStatement();
-        long endTime = System.currentTimeMillis();
-        long executionTime = endTime - startTime.get();
-        Logger logger = LoggerFactory.getLogger(QueryExecutionTimeInterceptor.class);
-        logger.info("Query execution time: {} ms", executionTime);
-        startTime.remove();
-    }
-
-    @Override
-    public void onCollectionLoad(Object collection, Serializable id) {
-        afterPrepareStatement();
-        super.onCollectionLoad(collection, id);
-    }
-
-    @Override
-    public void onCollectionRecreate(Object collection, Serializable id) {
-        afterPrepareStatement();
-        super.onCollectionRecreate(collection, id);
-    }
-
-    @Override
-    public void onCollectionRemove(Object collection, Serializable id) {
-        afterPrepareStatement();
-        super.onCollectionRemove(collection, id);
-    }
-
-    @Override
-    public void onCollectionUpdate(Object collection, Serializable id) {
-        afterPrepareStatement();
-        super.onCollectionUpdate(collection, id);
-    }
-
-    @Override
-    public void onDelete(Object entity, Serializable id, Object[] state, String[] propertyNames, Type[] types) {
-        afterPrepareStatement();
-        super.onDelete(entity, id, state, propertyNames, types);
-    }
-
-    @Override
-    public void onLoad(Object entity, Serializable id, Object[] state, String[] propertyNames, Type[] types) {
-        afterPrepareStatement();
-        super.onLoad(entity, id, state, propertyNames, types);
-    }
-
-    @Override
-    public void onSave(Object entity, Serializable id, Object[] state, String[] propertyNames, Type[] types) {
-        afterPrepareStatement();
-        super.onSave(entity, id, state, propertyNames, types);
-    }
-
-    @Override
-    public void onFlushDirty(Object entity, Serializable id, Object[] currentState, Object[] previousState, String[] propertyNames, Type[] types) {
-        afterPrepareStatement();
-        super.onFlushDirty(entity, id, currentState, previousState, propertyNames, types);
+    public void afterTransactionCompletion(Transaction tx) {
+        long elapsedTime = System.currentTimeMillis() - startTime;
+        LOGGER.info("Query execution time: {} ms", elapsedTime);
+        super.afterTransactionCompletion(tx);
     }
 }
