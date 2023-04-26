@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -7,6 +6,8 @@ import 'package:provider/provider.dart';
 import 'package:website_frontend/auth/auth.dart';
 import 'package:website_frontend/auth/auth_home_page.dart';
 import 'package:website_frontend/auth/login_register_page.dart';
+import 'package:website_frontend/auth/pages/music_sheets.dart';
+import 'package:website_frontend/auth/pages/premium_features.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/album_provider.dart';
@@ -97,13 +98,19 @@ class MyApp extends StatelessWidget {
                   return AuthHomePage();
                 },
               ),
+              GoRoute(
+                path: 'noten',
+                builder: (BuildContext context, GoRouterState state) {
+                  return MusicSheetPage();
+                },
+              ),
+              GoRoute(
+                path: 'premium/features',
+                builder: (BuildContext context, GoRouterState state) {
+                  return PremiumFeaturesPage();
+                },
+              ),
             ],
-          ),
-          GoRoute(
-            path: 'auth',
-            builder: (BuildContext context, GoRouterState state) {
-              return LoginPage();
-            },
           ),
           GoRoute(
             path: 'goenner',
@@ -162,6 +169,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: VorstandProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: Auth(),
         ),
       ],
       child: MaterialApp.router(

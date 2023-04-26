@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'assets/goslergrend.png',
                   fit: BoxFit.fitHeight,
                 ),
-                onLongPress: () => {
+                onTap: () => {
                   GoRouter.of(context).push('/auth'),
                 },
               ),
