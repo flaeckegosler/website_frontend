@@ -27,10 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ScrollSingleton myScrollSingleton = ScrollSingleton();
   final itemListener = ItemPositionsListener.create();
 
-//  double _navBarNewsTextSize = 16;
-//  double _navBarFotosTextSize = 16;
-//  double _navBarAgendaTextSize = 16;
-
   List indices = [];
   bool showRightNavbar = false;
 
@@ -53,41 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-/*
-  void setNavBarSizes() {
-    if (indices.first == 1 && (_navBarNewsTextSize.toInt() == 16)) {
-      setState(() {
-        _navBarNewsTextSize = 40;
-        _navBarFotosTextSize = 16;
-        _navBarAgendaTextSize = 16;
-      });
-      print("eins");
-    } else if (indices.first == 2 && (_navBarFotosTextSize.toInt() == 16)) {
-      setState(() {
-        _navBarNewsTextSize = 16;
-        _navBarFotosTextSize = 40;
-        _navBarAgendaTextSize = 16;
-      });
-      print("zwei");
-    } else if (indices.first == 3 && (_navBarAgendaTextSize.toInt() == 16)) {
-      setState(() {
-        _navBarNewsTextSize = 16;
-        _navBarFotosTextSize = 16;
-        _navBarAgendaTextSize = 40;
-      });
-      print("drei");
-    } else if (indices.first == 4) {
-      _navBarNewsTextSize = 12;
-      print("vier");
-    } else if (indices.first == 5) {
-      _navBarNewsTextSize = 12;
-      print("fünf");
-    } else if (indices.first == 5) {
-      _navBarNewsTextSize = 12;
-      print("sechs");
-    }
-  }
-*/
   void checkVisibility() {
     if (!indices.contains(0) && (showRightNavbar == false)) {
       setState(() {
@@ -135,9 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       case 'option1':
                         myScrollSingleton.scrollToItem("News");
                         break;
-                      case 'option2':
+                      /* case 'option2':
                         myScrollSingleton.scrollToItem("Programm");
-                        break;
+                        break;*/
                       case 'option3':
                         myScrollSingleton.scrollToItem("Fotos");
                         break;
@@ -162,10 +123,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       value: 'option1',
                       child: Text('News'),
                     ),
-                    const PopupMenuItem<String>(
+                    /*   const PopupMenuItem<String>(
                       value: 'option2',
                       child: Text('Programm'),
-                    ),
+                   ), */
                     const PopupMenuItem<String>(
                       value: 'option3',
                       child: Text('Fotos'),
@@ -212,8 +173,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               } else if (index == 1 && vorfasnachtModus == true) {
                 return NewsSection();
-              } else if (index == 2) {
-                return ProgrammSection();
+                // } else if (index == 2) {
+                // return ProgrammSection();
               } else if (index == 3) {
                 return GallerySection();
               } else if (index == 4) {
@@ -296,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  TimelineTile(
+                  /* TimelineTile(
                     indicatorStyle: IndicatorStyle(
                       color: Theme.of(context).primaryColor,
                       height: 30,
@@ -342,7 +303,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                  ),
+                  ), */
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
                       color: Theme.of(context).primaryColor,

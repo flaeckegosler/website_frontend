@@ -57,7 +57,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
               height: 550, //Otherwise card gets smaller
               //    width: 350,
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [if (isHover) kDefaultCardShadow],
               ),
