@@ -222,7 +222,7 @@ class MemberProvider with ChangeNotifier {
           instrument: "Horn",
           vorstand: "",
           expedition: "",
-          muKo: "Aktuar",
+          muKo: "Vize-Tambi",
           sujetKommission: "",
         ),
       );
@@ -282,10 +282,10 @@ class MemberProvider with ChangeNotifier {
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/2273/alex_vogel.420x0.jpg",
           instrument: "Trompete",
-          vorstand: "",
+          vorstand: "Sujetchef",
           expedition: "",
           muKo: "",
-          sujetKommission: "",
+          sujetKommission: "Sujetchef",
         ),
       );
 
@@ -411,7 +411,7 @@ class MemberProvider with ChangeNotifier {
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
-          muKo: "Vize-Tambi",
+          muKo: "",
           sujetKommission: "",
         ),
       );
@@ -508,7 +508,7 @@ class MemberProvider with ChangeNotifier {
           vorstand: "",
           expedition: "",
           muKo: "",
-          sujetKommission: "Grind",
+          sujetKommission: "Sujet-Vize",
         ),
       );
 
@@ -603,7 +603,7 @@ class MemberProvider with ChangeNotifier {
           instrument: "Posaune",
           vorstand: "",
           expedition: "",
-          muKo: "",
+          muKo: "Aktuar",
           sujetKommission: "",
         ),
       );
@@ -808,10 +808,10 @@ class MemberProvider with ChangeNotifier {
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/1942/diego_zimmermann.420x0.jpg",
           instrument: "Sousaphon",
-          vorstand: "Sujet-Chef",
+          vorstand: "",
           expedition: "",
           muKo: "",
-          sujetKommission: "Sujetchef",
+          sujetKommission: "",
         ),
       );
 
@@ -920,7 +920,7 @@ class MemberProvider with ChangeNotifier {
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/1952/kay_wicki-1.420x0.jpg",
           instrument: "Drums",
-          vorstand: "",
+          vorstand: "Materialverwalter",
           expedition: "",
           muKo: "",
           sujetKommission: "",
@@ -952,7 +952,7 @@ class MemberProvider with ChangeNotifier {
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/1125/manuel_muhlebach-1.420x0.jpg",
           instrument: "Drums",
-          vorstand: "Materialverwalter",
+          vorstand: "",
           expedition: "",
           muKo: "Schlag-Chef",
           sujetKommission: "",
