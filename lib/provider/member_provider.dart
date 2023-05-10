@@ -78,14 +78,14 @@ class MemberProvider with ChangeNotifier {
     if (_member.isEmpty) {
       _member.add(
         Member(
-          firstName: "Cedric (Kandidat)",
+          firstName: "Cedric",
           lastName: "Egli",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/e_cedric_360kb.jpg",
           pictureUrlMax: "assets/bild_kandidaten.png",
           instrument: "Horn",
           vorstand: "",
-          expedition: "",
+          expedition: "Mädchen für alles",
           muKo: "",
           sujetKommission: "",
         ),
