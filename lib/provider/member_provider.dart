@@ -93,7 +93,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Silja (Kandidatin)",
+          firstName: "Silja",
           lastName: "Graf",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/g_silja_360kb.jpg",
@@ -108,7 +108,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Jasmina (Kandidatin)",
+          firstName: "Jasmina",
           lastName: "Hartenstein",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/h_jasmina_360kb.jpg",
@@ -123,7 +123,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Fabio (Kandidat)",
+          firstName: "Fabio",
           lastName: "Wettstein",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/w_fabio_360kb.jpg",
@@ -138,7 +138,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Adrian (Kandidat)",
+          firstName: "Adrian",
           lastName: "Muschietti",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/m_adrian_360kb.jpg",
@@ -153,7 +153,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Pascal (Kandidat)",
+          firstName: "Pascal",
           lastName: "Rachow",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/r_pascal_360kb.jpg",
@@ -168,7 +168,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Manuela (Kandidatin)",
+          firstName: "Manuela",
           lastName: "Najer",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/n_manuela_360kb.jpg",
@@ -183,7 +183,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Andri (Kandidat)",
+          firstName: "Andri",
           lastName: "Wigger",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/w_andri_360kb.jpg",
@@ -198,7 +198,7 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Joel (Kandidat)",
+          firstName: "Joel",
           lastName: "Zeier",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/z_joel_360kb.jpg",
