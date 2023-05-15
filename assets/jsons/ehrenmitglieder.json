@@ -1,5 +1,23 @@
 [
     {
+    "Name": "Markus Studer",
+    "Ortschaft": "Rothenburg",
+    "isAktivEhrenMitglied": true,
+    "Anerkennungsjahr": 2023
+    },
+    {
+    "Name": "Lukas Studer",
+    "Ortschaft": "Rothenburg",
+    "isAktivEhrenMitglied": false,
+    "Anerkennungsjahr": 2023
+    },
+    {
+    "Name": "Manuel Mühlebach",
+    "Ortschaft": "Rothenburg",
+    "isAktivEhrenMitglied": true,
+    "Anerkennungsjahr": 2023
+    },
+    {
       "Name": "Carmen Andermatt",
       "Ortschaft": "Luzern",
       "isAktivEhrenMitglied": false,
@@ -8,7 +26,7 @@
     {
       "Name": "Marco Andermatt",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
+      "isAktivEhrenMitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
@@ -32,7 +50,7 @@
     {
       "Name": "Reto Bättig",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
+      "isAktivEhrenMitglied": false,
       "Anerkennungsjahr": 2020
     },
     {
@@ -140,7 +158,7 @@
     {
       "Name": "Fabian Koch",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
+      "isAktivEhrenMitglied": false,
       "Anerkennungsjahr": 2019
     },
     {
@@ -242,7 +260,7 @@
     {
       "Name": "Martin Richli",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
+      "isAktivEhrenMitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
@@ -368,7 +386,7 @@
     {
       "Name": "Damian Zurmühle",
       "Ortschaft": "Sursee",
-      "isAktivEhrenMitglied": true,
+      "isAktivEhrenMitglied": false,
       "Anerkennungsjahr": "-"
     },
     {

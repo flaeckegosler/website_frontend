@@ -114,7 +114,6 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                                 left: 10,
                                 right: 10,
                               ),
-                              fontSize: FontSize.em(1),
                             ),
                           },
                         ),
