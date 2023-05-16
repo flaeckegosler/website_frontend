@@ -6,19 +6,19 @@ class EhrenMitglied with ChangeNotifier {
   final String name;
   final String ortschaft;
   final String anerkennungsjahr;
-  final bool isAktivEhrenMitglied;
+  final bool istAktivEhrenmitglied;
 
   EhrenMitglied({
     required this.name,
     required this.ortschaft,
     required this.anerkennungsjahr,
-    required this.isAktivEhrenMitglied,
+    required this.istAktivEhrenmitglied,
   });
 
   factory EhrenMitglied.fromJson(Map<String, dynamic> json) => EhrenMitglied(
         name: json["Name"].toString(),
         ortschaft: json["Ortschaft"].toString(),
         anerkennungsjahr: json["Anerkennungsjahr"].toString(),
-        isAktivEhrenMitglied: json["isAktivEhrenMitglied"] as bool,
+        istAktivEhrenmitglied: json["istAktivEhrenmitglied"] as bool,
       );
 }
