@@ -1,464 +1,482 @@
 [
     {
+    "Name": "Markus Studer",
+    "Ortschaft": "Rothenburg",
+    "istAktivEhrenmitglied": true,
+    "Anerkennungsjahr": 2023
+    },
+    {
+    "Name": "Lukas Studer",
+    "Ortschaft": "Rothenburg",
+    "istAktivEhrenmitglied": false,
+    "Anerkennungsjahr": 2023
+    },
+    {
+    "Name": "Manuel Mühlebach",
+    "Ortschaft": "Rothenburg",
+    "istAktivEhrenmitglied": true,
+    "Anerkennungsjahr": 2023
+    },
+    {
       "Name": "Carmen Andermatt",
       "Ortschaft": "Luzern",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": 2021
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2022
     },
     {
       "Name": "Marco Andermatt",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2018
     },
     {
       "Name": "André Aregger",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 0
     },
     {
       "Name": "Thomas “Chrusi” Bachmann",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Markus Barmettler",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Reto Bättig",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2020
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2021
     },
     {
       "Name": "Urs Bernhard",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Sibille Brunner",
       "Ortschaft": "Sursee",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2017
     },
     {
       "Name": "Susi Brunner",
       "Ortschaft": "Eschenbach",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Raphael Bühlmann",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Nadia Dahinden",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Marcel Doppmann",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Lukas Dünki",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2020
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2021
     },
     {
       "Name": "René Eberli",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Urs “Metzger” Emmenegger",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Markus “Fahni” Fähndrich",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Cornel Fischer",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Martina Fischer",
       "Ortschaft": "Bern",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Daniel Hauser",
       "Ortschaft": "Buchrain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Pascal Huber",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
+      "istAktivEhrenmitglied": true,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Christoph Ineichen",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Daniel Kaufmann",
       "Ortschaft": "Eschenbach",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Michèle Kritzer",
       "Ortschaft": "Emmenbrücke",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2020
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2021
     },
     {
       "Name": "Fabian Koch",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2019
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2020
     },
     {
       "Name": "Raphael Koch",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2020
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2021
     },
     {
       "Name": "Dario Köchli",
       "Ortschaft": "Emmenbrücke",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": 2020
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2021
     },
     {
       "Name": "Fabian Kritzer",
       "Ortschaft": "Sursee",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2013
     },
     {
       "Name": "Bruno Krummenacher",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Ramona La Colla",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2021
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2022
     },
     {
       "Name": "Lukas Lang",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2019
     },
     {
       "Name": "Stefan Lang",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2018
     },
     {
       "Name": "Adrian Lässer",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Gerry Meier",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Dominic Mauron",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2019
     },
     {
       "Name": "Sebastian Moos",
       "Ortschaft": "Emmenbrücke",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2021
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2022
     },
     {
       "Name": "Bruno Odermatt",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Priska Odermatt-Schmid",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Andreas Pfister",
       "Ortschaft": "Luzern",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2013
     },
     {
       "Name": "Susanne Portmann",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2013
     },
     {
       "Name": "Philipp Rebsamen",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2015
     },
     {
       "Name": "Martin Richli",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2016
     },
     {
       "Name": "Patrick Roos",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2018
     },
     {
       "Name": "René Röösli",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Thomas Röösli",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Benno Schacher",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Roland Schacher",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Urs Schacher",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Martin Scheidegger",
       "Ortschaft": "Hochdorf",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Raphael Scheidegger",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2021
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2022
     },
     {
       "Name": "Philippe Schenker",
       "Ortschaft": "Luzern",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2020
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2021
     },
     {
       "Name": "Andreas Schürch",
       "Ortschaft": "Kriens",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Bernhard Schmid",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Marco Schriber",
       "Ortschaft": "Sursee",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": 2021
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2022
     },
     {
       "Name": "Andreas Stadelmann",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2014
     },
     {
       "Name": "Thomas Studer",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2018
     },
     {
       "Name": "Nadin Hoberg Stalder",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Ruedi Stofer",
       "Ortschaft": "Wilihof",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Thomas Wey",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Jürg Widmer",
       "Ortschaft": "Gunzwil",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Peter Widmer",
       "Ortschaft": "Gunzwil",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Sonya Wiss-Schärli",
       "Ortschaft": "Rain",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Damian Zurmühle",
       "Ortschaft": "Sursee",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2013
     },
     {
       "Name": "Joël Zurmühle",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": true,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": true,
+      "Anerkennungsjahr": 2015
     },
     {
       "Name": "Christa und Seppi Aeschlimann",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Armando Bucher",
       "Ortschaft": "Beckenried",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2019
     },
     {
       "Name": "Erika und Franz Furrer",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Lisbeth Häfliger",
       "Ortschaft": "Luzern",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Martha und Walter Kaufmann",
       "Ortschaft": "Horw",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Christa und Martin Keiser",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Marcel Omlin †",
       "Ortschaft": "",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Beat Pfister",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2015
     },
     {
       "Name": "Annelies und Meinrad Röösli",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Heidi und Bruno Schmid",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Robert Schmid †",
       "Ortschaft": "",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Margrit Schürch",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Ruedi Schürch †",
       "Ortschaft": "",
-      "isAktivEhrenMitglied": false,
+      "istAktivEhrenmitglied": false,
       "Anerkennungsjahr": "-"
     },
     {
       "Name": "Severin Züger",
       "Ortschaft": "Rothenburg",
-      "isAktivEhrenMitglied": false,
-      "Anerkennungsjahr": "-"
+      "istAktivEhrenmitglied": false,
+      "Anerkennungsjahr": 2012
     }
   ]

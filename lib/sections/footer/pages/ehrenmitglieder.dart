@@ -43,9 +43,9 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
     List<DataCell> getCells(List<dynamic> cells) =>
         cells.map((data) => DataCell(Text('$data'))).toList();
 
-    List<DataRow> getRows({required bool isAktivEhrenmitglied}) {
+    List<DataRow> getRows({required bool istAktivEhrenmitglied}) {
       List<EhrenMitglied> results = [];
-      if (isAktivEhrenmitglied) {
+      if (istAktivEhrenmitglied) {
         results =
             context.watch<EhrenMitgliederProvider>().allAktivEhrenMitglieder;
       } else {
@@ -65,7 +65,7 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
       return dataRowResult;
     }
 
-    Widget buildDataTable({required bool isAktivEhrenmitglied}) {
+    Widget buildDataTable({required bool istAktivEhrenmitglied}) {
       final DataTable dataTable = DataTable(
         headingRowColor: MaterialStateProperty.all(Colors.grey[300]),
         headingTextStyle: const TextStyle(fontWeight: FontWeight.bold),
@@ -73,7 +73,7 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
         sortAscending: false,
         columns: getColumns(column),
         rows: getRows(
-          isAktivEhrenmitglied: isAktivEhrenmitglied,
+          istAktivEhrenmitglied: istAktivEhrenmitglied,
         ),
       );
 
@@ -147,7 +147,7 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                                 ),
                               ),
                             )
-                          : buildDataTable(isAktivEhrenmitglied: true),
+                          : buildDataTable(istAktivEhrenmitglied: true),
                     ),
                     const SizedBox(
                       height: 20,
@@ -178,7 +178,7 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
                                 ),
                               ),
                             )
-                          : buildDataTable(isAktivEhrenmitglied: false),
+                          : buildDataTable(istAktivEhrenmitglied: false),
                     ),
                   ],
                 ),

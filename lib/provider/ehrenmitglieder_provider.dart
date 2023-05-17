@@ -15,7 +15,7 @@ class EhrenMitgliederProvider with ChangeNotifier {
   List<EhrenMitglied> get allAktivEhrenMitglieder {
     List<EhrenMitglied> aktivEhrenmitglieder = [];
     aktivEhrenmitglieder = ehrenMitglieder
-        .where((element) => element.isAktivEhrenMitglied == true)
+        .where((element) => element.istAktivEhrenmitglied == true)
         .toList();
     aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
     return List.from(aktivEhrenmitglieder);
@@ -24,7 +24,7 @@ class EhrenMitgliederProvider with ChangeNotifier {
   List<EhrenMitglied> get allNichtAktivEhrenMitglieder {
     List<EhrenMitglied> aktivEhrenmitglieder = [];
     aktivEhrenmitglieder = ehrenMitglieder
-        .where((element) => element.isAktivEhrenMitglied == false)
+        .where((element) => element.istAktivEhrenmitglied == false)
         .toList();
     aktivEhrenmitglieder.sort((a, b) => a.name.compareTo(b.name));
     return List.from(aktivEhrenmitglieder);

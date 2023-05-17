@@ -164,6 +164,7 @@ class _NewsSectionState extends State<NewsSection>
 
   @override
   Widget build(BuildContext context) {
+    //AddIcon function
     Widget addIcon(int index, ActiveNews activeNews) {
       return Container(
         margin: const EdgeInsets.only(right: 5),
@@ -332,7 +333,6 @@ class _NewsSectionState extends State<NewsSection>
                             "p": Style(
                               fontFamily: 'serif',
                               padding: const EdgeInsets.all(1),
-                              fontSize: FontSize.em(1),
                             ),
                           },
                         ),
@@ -349,79 +349,82 @@ class _NewsSectionState extends State<NewsSection>
 
     final double width = MediaQuery.of(context).size.width;
     final newsProvider = context.watch<NewsProvider>();
-    return Align(
-      child: Container(
-        alignment: Alignment.center,
-        // color: const Color.fromRGBO(230, 230, 230, 1), //good for debugging
-        constraints: const BoxConstraints(maxWidth: 1250),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 10),
-              child: SectionTitle(
-                title: "NEws",
-                subTitle: "AktuEllEs auf EinEn BliCk!",
-                color: Theme.of(context).primaryColor,
+    return ColoredBox(
+      color: const Color.fromRGBO(230, 230, 230, 1),
+      child: Align(
+        child: Container(
+          alignment: Alignment.center,
+          // color: const Color.fromRGBO(230, 230, 230, 1), //good for debugging
+          constraints: const BoxConstraints(maxWidth: 1250),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 40,
               ),
-            ),
-            const SizedBox(
-              height: 12.5,
-            ),
-            if (width < 1250)
-              if (_isLoading == true)
-                SizedBox(
-                  height: 751,
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                )
-              else
-                NewsWidget(
-                  news: newsProvider.allNews,
-                  startIndex: startIndex,
-                )
-            else
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  if (_isLoading == true)
-                    const SizedBox(
-                      height: 300,
-                    )
-                  else
-                    newsWidget(0, activeNews),
-                  if (_isLoading == true)
-                    SizedBox(
-                      height: 300,
-                      child: Center(
-                        child: CircularProgressIndicator(
-                          color: Theme.of(context).primaryColor,
-                        ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 10),
+                child: SectionTitle(
+                  title: "NEws",
+                  subTitle: "AktuEllEs auf EinEn BliCk!",
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+              const SizedBox(
+                height: 12.5,
+              ),
+              if (width < 1250)
+                if (_isLoading == true)
+                  SizedBox(
+                    height: 751,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        color: Theme.of(context).primaryColor,
                       ),
-                    )
-                  else
-                    newsWidget(1, activeNews),
-                  if (_isLoading == true)
-                    const SizedBox(
-                      height: 300,
-                    )
-                  else
-                    newsWidget(2, activeNews),
-                ],
+                    ),
+                  )
+                else
+                  NewsWidget(
+                    news: newsProvider.allNews,
+                    startIndex: startIndex,
+                  )
+              else
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    if (_isLoading == true)
+                      const SizedBox(
+                        height: 300,
+                      )
+                    else
+                      newsWidget(0, activeNews),
+                    if (_isLoading == true)
+                      SizedBox(
+                        height: 300,
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      )
+                    else
+                      newsWidget(1, activeNews),
+                    if (_isLoading == true)
+                      const SizedBox(
+                        height: 300,
+                      )
+                    else
+                      newsWidget(2, activeNews),
+                  ],
+                ),
+              const SizedBox(
+                height: 20,
               ),
-            const SizedBox(
-              height: 20,
-            ),
-            if (_isLoading == false) buildButtons(),
-            const SizedBox(
-              height: 40,
-            ),
-          ],
+              if (_isLoading == false) buildButtons(),
+              const SizedBox(
+                height: 40,
+              ),
+            ],
+          ),
         ),
       ),
     );
