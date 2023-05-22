@@ -8,6 +8,7 @@ import 'package:website_frontend/auth/auth_home_page.dart';
 import 'package:website_frontend/auth/login_register_page.dart';
 import 'package:website_frontend/auth/pages/music_sheets.dart';
 import 'package:website_frontend/auth/pages/premium_features.dart';
+import 'package:website_frontend/drive/logosammlung.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/album_provider.dart';
@@ -140,6 +141,12 @@ class MyApp extends StatelessWidget {
             path: 'vorstand',
             builder: (BuildContext context, GoRouterState state) {
               return VorstandPage();
+            },
+          ),
+          GoRoute(
+            path: 'assets',
+            builder: (BuildContext context, GoRouterState state) {
+              return const LogoSammlung();
             },
           ),
         ],
