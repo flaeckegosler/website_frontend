@@ -108,7 +108,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                   fit: BoxFit.cover,
                   image: AssetImage(
                     "assets/expedition_small.png",
-                  )),
+                  ),),
             ),
             child: Column(
               children: [
@@ -123,14 +123,14 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                   alignment: Alignment.bottomRight,
                   child: Container(
                     padding: const EdgeInsets.only(right: 30, bottom: 22),
-                    child: Container(
-                      decoration: const BoxDecoration(
+                    child: const DecoratedBox(
+                      decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(
                           Radius.circular(50),
                         ),
                       ),
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_forward_rounded,
                         color: Colors.black,
                         size: 50,
@@ -163,7 +163,7 @@ class DateInformation extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: Padding(
         padding: EdgeInsets.only(
-            left: smallScreen ? 8 : 16, top: smallScreen ? 8 : 16),
+            left: smallScreen ? 8 : 16, top: smallScreen ? 8 : 16,),
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

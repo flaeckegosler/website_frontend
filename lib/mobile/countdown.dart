@@ -74,11 +74,11 @@ class _CountdownState extends State<Countdown> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Text(
                         'FASNACHTSCOUNTDOWN  ',
                         style: TextStyle(
@@ -94,9 +94,9 @@ class _CountdownState extends State<Countdown> {
                       ),
                     ],
                   ),
-                  const SizedBox(),
-                  const SizedBox(),
-                  const SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
                 ],
               ),
               const SizedBox(

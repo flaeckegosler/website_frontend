@@ -19,9 +19,9 @@ class GlassContent extends StatelessWidget {
           //     BoxConstraints(maxWidth: 1110, maxHeight: size.height * 0.7),
           width: 1300,
           color: Colors.white.withOpacity(0),
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               SizedBox(
                 height: 50,
               ),

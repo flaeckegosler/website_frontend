@@ -8,7 +8,7 @@ class PersonPic extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(right: 60),
-          child: SizedBox(
+          child: const SizedBox(
             height: 550,
             // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
             /*    child: Align(

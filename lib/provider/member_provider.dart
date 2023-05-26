@@ -13,8 +13,8 @@ class MemberProvider with ChangeNotifier {
     return _member
         .firstWhere(
           (element) =>
-              element.firstName.toString().toLowerCase() == firstName &&
-              element.lastName.toString().toLowerCase() == lastName,
+              element.firstName.toLowerCase() == firstName &&
+              element.lastName.toLowerCase() == lastName,
         )
         .pictureUrlMax;
   }

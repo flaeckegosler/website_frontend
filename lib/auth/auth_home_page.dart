@@ -85,7 +85,6 @@ class _AuthHomePageState extends State<AuthHomePage> {
                   child: ConfettiWidget(
                     confettiController: _controller,
                     blastDirectionality: BlastDirectionality.explosive,
-                    shouldLoop: false,
                     colors: const [
                       Colors.green,
                       Colors.blue,
@@ -104,7 +103,7 @@ class _AuthHomePageState extends State<AuthHomePage> {
                   const SizedBox(height: 20),
                   Text(
                     '${Auth().user?.email}',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: 5),
                   const Text('Du bist eingeloggt.'),

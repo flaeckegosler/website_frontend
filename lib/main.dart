@@ -30,7 +30,7 @@ import 'package:website_frontend/themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load();
   await Firebase.initializeApp(
     options: FirebaseOptions(
       apiKey: dotenv.env['FIREBASE_API_KEY'].toString(),

@@ -23,10 +23,10 @@ class PicturesProvider with ChangeNotifier {
   }
 
   SpecificImage getGalleryLink(albumTitleRoute, pictureIndex) {
-    Album selectedGalerie = _albums
+    final Album selectedGalerie = _albums
         .firstWhere((element) => element.albumTitleRoute == albumTitleRoute);
     return selectedGalerie.specificImage.firstWhere(
-      (element) => element.pictureIndex.toString() == pictureIndex.toString(),
+      (element) => element.pictureIndex == pictureIndex.toString(),
     );
   }
 
@@ -63,10 +63,10 @@ class PicturesProvider with ChangeNotifier {
       );
       pictureIndex = 1;
       final Album pictures = Album(
-        id: picturesId.toString(),
+        id: picturesId,
         menuTitle: picturesData['menuTitle'] as String,
         albumTitle: picturesData['albumTitle'] as String,
-        albumTitleRoute: (picturesData['albumTitle'])
+        albumTitleRoute: picturesData['albumTitle']
             .toString()
             .toLowerCase()
             .replaceAll(" ", "-"),

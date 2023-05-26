@@ -87,7 +87,7 @@ class LogoSammlung extends StatelessWidget {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                              Theme.of(context).primaryColor),
+                              Theme.of(context).primaryColor,),
                         ),
                         onPressed: _launchURL,
                         child: const Text('Google Drive'),
