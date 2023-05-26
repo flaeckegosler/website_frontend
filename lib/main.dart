@@ -62,8 +62,8 @@ class MyApp extends StatelessWidget {
             path: 'mitglied/:firstName/:lastName',
             builder: (BuildContext context, GoRouterState state) {
               return MitgliederPhotoViewPage(
-                state.params["firstName"]!,
-                state.params["lastName"]!,
+                state.pathParameters["firstName"]!,
+                state.pathParameters["lastName"]!,
               );
             },
           ),
@@ -78,8 +78,8 @@ class MyApp extends StatelessWidget {
             path: 'galerie/:albumTitleRoute/:pictureIndex',
             builder: (BuildContext context, GoRouterState state) {
               return GaleriePhotoViewPage(
-                state.params["albumTitleRoute"]!,
-                state.params["pictureIndex"]!,
+                state.pathParameters["albumTitleRoute"]!,
+                state.pathParameters["pictureIndex"]!,
               );
             },
           ),

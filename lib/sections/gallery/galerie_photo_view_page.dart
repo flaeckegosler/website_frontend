@@ -119,7 +119,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
         context.pushReplacement(
           context.namedLocation(
             'galerie',
-            params: <String, String>{
+            pathParameters: <String, String>{
               'albumTitleRoute': widget.albumTitleRoute,
               'pictureIndex': "${startIndex - 1}",
             },
@@ -135,7 +135,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
         context.pushReplacement(
           context.namedLocation(
             'galerie',
-            params: <String, String>{
+            pathParameters: <String, String>{
               'albumTitleRoute': widget.albumTitleRoute,
               'pictureIndex': "${startIndex + 1}",
             },

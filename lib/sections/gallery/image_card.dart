@@ -19,7 +19,7 @@ class GalerieImageCard extends StatelessWidget {
         //change to go to see route...
         context.namedLocation(
           'galerie',
-          params: <String, String>{
+          pathParameters: <String, String>{
             'albumTitleRoute': albumTitleRoute,
             'pictureIndex': imageData.pictureIndex,
           },
