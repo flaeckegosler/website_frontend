@@ -184,7 +184,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: _router,
         title: 'Fläckegosler Roteborg',
-        theme: mythosTheme,
+        theme: myTheme,
       ),
     );
   }
