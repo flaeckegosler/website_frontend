@@ -51,7 +51,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                 children: [
                   SizedBox(
                     child: expeditionCard(
-                      "7. Januar 2023",
+                      "6. Januar 2024",
                     ),
                   ),
                   const SizedBox(
@@ -103,54 +103,19 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
         child: InkWell(
           onTap: () => launch("https://expedition-rothenburg.ch/"),
           child: DecoratedBox(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.cover,
-                image: MediaQuery.of(context).size.width < 1250
-                    ? const AssetImage(
-                        "assets/expedition_small.png",
-                      )
-                    : const AssetImage(
-                        "assets/expedition_small.png",
-                      ),
-              ),
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    "assets/expedition_small.png",
+                  )),
             ),
             child: Column(
               children: [
                 if (MediaQuery.of(context).size.width < 1250)
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 4.0,
-                            vertical: 4.0,
-                          ),
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              title,
-                              textAlign: TextAlign.start,
-                              style: const TextStyle(
-                                fontSize: 30.0,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Oswald',
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
+                  DateInformation(title: title, smallScreen: true)
                 else
-                  const SizedBox(),
+                  DateInformation(title: title, smallScreen: false),
                 SizedBox(
                   height: MediaQuery.of(context).size.width < 1250 ? 130 : 380,
                 ),
@@ -174,6 +139,53 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                   ),
                 )
               ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class DateInformation extends StatelessWidget {
+  final String title;
+  final bool smallScreen;
+
+  const DateInformation({
+    Key? key,
+    required this.title,
+    required this.smallScreen,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topLeft,
+      child: Padding(
+        padding: EdgeInsets.only(
+            left: smallScreen ? 8 : 16, top: smallScreen ? 8 : 16),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: smallScreen ? 4 : 8,
+              vertical: smallScreen ? 4 : 8,
+            ),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: smallScreen ? 30.0 : 80.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Oswald',
+                  color: Colors.black,
+                ),
+              ),
             ),
           ),
         ),
