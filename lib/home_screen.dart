@@ -14,7 +14,7 @@ import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
-import 'package:website_frontend/sections/programm/programm.dart';
+//import 'package:website_frontend/sections/programm/programm.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
 

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
-import 'package:website_frontend/sections/news/mobile/title_default.dart';
 
 class LogoSammlung extends StatelessWidget {
   const LogoSammlung();

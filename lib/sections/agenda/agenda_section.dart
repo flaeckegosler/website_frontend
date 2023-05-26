@@ -15,8 +15,6 @@ class _AgendaSectionState extends State<AgendaSection> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-
     return Container(
       width: double.infinity,
       color: const Color.fromRGBO(230, 230, 230, 1),
@@ -61,13 +59,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       endChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Freitag, 24. März",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Freitag, 24. März",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -89,13 +90,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       startChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Samstag, 6. Mai",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Samstag, 6. Mai",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -121,13 +125,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       endChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Freitag 12. - Sonntag 14. Mai",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Freitag 12. - Sonntag 14. Mai",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -149,13 +156,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       startChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Freitag, 2. Juni",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Freitag, 2. Juni",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -177,13 +187,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       endChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Samstag, 10. Juni",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Samstag, 10. Juni",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -205,13 +218,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       startChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Freitag, 7. Juli",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Freitag, 7. Juli",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -233,13 +249,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       endChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Samstag, 5. August",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Samstag, 5. August",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -261,13 +280,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       startChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Freitag, 1. September",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Freitag, 1. September",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
@@ -290,13 +312,16 @@ class _AgendaSectionState extends State<AgendaSection> {
                       endChild: Container(
                         height: 60,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Sonntag, 23. September",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Sonntag, 23. September",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
