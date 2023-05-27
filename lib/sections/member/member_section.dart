@@ -745,9 +745,12 @@ class _MemberSectionState extends State<MemberSection> {
               pickedButtonKommission = PickedButtonKommissionen.musikkomission;
             });
           },
-          child: const Text(
-            "Musikkommission",
-            textAlign: TextAlign.center,
+          child: const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              "Musikkommission",
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),

@@ -182,7 +182,7 @@ class Kontakt extends StatelessWidget {
                       Center(
                         child: SizedBox(
                           //  color: Colors.red,
-                          height: 800,
+                          height: 876,
                           width: 480,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,7 +211,7 @@ class Kontakt extends StatelessWidget {
                                 height: 10,
                               ),
                               buildTextField(
-                                title: 'Deine Email',
+                                title: 'Deine Email *',
                                 controller: controllerFromEmail,
                                 context: context,
                               ),
@@ -282,6 +282,12 @@ class Kontakt extends StatelessWidget {
                                   },
                                   child: const Text('Senden'),
                                 ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const Text(
+                                "* Ihre Kontaktanfrage wird als E-Mail an unseren Präsidenten gesendet, wobei Sie als Kopie (CC) einbezogen werden.",
                               ),
                             ],
                           ),

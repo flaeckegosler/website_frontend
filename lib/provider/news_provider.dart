@@ -30,7 +30,7 @@ class NewsProvider with ChangeNotifier {
           json.decode(response.body) as Map<String, dynamic>;
       newsListData.forEach((String newsId, dynamic newsData) {
         final News news = News(
-          id: newsId.toString(),
+          id: newsId,
           newsTitle: newsData['newsTitle'] as String,
           imageURL: newsData['imageURL'].toString().replaceFirst(
                 'https://flaeckegosler.ch',

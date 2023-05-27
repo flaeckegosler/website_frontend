@@ -101,7 +101,7 @@ class Auth with ChangeNotifier {
           'instrument': instrument,
         }) // Set the firstname / lastname / instrument only once, when the user is created, otherwise it will overwrite the existing values
         .then((value) =>
-            print("User attributes firstname / lastname / instrument added!"))
+            print("User attributes firstname / lastname / instrument added!"),)
         .catchError((error) => print("Failed to add user attributes: $error"));
   }
 }

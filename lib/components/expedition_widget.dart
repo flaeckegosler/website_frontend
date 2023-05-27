@@ -45,11 +45,11 @@ class ExpeditionWidget extends StatelessWidget {
                           automaticallyImplyLeading: false,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 180,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
                               "29. JAN",
                               style: TextStyle(fontSize: 36),

@@ -7,10 +7,10 @@ class MusicSheetPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Music Sheets'),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text(
               'Music Sheets',
             ),

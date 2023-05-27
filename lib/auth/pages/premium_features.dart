@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class PremiumFeaturesPage extends StatelessWidget {
   Widget _premiumFeatures() {
-    return SizedBox(
+    return const SizedBox(
       width: 250,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             'Als registrierter Benutzer hast du aktuell Zugriff auf folgende premium Features:',
           ),
@@ -36,7 +36,7 @@ class PremiumFeaturesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Premium Features'),
+        title: const Text('Premium Features'),
       ),
       body: Center(
         child: Column(

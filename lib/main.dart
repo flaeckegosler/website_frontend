@@ -8,8 +8,10 @@ import 'package:website_frontend/auth/auth_home_page.dart';
 import 'package:website_frontend/auth/login_register_page.dart';
 import 'package:website_frontend/auth/pages/music_sheets.dart';
 import 'package:website_frontend/auth/pages/premium_features.dart';
+import 'package:website_frontend/drive/logosammlung.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
+import 'package:website_frontend/provider/agenda_provider.dart';
 import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
@@ -29,7 +31,7 @@ import 'package:website_frontend/themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load();
   await Firebase.initializeApp(
     options: FirebaseOptions(
       apiKey: dotenv.env['FIREBASE_API_KEY'].toString(),
@@ -61,8 +63,8 @@ class MyApp extends StatelessWidget {
             path: 'mitglied/:firstName/:lastName',
             builder: (BuildContext context, GoRouterState state) {
               return MitgliederPhotoViewPage(
-                state.params["firstName"]!,
-                state.params["lastName"]!,
+                state.pathParameters["firstName"]!,
+                state.pathParameters["lastName"]!,
               );
             },
           ),
@@ -77,8 +79,8 @@ class MyApp extends StatelessWidget {
             path: 'galerie/:albumTitleRoute/:pictureIndex',
             builder: (BuildContext context, GoRouterState state) {
               return GaleriePhotoViewPage(
-                state.params["albumTitleRoute"]!,
-                state.params["pictureIndex"]!,
+                state.pathParameters["albumTitleRoute"]!,
+                state.pathParameters["pictureIndex"]!,
               );
             },
           ),
@@ -142,6 +144,12 @@ class MyApp extends StatelessWidget {
               return VorstandPage();
             },
           ),
+          GoRoute(
+            path: 'assets',
+            builder: (BuildContext context, GoRouterState state) {
+              return const LogoSammlung();
+            },
+          ),
         ],
       ),
     ],
@@ -173,11 +181,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Auth(),
         ),
+        ChangeNotifierProvider.value(
+          value: AgendaProvider(),
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: _router,
         title: 'Fläckegosler Roteborg',
-        theme: mythosTheme,
+        theme: myTheme,
       ),
     );
   }

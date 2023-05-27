@@ -449,10 +449,10 @@ class BottomBar extends StatelessWidget {
               ],
             ),
             const Divider(
-              thickness: 2,
+              thickness: 1.5,
               color: Colors.white,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             const Text(
               'Copyright © 2023 | Fläckegosler Roteborg',
               style: TextStyle(

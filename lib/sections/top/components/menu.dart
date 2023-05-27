@@ -12,7 +12,7 @@ class _MenuState extends State<Menu> {
   int hoverIndex = 0;
   List<String> menuItems = [
     "News",
-    "Programm",
+    //"Programm",
     "Fotos",
     "Agenda",
     "Mitglieder",
