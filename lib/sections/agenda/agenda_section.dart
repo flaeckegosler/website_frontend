@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/provider/agenda_provider.dart';
 
 class AgendaSection extends StatefulWidget {
   @override
@@ -8,8 +10,23 @@ class AgendaSection extends StatefulWidget {
 }
 
 class _AgendaSectionState extends State<AgendaSection> {
+  bool _isLoading = false;
+
+  //Fetch all Listings
+  Future fetchAgendaList() async {
+    setState(() {
+      _isLoading = true;
+    });
+    await Provider.of<AgendaProvider>(context, listen: false)
+        .fetchAgendaItems();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   void initState() {
+    fetchAgendaList();
     super.initState();
   }
 
