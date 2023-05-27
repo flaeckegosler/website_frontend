@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/models/agenda.dart';
 import 'package:website_frontend/provider/agenda_provider.dart';
 
 class AgendaSection extends StatefulWidget {
@@ -28,6 +29,74 @@ class _AgendaSectionState extends State<AgendaSection> {
   void initState() {
     fetchAgendaList();
     super.initState();
+  }
+
+  List<TimelineTile> buildTimelineTiles(List<AgendaItem> agendaItems) {
+    final List<TimelineTile> timelineTiles = [];
+
+    Widget buildContentContainer(
+      String dateDisplay,
+      String location,
+      bool isOdd,
+    ) {
+      return Container(
+        height: 60,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment:
+              isOdd ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                dateDisplay,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(location),
+            ),
+          ],
+        ),
+      );
+    }
+
+    for (int i = 0; i < agendaItems.length; i++) {
+      final AgendaItem item = agendaItems[i];
+      final bool isOdd = i % 2 == 0;
+
+      timelineTiles.add(
+        TimelineTile(
+          indicatorStyle: IndicatorStyle(
+            color: Theme.of(context).primaryColor,
+            height: 15,
+            width: 15,
+          ),
+          isFirst: i == 0,
+          isLast: i == agendaItems.length - 1,
+          beforeLineStyle: const LineStyle(thickness: 2),
+          alignment: TimelineAlign.center,
+          startChild: isOdd
+              ? buildContentContainer(
+                  item.agendaDate,
+                  item.agendaLocation,
+                  isOdd,
+                )
+              : const SizedBox(height: 60),
+          endChild: !isOdd
+              ? buildContentContainer(
+                  item.agendaDate,
+                  item.agendaLocation,
+                  isOdd,
+                )
+              : const SizedBox(height: 60),
+        ),
+      );
+    }
+
+    return timelineTiles;
   }
 
   @override
@@ -62,296 +131,21 @@ class _AgendaSectionState extends State<AgendaSection> {
                 width: 1250,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      isFirst: true,
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 60),
-                      endChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Freitag, 24. März",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                  children: _isLoading
+                      ? [
+                          SizedBox(
+                            height: 300,
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                color: Theme.of(context).primaryColor,
                               ),
                             ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Mitgliederversammlung, Roteborg"),
-                            )
-                          ],
+                          )
+                        ]
+                      : buildTimelineTiles(
+                          Provider.of<AgendaProvider>(context, listen: false)
+                              .allAgendaItems,
                         ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 60),
-                      startChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Samstag, 6. Mai",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Generalversammlung, Roteborg"),
-                            ),
-                            /* FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Suugerguggete, Emmenbrücke"),
-                            ),*/
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 60),
-                      endChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Freitag 12. - Sonntag 14. Mai",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Frühlingsausflug"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 60),
-                      startChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Freitag, 2. Juni",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Sujetwahl"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 60),
-                      endChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Samstag, 10. Juni",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Auftritt Städtetreffen, Roteborg"),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 60),
-                      startChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Freitag, 7. Juli",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("BCH Stamm"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 60),
-                      endChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Samstag, 5. August",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Gosler Wandertag & BCH Stamm"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      endChild: const SizedBox(height: 60),
-                      startChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Freitag, 1. September",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("BCH Stamm"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    TimelineTile(
-                      indicatorStyle: IndicatorStyle(
-                        color: Theme.of(context).primaryColor,
-                        height: 15,
-                        width: 15,
-                      ),
-                      isLast: true,
-                      beforeLineStyle: const LineStyle(thickness: 2),
-                      alignment: TimelineAlign.center,
-                      startChild: const SizedBox(height: 60),
-                      endChild: Container(
-                        height: 60,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Sonntag, 23. September",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text("Start Probesaison"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    )
-                  ],
                 ),
               ),
             ],

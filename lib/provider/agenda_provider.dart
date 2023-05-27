@@ -7,7 +7,7 @@ import 'package:website_frontend/models/agenda.dart';
 class AgendaProvider with ChangeNotifier {
   List<AgendaItem> _items = [];
 
-  List<AgendaItem> get allPictures {
+  List<AgendaItem> get allAgendaItems {
     return List.from(_items);
   }
 
@@ -31,6 +31,7 @@ class AgendaProvider with ChangeNotifier {
           throw Exception('Invalid agenda item');
         }
       }).toList();
+
       _items = agendaItems;
     } else {
       throw Exception('Failed to fetch agenda items');
