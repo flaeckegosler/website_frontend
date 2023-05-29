@@ -14,13 +14,14 @@ import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/agenda_provider.dart';
 import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
+import 'package:website_frontend/provider/kleiderverkauf_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/sujet_provider.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
 import 'package:website_frontend/sections/footer/pages/goenner.dart';
-import 'package:website_frontend/sections/footer/pages/kleiderverkauf.dart';
+import 'package:website_frontend/sections/footer/pages/kleiderverkauf_page.dart';
 import 'package:website_frontend/sections/footer/pages/kontakt.dart';
 import 'package:website_frontend/sections/footer/pages/sujet.dart';
 import 'package:website_frontend/sections/footer/pages/vorstand_page.dart';
@@ -129,7 +130,7 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: 'kleiderverkauf',
             builder: (BuildContext context, GoRouterState state) {
-              return const Kleiderverkauf();
+              return const KleiderverkaufPage();
             },
           ),
           GoRoute(
@@ -183,6 +184,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: AgendaProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: KleiderverkaufProvider(),
         ),
       ],
       child: MaterialApp.router(
