@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:website_frontend/models/kleiderverkauf.dart';
+import 'package:website_frontend/models/basic_page_model.dart';
 
 class KleiderverkaufProvider with ChangeNotifier {
-  late Kleiderverkauf _kleiderverkauf;
+  late BasicPageModel _kleiderverkauf;
 
-  Kleiderverkauf get getKleiderverkauf {
+  BasicPageModel get getKleiderverkauf {
     return _kleiderverkauf;
   }
 
@@ -20,7 +20,7 @@ class KleiderverkaufProvider with ChangeNotifier {
       final Map<String, dynamic> jsonData =
           json.decode(response.body) as Map<String, dynamic>;
 
-      _kleiderverkauf = Kleiderverkauf.fromJson(jsonData);
+      _kleiderverkauf = BasicPageModel.fromJson(jsonData);
     } else {
       throw Exception('Failed to fetch news');
     }

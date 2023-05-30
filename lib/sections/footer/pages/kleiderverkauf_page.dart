@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/provider/kleiderverkauf_provider.dart';
@@ -42,6 +43,8 @@ class _KleiderverkaufPageState extends State<KleiderverkaufPage> {
         right: 20,
       ),
       child: SizedBox(
+        height: 300,
+        width: 480,
         child: CachedNetworkImage(
           imageUrl: api + url,
           fit: BoxFit.cover,
@@ -69,9 +72,9 @@ class _KleiderverkaufPageState extends State<KleiderverkaufPage> {
 
   Widget _buildMainText(String url) {
     return Container(
-      padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
-      child: Text(
-        url,
+      padding: const EdgeInsets.only(top: 10.0, left: 10.0, right: 10.0),
+      child: Html(
+        data: url,
       ),
     );
   }
@@ -93,94 +96,92 @@ class _KleiderverkaufPageState extends State<KleiderverkaufPage> {
               )
             : CustomScrollView(
                 slivers: [
-                  SliverFillRemaining(
+                  SliverToBoxAdapter(
+                    child: Center(
+                      child: SizedBox(
+                        width: 480,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 20.0, right: 10),
+                              child: SectionTitle(
+                                title: Provider.of<KleiderverkaufProvider>(
+                                  context,
+                                  listen: false,
+                                ).getKleiderverkauf.title,
+                                subTitle: Provider.of<KleiderverkaufProvider>(
+                                  context,
+                                  listen: false,
+                                ).getKleiderverkauf.subtitle,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            _buildTitelBild(
+                              Provider.of<KleiderverkaufProvider>(
+                                context,
+                                listen: false,
+                              ).getKleiderverkauf.imageUrl,
+                            ),
+                            _buildImageDescription(
+                              Provider.of<KleiderverkaufProvider>(
+                                context,
+                                listen: false,
+                              ).getKleiderverkauf.imageDescription,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(
+                                top: 20.0,
+                                right: 20,
+                                left: 20,
+                              ),
+                              child: TitleDefault(
+                                Provider.of<KleiderverkaufProvider>(
+                                  context,
+                                  listen: false,
+                                ).getKleiderverkauf.newsTitle,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(
+                                top: 10.0,
+                                right: 10.0,
+                                left: 10.0,
+                              ),
+                              child: Html(
+                                data: Provider.of<KleiderverkaufProvider>(
+                                  context,
+                                  listen: false,
+                                ).getKleiderverkauf.newsIntro,
+                              ),
+                            ),
+                            _buildMainText(
+                              Provider.of<KleiderverkaufProvider>(
+                                context,
+                                listen: false,
+                              ).getKleiderverkauf.newsMain,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SliverFillRemaining(
                     hasScrollBody: false,
                     child: Column(
                       children: [
-                        Center(
-                          child: SizedBox(
-                            width: 480,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 20.0, right: 10),
-                                  child: SectionTitle(
-                                    title: Provider.of<KleiderverkaufProvider>(
-                                      context,
-                                      listen: false,
-                                    ).getKleiderverkauf.title,
-                                    subTitle:
-                                        Provider.of<KleiderverkaufProvider>(
-                                      context,
-                                      listen: false,
-                                    ).getKleiderverkauf.subtitle,
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                _buildTitelBild(
-                                  Provider.of<KleiderverkaufProvider>(
-                                    context,
-                                    listen: false,
-                                  ).getKleiderverkauf.imageUrl,
-                                ),
-                                _buildImageDescription(
-                                  Provider.of<KleiderverkaufProvider>(
-                                    context,
-                                    listen: false,
-                                  ).getKleiderverkauf.imageDescription,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.only(
-                                    top: 20.0,
-                                    right: 20,
-                                    left: 20,
-                                  ),
-                                  child: TitleDefault(
-                                    Provider.of<KleiderverkaufProvider>(
-                                      context,
-                                      listen: false,
-                                    ).getKleiderverkauf.newsTitle,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.only(
-                                    top: 10.0,
-                                    right: 20,
-                                    left: 20,
-                                  ),
-                                  child: Text(
-                                    Provider.of<KleiderverkaufProvider>(
-                                      context,
-                                      listen: false,
-                                    ).getKleiderverkauf.newsIntro,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                                _buildMainText(
-                                  Provider.of<KleiderverkaufProvider>(
-                                    context,
-                                    listen: false,
-                                  ).getKleiderverkauf.newsMain,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
                         Spacer(),
-                        const BottomBar(),
+                        BottomBar(),
                       ],
                     ),
                   ),

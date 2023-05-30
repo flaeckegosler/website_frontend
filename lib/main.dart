@@ -14,15 +14,16 @@ import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/agenda_provider.dart';
 import 'package:website_frontend/provider/album_provider.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
+import 'package:website_frontend/provider/goenner_provider.dart';
 import 'package:website_frontend/provider/kleiderverkauf_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
 import 'package:website_frontend/provider/sujet_provider.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
-import 'package:website_frontend/sections/footer/pages/goenner.dart';
+import 'package:website_frontend/sections/footer/pages/goenner_page.dart';
 import 'package:website_frontend/sections/footer/pages/kleiderverkauf_page.dart';
-import 'package:website_frontend/sections/footer/pages/kontakt.dart';
+import 'package:website_frontend/sections/footer/pages/kontakt_page.dart';
 import 'package:website_frontend/sections/footer/pages/sujet.dart';
 import 'package:website_frontend/sections/footer/pages/vorstand_page.dart';
 import 'package:website_frontend/sections/gallery/galerie_photo_view_page.dart';
@@ -118,7 +119,7 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: 'goenner',
             builder: (BuildContext context, GoRouterState state) {
-              return const Goenner();
+              return const GoennerPage();
             },
           ),
           GoRoute(
@@ -136,7 +137,7 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: 'kontakt',
             builder: (BuildContext context, GoRouterState state) {
-              return Kontakt();
+              return KontaktPage();
             },
           ),
           GoRoute(
@@ -187,6 +188,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: KleiderverkaufProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: GoennerProvider(),
         ),
       ],
       child: MaterialApp.router(
