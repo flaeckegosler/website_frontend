@@ -2,17 +2,21 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:website_frontend/models/agenda_item.dart';
+import 'package:website_frontend/models/sound_item.dart';
 
-class AgendaProvider with ChangeNotifier {
-  List<AgendaItem> _items = [];
+class SoundProvider with ChangeNotifier {
+  List<SoundItem> _items = [];
 
-  List<AgendaItem> get allAgendaItems {
+  List<SoundItem> get allSoundItems {
     return List.from(_items);
   }
 
-  Future<void> fetchAgendaItems() async {
-    final url = Uri.parse('https://api.flaeckegosler.ch/app/agenda-to-json/');
+  bool isDivisibleByThree() {
+    return _items.length % 3 == 0;
+  }
+
+  Future<void> fetchSoundItems() async {
+    final url = Uri.parse('https://api.flaeckegosler.ch/app/sound-to-json/');
     final response = await http.get(
       url,
     );
@@ -20,19 +24,19 @@ class AgendaProvider with ChangeNotifier {
     if (response.statusCode == 200) {
       final List<dynamic> jsonData =
           json.decode(response.body) as List<dynamic>;
-      final Map<String, dynamic> agendaData =
+      final Map<String, dynamic> soundData =
           jsonData[0] as Map<String, dynamic>;
-      final List<dynamic> jsonItems = agendaData['items'] as List<dynamic>;
+      final List<dynamic> jsonItems = soundData['items'] as List<dynamic>;
 
-      final List<AgendaItem> agendaItems = jsonItems.map((item) {
+      final List<SoundItem> soundItems = jsonItems.map((item) {
         if (item != null && item is Map<String, dynamic>) {
-          return AgendaItem.fromJson(item);
+          return SoundItem.fromJson(item);
         } else {
           throw Exception('Invalid agenda item');
         }
       }).toList();
 
-      _items = agendaItems;
+      _items = soundItems;
     } else {
       throw Exception('Failed to fetch agenda items');
     }

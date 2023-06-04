@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/components/section_title.dart';
+import 'package:website_frontend/provider/sound_provider.dart';
 
 class SoundSection extends StatefulWidget {
   @override
@@ -8,8 +10,22 @@ class SoundSection extends StatefulWidget {
 }
 
 class _SoundSectionState extends State<SoundSection> {
+  bool _isLoading = false;
+
+  //Fetch all Listings
+  Future fetchSoundItemsList() async {
+    setState(() {
+      _isLoading = true;
+    });
+    await Provider.of<SoundProvider>(context, listen: false).fetchSoundItems();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   void initState() {
+    fetchSoundItemsList();
     super.initState();
   }
 
@@ -47,61 +63,51 @@ class _SoundSectionState extends State<SoundSection> {
               const SizedBox(
                 height: 30,
               ),
-              if (MediaQuery.of(context).size.width > 1250)
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 250,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: newSoundCard(
-                              "Rothuusstäge 2020",
-                              "assets/youtube_diadamas_2020.jpg",
-                              "https://www.youtube.com/watch?v=2xE9i5t4mXQ",
+              Column(
+                children: _isLoading
+                    ? [
+                        SizedBox(
+                          height: 300,
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
-                          const SizedBox(
-                            width: 100,
-                          ),
-                          Expanded(
-                            child: newSoundCard(
-                              "Rothuusstäge 2019",
-                              "assets/youtube_vampir_2019.jpg",
-                              "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                  ],
-                )
-              else
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      newSoundCard(
-                        "Rothuusstäge 2020",
-                        "assets/youtube_diadamas_2020.jpg",
-                        "https://www.youtube.com/watch?v=2xE9i5t4mXQ",
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      newSoundCard(
-                        "Rothuusstäge 2019",
-                        "assets/youtube_vampir_2019.jpg",
-                        "https://www.youtube.com/watch?v=vlq1-nWLDh8&t",
-                      ),
-                    ],
-                  ),
-                ),
-              const SizedBox(
-                height: 40,
+                        )
+                      ]
+                    : [
+                        GridView.count(
+                          childAspectRatio:
+                              MediaQuery.of(context).size.width > 1250 &&
+                                      Provider.of<SoundProvider>(context)
+                                          .isDivisibleByThree()
+                                  ? 1.5
+                                  : 2.4,
+                          crossAxisCount:
+                              MediaQuery.of(context).size.width > 1250 &&
+                                      Provider.of<SoundProvider>(context)
+                                          .isDivisibleByThree()
+                                  ? 3
+                                  : (MediaQuery.of(context).size.width > 1250
+                                      ? 2
+                                      : 1),
+                          mainAxisSpacing: 30,
+                          crossAxisSpacing: 30,
+                          shrinkWrap: true,
+                          children: Provider.of<SoundProvider>(context)
+                              .allSoundItems
+                              .map((soundItem) {
+                            return newSoundCard(
+                              soundItem.soundTitle,
+                              soundItem.image,
+                              soundItem.soundUrl,
+                            );
+                          }).toList(),
+                        ),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                      ],
               )
             ],
           ),
@@ -110,82 +116,85 @@ class _SoundSectionState extends State<SoundSection> {
     );
   }
 
-  ClipRRect newSoundCard(
+  Padding newSoundCard(
     String title,
     String assetImage,
     String youtubeLink,
   ) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: InkWell(
-        onTap: () {
-          _launchURL(youtubeLink);
-        },
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(
-                assetImage,
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: InkWell(
+          onTap: () {
+            _launchURL(youtubeLink);
+          },
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                  "https://api.flaeckegosler.ch/$assetImage",
+                ),
               ),
             ),
-          ),
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 4.0,
-                        vertical: 4.0,
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
                       ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          title,
-                          textAlign: TextAlign.start,
-                          style: const TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Oswald',
-                            color: Colors.black,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0,
+                          vertical: 4.0,
+                        ),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            title,
+                            textAlign: TextAlign.start,
+                            style: const TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Oswald',
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 130,
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  padding: const EdgeInsets.only(right: 30, bottom: 22),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(50),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    padding: const EdgeInsets.only(right: 30, bottom: 22),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                      ),
+                      child: const Icon(
+                        Icons.arrow_forward_rounded,
+                        color: Colors.white,
+                        size: 50,
                       ),
                     ),
-                    child: const Icon(
-                      Icons.arrow_forward_rounded,
-                      color: Colors.white,
-                      size: 50,
-                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

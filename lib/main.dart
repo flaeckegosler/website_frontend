@@ -18,6 +18,7 @@ import 'package:website_frontend/provider/goenner_provider.dart';
 import 'package:website_frontend/provider/kleiderverkauf_provider.dart';
 import 'package:website_frontend/provider/member_provider.dart';
 import 'package:website_frontend/provider/news_provider.dart';
+import 'package:website_frontend/provider/sound_provider.dart';
 import 'package:website_frontend/provider/sujet_provider.dart';
 import 'package:website_frontend/provider/vorstand_provider.dart';
 import 'package:website_frontend/sections/footer/pages/ehrenmitglieder.dart';
@@ -191,6 +192,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: GoennerProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: SoundProvider(),
         ),
       ],
       child: MaterialApp.router(
