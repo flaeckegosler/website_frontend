@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 centerTitle: true,
                 background: Image.asset(
-                  'assets/background_kyoto.png',
+                  'assets/background_kyoto.jpg',
                   fit: BoxFit.fitWidth,
                 ),
               ),

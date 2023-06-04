@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:website_frontend/components/section_title.dart';
-import 'package:website_frontend/models/agenda.dart';
+import 'package:website_frontend/models/agenda_item.dart';
 import 'package:website_frontend/provider/agenda_provider.dart';
 
 class AgendaSection extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:website_frontend/models/agenda.dart';
+import 'package:website_frontend/models/agenda_item.dart';
 
 class AgendaProvider with ChangeNotifier {
   List<AgendaItem> _items = [];
@@ -24,7 +24,7 @@ class AgendaProvider with ChangeNotifier {
           jsonData[0] as Map<String, dynamic>;
       final List<dynamic> jsonItems = agendaData['items'] as List<dynamic>;
 
-      List<AgendaItem> agendaItems = jsonItems.map((item) {
+      final List<AgendaItem> agendaItems = jsonItems.map((item) {
         if (item != null && item is Map<String, dynamic>) {
           return AgendaItem.fromJson(item);
         } else {
