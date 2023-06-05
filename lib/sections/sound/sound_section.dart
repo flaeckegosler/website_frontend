@@ -77,12 +77,13 @@ class _SoundSectionState extends State<SoundSection> {
                       ]
                     : [
                         GridView.count(
+                          physics: const NeverScrollableScrollPhysics(),
                           childAspectRatio:
                               MediaQuery.of(context).size.width > 1250 &&
                                       Provider.of<SoundProvider>(context)
                                           .isDivisibleByThree()
                                   ? 1.5
-                                  : 2.4,
+                                  : 2.0,
                           crossAxisCount:
                               MediaQuery.of(context).size.width > 1250 &&
                                       Provider.of<SoundProvider>(context)
