@@ -14,6 +14,7 @@ class GallerySection extends StatefulWidget {
 
 class _GallerySectionState extends State<GallerySection> {
   bool _isLoading = false;
+  bool _isLoading2 = true;
   int activeIndex = 0;
   final controller = CarouselController();
 
@@ -25,11 +26,16 @@ class _GallerySectionState extends State<GallerySection> {
       _isLoading = true;
     });
     await Provider.of<PicturesProvider>(context, listen: false)
-        .fetchAlbumList();
+        .fetchFirstAlbum();
     _selectedGallery =
-        Provider.of<PicturesProvider>(context, listen: false).allPictures[0];
+        Provider.of<PicturesProvider>(context, listen: false).getFirstAlbum();
     setState(() {
       _isLoading = false;
+    });
+    await Provider.of<PicturesProvider>(context, listen: false)
+        .fetchAlbumList();
+    setState(() {
+      _isLoading2 = false;
     });
   }
 
@@ -258,7 +264,19 @@ class _GallerySectionState extends State<GallerySection> {
                       subTitle: "Schau dir unsErE BildEr an!",
                       color: Theme.of(context).primaryColor,
                     ),
-                    if (_isLoading) const SizedBox() else dropDownButton(),
+                    if (_isLoading)
+                      const SizedBox()
+                    else
+                      AnimatedOpacity(
+                        opacity: _isLoading2
+                            ? 0.0
+                            : 1.0, // Set the opacity based on the _loading bool
+                        duration: const Duration(
+                            milliseconds:
+                                500), // Set the duration of the animation
+                        curve: Curves.easeInCirc, // Set the animation curve
+                        child: dropDownButton(), // Your dropDownButton widget
+                      ),
                   ],
                 ),
               ),
