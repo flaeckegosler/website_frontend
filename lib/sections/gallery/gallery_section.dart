@@ -268,7 +268,8 @@ class _GallerySectionState extends State<GallerySection> {
                       const SizedBox()
                     else
                       AnimatedOpacity(
-                        opacity: _isLoading2
+                        opacity: _isLoading2 &&
+                                pictureProvider.allPictures.isEmpty
                             ? 0.0
                             : 1.0, // Set the opacity based on the _loading bool
                         duration: const Duration(
