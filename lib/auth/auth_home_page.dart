@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/auth/auth.dart';
+import 'package:website_frontend/components/birthday_card.dart';
+import 'package:website_frontend/provider/birthday_provider.dart';
 
 class AuthHomePage extends StatefulWidget {
   @override
@@ -11,10 +13,12 @@ class AuthHomePage extends StatefulWidget {
 
 class _AuthHomePageState extends State<AuthHomePage> {
   late ConfettiController _controller;
+  bool _isLoading = true;
 
   @override
-  void initState() {
+  initState() {
     super.initState();
+    fetchBirthdayAsync();
     _controller = ConfettiController(duration: const Duration(seconds: 3));
     _controller.play();
   }
@@ -25,11 +29,26 @@ class _AuthHomePageState extends State<AuthHomePage> {
     super.dispose();
   }
 
+  //Fetch all Listings
+  Future fetchBirthdayAsync() async {
+    setState(() {
+      _isLoading = true;
+    });
+    await Provider.of<BirthdayProvider>(context, listen: false)
+        .readBirthdayJson();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text(
+          'Home Page',
+          style: TextStyle(fontFamily: 'Gosler', color: Colors.white),
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -40,7 +59,7 @@ class _AuthHomePageState extends State<AuthHomePage> {
                 color: Theme.of(context).primaryColor,
               ),
               child: Text(
-                'Hallo ${Provider.of<Auth>(context, listen: false).goslerUser.firstName}',
+                'Menü ${Provider.of<Auth>(context, listen: false).goslerUser.firstName}',
                 style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'Gosler',
@@ -97,26 +116,45 @@ class _AuthHomePageState extends State<AuthHomePage> {
               ],
             ),
             Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: ListView(
                 children: [
                   const SizedBox(height: 20),
-                  Text(
-                    '${Auth().user?.email}',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 5),
-                  const Text('Du bist eingeloggt.'),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).primaryColor,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: BirthdayCard(
+                      birthdays: Provider.of<BirthdayProvider>(context)
+                          .nextThreeBirthdays,
                     ),
-                    onPressed: () {
-                      Auth().signOut();
-                      GoRouter.of(context).pushReplacement('/auth');
-                    },
-                    child: const Text('Sign out'),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Center(
+                    child: Text(
+                      '${Auth().user?.email}',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  const Center(
+                    child: Text('Du bist eingeloggt.'),
+                  ),
+                  const SizedBox(height: 20),
+                  Center(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        backgroundColor: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () {
+                        Auth().signOut();
+                        GoRouter.of(context).pushReplacement('/auth');
+                      },
+                      child: const Text('Sign out'),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
                   ),
                 ],
               ),

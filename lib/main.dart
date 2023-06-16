@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/auth/auth.dart';
 import 'package:website_frontend/auth/auth_home_page.dart';
@@ -13,6 +15,7 @@ import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/agenda_provider.dart';
 import 'package:website_frontend/provider/album_provider.dart';
+import 'package:website_frontend/provider/birthday_provider.dart';
 import 'package:website_frontend/provider/ehrenmitglieder_provider.dart';
 import 'package:website_frontend/provider/goenner_provider.dart';
 import 'package:website_frontend/provider/kleiderverkauf_provider.dart';
@@ -43,7 +46,9 @@ Future<void> main() async {
       projectId: 'flaeckegosler',
     ),
   );
-  runApp(MyApp());
+  initializeDateFormatting('de_DE', null).then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -195,6 +200,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: SoundProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: BirthdayProvider(),
         ),
       ],
       child: MaterialApp.router(
