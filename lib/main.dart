@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/auth/auth.dart';
 import 'package:website_frontend/auth/auth_home_page.dart';
@@ -11,6 +10,7 @@ import 'package:website_frontend/auth/login_register_page.dart';
 import 'package:website_frontend/auth/pages/music_sheets.dart';
 import 'package:website_frontend/auth/pages/premium_features.dart';
 import 'package:website_frontend/drive/logosammlung.dart';
+import 'package:website_frontend/drive/midisammlung.dart';
 import 'package:website_frontend/home_screen.dart';
 import 'package:website_frontend/models/news_model.dart';
 import 'package:website_frontend/provider/agenda_provider.dart';
@@ -156,6 +156,12 @@ class MyApp extends StatelessWidget {
             path: 'assets',
             builder: (BuildContext context, GoRouterState state) {
               return const LogoSammlung();
+            },
+          ),
+          GoRoute(
+            path: 'midi',
+            builder: (BuildContext context, GoRouterState state) {
+              return const MidiSammlung();
             },
           ),
         ],
