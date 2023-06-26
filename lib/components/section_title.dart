@@ -6,10 +6,17 @@ class SectionTitle extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.color,
+    this.fontFamily = "Shakuro",
+    this.fontSizeMainTitle = 48,
+    this.fontWeight = FontWeight.bold,
   });
 
-  final String title, subTitle;
+  final String title;
+  final String subTitle;
   final Color color;
+  final String fontFamily;
+  final double fontSizeMainTitle;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +46,10 @@ class SectionTitle extends StatelessWidget {
                 height: 15,
                 child: Text(
                   subTitle,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w200,
                     color: kTextColor,
-                    fontFamily: "Shakuro",
+                    fontFamily: fontFamily,
                     fontSize: 12,
                   ),
                 ),
@@ -55,10 +62,10 @@ class SectionTitle extends StatelessWidget {
                 child: Text(
                   title,
                   style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: fontWeight,
                         color: Colors.black,
-                        fontFamily: "Shakuro",
-                        fontSize: 48,
+                        fontFamily: fontFamily,
+                        fontSize: fontSizeMainTitle,
                       ),
                 ),
               )

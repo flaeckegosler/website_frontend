@@ -242,9 +242,9 @@ class _GallerySectionState extends State<GallerySection> {
   Widget build(BuildContext context) {
     final bool isMobile = MediaQuery.of(context).size.width < 1250;
     final pictureProvider = context.watch<PicturesProvider>();
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      //  color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color(0xffFFFFFF),
       child: Align(
         child: Container(
           alignment: Alignment.center,
