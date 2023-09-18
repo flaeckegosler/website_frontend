@@ -85,7 +85,7 @@ class MemberProvider with ChangeNotifier {
           pictureUrlMax: "assets/bild_kandidaten.png",
           instrument: "Horn",
           vorstand: "",
-          expedition: "Mädchen für alles",
+          expedition: "OK-Präsident Stv.",
           muKo: "",
           sujetKommission: "",
         ),

@@ -110,7 +110,7 @@ class NewsCardState extends State<NewsCard> with TickerProviderStateMixin {
                           style: {
                             "p": Style(
                               fontFamily: 'serif',
-                              padding: const EdgeInsets.only(
+                              padding: HtmlPaddings.only(
                                 left: 10,
                                 right: 10,
                               ),
