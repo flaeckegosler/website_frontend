@@ -210,7 +210,7 @@ class _GallerySectionState extends State<GallerySection> {
         );
       },
       child: SizedBox(
-        width: 200,
+        width: MediaQuery.of(context).size.width > 400 ? 200 : 130,
         height: 40,
         child: Container(
           decoration: const BoxDecoration(
@@ -220,18 +220,27 @@ class _GallerySectionState extends State<GallerySection> {
             ),
           ),
           alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                _selectedGallery.albumTitle,
-                style: const TextStyle(color: Colors.white),
-              ),
-              const Icon(
-                Icons.expand_more,
-                color: Colors.white,
-              ),
-            ],
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width > 400 ? 0 : 10,
+                ),
+                Text(
+                  _selectedGallery.albumTitle,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                const Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width > 400 ? 0 : 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -261,7 +270,7 @@ class _GallerySectionState extends State<GallerySection> {
                   children: [
                     SectionTitle(
                       title: "Fotos",
-                      subTitle: "Schau dir unsErE BildEr an!",
+                      subTitle: "Schau unsErE BildEr an!",
                       color: Theme.of(context).primaryColor,
                     ),
                     if (_isLoading)
