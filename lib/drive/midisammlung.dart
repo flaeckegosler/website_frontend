@@ -3,12 +3,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 
-class LogoSammlung extends StatelessWidget {
-  const LogoSammlung();
+class MidiSammlung extends StatelessWidget {
+  const MidiSammlung();
 
   _launchURL() async {
     const url =
-        'https://drive.google.com/drive/folders/1yUKOnqf9GsS_hqWENdJc56myZz7zbxUI';
+        'https://drive.google.com/drive/folders/17rZ-RBR3Cwk2nXVLWWRso4K7qug06qAH?usp';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -16,18 +16,19 @@ class LogoSammlung extends StatelessWidget {
     }
   }
 
-  Widget _buildTitelBild() {
-    return const Padding(
-      padding: EdgeInsets.only(
+  Widget _buildTitelBild(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
         right: 20.0,
         left: 20,
       ),
       child: Center(
         child: SizedBox(
           height: 200,
-          child: Image(
-            image: AssetImage('assets/flaeckegosler_webseite_logo.png'),
-            fit: BoxFit.cover,
+          child: Icon(
+            Icons.library_music,
+            size: 200,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       ),
@@ -59,14 +60,14 @@ class LogoSammlung extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 20.0, right: 10),
                       child: SectionTitle(
                         title: "Assets",
-                        subTitle: "Logosammlung!",
+                        subTitle: "Midisammlung!",
                         color: Theme.of(context).primaryColor,
                       ),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    _buildTitelBild(),
+                    _buildTitelBild(context),
                     const SizedBox(
                       height: 10,
                     ),
@@ -77,7 +78,7 @@ class LogoSammlung extends StatelessWidget {
                         left: 20,
                       ),
                       child: const Text(
-                        "Unsere Logo-Sammlung ist auf Google Drive zu finden. Nutze den nachfolgenden Button um die Sammlung zu öffnen.",
+                        "Unsere Midi-Sammlung ist auf Google Drive zu finden. Nutze den nachfolgenden Button um die Sammlung zu öffnen.",
                       ),
                     ),
                     const SizedBox(

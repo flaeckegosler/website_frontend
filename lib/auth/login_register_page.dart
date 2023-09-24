@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _title() {
-    return const Text('Authorisierung');
+    return const Text('Authorisierung', style: TextStyle(color: Colors.white));
   }
 
   Widget _entryField(

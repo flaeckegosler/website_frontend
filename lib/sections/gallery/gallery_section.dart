@@ -14,6 +14,7 @@ class GallerySection extends StatefulWidget {
 
 class _GallerySectionState extends State<GallerySection> {
   bool _isLoading = false;
+  bool _isLoading2 = true;
   int activeIndex = 0;
   final controller = CarouselController();
 
@@ -25,11 +26,16 @@ class _GallerySectionState extends State<GallerySection> {
       _isLoading = true;
     });
     await Provider.of<PicturesProvider>(context, listen: false)
-        .fetchAlbumList();
+        .fetchFirstAlbum();
     _selectedGallery =
-        Provider.of<PicturesProvider>(context, listen: false).allPictures[0];
+        Provider.of<PicturesProvider>(context, listen: false).getFirstAlbum();
     setState(() {
       _isLoading = false;
+    });
+    await Provider.of<PicturesProvider>(context, listen: false)
+        .fetchAlbumList();
+    setState(() {
+      _isLoading2 = false;
     });
   }
 
@@ -204,7 +210,7 @@ class _GallerySectionState extends State<GallerySection> {
         );
       },
       child: SizedBox(
-        width: 200,
+        width: MediaQuery.of(context).size.width > 400 ? 200 : 130,
         height: 40,
         child: Container(
           decoration: const BoxDecoration(
@@ -214,18 +220,27 @@ class _GallerySectionState extends State<GallerySection> {
             ),
           ),
           alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                _selectedGallery.albumTitle,
-                style: const TextStyle(color: Colors.white),
-              ),
-              const Icon(
-                Icons.expand_more,
-                color: Colors.white,
-              ),
-            ],
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width > 400 ? 0 : 10,
+                ),
+                Text(
+                  _selectedGallery.albumTitle,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                const Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width > 400 ? 0 : 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -236,9 +251,9 @@ class _GallerySectionState extends State<GallerySection> {
   Widget build(BuildContext context) {
     final bool isMobile = MediaQuery.of(context).size.width < 1250;
     final pictureProvider = context.watch<PicturesProvider>();
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      //  color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color(0xffFFFFFF),
       child: Align(
         child: Container(
           alignment: Alignment.center,
@@ -255,10 +270,23 @@ class _GallerySectionState extends State<GallerySection> {
                   children: [
                     SectionTitle(
                       title: "Fotos",
-                      subTitle: "Schau dir unsErE BildEr an!",
+                      subTitle: "Schau unsErE BildEr an!",
                       color: Theme.of(context).primaryColor,
                     ),
-                    if (_isLoading) const SizedBox() else dropDownButton(),
+                    if (_isLoading)
+                      const SizedBox()
+                    else
+                      AnimatedOpacity(
+                        opacity: _isLoading2 &&
+                                pictureProvider.allPictures.isEmpty
+                            ? 0.0
+                            : 1.0, // Set the opacity based on the _loading bool
+                        duration: const Duration(
+                            milliseconds:
+                                500), // Set the duration of the animation
+                        curve: Curves.easeInCirc, // Set the animation curve
+                        child: dropDownButton(), // Your dropDownButton widget
+                      ),
                   ],
                 ),
               ),
