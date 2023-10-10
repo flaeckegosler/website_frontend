@@ -40,7 +40,7 @@ class KontaktPage extends StatelessWidget {
                 'user_email': email,
                 'user_subject': subject,
                 'user_message': message,
-              }
+              },
             },
           ),
         )
@@ -157,7 +157,7 @@ class KontaktPage extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
       );
 
@@ -191,7 +191,7 @@ class KontaktPage extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 8.0, right: 10),
+                                      left: 8.0, right: 10,),
                                   child: SectionTitle(
                                     title: "Kontakt",
                                     subTitle: "Tell me more!",
@@ -309,7 +309,7 @@ class KontaktPage extends StatelessWidget {
                   BottomBar(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

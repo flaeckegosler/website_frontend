@@ -49,7 +49,7 @@ class PersonPic extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

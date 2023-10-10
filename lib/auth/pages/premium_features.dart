@@ -26,7 +26,7 @@ class PremiumFeaturesPage extends StatelessWidget {
           ),
           Text(
             '⦁ Bilder herunterladen',
-          )
+          ),
         ],
       ),
     );

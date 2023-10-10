@@ -73,7 +73,7 @@ class _SoundSectionState extends State<SoundSection> {
                               color: Theme.of(context).primaryColor,
                             ),
                           ),
-                        )
+                        ),
                       ]
                     : [
                         GridView.count(
@@ -109,7 +109,7 @@ class _SoundSectionState extends State<SoundSection> {
                           height: 50,
                         ),
                       ],
-              )
+              ),
             ],
           ),
         ),
@@ -193,7 +193,7 @@ class _SoundSectionState extends State<SoundSection> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

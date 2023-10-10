@@ -52,11 +52,12 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
               const Padding(
                 padding: EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
-                    title: "Oktoberfest",
-                    subTitle: "UnsEr Gaudi!",
-                    fontFamily: "Gosler",
-                    fontWeight: FontWeight.w200,
-                    color: Color.fromRGBO(40, 145, 210, 1)),
+                  title: "Oktoberfest",
+                  subTitle: "UnsEr Gaudi!",
+                  fontFamily: "Gosler",
+                  fontWeight: FontWeight.w200,
+                  color: Color.fromRGBO(40, 145, 210, 1),
+                ),
               ),
               const SizedBox(
                 height: 30,

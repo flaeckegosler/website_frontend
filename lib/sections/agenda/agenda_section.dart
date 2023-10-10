@@ -51,7 +51,7 @@ class _AgendaSectionState extends State<AgendaSection> {
               fit: BoxFit.scaleDown,
               child: Text(
                 dateDisplay,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
             FittedBox(
@@ -140,7 +140,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                                 color: Theme.of(context).primaryColor,
                               ),
                             ),
-                          )
+                          ),
                         ]
                       : buildTimelineTiles(
                           Provider.of<AgendaProvider>(context, listen: false)

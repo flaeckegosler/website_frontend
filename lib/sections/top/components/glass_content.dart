@@ -54,7 +54,7 @@ class GlassContent extends StatelessWidget {
                   fontFamily: 'Shakuro',
                   color: Colors.white,
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -187,7 +187,7 @@ class _GallerySectionState extends State<GallerySection> {
         setState(() {
           _selectedGallery =
               Provider.of<PicturesProvider>(context, listen: false)
-                  .allPictures[result as int];
+                  .allPictures[result! as int];
         });
       },
       itemBuilder: (context) {
@@ -282,8 +282,8 @@ class _GallerySectionState extends State<GallerySection> {
                             ? 0.0
                             : 1.0, // Set the opacity based on the _loading bool
                         duration: const Duration(
-                            milliseconds:
-                                500), // Set the duration of the animation
+                          milliseconds: 500,
+                        ), // Set the duration of the animation
                         curve: Curves.easeInCirc, // Set the animation curve
                         child: dropDownButton(), // Your dropDownButton widget
                       ),

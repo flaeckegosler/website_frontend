@@ -99,7 +99,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             const SizedBox(
               height: 14,
-            )
+            ),
           ],
         ),
       ),
@@ -147,7 +147,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             const SizedBox(
               height: 14,
-            )
+            ),
           ],
         ),
       ),
@@ -199,7 +199,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             const SizedBox(
               height: 14,
-            )
+            ),
           ],
         ),
       ),
@@ -243,7 +243,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             const SizedBox(
               height: 14,
-            )
+            ),
           ],
         ),
       ),
@@ -287,7 +287,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             const SizedBox(
               height: 14,
-            )
+            ),
           ],
         ),
       ),
@@ -331,7 +331,7 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             const SizedBox(
               height: 14,
-            )
+            ),
           ],
         ),
       ),
@@ -433,7 +433,7 @@ class _SoundSectionState extends State<ProgrammSection> {
                 ),
               const SizedBox(
                 height: 40,
-              )
+              ),
             ],
           ),
         ),

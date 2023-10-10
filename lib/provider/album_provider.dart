@@ -43,7 +43,7 @@ class PicturesProvider with ChangeNotifier {
 
     int pictureIndex = 1;
     for (final entry in picturesData.entries) {
-      final k = entry.key as String;
+      final k = entry.key;
       final v = entry.value.toString();
 
       specificImages.add(

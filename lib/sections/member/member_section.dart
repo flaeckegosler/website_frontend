@@ -54,7 +54,7 @@ class _MemberSectionState extends State<MemberSection> {
               GoRouter.of(context).push(
                 '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
                 extra: member.pictureUrlMax,
-              )
+              ),
             },
         },
         child: Stack(
@@ -117,7 +117,7 @@ class _MemberSectionState extends State<MemberSection> {
               GoRouter.of(context).push(
                 '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
                 extra: member.pictureUrlMax,
-              )
+              ),
             },
         },
         child: Stack(
@@ -334,7 +334,7 @@ class _MemberSectionState extends State<MemberSection> {
               ),
               const SizedBox(
                 height: 40,
-              )
+              ),
             ],
           ),
         ),

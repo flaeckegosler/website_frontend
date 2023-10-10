@@ -91,7 +91,7 @@ class ExpeditionWidget extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(),
-                )
+                ),
               ],
             ),
           ),

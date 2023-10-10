@@ -68,9 +68,9 @@ class SectionTitle extends StatelessWidget {
                         fontSize: fontSizeMainTitle,
                       ),
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

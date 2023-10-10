@@ -137,7 +137,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

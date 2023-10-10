@@ -149,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Text('Expedition'),
                     ),
                   ],
-                )
+                ),
               ],
               backgroundColor: Theme.of(context).primaryColor,
             )
@@ -581,7 +581,7 @@ class BoxesLargeScale extends StatelessWidget {
             width: 400,
             height: 300,
             child: KleiderKaufenBox(),
-          )
+          ),
         ],
       ),
     );

@@ -109,28 +109,28 @@ class _CountdownState extends State<Countdown> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(counterDays.toString(), style: textStyle()),
-                      Text(days, style: textStyle())
+                      Text(days, style: textStyle()),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(counterHours.toString(), style: textStyle()),
-                      Text(hours, style: textStyle())
+                      Text(hours, style: textStyle()),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(counterMinutes.toString(), style: textStyle()),
-                      Text(minutes, style: textStyle())
+                      Text(minutes, style: textStyle()),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(counterSeconds.toString(), style: textStyle()),
-                      Text(seconds, style: textStyle())
+                      Text(seconds, style: textStyle()),
                     ],
                   ),
                 ],
