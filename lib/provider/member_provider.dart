@@ -188,7 +188,7 @@ class MemberProvider with ChangeNotifier {
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/w_andri_360kb.jpg",
           pictureUrlMax: "assets/bild_kandidaten.png",
-          instrument: "Posaune",
+          instrument: "Sousaphon",
           vorstand: "",
           expedition: "",
           muKo: "",
@@ -223,22 +223,6 @@ class MemberProvider with ChangeNotifier {
           vorstand: "",
           expedition: "",
           muKo: "Vize-Tambi",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
-          firstName: "Yannick",
-          lastName: "Egli",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/e_yannick_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/27/yannickegli.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
           sujetKommission: "",
         ),
       );
@@ -339,22 +323,6 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Damian",
-          lastName: "Zurmühle",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/z_damian_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/2275/damian_zurmuhle.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
           firstName: "Julia",
           lastName: "Lipp",
           pictureUrl:
@@ -392,22 +360,6 @@ class MemberProvider with ChangeNotifier {
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/s_marco_360kb.jpg",
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/1080/marco_schriber.420x0.jpg",
-          instrument: "Trompete",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
-          firstName: "Martin",
-          lastName: "Richli",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/r_martin_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/2284/martin_richli.jpg",
           instrument: "Trompete",
           vorstand: "",
           expedition: "",
@@ -562,22 +514,6 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Daniela",
-          lastName: "Hotz",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/h_daniela_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/1100/daniela_hotz.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
           firstName: "Fabian",
           lastName: "Benz",
           pictureUrl:
@@ -706,44 +642,12 @@ class MemberProvider with ChangeNotifier {
 
       _member.add(
         Member(
-          firstName: "Reto",
-          lastName: "Bättig",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/b_reto_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/1088/reto_battig.420x0.jpg",
-          instrument: "Posaune",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
           firstName: "Andrea",
           lastName: "Mattmann",
           pictureUrl:
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/m_andrea_360kb.jpg",
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/1108/andrea_mattmann.jpg",
-          instrument: "Horn",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
-          firstName: "Fabian",
-          lastName: "Koch",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/k_fabian_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/1103/fabian_koch.jpg",
           instrument: "Horn",
           vorstand: "",
           expedition: "",
@@ -823,38 +727,6 @@ class MemberProvider with ChangeNotifier {
               "https://api.flaeckegosler.ch/site/assets/files/mitglieder/zu_joel_360kb.jpg",
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/27/zu_joel.jpg",
-          instrument: "Sousaphon",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
-          firstName: "Lukas",
-          lastName: "Studer",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/s_lukas_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/1116/lukas_studer.420x0.jpg",
-          instrument: "Sousaphon",
-          vorstand: "",
-          expedition: "",
-          muKo: "",
-          sujetKommission: "",
-        ),
-      );
-
-      _member.add(
-        Member(
-          firstName: "Marco",
-          lastName: "Andermatt",
-          pictureUrl:
-              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/a_marco_360kb.jpg",
-          pictureUrlMax:
-              "https://api.flaeckegosler.ch/site/assets/files/27/a_marco.jpg",
           instrument: "Sousaphon",
           vorstand: "",
           expedition: "",
@@ -999,6 +871,81 @@ class MemberProvider with ChangeNotifier {
           pictureUrlMax:
               "https://api.flaeckegosler.ch/site/assets/files/1939/sven_lotscher.jpg",
           instrument: "Drums",
+          vorstand: "",
+          expedition: "",
+          muKo: "",
+          sujetKommission: "",
+        ),
+      );
+      _member.add(
+        Member(
+          firstName: "Tim",
+          lastName: "Bachman",
+          pictureUrl:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          pictureUrlMax:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          instrument: "Posaune",
+          vorstand: "",
+          expedition: "",
+          muKo: "",
+          sujetKommission: "",
+        ),
+      );
+      _member.add(
+        Member(
+          firstName: "Samuel",
+          lastName: "Bühlmann",
+          pictureUrl:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          pictureUrlMax:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          instrument: "Posaune",
+          vorstand: "",
+          expedition: "",
+          muKo: "",
+          sujetKommission: "",
+        ),
+      );
+      _member.add(
+        Member(
+          firstName: "Raffael",
+          lastName: "Borer",
+          pictureUrl:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          pictureUrlMax:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          instrument: "Horn",
+          vorstand: "",
+          expedition: "",
+          muKo: "",
+          sujetKommission: "",
+        ),
+      );
+      _member.add(
+        Member(
+          firstName: "Yanick",
+          lastName: "Florez",
+          pictureUrl:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          pictureUrlMax:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          instrument: "Horn",
+          vorstand: "",
+          expedition: "",
+          muKo: "",
+          sujetKommission: "",
+        ),
+      );
+      _member.add(
+        Member(
+          firstName: "Manuela",
+          lastName: "Tschopp",
+          pictureUrl:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          pictureUrlMax:
+              "https://api.flaeckegosler.ch/site/assets/files/mitglieder/_kandidaten_2023.png",
+          instrument: "Trompete",
           vorstand: "",
           expedition: "",
           muKo: "",
