@@ -66,7 +66,7 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
                 children: [
                   SizedBox(
                     child: oktoberfestCard(
-                      "16. September 2023",
+                      "21. September 2024",
                     ),
                   ),
                   const SizedBox(
