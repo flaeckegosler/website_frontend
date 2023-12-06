@@ -8,6 +8,7 @@ class Member with ChangeNotifier {
   final String instrument;
   final String vorstand;
   final String expedition;
+  final String oktoberfest;
   final String muKo;
   final String sujetKommission;
 
@@ -19,6 +20,7 @@ class Member with ChangeNotifier {
     required this.instrument,
     required this.vorstand,
     required this.expedition,
+    required this.oktoberfest,
     required this.muKo,
     required this.sujetKommission,
   });

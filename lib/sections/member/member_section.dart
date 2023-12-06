@@ -28,6 +28,7 @@ enum PickedButtonInstruments {
 enum PickedButtonKommissionen {
   vorstand,
   expedition,
+  oktoberfest,
   sujetkomission,
   musikkomission,
   wagenbau,
@@ -101,6 +102,8 @@ class _MemberSectionState extends State<MemberSection> {
       aemtli = member.vorstand;
     } else if (buttonType == PickedButtonKommissionen.expedition) {
       aemtli = member.expedition;
+    } else if (buttonType == PickedButtonKommissionen.oktoberfest) {
+      aemtli = member.oktoberfest;
     } else if (buttonType == PickedButtonKommissionen.sujetkomission) {
       aemtli = member.sujetKommission;
     } else if (buttonType == PickedButtonKommissionen.musikkomission) {
@@ -262,6 +265,15 @@ class _MemberSectionState extends State<MemberSection> {
             ),
           );
         } else if (pickedButtonKommission ==
+            PickedButtonKommissionen.oktoberfest) {
+          return List.generate(
+            myMemberProvider.getMemberOfOktoberfest().length,
+            (index) => createMemberCardPremium(
+              myMemberProvider.getMemberOfOktoberfest()[index],
+              PickedButtonKommissionen.oktoberfest,
+            ),
+          );
+        } else if (pickedButtonKommission ==
             PickedButtonKommissionen.sujetkomission) {
           return List.generate(
             myMemberProvider.getMemberOfSujetkommission().length,
@@ -395,10 +407,7 @@ class _MemberSectionState extends State<MemberSection> {
                 if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[5]
                 else
-                  const SizedBox(
-                    width: 160,
-                    height: 40,
-                  ),
+                  kommissionenButtons()[5],
               ],
             ),
           ],
@@ -452,10 +461,7 @@ class _MemberSectionState extends State<MemberSection> {
                 if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[5]
                 else
-                  const SizedBox(
-                    width: 160,
-                    height: 40,
-                  ),
+                  kommissionenButtons()[5],
               ],
             ),
           ],
@@ -685,6 +691,37 @@ class _MemberSectionState extends State<MemberSection> {
           },
           child: const Text(
             "Expedition",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      //Oktoberfest
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                PickedButtonKommissionen.oktoberfest == pickedButtonKommission
+                    ? MaterialStateProperty.all<Color>(
+                        Theme.of(context).primaryColor,
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              pickedButtonKommission = PickedButtonKommissionen.oktoberfest;
+            });
+          },
+          child: const Text(
+            "Oktoberfest",
             textAlign: TextAlign.center,
           ),
         ),

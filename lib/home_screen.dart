@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         myScrollSingleton.scrollToItem("Sound");
                         break;
                       case 'option7':
-                        myScrollSingleton.scrollToItem("Expedition");
+                        myScrollSingleton.scrollToItem("Oktoberfest");
                         break;
                       default:
                     }
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'option7',
-                      child: Text('Expedition'),
+                      child: Text('Oktoberfest'),
                     ),
                   ],
                 ),
@@ -175,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (index == 1 && vorfasnachtModus == true) {
                 return Column(
                   children: [
-                    OktoberfestSection(),
+                    ExpeditionSection(),
                     NewsSection(),
                   ],
                 );
@@ -189,8 +189,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 return MemberSection();
               } else if (index == 6) {
                 return SoundSection();
+                // } else if (index == 7) {
+                //   return ExpeditionSection();
               } else if (index == 7) {
-                return ExpeditionSection();
+                return OktoberfestSection();
               } else if (index == 8 && width < 1250) {
                 return const GoennerWerden();
               } else if (index == 8 && width > 1250) {
@@ -501,11 +503,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           InkWell(
                             borderRadius: BorderRadius.circular(20),
                             onTap: () =>
-                                myScrollSingleton.scrollToItem("Expedition"),
+                                myScrollSingleton.scrollToItem("Oktoberfest"),
                             child: const Padding(
                               padding: EdgeInsets.all(10.0),
                               child: Text(
-                                "Expedition",
+                                "Oktoberfest",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
