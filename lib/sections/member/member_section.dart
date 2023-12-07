@@ -40,21 +40,26 @@ class _MemberSectionState extends State<MemberSection> {
   bool _isLoading = false;
 
   //Fetch all Listings
-  Future fetchMemberList() async {
-    setState(() {
-      _isLoading = true;
-    });
-    await Provider.of<MemberProvider>(context, listen: false)
-        .fetchMembersData();
-    setState(() {
-      _isLoading = false;
-    });
+  Future<void> fetchMemberList() async {
+    if (mounted) {
+      // Check if the widget is still mounted
+      setState(() {
+        _isLoading = true;
+      });
+      await Provider.of<MemberProvider>(context, listen: false)
+          .fetchMembersData();
+      if (mounted) {
+        // Check again in case the widget was disposed while awaiting
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
   }
 
   @override
   void initState() {
     super.initState();
-    // Provider.of<MemberProvider>(context, listen: false).createMembers();
     fetchMemberList();
   }
 

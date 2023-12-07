@@ -17,7 +17,9 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
     _confettiController =
         ConfettiController(duration: const Duration(seconds: 3));
     Future.delayed(const Duration(milliseconds: 1500), () {
-      _confettiController.play();
+      if (mounted) {
+        _confettiController.play();
+      }
     });
   }
 

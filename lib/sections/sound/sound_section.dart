@@ -12,21 +12,28 @@ class SoundSection extends StatefulWidget {
 class _SoundSectionState extends State<SoundSection> {
   bool _isLoading = false;
 
-  //Fetch all Listings
-  Future fetchSoundItemsList() async {
-    setState(() {
-      _isLoading = true;
-    });
-    await Provider.of<SoundProvider>(context, listen: false).fetchSoundItems();
-    setState(() {
-      _isLoading = false;
-    });
+  // Fetch all Listings
+  Future<void> fetchSoundItemsList() async {
+    if (mounted) {
+      // Check if the widget is still mounted
+      setState(() {
+        _isLoading = true;
+      });
+      await Provider.of<SoundProvider>(context, listen: false)
+          .fetchSoundItems();
+      if (mounted) {
+        // Check again in case the widget was disposed while awaiting
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
   }
 
   @override
   void initState() {
-    fetchSoundItemsList();
     super.initState();
+    fetchSoundItemsList();
   }
 
   _launchURL(String url) async {
