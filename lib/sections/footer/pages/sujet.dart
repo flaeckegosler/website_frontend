@@ -17,7 +17,7 @@ class SujetPage extends StatelessWidget {
         cells.map((data) => DataCell(Text('$data'))).toList();
 
     List<DataRow> getRows() {
-      Provider.of<SujetProvider>(context, listen: false).createMembers();
+      Provider.of<SujetProvider>(context, listen: false).createSujets();
       final sujetProvider = context.watch<SujetProvider>();
       final List<Sujet> results = sujetProvider.allSujetsByYear;
       final List<DataRow> dataRowResult = [];
@@ -51,7 +51,7 @@ class SujetPage extends StatelessWidget {
       final DataTable dataTable = DataTable(
         headingRowColor: MaterialStateProperty.all(Colors.grey[300]),
         headingTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-        dataRowHeight: 35,
+        dataRowMinHeight: 35,
         sortAscending: false,
         columns: getColumns(),
         rows: getRows(),

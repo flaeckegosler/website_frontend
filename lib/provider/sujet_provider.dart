@@ -9,7 +9,7 @@ class SujetProvider with ChangeNotifier {
     return List.from(_sujet);
   }
 
-  void createMembers() {
+  void createSujets() {
     if (_sujet.isEmpty) {
       _sujet.add(
         Sujet(

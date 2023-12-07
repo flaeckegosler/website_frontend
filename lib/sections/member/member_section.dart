@@ -37,10 +37,25 @@ enum PickedButtonKommissionen {
 class _MemberSectionState extends State<MemberSection> {
   ButtonType buttonType = ButtonType.instrumente;
 
+  bool _isLoading = false;
+
+  //Fetch all Listings
+  Future fetchMemberList() async {
+    setState(() {
+      _isLoading = true;
+    });
+    await Provider.of<MemberProvider>(context, listen: false)
+        .fetchMembersData();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    Provider.of<MemberProvider>(context, listen: false).createMembers();
+    // Provider.of<MemberProvider>(context, listen: false).createMembers();
+    fetchMemberList();
   }
 
   Widget createMemberCard(Member member) {
@@ -54,7 +69,7 @@ class _MemberSectionState extends State<MemberSection> {
             {
               GoRouter.of(context).push(
                 '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
-                extra: member.pictureUrlMax,
+                extra: member.pictureUrl,
               ),
             },
         },
@@ -119,7 +134,7 @@ class _MemberSectionState extends State<MemberSection> {
             {
               GoRouter.of(context).push(
                 '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
-                extra: member.pictureUrlMax,
+                extra: member.pictureUrl,
               ),
             },
         },
@@ -128,7 +143,9 @@ class _MemberSectionState extends State<MemberSection> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Center(
-                child: _buildMember(member),
+                child: _isLoading
+                    ? const CircularProgressIndicator()
+                    : _buildMember(member),
               ),
             ),
             Container(

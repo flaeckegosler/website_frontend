@@ -29,7 +29,6 @@ class _MitgliederPhotoViewPageState extends State<MitgliederPhotoViewPage> {
     if (Provider.of<MemberProvider>(context, listen: false)
         .allMembers
         .isEmpty) {
-      Provider.of<MemberProvider>(context, listen: false).createMembers();
       galleryLink = Provider.of<MemberProvider>(context, listen: false)
           .getPictureLink(widget.firstName, widget.lastName);
     } else {
