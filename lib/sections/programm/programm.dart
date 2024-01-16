@@ -86,12 +86,12 @@ class _SoundSectionState extends State<ProgrammSection> {
               'FlECkEnkonZErt, FLECKEN R’BURG',
             ),
             getProgrammRow(
-              '10:30',
+              '10:45',
               'Ständli Pistor, RothEnburg',
             ),
             getProgrammRow(
               '14:00',
-              'LuZErnEr UmZug (Nr. 30), LuZErn',
+              'LuZErnEr UmZug (Nr. 17), LuZErn',
             ),
             getProgrammRow(
               'Abend',
@@ -132,6 +132,10 @@ class _SoundSectionState extends State<ProgrammSection> {
             getProgrammRow(
               '11:00',
               'SChnEbE-FrühstüCk (intErn)',
+            ),
+            getProgrammRow(
+              '13:00',
+              "Ständli Rank, RothEnburg",
             ),
             getProgrammRow(
               '14:00',
@@ -179,19 +183,11 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '12:30',
-              'Auftritt MÜHLENPLATZ, luZErn',
+              'Auftritt MÜHLENPLATZ, LuZErn',
             ),
             getProgrammRow(
-              '13:00',
-              "gässlE, luZErn",
-            ),
-            getProgrammRow(
-              '14:00',
+              '16:00',
               'Auftritt JEsuitEnplatZ, LuZERN',
-            ),
-            getProgrammRow(
-              '15:00',
-              'Ständli AmEisiZunft, LöwEngrabEn',
             ),
             getProgrammRow(
               'AbEnd',
@@ -235,11 +231,11 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '14:00',
-              'UMZUG INWIL, ansChl. dörflifasnaCht',
+              'UMZUG Emmen',
             ),
             getProgrammRow(
               'AbEnd',
-              'BElCantos Ball (Auftritt 23 Uhr), BAAR',
+              'Ämmer Fasnacht',
             ),
             const SizedBox(
               height: 14,
@@ -274,15 +270,15 @@ class _SoundSectionState extends State<ProgrammSection> {
               ),
             ),
             getProgrammRow(
-              '10:00',
+              '10:30',
               "GässlE, LuZErn",
             ),
             getProgrammRow(
               '14:00',
-              'LuZErnEr UmZug (Nr. 30), LuZErn',
+              'LuZErnEr UmZug (Nr. 17), LuZErn',
             ),
             getProgrammRow(
-              '18:15',
+              '17:30',
               'AUFTRITT SCHWEIZERHOF, LuZErn',
             ),
             const SizedBox(
@@ -318,16 +314,20 @@ class _SoundSectionState extends State<ProgrammSection> {
               ),
             ),
             getProgrammRow(
+              '11:00',
+              "Mittagessen mit Goldies (intErn)",
+            ),
+            getProgrammRow(
               '14:00',
               "KindErumZug, RothEnburg",
             ),
             getProgrammRow(
-              '20:00',
-              'Auftritt JEsuitEnplatZ, LuZErn',
-            ),
-            getProgrammRow(
               'AbEnd',
               'GässlE, LuZErn',
+            ),
+            getProgrammRow(
+              '00:00',
+              'Auftritt Falkenplatz, LuZErn',
             ),
             const SizedBox(
               height: 14,

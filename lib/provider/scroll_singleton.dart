@@ -13,12 +13,6 @@ class ScrollSingleton {
 
   Future scrollToItem(String section) async {
     int index = 0;
-    // if (index == 0)  AppBar /TopSection()
-    // index == 1 SizedBox(height: kDefaultPadding * 2);
-    // index == 2 NewsSection();
-    // index == 3 GallerySection();
-    // index == 4  MemberSection();
-    // index == 5  BottomBar();
     if (section == "News") {
       index = 1;
     } else if (section == "Programm") {
@@ -31,8 +25,10 @@ class ScrollSingleton {
       index = 5;
     } else if (section == "Sound") {
       index = 6;
-    } else if (section == "Oktoberfest") {
+    } else if (section == "Expedition") {
       index = 7;
+    } else if (section == "Oktoberfest") {
+      index = 8;
     }
     navBarScrollController.scrollTo(
       index: index,

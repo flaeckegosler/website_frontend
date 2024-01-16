@@ -15,7 +15,7 @@ import 'package:website_frontend/sections/gallery/gallery_section.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 import 'package:website_frontend/sections/oktoberfest/oktoberfest_section.dart';
-//import 'package:website_frontend/sections/programm/programm.dart';
+import 'package:website_frontend/sections/programm/programm.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
 
@@ -97,9 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       case 'option1':
                         myScrollSingleton.scrollToItem("News");
                         break;
-                      /* case 'option2':
+                      case 'option2':
                         myScrollSingleton.scrollToItem("Programm");
-                        break;*/
+                        break;
                       case 'option3':
                         myScrollSingleton.scrollToItem("Fotos");
                         break;
@@ -113,6 +113,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         myScrollSingleton.scrollToItem("Sound");
                         break;
                       case 'option7':
+                        myScrollSingleton.scrollToItem("Expedition");
+                        break;
+                      case 'option8':
                         myScrollSingleton.scrollToItem("Oktoberfest");
                         break;
                       default:
@@ -124,10 +127,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       value: 'option1',
                       child: Text('News'),
                     ),
-                    /*   const PopupMenuItem<String>(
+                    const PopupMenuItem<String>(
                       value: 'option2',
                       child: Text('Programm'),
-                   ), */
+                    ),
                     const PopupMenuItem<String>(
                       value: 'option3',
                       child: Text('Fotos'),
@@ -146,6 +149,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'option7',
+                      child: Text('Expedition'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option8',
                       child: Text('Oktoberfest'),
                     ),
                   ],
@@ -175,12 +182,13 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (index == 1 && vorfasnachtModus == true) {
                 return Column(
                   children: [
-                    ExpeditionSection(),
+                    //OktoberfestSection(),
+                    //ExpeditionSection(),
                     NewsSection(),
                   ],
                 );
-                // } else if (index == 2) {
-                // return ProgrammSection();
+              } else if (index == 2) {
+                return ProgrammSection();
               } else if (index == 3) {
                 return GallerySection();
               } else if (index == 4) {
@@ -189,25 +197,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 return MemberSection();
               } else if (index == 6) {
                 return SoundSection();
-                // } else if (index == 7) {
-                //   return ExpeditionSection();
               } else if (index == 7) {
+                return ExpeditionSection();
+              } else if (index == 8) {
                 return OktoberfestSection();
-              } else if (index == 8 && width < 1250) {
-                return const GoennerWerden();
-              } else if (index == 8 && width > 1250) {
-                return const BoxesLargeScale();
               } else if (index == 9 && width < 1250) {
-                return const MitgliedWerden();
+                return const GoennerWerden();
+              } else if (index == 9 && width > 1250) {
+                return const BoxesLargeScale();
               } else if (index == 10 && width < 1250) {
+                return const MitgliedWerden();
+              } else if (index == 11 && width < 1250) {
                 return const ContdownMobile();
-              } else if (index == 11) {
+              } else if (index == 12) {
                 return const BottomBar();
               } else {
                 return Container();
               }
             },
-            itemCount: 12,
+            itemCount: 13,
             itemPositionsListener: itemListener,
           ),
           if (showRightNavbar && width > 1500)
@@ -265,7 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  /* TimelineTile(
+                  TimelineTile(
                     indicatorStyle: IndicatorStyle(
                       color: Theme.of(context).primaryColor,
                       height: 30,
@@ -311,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                  ), */
+                  ),
                   TimelineTile(
                     indicatorStyle: IndicatorStyle(
                       color: Theme.of(context).primaryColor,
@@ -488,6 +496,44 @@ class _HomeScreenState extends State<HomeScreen> {
                       iconStyle: IconStyle(
                         color: Colors.white,
                         iconData: Icons.local_fire_department,
+                      ),
+                    ),
+                    beforeLineStyle: const LineStyle(thickness: 2),
+                    alignment: TimelineAlign.end,
+                    startChild: Container(
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () =>
+                                myScrollSingleton.scrollToItem("Expedition"),
+                            child: const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Expedition",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  TimelineTile(
+                    indicatorStyle: IndicatorStyle(
+                      color: Theme.of(context).primaryColor,
+                      height: 30,
+                      width: 30,
+                      iconStyle: IconStyle(
+                        color: Colors.white,
+                        iconData: Icons.local_gas_station,
                       ),
                     ),
                     beforeLineStyle: const LineStyle(thickness: 2),
