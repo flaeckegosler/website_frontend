@@ -13,7 +13,7 @@ Widget buildRedakteurHomeNews(String newsCreatedBy, BuildContext context) {
             BoxShadow(
               blurRadius: 6,
               offset: Offset(2.0, 2.0),
-            )
+            ),
           ],
         ),
         child: CircleAvatar(

@@ -17,7 +17,9 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
     _confettiController =
         ConfettiController(duration: const Duration(seconds: 3));
     Future.delayed(const Duration(milliseconds: 1500), () {
-      _confettiController.play();
+      if (mounted) {
+        _confettiController.play();
+      }
     });
   }
 
@@ -37,8 +39,9 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           width: 1250,
@@ -52,11 +55,12 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
               const Padding(
                 padding: EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
-                    title: "Oktoberfest",
-                    subTitle: "UnsEr Gaudi!",
-                    fontFamily: "Gosler",
-                    fontWeight: FontWeight.w200,
-                    color: Color.fromRGBO(40, 145, 210, 1)),
+                  title: "Oktoberfest",
+                  subTitle: "Unser Gaudi!",
+                  fontFamily: "Gosler",
+                  fontWeight: FontWeight.w200,
+                  color: Color.fromRGBO(40, 145, 210, 1),
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -65,7 +69,7 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
                 children: [
                   SizedBox(
                     child: oktoberfestCard(
-                      "16. September 2023",
+                      "21. September 2024",
                     ),
                   ),
                   const SizedBox(

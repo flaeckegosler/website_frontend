@@ -350,11 +350,10 @@ class _NewsSectionState extends State<NewsSection>
     final double width = MediaQuery.of(context).size.width;
     final newsProvider = context.watch<NewsProvider>();
     return ColoredBox(
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      color: const Color(0xffFFFFFF),
       child: Align(
         child: Container(
           alignment: Alignment.center,
-          // color: const Color.fromRGBO(230, 230, 230, 1), //good for debugging
           constraints: const BoxConstraints(maxWidth: 1250),
           child: Column(
             children: [
@@ -364,8 +363,8 @@ class _NewsSectionState extends State<NewsSection>
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
-                  title: "NEws",
-                  subTitle: "AktuEllEs auf EinEn BliCk!",
+                  title: "News",
+                  subTitle: "Aktuelles auf einen Blick!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),

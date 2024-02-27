@@ -14,17 +14,34 @@ class BirthdayProvider with ChangeNotifier {
 
   List<Birthday> get nextThreeBirthdays {
     final today = DateTime.now();
-    final List<Birthday> upcomingBirthdays = [];
+    // Sort all birthdays by month and day
+    final sortedBirthdays = memberBirthday
+      ..sort((a, b) {
+        int monthCompare = a.birthday.month.compareTo(b.birthday.month);
+        if (monthCompare == 0) {
+          return a.birthday.day.compareTo(b.birthday.day);
+        }
+        return monthCompare;
+      });
 
-    for (final birthday in memberBirthday) {
-      if ((birthday.birthday.month > today.month) ||
+    // Split the list into two based on today's date
+    final List<Birthday> beforeToday = [];
+    final List<Birthday> afterOrOnToday = [];
+    for (final birthday in sortedBirthdays) {
+      //print("${birthday.birthday.month}/${birthday.birthday.day}");
+      if ((birthday.birthday.month < today.month) ||
           (birthday.birthday.month == today.month &&
-              birthday.birthday.day >= today.day)) {
-        upcomingBirthdays.add(birthday);
+              birthday.birthday.day < today.day)) {
+        beforeToday.add(birthday);
+      } else {
+        afterOrOnToday.add(birthday);
       }
     }
-    upcomingBirthdays.sort((a, b) => a.birthday.compareTo(b.birthday));
 
+    // Concatenate the lists with afterToday first
+    final List<Birthday> upcomingBirthdays = afterOrOnToday + beforeToday;
+
+    // Take the first three birthdays
     return upcomingBirthdays.take(3).toList();
   }
 

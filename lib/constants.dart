@@ -7,6 +7,8 @@ const kDefaultPadding = 20.0;
 
 const vorfasnachtModus = true;
 
+const apiUrl = "https://api.flaeckegosler.ch/";
+
 final kDefaultShadow = BoxShadow(
   offset: const Offset(0, 50),
   blurRadius: 50,

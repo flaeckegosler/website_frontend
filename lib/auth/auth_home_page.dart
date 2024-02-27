@@ -1,8 +1,11 @@
+import 'dart:html';
+
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:website_frontend/auth/auth.dart';
+import 'package:website_frontend/components/basic_cart.dart';
 import 'package:website_frontend/components/birthday_card.dart';
 import 'package:website_frontend/provider/birthday_provider.dart';
 
@@ -14,6 +17,40 @@ class AuthHomePage extends StatefulWidget {
 class _AuthHomePageState extends State<AuthHomePage> {
   late ConfettiController _controller;
   bool _isLoading = true;
+
+// Define a list of BasicCards
+  final List<BasicCard> basicCards = [
+    const BasicCard(
+      title: "Aufnahmen",
+      icon: Icons.library_music,
+      link: 'www.example1.com',
+    ),
+    const BasicCard(
+      title: "Kalender",
+      icon: Icons.calendar_month,
+      link: 'www.example2.com',
+    ),
+    const BasicCard(
+      title: "Noten",
+      icon: Icons.music_note,
+      link: 'www.example2.com',
+    ),
+    const BasicCard(
+      title: "Gosler Brand Assets",
+      icon: Icons.business_center_rounded,
+      link: 'www.example2.com',
+    ),
+    const BasicCard(
+      title: "Sujet Assets",
+      icon: Icons.celebration,
+      link: 'www.example2.com',
+    ),
+    const BasicCard(
+      title: "Archiv-Bilder",
+      icon: Icons.photo,
+      link: 'www.example2.com',
+    ),
+  ];
 
   @override
   initState() {
@@ -41,54 +78,46 @@ class _AuthHomePageState extends State<AuthHomePage> {
     });
   }
 
+  bool validateBasicCard(BasicCard card) {
+    // Define your validation logic here
+    // For example, you might check if the link is valid, or if some property meets a condition
+    // Return true if the card meets the criteria, false otherwise
+    if (card.title == "") {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  List<Widget> _buildCardRows() {
+    final List<BasicCard> validCards =
+        basicCards.where(validateBasicCard).toList();
+    final List<Widget> rows = [];
+
+    for (int i = 0; i < validCards.length; i += 2) {
+      rows.add(
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              validCards[i],
+              // Add the second card only if it exists
+              if (i + 1 < validCards.length) validCards[i + 1],
+            ],
+          ),
+        ),
+      );
+    }
+    return rows;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Home Page',
+          'Gosler Area',
           style: TextStyle(fontFamily: 'Gosler', color: Colors.white),
-        ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-              ),
-              child: Text(
-                'Menü ${Provider.of<Auth>(context, listen: false).goslerUser.firstName}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Gosler',
-                  fontSize: 30,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.library_music),
-              title: const Text('Noten'),
-              onTap: () {
-                GoRouter.of(context).push('/auth/noten');
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.branding_watermark_outlined),
-              title: const Text('Brand Assets'),
-              onTap: () {
-                // do something
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.star),
-              title: const Text('Premium Features'),
-              onTap: () {
-                GoRouter.of(context).push('/auth/premium/features');
-              },
-            ),
-          ],
         ),
       ),
       body: Center(
@@ -127,7 +156,11 @@ class _AuthHomePageState extends State<AuthHomePage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 20,
+                  ),
+                  ..._buildCardRows(),
+                  const SizedBox(
+                    height: 30,
                   ),
                   Center(
                     child: Text(

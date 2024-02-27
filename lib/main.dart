@@ -46,7 +46,7 @@ Future<void> main() async {
       projectId: 'flaeckegosler',
     ),
   );
-  initializeDateFormatting('de_DE', null).then((_) {
+  initializeDateFormatting('de_DE').then((_) {
     runApp(MyApp());
   });
 }

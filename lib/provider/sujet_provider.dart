@@ -9,7 +9,7 @@ class SujetProvider with ChangeNotifier {
     return List.from(_sujet);
   }
 
-  void createMembers() {
+  void createSujets() {
     if (_sujet.isEmpty) {
       _sujet.add(
         Sujet(
@@ -287,6 +287,14 @@ class SujetProvider with ChangeNotifier {
         Sujet(
           name: "Operation Kyoto",
           jahr: "2023",
+          vierzeiler: "-",
+        ),
+      );
+
+      _sujet.add(
+        Sujet(
+          name: "Inferno",
+          jahr: "2024",
           vierzeiler: "-",
         ),
       );

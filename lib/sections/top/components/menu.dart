@@ -18,6 +18,7 @@ class _MenuState extends State<Menu> {
     "Mitglieder",
     "Sound",
     "Expedition",
+    "Oktoberfest",
   ];
 
   ScrollSingleton myScrollSingleton = ScrollSingleton();

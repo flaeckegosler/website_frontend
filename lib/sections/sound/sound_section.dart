@@ -12,21 +12,28 @@ class SoundSection extends StatefulWidget {
 class _SoundSectionState extends State<SoundSection> {
   bool _isLoading = false;
 
-  //Fetch all Listings
-  Future fetchSoundItemsList() async {
-    setState(() {
-      _isLoading = true;
-    });
-    await Provider.of<SoundProvider>(context, listen: false).fetchSoundItems();
-    setState(() {
-      _isLoading = false;
-    });
+  // Fetch all Listings
+  Future<void> fetchSoundItemsList() async {
+    if (mounted) {
+      // Check if the widget is still mounted
+      setState(() {
+        _isLoading = true;
+      });
+      await Provider.of<SoundProvider>(context, listen: false)
+          .fetchSoundItems();
+      if (mounted) {
+        // Check again in case the widget was disposed while awaiting
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
   }
 
   @override
   void initState() {
-    fetchSoundItemsList();
     super.initState();
+    fetchSoundItemsList();
   }
 
   _launchURL(String url) async {
@@ -56,7 +63,7 @@ class _SoundSectionState extends State<SoundSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Sound",
-                  subTitle: "Nimm EinE KostprobE!",
+                  subTitle: "Nimm eine Kostprobe!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -73,7 +80,7 @@ class _SoundSectionState extends State<SoundSection> {
                               color: Theme.of(context).primaryColor,
                             ),
                           ),
-                        )
+                        ),
                       ]
                     : [
                         GridView.count(
@@ -109,7 +116,7 @@ class _SoundSectionState extends State<SoundSection> {
                           height: 50,
                         ),
                       ],
-              )
+              ),
             ],
           ),
         ),
@@ -193,7 +200,7 @@ class _SoundSectionState extends State<SoundSection> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

@@ -45,7 +45,7 @@ class _VorstandPageState extends State<VorstandPage> {
     "Sujetchef",
     "Materialverwalter",
     "Aktuar",
-    "Sujet"
+    "Sujet",
   ];
 
   @override

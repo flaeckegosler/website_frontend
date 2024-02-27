@@ -40,7 +40,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Expedition",
-                  subTitle: "UnsEr FasnaChtsfEst!",
+                  subTitle: "Unser Fasnachtsfest!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -105,10 +105,11 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
           child: DecoratedBox(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(
-                    "assets/expedition_small.png",
-                  ),),
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  "assets/expedition_small.png",
+                ),
+              ),
             ),
             child: Column(
               children: [
@@ -117,7 +118,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                 else
                   DateInformation(title: title, smallScreen: false),
                 SizedBox(
-                  height: MediaQuery.of(context).size.width < 1250 ? 130 : 380,
+                  height: MediaQuery.of(context).size.width < 1250 ? 130 : 300,
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
@@ -137,7 +138,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -163,7 +164,9 @@ class DateInformation extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: Padding(
         padding: EdgeInsets.only(
-            left: smallScreen ? 8 : 16, top: smallScreen ? 8 : 16,),
+          left: smallScreen ? 8 : 16,
+          top: smallScreen ? 8 : 16,
+        ),
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -180,7 +183,7 @@ class DateInformation extends StatelessWidget {
                 title,
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                  fontSize: smallScreen ? 30.0 : 80.0,
+                  fontSize: smallScreen ? 30.0 : 70.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Oswald',
                   color: Colors.black,

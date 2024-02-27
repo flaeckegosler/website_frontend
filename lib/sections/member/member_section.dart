@@ -28,6 +28,7 @@ enum PickedButtonInstruments {
 enum PickedButtonKommissionen {
   vorstand,
   expedition,
+  oktoberfest,
   sujetkomission,
   musikkomission,
   wagenbau,
@@ -36,10 +37,30 @@ enum PickedButtonKommissionen {
 class _MemberSectionState extends State<MemberSection> {
   ButtonType buttonType = ButtonType.instrumente;
 
+  bool _isLoading = false;
+
+  //Fetch all Listings
+  Future<void> fetchMemberList() async {
+    if (mounted) {
+      // Check if the widget is still mounted
+      setState(() {
+        _isLoading = true;
+      });
+      await Provider.of<MemberProvider>(context, listen: false)
+          .fetchMembersData();
+      if (mounted) {
+        // Check again in case the widget was disposed while awaiting
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    Provider.of<MemberProvider>(context, listen: false).createMembers();
+    fetchMemberList();
   }
 
   Widget createMemberCard(Member member) {
@@ -53,8 +74,8 @@ class _MemberSectionState extends State<MemberSection> {
             {
               GoRouter.of(context).push(
                 '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
-                extra: member.pictureUrlMax,
-              )
+                extra: member.pictureUrl,
+              ),
             },
         },
         child: Stack(
@@ -101,6 +122,8 @@ class _MemberSectionState extends State<MemberSection> {
       aemtli = member.vorstand;
     } else if (buttonType == PickedButtonKommissionen.expedition) {
       aemtli = member.expedition;
+    } else if (buttonType == PickedButtonKommissionen.oktoberfest) {
+      aemtli = member.oktoberfest;
     } else if (buttonType == PickedButtonKommissionen.sujetkomission) {
       aemtli = member.sujetKommission;
     } else if (buttonType == PickedButtonKommissionen.musikkomission) {
@@ -116,8 +139,8 @@ class _MemberSectionState extends State<MemberSection> {
             {
               GoRouter.of(context).push(
                 '/mitglied/${member.firstName.toLowerCase()}/${member.lastName.toLowerCase()}',
-                extra: member.pictureUrlMax,
-              )
+                extra: member.pictureUrl,
+              ),
             },
         },
         child: Stack(
@@ -125,7 +148,9 @@ class _MemberSectionState extends State<MemberSection> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Center(
-                child: _buildMember(member),
+                child: _isLoading
+                    ? const CircularProgressIndicator()
+                    : _buildMember(member),
               ),
             ),
             Container(
@@ -262,6 +287,15 @@ class _MemberSectionState extends State<MemberSection> {
             ),
           );
         } else if (pickedButtonKommission ==
+            PickedButtonKommissionen.oktoberfest) {
+          return List.generate(
+            myMemberProvider.getMemberOfOktoberfest().length,
+            (index) => createMemberCardPremium(
+              myMemberProvider.getMemberOfOktoberfest()[index],
+              PickedButtonKommissionen.oktoberfest,
+            ),
+          );
+        } else if (pickedButtonKommission ==
             PickedButtonKommissionen.sujetkomission) {
           return List.generate(
             myMemberProvider.getMemberOfSujetkommission().length,
@@ -311,7 +345,7 @@ class _MemberSectionState extends State<MemberSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Mitglieder",
-                  subTitle: "SiEh dir diEsE BEautiEs an!",
+                  subTitle: "Sieh dir diese Beauties an!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -334,7 +368,7 @@ class _MemberSectionState extends State<MemberSection> {
               ),
               const SizedBox(
                 height: 40,
-              )
+              ),
             ],
           ),
         ),
@@ -395,10 +429,7 @@ class _MemberSectionState extends State<MemberSection> {
                 if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[5]
                 else
-                  const SizedBox(
-                    width: 160,
-                    height: 40,
-                  ),
+                  kommissionenButtons()[5],
               ],
             ),
           ],
@@ -452,10 +483,7 @@ class _MemberSectionState extends State<MemberSection> {
                 if (buttonType == ButtonType.instrumente)
                   instrumenteButtons()[5]
                 else
-                  const SizedBox(
-                    width: 160,
-                    height: 40,
-                  ),
+                  kommissionenButtons()[5],
               ],
             ),
           ],
@@ -685,6 +713,37 @@ class _MemberSectionState extends State<MemberSection> {
           },
           child: const Text(
             "Expedition",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      //Oktoberfest
+      SizedBox(
+        width: 160,
+        height: 40,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                PickedButtonKommissionen.oktoberfest == pickedButtonKommission
+                    ? MaterialStateProperty.all<Color>(
+                        Theme.of(context).primaryColor,
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        Colors.grey,
+                      ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              pickedButtonKommission = PickedButtonKommissionen.oktoberfest;
+            });
+          },
+          child: const Text(
+            "Oktoberfest",
             textAlign: TextAlign.center,
           ),
         ),

@@ -222,7 +222,7 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
                     else
                       const SizedBox(),
                   ],
-                )
+                ),
               ],
             ),
     );

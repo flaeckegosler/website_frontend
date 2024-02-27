@@ -29,7 +29,7 @@ class GlassContent extends StatelessWidget {
                 "Guuggemusig",
                 style: TextStyle(
                   fontSize: 30.0,
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                 ),
               ),
@@ -37,10 +37,10 @@ class GlassContent extends StatelessWidget {
                 height: 80,
               ),
               SelectableText(
-                "FläCkegosler \nRoteborg",
+                "Fläckegosler \nRoteborg",
                 style: TextStyle(
                   fontSize: 100.0,
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                 ),
               ),
@@ -51,10 +51,10 @@ class GlassContent extends StatelessWidget {
                 "Since 1989",
                 style: TextStyle(
                   fontSize: 30.0,
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                 ),
-              )
+              ),
             ],
           ),
         ),

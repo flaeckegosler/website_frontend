@@ -6,7 +6,7 @@ class SectionTitle extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.color,
-    this.fontFamily = "Shakuro",
+    this.fontFamily = "Impact",
     this.fontSizeMainTitle = 48,
     this.fontWeight = FontWeight.bold,
   });
@@ -68,9 +68,9 @@ class SectionTitle extends StatelessWidget {
                         fontSize: fontSizeMainTitle,
                       ),
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

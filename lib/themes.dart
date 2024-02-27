@@ -6,9 +6,9 @@ ThemeData get myTheme {
     useMaterial3: true,
     inputDecorationTheme: kDefaultInputDecorationTheme,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    primaryColor: const Color.fromRGBO(151, 28, 28, 1),
+    primaryColor: const Color.fromRGBO(238, 153, 67, 1),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromRGBO(151, 28, 28, 1),
+      backgroundColor: Color.fromRGBO(172, 80, 48, 1),
       iconTheme: IconThemeData(color: Colors.white),
     ),
     splashColor: Colors.white,
@@ -18,7 +18,7 @@ ThemeData get myTheme {
         .copyWith(background: Colors.white),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(151, 28, 28, 1),
+        backgroundColor: const Color.fromRGBO(238, 153, 67, 1),
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
