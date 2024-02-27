@@ -22,14 +22,14 @@ class _CountdownState extends State<Countdown> {
     return const TextStyle(
       color: Colors.white,
       fontSize: 16,
-      fontFamily: "Shakuro",
+      fontFamily: "Impact",
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    if (DateTime.parse('2024-02-08 05:00:00').isAfter(DateTime.now())) {
-      final date1 = DateTime.parse('2024-02-08 05:00:00');
+    final date1 = DateTime.parse('2025-02-27 05:00:00');
+    if (date1.isAfter(DateTime.now())) {
       counterSeconds = date1.difference(DateTime.now()).inSeconds % 60;
       counterMinutes = date1.difference(DateTime.now()).inMinutes % 60;
       counterHours = date1.difference(DateTime.now()).inHours % 24;
@@ -69,7 +69,7 @@ class _CountdownState extends State<Countdown> {
       return ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
         child: Container(
-          color: const Color.fromRGBO(121, 28, 28, 1),
+          color: const Color.fromRGBO(172, 80, 48, 1),
           height: 120,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +84,7 @@ class _CountdownState extends State<Countdown> {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
-                          fontFamily: "Shakuro",
+                          fontFamily: "Impact",
                         ),
                       ),
                       Icon(

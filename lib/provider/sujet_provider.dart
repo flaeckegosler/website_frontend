@@ -290,6 +290,14 @@ class SujetProvider with ChangeNotifier {
           vierzeiler: "-",
         ),
       );
+
+      _sujet.add(
+        Sujet(
+          name: "Inferno",
+          jahr: "2024",
+          vierzeiler: "-",
+        ),
+      );
     }
   }
 }

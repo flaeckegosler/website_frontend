@@ -40,7 +40,7 @@ class _ExpeditionSectionState extends State<ExpeditionSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Expedition",
-                  subTitle: "UnsEr FasnaChtsfEst!",
+                  subTitle: "Unser Fasnachtsfest!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),

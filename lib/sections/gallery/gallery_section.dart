@@ -270,7 +270,7 @@ class _GallerySectionState extends State<GallerySection> {
                   children: [
                     SectionTitle(
                       title: "Fotos",
-                      subTitle: "Schau unsErE BildEr an!",
+                      subTitle: "Schau unsere Bilder an!",
                       color: Theme.of(context).primaryColor,
                     ),
                     if (_isLoading)

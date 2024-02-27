@@ -345,7 +345,7 @@ class _MemberSectionState extends State<MemberSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Mitglieder",
-                  subTitle: "SiEh dir diEsE BEautiEs an!",
+                  subTitle: "Sieh dir diese Beauties an!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),

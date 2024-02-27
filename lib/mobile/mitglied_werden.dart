@@ -9,7 +9,7 @@ class MitgliedWerden extends StatelessWidget {
   Widget build(BuildContext context) {
     return ColoredBox(
       //  height: 250,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.only(
           top: 20,

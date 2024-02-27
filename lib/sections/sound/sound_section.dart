@@ -63,7 +63,7 @@ class _SoundSectionState extends State<SoundSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Sound",
-                  subTitle: "Nimm EinE KostprobE!",
+                  subTitle: "Nimm eine Kostprobe!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),

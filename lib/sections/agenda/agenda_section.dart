@@ -118,7 +118,7 @@ class _AgendaSectionState extends State<AgendaSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Agenda",
-                  subTitle: "Komm vorbEi!",
+                  subTitle: "Komm vorbei!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),

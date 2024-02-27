@@ -13,13 +13,12 @@ class _SoundSectionState extends State<ProgrammSection> {
   }
 
   TextStyle sujetFontProgramm = const TextStyle(
-    fontFamily: 'Shakuro',
+    fontFamily: 'Impact',
     color: Colors.white,
     fontSize: 18,
   );
 
-  Color color1 = const Color.fromRGBO(165, 102, 19, 1);
-  Color color2 = const Color.fromRGBO(121, 28, 28, 1);
+  Color color2 = const Color.fromRGBO(172, 80, 48, 1);
 
   FittedBox getProgrammRow(String zeit, String ort) {
     return FittedBox(
@@ -61,9 +60,9 @@ class _SoundSectionState extends State<ProgrammSection> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "SCHMUDO 16. FEBRUAR",
+                "SCHMUDO 8. FEBRUAR",
                 style: TextStyle(
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                   fontSize: 26,
                 ),
@@ -71,31 +70,35 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '04:00',
-              'TagwaChE (intErn)',
+              'Tagwache (intern)',
             ),
             getProgrammRow(
               '05:00',
-              "Urknall + TagwaChE, FlECkEn R’BURG",
+              "Urknall + Tagwache, Flecken R’burg",
             ),
             getProgrammRow(
               '06:45',
-              'FasnaChtsZmorgE,	PfarrEihEim',
+              'Fasnachtszmorge,	Pfarreiheim',
             ),
             getProgrammRow(
               '09:00',
-              'FlECkEnkonZErt, FLECKEN R’BURG',
+              'Fleckenkonzert, Flecken R’burg',
             ),
             getProgrammRow(
               '10:45',
-              'Ständli Pistor, RothEnburg',
+              'Ständli Pistor, Rothenburg',
             ),
             getProgrammRow(
               '14:00',
-              'LuZErnEr UmZug (Nr. 17), LuZErn',
+              'Luzerner Umzug (Nr. 17), Luzern',
             ),
             getProgrammRow(
-              'Abend',
-              "MonstErkonZErt, FlECkEn R’BURG",
+              '19:15',
+              "Monsterkonzert, Flecken R’burg",
+            ),
+            getProgrammRow(
+              '22:45',
+              "Auftritt Pfarreiheim, R’burg",
             ),
             const SizedBox(
               height: 14,
@@ -121,9 +124,9 @@ class _SoundSectionState extends State<ProgrammSection> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "FASNACHTS-FRIITIG 17. FEBRUAR",
+                "FASNACHTS-FRIITIG 9. FEBRUAR",
                 style: TextStyle(
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                   fontSize: 26,
                 ),
@@ -131,23 +134,23 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '11:00',
-              'SChnEbE-FrühstüCk (intErn)',
+              'Schnebe-Frühstück (intern)',
             ),
             getProgrammRow(
               '13:00',
-              "Ständli Rank, RothEnburg",
+              "Ständli Rank, Rothenburg",
             ),
             getProgrammRow(
               '14:00',
-              "Ständli RaiffEisEnbank, RothEnburg",
+              "Ständli Raiffeisenbank, Rothenburg",
             ),
             getProgrammRow(
               '15:30',
-              'Ständli Landi, RothEnburg',
+              'Ständli Landi, Rothenburg',
             ),
             getProgrammRow(
-              'AbEnd',
-              'GönnEranlass	PfarrEihEim, RothEnburg ',
+              'Abend',
+              'Gönneranlass	Pfarreiheim, Rothenburg',
             ),
             const SizedBox(
               height: 14,
@@ -173,9 +176,9 @@ class _SoundSectionState extends State<ProgrammSection> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "FLÄTTERE-SAMSCHTIG 18. FEBRUAR",
+                "FLÄTTERE-SAMSCHTIG 10. FEBRUAR",
                 style: TextStyle(
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                   fontSize: 26,
                 ),
@@ -183,14 +186,14 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '12:30',
-              'Auftritt MÜHLENPLATZ, LuZErn',
+              'Auftritt Mühlenplatz, Luzern',
             ),
             getProgrammRow(
               '16:00',
-              'Auftritt JEsuitEnplatZ, LuZERN',
+              'Auftritt Jesuitenplatz, Luzern',
             ),
             getProgrammRow(
-              'AbEnd',
+              'Abend',
               'Raguball (Auftritt 23 Uhr), Rain',
             ),
             const SizedBox(
@@ -217,9 +220,9 @@ class _SoundSectionState extends State<ProgrammSection> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "FASNACHTS-SONNTIG 19. FEBRUAR",
+                "FASNACHTS-SONNTIG 11. FEBRUAR",
                 style: TextStyle(
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                   fontSize: 26,
                 ),
@@ -227,15 +230,15 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '10:00',
-              "FasnaChtsgottEsdiEnst, PfarrkirChE",
+              "Fasnachtsgottesdienst, Pfarrkirche",
             ),
             getProgrammRow(
               '14:00',
-              'UMZUG Emmen',
+              'Umzug Emmen',
             ),
             getProgrammRow(
-              'AbEnd',
-              'Ämmer Fasnacht',
+              '23:00',
+              'Auftritt Ämmer Fasnacht',
             ),
             const SizedBox(
               height: 14,
@@ -261,9 +264,9 @@ class _SoundSectionState extends State<ProgrammSection> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "GÜDIS-MÄNTIG 20. FEBRUAR",
+                "GÜDIS-MÄNTIG 12. FEBRUAR",
                 style: TextStyle(
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                   fontSize: 26,
                 ),
@@ -271,15 +274,15 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '10:30',
-              "GässlE, LuZErn",
+              "Gässle, Luzern",
             ),
             getProgrammRow(
               '14:00',
-              'LuZErnEr UmZug (Nr. 17), LuZErn',
+              'Luzerner Umzug (Nr. 17), Luzern',
             ),
             getProgrammRow(
               '17:30',
-              'AUFTRITT SCHWEIZERHOF, LuZErn',
+              'Auftritt Schweizerhof, Luzern',
             ),
             const SizedBox(
               height: 14,
@@ -305,9 +308,9 @@ class _SoundSectionState extends State<ProgrammSection> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "GÜDIS-ZIISCHTIG 21. FEBRUAR",
+                "GÜDIS-ZIISCHTIG 13. FEBRUAR",
                 style: TextStyle(
-                  fontFamily: 'Shakuro',
+                  fontFamily: 'Impact',
                   color: Colors.white,
                   fontSize: 26,
                 ),
@@ -315,19 +318,19 @@ class _SoundSectionState extends State<ProgrammSection> {
             ),
             getProgrammRow(
               '11:00',
-              "Mittagessen mit Goldies (intErn)",
+              "Mittagessen mit Goldies (intern)",
             ),
             getProgrammRow(
               '14:00',
-              "KindErumZug, RothEnburg",
+              "Kinderumzug, Rothenburg",
             ),
             getProgrammRow(
-              'AbEnd',
-              'GässlE, LuZErn',
+              'Abend',
+              'Gässle, Luzern',
             ),
             getProgrammRow(
               '00:00',
-              'Auftritt Falkenplatz, LuZErn',
+              'Auftritt Falkenplatz, Luzern',
             ),
             const SizedBox(
               height: 14,
@@ -357,7 +360,7 @@ class _SoundSectionState extends State<ProgrammSection> {
                 padding: const EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Programm",
-                  subTitle: "Komm vorbEi!",
+                  subTitle: "Komm vorbei!",
                   color: Theme.of(context).primaryColor,
                 ),
               ),

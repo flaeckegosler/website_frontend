@@ -80,12 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: const EdgeInsets.only(top: 5, bottom: 5),
                 title: Image.asset(
-                  'assets/operation_kyoto_title.png',
+                  'assets/inferno_title.png',
                   height: 50,
                 ),
                 centerTitle: true,
                 background: Image.asset(
-                  'assets/background_kyoto.jpg',
+                  'assets/background_ohne.jpg',
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -605,7 +605,7 @@ class BoxesLargeScale extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 340,
-      color: const Color.fromRGBO(230, 230, 230, 1),
+      color: Colors.white,
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

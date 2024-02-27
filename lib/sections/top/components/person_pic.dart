@@ -7,18 +7,19 @@ class PersonPic extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.only(right: 60),
-          child: const SizedBox(
-            height: 550,
-            // constraints: BoxConstraints(maxWidth: 639, maxHeight: 860),
-            /*    child: Align(
+          margin: const EdgeInsets.only(right: 200, bottom: 150),
+          child: Container(
+            height: 950,
+            width: 400,
+            //constraints: const BoxConstraints(maxWidth: 1039, maxHeight: 1060),
+            child: Align(
               alignment: Alignment.bottomRight,
               child: Image.asset(
-                "assets/webseite_mann_kyoto.png",
-                fit: BoxFit.fitHeight,
+                "assets/website_phoenix.png",
               ),
-            ),*/
+            ),
           ),
+          // ),
         ),
         Positioned.fill(
           child: Container(

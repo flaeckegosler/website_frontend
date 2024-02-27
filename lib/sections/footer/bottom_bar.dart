@@ -50,7 +50,11 @@ class BottomBar extends StatelessWidget {
               ),
             ],
           ),
-          child: FaIcon(icon, color: Colors.white, size: 60),
+          child: FaIcon(
+            icon,
+            color: Colors.white,
+            size: 60,
+          ),
         ),
       );
 
@@ -63,7 +67,7 @@ class BottomBar extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fitHeight,
-            image: AssetImage("assets/background_kyoto.jpg"),
+            image: AssetImage("assets/background_ohne.jpg"),
             //repeat: ImageRepeat.noRepeat,
             scale: 0.2,
           ),
@@ -263,7 +267,7 @@ class BottomBar extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage("assets/background_kyoto.jpg"),
+            image: AssetImage("assets/background_ohne.jpg"),
             // repeat: ImageRepeat.repeat,
             scale: 0.2,
           ),

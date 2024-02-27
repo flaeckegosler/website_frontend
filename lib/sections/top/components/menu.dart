@@ -17,6 +17,7 @@ class _MenuState extends State<Menu> {
     "Agenda",
     "Mitglieder",
     "Sound",
+    "Expedition",
     "Oktoberfest",
   ];
 

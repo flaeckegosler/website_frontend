@@ -39,8 +39,9 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
+      color: const Color.fromRGBO(230, 230, 230, 1),
       child: Align(
         child: Container(
           width: 1250,
@@ -55,7 +56,7 @@ class _OktoberfestSectionState extends State<OktoberfestSection> {
                 padding: EdgeInsets.only(left: 8.0, right: 10),
                 child: SectionTitle(
                   title: "Oktoberfest",
-                  subTitle: "UnsEr Gaudi!",
+                  subTitle: "Unser Gaudi!",
                   fontFamily: "Gosler",
                   fontWeight: FontWeight.w200,
                   color: Color.fromRGBO(40, 145, 210, 1),
