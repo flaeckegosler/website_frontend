@@ -15,7 +15,7 @@ ThemeData get myTheme {
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSwatch()
         .copyWith(secondary: Colors.white)
-        .copyWith(background: Colors.white),
+        .copyWith(surface: Colors.white),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromRGBO(238, 153, 67, 1),

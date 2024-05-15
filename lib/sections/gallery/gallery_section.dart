@@ -187,7 +187,7 @@ class _GallerySectionState extends State<GallerySection> {
         setState(() {
           _selectedGallery =
               Provider.of<PicturesProvider>(context, listen: false)
-                  .allPictures[result! as int];
+                  .allPictures[result];
         });
       },
       itemBuilder: (context) {

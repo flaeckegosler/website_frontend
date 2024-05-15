@@ -16,7 +16,6 @@ import 'package:website_frontend/sections/kleiderverkauf/KleiderverkaufSection.d
 import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 import 'package:website_frontend/sections/oktoberfest/oktoberfest_section.dart';
-import 'package:website_frontend/sections/programm/programm.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
 
@@ -579,8 +578,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class ContdownMobile extends StatelessWidget {
   const ContdownMobile({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -599,8 +598,8 @@ class ContdownMobile extends StatelessWidget {
 
 class BoxesLargeScale extends StatelessWidget {
   const BoxesLargeScale({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

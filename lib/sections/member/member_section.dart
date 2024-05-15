@@ -502,13 +502,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonInstruments.drums == pickedButtonInstrument
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -533,13 +533,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonInstruments.horn == pickedButtonInstrument
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -564,13 +564,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonInstruments.posaune == pickedButtonInstrument
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -595,13 +595,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonInstruments.sousaphon == pickedButtonInstrument
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -626,13 +626,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonInstruments.trompete == pickedButtonInstrument
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -663,13 +663,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonKommissionen.vorstand == pickedButtonKommission
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -694,13 +694,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonKommissionen.expedition == pickedButtonKommission
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -725,13 +725,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor:
                 PickedButtonKommissionen.oktoberfest == pickedButtonKommission
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         Theme.of(context).primaryColor,
                       )
-                    : MaterialStateProperty.all<Color>(
+                    : WidgetStateProperty.all<Color>(
                         Colors.grey,
                       ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -756,13 +756,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor: PickedButtonKommissionen.sujetkomission ==
                     pickedButtonKommission
-                ? MaterialStateProperty.all<Color>(
+                ? WidgetStateProperty.all<Color>(
                     Theme.of(context).primaryColor,
                   )
-                : MaterialStateProperty.all<Color>(
+                : WidgetStateProperty.all<Color>(
                     Colors.grey,
                   ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
@@ -787,13 +787,13 @@ class _MemberSectionState extends State<MemberSection> {
           style: ButtonStyle(
             backgroundColor: PickedButtonKommissionen.musikkomission ==
                     pickedButtonKommission
-                ? MaterialStateProperty.all<Color>(
+                ? WidgetStateProperty.all<Color>(
                     Theme.of(context).primaryColor,
                   )
-                : MaterialStateProperty.all<Color>(
+                : WidgetStateProperty.all<Color>(
                     Colors.grey,
                   ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),

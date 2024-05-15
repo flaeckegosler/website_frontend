@@ -87,7 +87,7 @@ class MidiSammlung extends StatelessWidget {
                     Center(
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
+                          backgroundColor: WidgetStateProperty.all<Color>(
                             Theme.of(context).primaryColor,
                           ),
                         ),

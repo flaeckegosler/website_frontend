@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MitgliedWerden extends StatelessWidget {
-  const MitgliedWerden({Key? key}) : super(key: key);
+  const MitgliedWerden({super.key});
 
   @override
   Widget build(BuildContext context) {

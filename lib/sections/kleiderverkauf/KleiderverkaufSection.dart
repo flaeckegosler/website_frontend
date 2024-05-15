@@ -156,7 +156,6 @@ class _KleiderverkaufSectionState extends State<KleiderverkaufSection> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 6,

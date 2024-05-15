@@ -67,7 +67,7 @@ class _EhrenMitgliederPageState extends State<EhrenMitgliederPage> {
 
     Widget buildDataTable({required bool istAktivEhrenmitglied}) {
       final DataTable dataTable = DataTable(
-        headingRowColor: MaterialStateProperty.all(Colors.grey[300]),
+        headingRowColor: WidgetStateProperty.all(Colors.grey[300]),
         headingTextStyle: const TextStyle(fontWeight: FontWeight.bold),
         dataRowHeight: 35,
         sortAscending: false,

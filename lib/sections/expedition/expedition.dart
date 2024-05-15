@@ -153,10 +153,10 @@ class DateInformation extends StatelessWidget {
   final bool smallScreen;
 
   const DateInformation({
-    Key? key,
+    super.key,
     required this.title,
     required this.smallScreen,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
