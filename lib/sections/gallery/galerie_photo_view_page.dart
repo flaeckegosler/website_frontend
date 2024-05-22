@@ -172,8 +172,8 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
                     maxScale: PhotoViewComputedScale.covered * 2,
                     enableRotation: true,
                     // Set the background color to the "classic white"
-                    backgroundDecoration: BoxDecoration(
-                      color: Theme.of(context).canvasColor,
+                    backgroundDecoration: const BoxDecoration(
+                      color: Colors.white,
                     ),
                   ),
                 ),
