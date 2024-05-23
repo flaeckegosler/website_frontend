@@ -7,8 +7,8 @@ enum SocialMedia { facebook, twitter, email, linkedin, whatsapp, instagram }
 
 class BottomBar extends StatelessWidget {
   const BottomBar({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   static const Color gradientStartColor = Color(0xff11998e);
   static const Color gradientEndColor = Color(0xff0575E6);
 

@@ -49,7 +49,7 @@ class SujetPage extends StatelessWidget {
 
     Widget buildDataTable() {
       final DataTable dataTable = DataTable(
-        headingRowColor: MaterialStateProperty.all(Colors.grey[300]),
+        headingRowColor: WidgetStateProperty.all(Colors.grey[300]),
         headingTextStyle: const TextStyle(fontWeight: FontWeight.bold),
         dataRowMinHeight: 35,
         sortAscending: false,

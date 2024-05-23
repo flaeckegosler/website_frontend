@@ -73,7 +73,6 @@ class PicturesProvider with ChangeNotifier {
       albumTitle: albumData['albumTitle'] as String,
       albumTitleRoute:
           albumData['albumTitle'].toString().toLowerCase().replaceAll(" ", "-"),
-      bodyText: albumData['bodyText'] as String,
       dateUnix: albumData['dateUnix'] as int,
       dateFormatted: albumData['dateFormatted'] as String,
       specificImage: specificImages,
@@ -107,7 +106,6 @@ class PicturesProvider with ChangeNotifier {
               .toString()
               .toLowerCase()
               .replaceAll(" ", "-"),
-          bodyText: albumData['bodyText'] as String,
           dateUnix: albumData['dateUnix'] as int,
           dateFormatted: albumData['dateFormatted'] as String,
           specificImage: specificImages,

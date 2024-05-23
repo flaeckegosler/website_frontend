@@ -28,7 +28,7 @@ class Member with ChangeNotifier {
     return Member(
       firstName: json['member_firstname'] as String,
       lastName: json['member_lastname'] as String,
-      pictureUrl: apiUrl + json['member_image'],
+      pictureUrl: apiUrl + (json['member_image'] as String),
       instrument: json['member_instrument'] as String,
       vorstand: json['member_vorstand'] as String,
       expedition: json['member_expedition'] as String,

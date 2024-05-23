@@ -28,9 +28,9 @@ class _NewsSectionState extends State<NewsSection>
 
   bool _isLoading = false;
 
-  int n0preview = 350;
-  int n1preview = 350;
-  int n2preview = 350;
+  double n0preview = 350;
+  double n1preview = 350;
+  double n2preview = 350;
 
   int n0text = 0;
   int n1text = 0;

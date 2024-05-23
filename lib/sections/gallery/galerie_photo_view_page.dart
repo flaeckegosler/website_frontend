@@ -1,5 +1,3 @@
-import 'dart:html' as html;
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -174,8 +172,8 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
                     maxScale: PhotoViewComputedScale.covered * 2,
                     enableRotation: true,
                     // Set the background color to the "classic white"
-                    backgroundDecoration: BoxDecoration(
-                      color: Theme.of(context).canvasColor,
+                    backgroundDecoration: const BoxDecoration(
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -204,14 +202,14 @@ class _GaleriePhotoViewPageState extends State<GaleriePhotoViewPage> {
                             final imageUrl = specificImage.pictureUrl;
                             final response =
                                 await http.get(Uri.parse(imageUrl));
-                            final blob =
-                                html.Blob([response.bodyBytes], 'image/jpg');
-                            final url = html.Url.createObjectUrlFromBlob(blob);
-                            final link = html.AnchorElement(
-                              href: url,
-                            );
-                            link.download = specificImage.pictureName;
-                            link.click();
+                            //  final blob =
+                            //      html.Blob([response.bodyBytes], 'image/jpg');
+                            //  final url = html.Url.createObjectUrlFromBlob(blob);
+                            //  final link = html.AnchorElement(
+                            //   href: url,
+                            // );
+                            // link.download = specificImage.pictureName;
+                            // link.click();
                           },
                           child: const Icon(
                             Icons.download,

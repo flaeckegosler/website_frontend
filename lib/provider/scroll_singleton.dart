@@ -15,7 +15,7 @@ class ScrollSingleton {
     int index = 0;
     if (section == "News") {
       index = 1;
-    } else if (section == "Programm") {
+    } else if (section == "Kleiderverkauf") {
       index = 2;
     } else if (section == "Fotos") {
       index = 3;

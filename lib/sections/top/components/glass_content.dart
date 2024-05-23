@@ -23,7 +23,7 @@ class GlassContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 50,
+                height: 40,
               ),
               SelectableText(
                 "Guuggemusig",
@@ -34,7 +34,7 @@ class GlassContent extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 80,
+                height: 30,
               ),
               SelectableText(
                 "Fläckegosler \nRoteborg",

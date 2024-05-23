@@ -17,7 +17,7 @@ class BirthdayProvider with ChangeNotifier {
     // Sort all birthdays by month and day
     final sortedBirthdays = memberBirthday
       ..sort((a, b) {
-        int monthCompare = a.birthday.month.compareTo(b.birthday.month);
+        final int monthCompare = a.birthday.month.compareTo(b.birthday.month);
         if (monthCompare == 0) {
           return a.birthday.day.compareTo(b.birthday.day);
         }

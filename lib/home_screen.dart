@@ -12,10 +12,10 @@ import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/expedition/expedition.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
+import 'package:website_frontend/sections/kleiderverkauf/KleiderverkaufSection.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 import 'package:website_frontend/sections/oktoberfest/oktoberfest_section.dart';
-import 'package:website_frontend/sections/programm/programm.dart';
 import 'package:website_frontend/sections/sound/sound_section.dart';
 import 'package:website_frontend/sections/top/top_section.dart';
 
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         myScrollSingleton.scrollToItem("News");
                         break;
                       case 'option2':
-                        myScrollSingleton.scrollToItem("Programm");
+                        myScrollSingleton.scrollToItem("Kleiderverkauf");
                         break;
                       case 'option3':
                         myScrollSingleton.scrollToItem("Fotos");
@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'option2',
-                      child: Text('Programm'),
+                      child: Text('Kleiderverkauf'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'option3',
@@ -188,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 );
               } else if (index == 2) {
-                return ProgrammSection();
+                return KleiderverkaufSection();
               } else if (index == 3) {
                 return GallerySection();
               } else if (index == 4) {
@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 30,
                       iconStyle: IconStyle(
                         color: Colors.white,
-                        iconData: Icons.watch_later_outlined,
+                        iconData: Icons.monetization_on_outlined,
                       ),
                     ),
                     beforeLineStyle: const LineStyle(thickness: 2),
@@ -294,8 +294,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           InkWell(
                             borderRadius: BorderRadius.circular(20),
-                            onTap: () =>
-                                myScrollSingleton.scrollToItem("Programm"),
+                            onTap: () => myScrollSingleton
+                                .scrollToItem("Kleiderverkauf"),
                             child: /* TweenAnimationBuilder<double>(
                                   duration: const Duration(milliseconds: 500),
                                   tween: Tween<double>(
@@ -306,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const Padding(
                               padding: EdgeInsets.all(10),
                               child: Text(
-                                "Programm",
+                                "Kleiderverkauf",
                                 style: TextStyle(
                                   fontSize: 16, //size,
                                   fontWeight: FontWeight.bold,
@@ -578,8 +578,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class ContdownMobile extends StatelessWidget {
   const ContdownMobile({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -598,8 +598,8 @@ class ContdownMobile extends StatelessWidget {
 
 class BoxesLargeScale extends StatelessWidget {
   const BoxesLargeScale({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

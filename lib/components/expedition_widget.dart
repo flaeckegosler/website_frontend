@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ExpeditionWidget extends StatelessWidget {
   const ExpeditionWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

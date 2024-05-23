@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class GoennerWerden extends StatelessWidget {
-  const GoennerWerden({Key? key}) : super(key: key);
+  const GoennerWerden({super.key});
 
   @override
   Widget build(BuildContext context) {
