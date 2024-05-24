@@ -107,9 +107,6 @@ flutter:
    - family: Gosler
      fonts:
        - asset: assets/fonts/FONTH.ttf
-   - family: Shakuro
-     fonts: 
-       - asset: assets/fonts/Shakuro-Brush-Regular.ttf
    - family: Impact
      fonts: 
        - asset: assets/fonts/IMPACT.TTF
