@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
+import 'package:website_frontend/api_keys.dart' as api_keys;
 import 'package:website_frontend/components/section_title.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 
@@ -19,10 +19,6 @@ class KontaktPage extends StatelessWidget {
     required String message,
     required BuildContext ctx,
   }) async {
-    final serviceId = dotenv.env['serviceId'].toString();
-    final templateId = dotenv.env['templateId'].toString();
-    final userId = dotenv.env['userId'].toString();
-
     final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
     final response = await http
         .post(
@@ -32,9 +28,9 @@ class KontaktPage extends StatelessWidget {
           },
           body: json.encode(
             {
-              'service_id': serviceId,
-              'template_id': templateId,
-              'user_id': userId,
+              'service_id': api_keys.serviceId,
+              'template_id': api_keys.templateId,
+              'user_id': api_keys.userId,
               'template_params': {
                 'user_name': name,
                 'user_email': email,
@@ -191,7 +187,9 @@ class KontaktPage extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 8.0, right: 10,),
+                                    left: 8.0,
+                                    right: 10,
+                                  ),
                                   child: SectionTitle(
                                     title: "Kontakt",
                                     subTitle: "Tell me more!",
