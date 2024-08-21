@@ -16,7 +16,7 @@ class _GallerySectionState extends State<GallerySection> {
   bool _isLoading = false;
   bool _isLoading2 = true;
   int activeIndex = 0;
-  final controller = CarouselController();
+  final controller = CarouselSliderController();
 
   late Album _selectedGallery;
 
