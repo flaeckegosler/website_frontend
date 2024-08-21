@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
+import 'package:website_frontend/api_keys.dart' as api_keys;
 import 'package:website_frontend/auth/auth.dart';
 import 'package:website_frontend/auth/auth_home_page.dart';
 import 'package:website_frontend/auth/login_register_page.dart';
@@ -37,10 +37,9 @@ import 'package:website_frontend/themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load();
   await Firebase.initializeApp(
-    options: FirebaseOptions(
-      apiKey: dotenv.env['FIREBASE_API_KEY'].toString(),
+    options: const FirebaseOptions(
+      apiKey: api_keys.FIREBASE_API_KEY,
       appId: "1:382871203406:web:c0593d41ed0a4c08fb5d1f",
       messagingSenderId: "382871203406",
       projectId: 'flaeckegosler',
