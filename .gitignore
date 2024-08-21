@@ -1,3 +1,7 @@
+# Custom
+
+lib/api_keys.dart
+
 # Miscellaneous
 *.class
 *.env
