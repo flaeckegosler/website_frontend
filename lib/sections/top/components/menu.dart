@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:website_frontend/constants.dart';
 import 'package:website_frontend/provider/scroll_singleton.dart';
+import 'package:website_frontend/sections/AppSection.dart';
 
 class Menu extends StatefulWidget {
+  final List<AppSection> appSections;
+
+  // Constructor to accept menu items
+  Menu({required this.appSections});
+
   @override
   _MenuState createState() => _MenuState();
 }
@@ -10,16 +16,6 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   int selectedIndex = 0;
   int hoverIndex = 0;
-  List<String> menuItems = [
-    "News",
-    "Kleiderverkauf",
-    "Fotos",
-    "Agenda",
-    "Mitglieder",
-    "Sound",
-    "Expedition",
-    "Oktoberfest",
-  ];
 
   ScrollSingleton myScrollSingleton = ScrollSingleton();
 
@@ -40,8 +36,10 @@ class _MenuState extends State<Menu> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
-          menuItems.length,
-          (index) => buildMenuItem(index),
+          widget.appSections.length,
+          (index) => (widget.appSections[index].isVisible)
+              ? buildMenuItem(index)
+              : SizedBox(),
         ),
       ),
     );
@@ -51,7 +49,7 @@ class _MenuState extends State<Menu> {
         onTap: () {
           setState(() {
             selectedIndex = index;
-            myScrollSingleton.scrollToItem(menuItems[index]);
+            myScrollSingleton.scrollToItem(widget.appSections[index].name);
           });
         },
         onHover: (value) {
@@ -66,7 +64,7 @@ class _MenuState extends State<Menu> {
             alignment: Alignment.center,
             children: [
               Text(
-                menuItems[index],
+                widget.appSections[index].name,
                 style: const TextStyle(fontSize: 20, color: kTextColor),
               ),
               // Hover

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:website_frontend/constants.dart';
+import 'package:website_frontend/sections/AppSection.dart';
 import 'package:website_frontend/sections/top/components/logo_blur_box.dart';
 import 'package:website_frontend/sections/top/components/menu.dart';
 import 'package:website_frontend/sections/top/components/person_pic.dart';
 
 class TopSection extends StatelessWidget {
+  final List<AppSection> appSections;
+
+  // Constructor to accept menu items
+  const TopSection({required this.appSections});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +46,7 @@ class TopSection extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              child: Menu(),
+              child: Menu(appSections: appSections), // Pass menuItems to Menu
             ),
           ],
         ),
