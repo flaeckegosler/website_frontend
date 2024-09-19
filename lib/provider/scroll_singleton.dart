@@ -15,8 +15,8 @@ class ScrollSingleton {
     int index = 0;
     if (section == "News") {
       index = 1;
-    } else if (section == "Kleiderverkauf") {
-      index = 2;
+      // } else if (section == "Kleiderverkauf") {
+      //   index = 2;
     } else if (section == "Fotos") {
       index = 3;
     } else if (section == "Agenda") {
@@ -28,7 +28,7 @@ class ScrollSingleton {
     } else if (section == "Expedition") {
       index = 7;
     } else if (section == "Oktoberfest") {
-      index = 8;
+      index = 2;
     }
     navBarScrollController.scrollTo(
       index: index,

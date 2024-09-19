@@ -12,7 +12,6 @@ import 'package:website_frontend/sections/agenda/agenda_section.dart';
 import 'package:website_frontend/sections/expedition/expedition.dart';
 import 'package:website_frontend/sections/footer/bottom_bar.dart';
 import 'package:website_frontend/sections/gallery/gallery_section.dart';
-import 'package:website_frontend/sections/kleiderverkauf/KleiderverkaufSection.dart';
 import 'package:website_frontend/sections/member/member_section.dart';
 import 'package:website_frontend/sections/news/news_section.dart';
 import 'package:website_frontend/sections/oktoberfest/oktoberfest_section.dart';
@@ -34,6 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<AppSection> appSections = [
     AppSection(name: "News", icon: Icons.newspaper, isVisible: true),
     AppSection(
+        name: "Oktoberfest", icon: Icons.local_gas_station, isVisible: true),
+    AppSection(
         name: "Kleiderverkauf",
         icon: Icons.monetization_on_outlined,
         isVisible: false),
@@ -44,8 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
     AppSection(name: "Sound", icon: Icons.music_note, isVisible: true),
     AppSection(
         name: "Expedition", icon: Icons.local_fire_department, isVisible: true),
-    AppSection(
-        name: "Oktoberfest", icon: Icons.local_gas_station, isVisible: true),
   ];
 
   @override
@@ -184,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
               } else if (index == 1) {
                 return NewsSection();
               } else if (index == 2) {
-                return KleiderverkaufSection();
+                return OktoberfestSection(); //Instead of KleiderverkaufSection
               } else if (index == 3) {
                 return GallerySection();
               } else if (index == 4) {
@@ -195,8 +194,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 return SoundSection();
               } else if (index == 7) {
                 return ExpeditionSection();
-              } else if (index == 8) {
-                return OktoberfestSection();
+                // } else if (index == 8) {
+                //   return OktoberfestSection();
               } else if (index == 9 && width < 1250) {
                 return const GoennerWerden();
               } else if (index == 9 && width > 1250) {
