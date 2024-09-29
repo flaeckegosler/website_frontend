@@ -1,8 +1,8 @@
 [
   {
-    "Nachname": "Andermatt",
-    "Vorname": "Marco",
-    "Gebdatum": "20.05.1900"
+    "Nachname": "Bachmann",
+    "Vorname": "Tim",
+    "Gebdatum": "03.06.1900"
   },
   {
     "Nachname": "Benz",
@@ -20,9 +20,19 @@
     "Gebdatum": "19.07.1900"
   },
   {
+    "Nachname": "Borer",
+    "Vorname": "Raffael",
+    "Gebdatum": "27.06.1900"
+  },
+  {
     "Nachname": "Bucher",
     "Vorname": "Domenik",
     "Gebdatum": "25.06.1900"
+  },
+  {
+    "Nachname": "Bühlmann",
+    "Vorname": "Samuel",
+    "Gebdatum": "12.07.1900"
   },
   {
     "Nachname": "Dünki",
@@ -90,14 +100,14 @@
     "Gebdatum": "13.05.1900"
   },
   {
+    "Nachname": "Köchli",
+    "Vorname": "Raphaela",
+    "Gebdatum": "30.06.1900"
+  },
+  {
     "Nachname": "Kritzer",
     "Vorname": "Michèle",
     "Gebdatum": "27.10.1900"
-  },
-  {
-    "Nachname": "Krummenacher",
-    "Vorname": "Silvia",
-    "Gebdatum": "21.01.1900"
   },
   {
     "Nachname": "La Colla",
@@ -118,6 +128,11 @@
     "Nachname": "Lang",
     "Vorname": "Lukas",
     "Gebdatum": "23.01.1900"
+  },
+  {
+    "Nachname": "Lang",
+    "Vorname": "Silvana",
+    "Gebdatum": "14.02.1900"
   },
   {
     "Nachname": "Leber",
@@ -195,11 +210,6 @@
     "Gebdatum": "17.12.1900"
   },
   {
-    "Nachname": "Schriber",
-    "Vorname": "Marco",
-    "Gebdatum": "04.03.1900"
-  },
-  {
     "Nachname": "Schürch",
     "Vorname": "Oliver",
     "Gebdatum": "25.06.1900"
@@ -250,19 +260,9 @@
     "Gebdatum": "07.11.1900"
   },
   {
-    "Nachname": "Zemp",
-    "Vorname": "Joanna",
-    "Gebdatum": "26.05.1900"
-  },
-  {
     "Nachname": "Zimmermann",
     "Vorname": "Diego",
     "Gebdatum": "18.06.1900"
-  },
-  {
-    "Nachname": "Zimmermann",
-    "Vorname": "Raphaela",
-    "Gebdatum": "30.06.1900"
   },
   {
     "Nachname": "Zurmühle",
